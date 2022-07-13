@@ -98,11 +98,13 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 
+# Setup nvm for managing different versions of node
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-#export JAVA_HOME="/usr/lib/jvm/default/"
+
+# FZF script to enable fzf key-bindings
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 source /usr/share/nvm/init-nvm.sh
