@@ -92,4 +92,11 @@ call plug#begin('~/.vim/plugged')
 
   " --- Test
   Plug 'vim-test/vim-test'
-call plug#end()
+
+  " --- Git Integration https://www.youtube.com/watch?v=F7JZdAwGmpU
+  Plug 'mhinz/vim-signify'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-rhubarb'
+  Plug 'junegunn/gv.vim'
+
+  call plug#end()

@@ -1,3 +1,10 @@
+"   _____       _ __        _
+"  /_  _/___   (_) /__   __(_)___ ___
+"   / / / __ \/ / __/ | / / / __  __ \
+" _/ /_/ / / / / /__| |/ / / / / / / /
+"/____/_/ /_/_/\__(_)___/_/_/ /_/ /_/
+"
+
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/vim-plug/plugins.vim
@@ -45,6 +52,8 @@ let g:netrw_liststyle=3
 nnoremap ,html :-1read ~/.config/nvim/my_snippets/hello_snippet.html<CR>3jwf>a
 
 source $HOME/.config/nvim/plug-config/coc.vim
+source $HOME/.config/nvim/plug-config/signify.vim
+source $HOME/.config/nvim/plug-config/start-screen.vim
 source $HOME/.config/nvim/modules/vim-which-key.vim
 source $HOME/.config/nvim/modules/nvim-colorizer.vim
 source $HOME/.config/nvim/modules/treesitter.vim
