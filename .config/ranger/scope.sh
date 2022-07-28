@@ -162,13 +162,13 @@ handle_image() {
 
         ## PDF
         # application/pdf)
-        #     pdftoppm -f 1 -l 1 \
-        #              -scale-to-x "${DEFAULT_SIZE%x*}" \
-        #              -scale-to-y -1 \
-        #              -singlefile \
-        #              -jpeg -tiffcompression jpeg \
-        #              -- "${FILE_PATH}" "${IMAGE_CACHE_PATH%.*}" \
-        #         && exit 6 || exit 1;;
+            pdftoppm -f 1 -l 1 \
+                     -scale-to-x "${DEFAULT_SIZE%x*}" \
+                     -scale-to-y -1 \
+                     -singlefile \
+                     -jpeg -tiffcompression jpeg \
+                     -- "${FILE_PATH}" "${IMAGE_CACHE_PATH%.*}" \
+                && exit 6 || exit 1;;
 
 
         ## ePub, MOBI, FB2 (using Calibre)
