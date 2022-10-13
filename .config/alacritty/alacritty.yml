@@ -143,3 +143,6 @@ font:
     style: Bold Italic
 
   size: 10
+
+selection:
+  save_to_clipboard: true
