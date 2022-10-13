@@ -26,6 +26,9 @@ nmap <silent> t<C-s> :TestSuite --verbose<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 
+" Paste and replace selection
+xnoremap("<leader>p", "\"_dP")
+
 " --- Theme
 colorscheme gruvbox
 
