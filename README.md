@@ -1,1 +1,3 @@
-Hello
+Create symlinks:
+cd ~
+stow .
