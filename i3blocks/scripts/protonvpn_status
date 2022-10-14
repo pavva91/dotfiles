@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+STATUS=$(protonvpn s)
+echo ${STATUS:157:3}
+echo ${STATUS:157:3}
+#echo ${STATUS:157:250}
+	print "#FF0000"
