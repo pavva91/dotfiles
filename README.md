@@ -13,14 +13,15 @@ To simulate the stow symlink creation do: -nv
 2. Stow the .config into ~/.config
 `stow -v -t ~/.config .config`
 ## Stow bash dotfiles (e.g. .bashrc)
+1. Go to the dotfiles repository
 `cd dotfiles`
+2. Stow the bash into ~
 `stow -t ~ bash`
 
 ## Stow i3 dotfiles
-Before create the i3 folder in ~/.config
-`cd ~/.config`
-`mkdir i3`
-Then stow i3 config folder
+a. Before create the i3 folder in ~/.config
+`cd ~/.config` and `mkdir i3`
+b. Then stow i3 config folder
 1. Go to the .config subrepository of this dotfiles repository
 `cd dotfiles/.config`
 2. Stow i3 into ~/.config/i3
