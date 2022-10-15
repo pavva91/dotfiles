@@ -9,27 +9,6 @@ source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/vim-plug/plugins.vim
 
-" --- Shortcuts
-nnoremap <F3> :NERDTreeToggle<CR>
-nmap <leader>f :NERDTreeFind<CR>
-nnoremap <leader>r :Ranger<CR>
-nnoremap <C-p> :Files<CR>
-nmap <leader>gf :GFiles<CR>
-nnoremap <C-g> :Ag<CR>
-nmap <leader>rg :Rg<CR>
-nnoremap <F8> :TagbarToggle<CR>
-" nmap <leader>fi :Files<CR>
-"
-" --- tests https://zignar.net/2019/11/21/setup-neovim-for-java-development/
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite --verbose<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
-
-" Paste and replace selection
-xnoremap("<leader>p", "\"_dP")
-
 " --- Theme
 colorscheme gruvbox
 
