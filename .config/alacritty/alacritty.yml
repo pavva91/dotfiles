@@ -120,8 +120,8 @@ schemes:
       white: "#ffffff"
 
 colors: *solarized_dark
-#colors: *ubuntu
-#colors: *xterm
+# colors: *ubuntu
+# colors: *xterm
 
 # General Background Opacity
 window:
