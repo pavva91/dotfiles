@@ -12,11 +12,18 @@ To simulate the stow symlink creation do: -nv
 `cd dotfiles`
 2. Stow the .config into ~/.config
 `stow -v -t ~/.config .config`
+
 ## Stow bash dotfiles (e.g. .bashrc)
 1. Go to the dotfiles repository
 `cd dotfiles`
 2. Stow the bash into ~
 `stow -t ~ bash`
+
+## Stow vim dotfiles (.vimrc)
+1. Go to the dotfiles repository
+`cd dotfiles`
+2. Stow the vim into ~
+`stow -v -t ~ vim`
 
 ## Stow i3 dotfiles
 a. Before create the i3 folder in ~/.config
