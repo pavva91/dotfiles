@@ -4,6 +4,8 @@
 " Enable syntax highlighting
 syntax enable
 
+filetype plugin on
+
 colorscheme desert
 set background=dark
 
@@ -30,6 +32,15 @@ set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
 set wildmenu            " visual autocomplete for command menu
 set showmatch           " highlight matching [{()}]
+"set termguicolors
+" Search down into subfolders
+" Provides tab completion for all file-related tasks
+set path+=**
+" Display all matching files when we tab complete
+set wildmenu
+set pastetoggle=<F2>
+set hidden
+set wrap
 
 filetype indent on      " load filetype-specific indent files
 
@@ -39,6 +50,11 @@ filetype indent on      " load filetype-specific indent files
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
+" -----------------------------------------------------------------------------------
+" SPLIT
+" -----------------------------------------------------------------------------------
+set splitbelow
+set splitright
 " -----------------------------------------------------------------------------------
 " FOLDING
 " -----------------------------------------------------------------------------------
@@ -96,6 +112,9 @@ nnoremap S :%s//g<left><left>
 
 nnoremap <TAB> :bnext<CR>
 nnoremap <S-TAB> :bprevious<CR>
+
+" buffer search shortcut
+nnoremap gb :ls<cr>:b<space>
 
 " -----------------------------------------------------------------------------------
 " => Spell checking
