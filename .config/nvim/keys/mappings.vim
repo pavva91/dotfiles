@@ -62,3 +62,6 @@ nmap t<C-g> :TestVisit<CR>
 
 " Paste and replace selection
 xnoremap("<leader>p", "\"_dP")
+
+" buffer search shortcut
+nnoremap gb :ls<cr>:b<space>

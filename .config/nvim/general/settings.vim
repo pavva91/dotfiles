@@ -1,5 +1,6 @@
 " set leader key
 " let g:mapleader = "\<Space>"
+let g:mapleader = ","
 
 syntax enable
 filetype plugin on
@@ -25,4 +26,5 @@ set path+=**
 " Display all matching files when we tab complete
 set wildmenu
 set pastetoggle=<F2>
-
+set splitbelow
+set splitright
