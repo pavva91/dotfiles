@@ -50,6 +50,9 @@ nnoremap <C-p> :Files<CR>
 " nmap <leader>fi :Files<CR>
 
 nnoremap <leader>s :Startify<CR>
+
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
 " --- tests https://zignar.net/2019/11/21/setup-neovim-for-java-development/
 nmap t<C-n> :TestNearest<CR>
 nmap t<C-f> :TestFile<CR>
