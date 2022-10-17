@@ -13,6 +13,12 @@ To simulate the stow symlink creation do: -nv
 2. Stow the .config into ~/.config
 `stow -v -t ~/.config .config`
 
+## Stow vconsole (remap Esc with Caps-lock)
+1. Go to the dotfiles repository
+`cd dotfiles/root_folder`
+2. Stow the bash into ~
+`sudo stow -v -t /etc etc`
+
 ## Stow bash dotfiles (e.g. .bashrc)
 1. Go to the dotfiles repository
 `cd dotfiles`
