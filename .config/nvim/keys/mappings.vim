@@ -21,16 +21,31 @@ nnoremap <C-l> <C-w>l
 nnoremap <F2> :sp<CR>:terminal<CR>
 nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <F4> :bd<CR>
-
-nmap <leader>nf :NERDTreeFind<CR>
-nnoremap <leader>r :Ranger<CR>
-nnoremap <C-p> :Files<CR>
-nmap <leader>gf :GFiles<CR>
-nnoremap <C-g> :Ag<CR>
-nmap <leader>rg :Rg<CR>
 nnoremap <F8> :TagbarToggle<CR>
+
+nnoremap <leader>nf :NERDTreeFind<CR>
+nnoremap <leader>r :Ranger<CR>
+nnoremap <leader>g :GFiles<CR>
+nnoremap <leader>ag :Ag<CR>
+nnoremap <leader>rg :Rg<CR>
+nnoremap <leader>fz :FZF<CR>
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fb :BLines<CR>
+nnoremap <leader>fl :Lines<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>h :History:<CR>
+
+nnoremap <C-p> :Files<CR>
+nnoremap <C-g> :Ag<CR>
+
+" Ag : Search in directory of the current open file files that contains the searched text
+" Rg : Search in directory files that contains the searched text
+" BLines : Search in current file
+" Lines : Search in all the buffers
+
 " nmap <leader>fi :Files<CR>
 
+nnoremap <leader>s :Startify<CR>
 " --- tests https://zignar.net/2019/11/21/setup-neovim-for-java-development/
 nmap t<C-n> :TestNearest<CR>
 nmap t<C-f> :TestFile<CR>
