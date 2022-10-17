@@ -17,12 +17,16 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Replace all is aliased to S
+nnoremap S :%s//g<left><left>
+
 " --- Shortcuts
-nnoremap <F2> :sp<CR>:terminal<CR>
 nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <F4> :bd<CR>
+nnoremap <F5> :sp<CR>:terminal<CR>
 nnoremap <F8> :TagbarToggle<CR>
 
+nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 nnoremap <leader>r :Ranger<CR>
 nnoremap <leader>g :GFiles<CR>
@@ -36,7 +40,7 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>h :History:<CR>
 
 nnoremap <C-p> :Files<CR>
-nnoremap <C-g> :Ag<CR>
+" nnoremap <C-g> :Ag<CR>
 
 " Ag : Search in directory of the current open file files that contains the searched text
 " Rg : Search in directory files that contains the searched text

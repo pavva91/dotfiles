@@ -24,3 +24,5 @@ set termguicolors
 set path+=**
 " Display all matching files when we tab complete
 set wildmenu
+set pastetoggle=<F2>
+

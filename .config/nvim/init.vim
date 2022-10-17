@@ -34,10 +34,12 @@ let g:netrw_liststyle=3
 " -1 means 'go up one line (k)' <CR> means hit 'Enter'
 nnoremap ,html :-1read ~/.config/nvim/my_snippets/hello_snippet.html<CR>3jwf>a
 
+source $HOME/.config/nvim/native-config/netrw.vim
+
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/signify.vim
 source $HOME/.config/nvim/plug-config/start-screen.vim
-" source $HOME/.config/nvim/plug-config/ranger.vim
+source $HOME/.config/nvim/plug-config/ranger.vim
 source $HOME/.config/nvim/modules/vim-which-key.vim
 source $HOME/.config/nvim/modules/nvim-colorizer.vim
 source $HOME/.config/nvim/modules/treesitter.vim
