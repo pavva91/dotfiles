@@ -17,7 +17,13 @@ fi
 alias ll='ls -lF'
 alias la='ls -lFa'
 alias l='ls -CF'
+
+# mv alias
 alias mv='mv -iv'
+
+# fzf aliases
+alias fzfvim='vim -o `fzf`'
+alias fzfnvim='nvim -o `fzf`'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
