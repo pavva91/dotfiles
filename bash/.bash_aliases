@@ -21,6 +21,9 @@ alias l='exa -CF'
 # mv alias
 alias mv='mv -iv'
 
+# rm alias
+alias rm='rm -iv'
+
 # fzf aliases
 alias fzfvim='vim $(fzf --height 40% --reverse)'
 alias fzfnvim='nvim $(fzf --height 40% --reverse)'
