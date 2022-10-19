@@ -14,16 +14,16 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -lF'
-alias la='ls -lFa'
-alias l='ls -CF'
+alias ll='exa -lF'
+alias la='exa -lFa'
+alias l='exa -CF'
 
 # mv alias
 alias mv='mv -iv'
 
 # fzf aliases
-alias fzfvim='vim -o `fzf`'
-alias fzfnvim='nvim -o `fzf`'
+alias fzfvim='vim $(fzf --height 40% --reverse)'
+alias fzfnvim='nvim $(fzf --height 40% --reverse)'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
