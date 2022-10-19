@@ -6,33 +6,7 @@
 "
 
 source $HOME/.config/nvim/general/settings.vim
-source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/vim-plug/plugins.vim
-
-" --- Theme
-colorscheme gruvbox
-
-" Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
-
-" --- Airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-
-" --- CloseTag
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.xml' " On which file closeTag is active
-
-" --- ctags mapping Tagbar
-let g:tagbar_ctags_bin = '/usr/bin/ctags'
-
-" --- Vim Standard File Manager (netrw)
-let g:netrw_banner=0
-let g:netrw_liststyle=3
-
-" Try remapping to insert code snippets
-" -1 means 'go up one line (k)' <CR> means hit 'Enter'
-nnoremap ,html :-1read ~/.config/nvim/my_snippets/hello_snippet.html<CR>3jwf>a
 
 source $HOME/.config/nvim/native-config/netrw.vim
 
@@ -40,6 +14,24 @@ source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/signify.vim
 source $HOME/.config/nvim/plug-config/start-screen.vim
 source $HOME/.config/nvim/plug-config/ranger.vim
-source $HOME/.config/nvim/modules/vim-which-key.vim
-source $HOME/.config/nvim/modules/nvim-colorizer.vim
-source $HOME/.config/nvim/modules/treesitter.vim
+source $HOME/.config/nvim/plug-config/airline.vim
+source $HOME/.config/nvim/plug-config/nvim-colorizer.vim
+source $HOME/.config/nvim/plug-config/treesitter.vim
+
+source $HOME/.config/nvim/keys/mappings.vim
+
+" --- Theme
+colorscheme gruvbox
+
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+
+" --- CloseTag
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.xml' " On which file closeTag is active
+
+" --- ctags mapping Tagbar
+let g:tagbar_ctags_bin = '/usr/bin/ctags'
+
+" Try remapping to insert code snippets
+" -1 means 'go up one line (k)' <CR> means hit 'Enter'
+nnoremap ,html :-1read ~/.config/nvim/my_snippets/hello_snippet.html<CR>3jwf>a
