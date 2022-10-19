@@ -344,6 +344,8 @@ function! HasPaste()
     if &paste
         return 'PASTE MODE  '
     endif
+
+
     return ''
 endfunction
 
