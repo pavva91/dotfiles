@@ -1,19 +1,18 @@
-"            $$\                                   
-"            \__|                                  
+"            $$\ 
+"            \__|
 " $$\    $$\ $$\ $$$$$$\$$$$\   $$$$$$\   $$$$$$$\ 
 " \$$\  $$  |$$ |$$  _$$  _$$\ $$  __$$\ $$  _____|
-"  \$$\$$  / $$ |$$ / $$ / $$ |$$ |  \__|$$ /      
-"   \$$$  /  $$ |$$ | $$ | $$ |$$ |      $$ |      
+"  \$$\$$  / $$ |$$ / $$ / $$ |$$ |  \__|$$ /
+"   \$$$  /  $$ |$$ | $$ | $$ |$$ |      $$ |
 " $$\\$  /   $$ |$$ | $$ | $$ |$$ |      \$$$$$$$\ 
 " \__|\_/    \__|\__| \__| \__|\__|       \_______|
-                                                 
-" -----------------------------------------------------------------------------------
-" COLORS AND SYNTAX HIGHLIGHT
-" -----------------------------------------------------------------------------------
-" Enable syntax highlighting
-syntax enable
 
+" -----------------------------------------------------------------------------
+" COLORS AND SYNTAX HIGHLIGHT
+" -----------------------------------------------------------------------------
+" Enable syntax highlighting
 filetype plugin on
+syntax on
 
 colorscheme desert
 set background=dark
@@ -24,22 +23,22 @@ set encoding=utf8
 " Set Mouse
 set mouse=a
 
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " TAB
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 set tabstop=4       " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
 
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " LINE NUMBERS
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 set number              " show line numbers
-set relativenumber	    " show relative line numbers	
+set relativenumber	    " show relative line numbers
 
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " VISUALS
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
 set wildmenu            " visual autocomplete for command menu
@@ -52,33 +51,37 @@ set path+=**
 set wildmenu
 set pastetoggle=<F2>
 set hidden
-set wrap
 
+" Visual Wrapping
+set wrap
+" autocmd FileType python set breakindentopt=shift:4
+
+" Enable indentationn
 filetype indent on      " load filetype-specific indent files
 
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " SEARCH
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " SPLIT
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 set splitbelow
 set splitright
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " FOLDING
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " fold based on indent level
 
 
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " => Status line
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 " Always show the status line
 set laststatus=2
@@ -95,9 +98,23 @@ set ruler
 " Height of the command bar
 set cmdheight=1
 
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
+" => Show the 80th Column
+" -----------------------------------------------------------------------------
+if (exists('+colorcolumn'))
+    set colorcolumn=80
+    highlight ColorColumn ctermbg=9
+endif
+
+" -----------------------------------------------------------------------------
+" SPELL CHECKING
+" -----------------------------------------------------------------------------
+" Spell Checking
+" set spell
+
+" -----------------------------------------------------------------------------
 " MAPPINGS
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -134,9 +151,7 @@ nnoremap <S-TAB> :bprevious<CR>
 " buffer search shortcut
 nnoremap gb :ls<cr>:b<space>
 
-" -----------------------------------------------------------------------------------
-" => Spell checking
-" -----------------------------------------------------------------------------------
+" SPELL TOGGLE
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
@@ -146,9 +161,9 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " => Helper functions
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Returns true if paste mode is enabled
 function! HasPaste()
     if &paste
@@ -158,9 +173,9 @@ function! HasPaste()
 endfunction
 
 
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " => CONFIG NETRW FILE EXPLORER
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
@@ -190,10 +205,17 @@ function! ToggleVExplorer()
 endfunction
 map <F3> :call ToggleVExplorer()<CR>
 
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " => PLUG
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 call plug#begin()
+
+" Rip Grep (:Rg <string> <folder>)
+Plug 'jremmen/vim-ripgrep'
+
+" See and clean trailing whitespaces (:FixWhitespace)
+Plug 'bronson/vim-trailing-whitespace'
+
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
 
@@ -211,58 +233,65 @@ Plug 'sheerun/vim-polyglot'
 " --- Start Page
 Plug 'mhinz/vim-startify'
 
-" --- Auto close parenthesys
+" --- Auto close parentheses
 Plug 'jiangmiao/auto-pairs'
 
 
 " --- Surrounding (e.g: surround 1 word with '()': ysw), surround 2 lines with '{}' ys2j} )
 "  ysw( : surround 1 word with '(   )' with heading and trailing spaces
 "  cs"' - Change "hello" to 'hello'
+"https://vimawesome.com/plugin/surround-vim
 Plug 'tpope/vim-surround' " ys
 
 " --- Commentary Toggle (gcc : comment line, gc : comment selection)
 Plug 'tpope/vim-commentary'
+
+" --- Git integration
+"  https://vimawesome.com/plugin/fugitive-vim
+Plug 'tpope/vim-fugitive'
 
 " --- Ranger File Manager
 Plug 'https://github.com/francoiscabrol/ranger.vim'
 " --- Ranger dependency
 Plug 'rbgrouleff/bclose.vim'
 call plug#end()
-" You can revert the settings after the call like so:
-"   filetype indent off   " Disable file-type-specific indentation
-"   syntax off            " Disable syntax highlighting
-
-
-" -----------------------------------------------------------------------------------
-" => NERDTREE
-" -----------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
+" => FZF
+" -----------------------------------------------------------------------------
+let g:fzf_command_prefix = 'Fzf'
+" -----------------------------------------------------------------------------
+" => NERDTree
+" -----------------------------------------------------------------------------
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 
+" -----------------------------------------------------------------------------
+" => MAPPINGS PLUGINS
+" -----------------------------------------------------------------------------
 map <F3> :NERDTreeToggle<CR>
-" -----------------------------------------------------------------------------------
-" => MAPPINGS
-" -----------------------------------------------------------------------------------
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 nnoremap <leader>nc :NERDTreeCWD<CR>
 nnoremap <leader>r :RangerCurrentDirectory<CR>
-nnoremap <leader>g :GFiles<CR>
+nnoremap <leader>g :FzfGFiles<CR>
 " Ag on CWD
-nnoremap <leader>ag :Ag<CR>
+nnoremap <leader>ag :FzfAg<CR>
 " Rip Grep on CWD
-nnoremap <leader>rg :Rg<CR>
+nnoremap <leader>rg :FzfRg<CR>
 " FZF by file name without file preview on CWD
 nnoremap <leader>fz :FZF<CR>
 " FZF by file name with file preview on CWD
-nnoremap <leader>ff :Files<CR>
-nnoremap <C-p> :Files<CR>
+nnoremap <leader>ff :FzfFiles<CR>
+nnoremap <C-p> :FzfFiles<CR>
 " Fuzzy find string in current open file
-nnoremap <leader>fb :BLines<CR>
-nnoremap g/ :BLines<CR>
+nnoremap <leader>fb :FzfBLines<CR>
+nnoremap g/ :FzfBLines<CR>
 " Fuzzy find string in files in buffer
 nnoremap <leader>fl :Lines<CR>
 nnoremap g? :Lines<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>h :History:<CR>
+nnoremap <leader>b :FzfBuffers<CR>
+nnoremap <leader>h :FzfHistory:<CR>
 nnoremap <leader>s :Startify<CR>
+
+" Easy align interactive
+vnoremap <silent> <Enter> :EasyAlign<cr>
