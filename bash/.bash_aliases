@@ -25,8 +25,8 @@ alias mv='mv -iv'
 alias rm='rm -iv'
 
 # fzf aliases
-alias fzfvim='vim $(fzf --height 40% --reverse)'
-alias fzfnvim='nvim $(fzf --height 40% --reverse)'
+alias fzfvim=~/bash_scripts/fzfvim.sh
+alias fzfnvim=~/bash_scripts/fzfnvim.sh
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
