@@ -24,10 +24,6 @@ alias mv='mv -iv'
 # rm alias
 alias rm='rm -iv'
 
-# fzf aliases
-alias fzfvim=~/bash_scripts/fzfvim.sh
-alias fzfnvim=~/bash_scripts/fzfnvim.sh
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -50,7 +46,13 @@ alias restart_vpn_service='(sudo systemctl restart openvpn-client@ch-lu-01.proto
 alias stop_vpn_service='(sudo systemctl stop openvpn-client@ch-lu-01.protonvpn.com.udp.service)'
 
 # Fuzzy Find on Installed Packages
-alias what_i_have=$HOME/SynologyDrive/Scripts/what_i_have.sh
+alias what_i_have=~/bash_scripts/what_i_have.sh
 
 # Fuzzy Find on available packages and install it
-alias search_and_install_package=$HOME/SynologyDrive/Scripts/search_and_install_package.sh
+alias search_and_install_package=~/bash_scripts/search_and_install_package.sh
+
+# fzf alias to open file with vim
+alias fzfvim=~/bash_scripts/fzfvim.sh
+
+# fzf alias to open file with nvim
+alias fzfnvim=~/bash_scripts/fzfnvim.sh
