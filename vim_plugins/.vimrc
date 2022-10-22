@@ -1,12 +1,13 @@
-"            $$\ 
+"            $$\
 "            \__|
-" $$\    $$\ $$\ $$$$$$\$$$$\   $$$$$$\   $$$$$$$\ 
+" $$\    $$\ $$\ $$$$$$\$$$$\   $$$$$$\   $$$$$$$\
 " \$$\  $$  |$$ |$$  _$$  _$$\ $$  __$$\ $$  _____|
 "  \$$\$$  / $$ |$$ / $$ / $$ |$$ |  \__|$$ /
 "   \$$$  /  $$ |$$ | $$ | $$ |$$ |      $$ |
-" $$\\$  /   $$ |$$ | $$ | $$ |$$ |      \$$$$$$$\ 
+" $$\\$  /   $$ |$$ | $$ | $$ |$$ |      \$$$$$$$\
 " \__|\_/    \__|\__| \__| \__|\__|       \_______|
 
+" :so % : To make changes effective
 " -----------------------------------------------------------------------------
 " COLORS AND SYNTAX HIGHLIGHT
 " -----------------------------------------------------------------------------
@@ -28,7 +29,9 @@ set mouse=a
 " -----------------------------------------------------------------------------
 set tabstop=4       " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in tab when editing
+set shiftwidth=4
 set expandtab       " tabs are spaces
+set smartindent
 
 " -----------------------------------------------------------------------------
 " LINE NUMBERS
@@ -50,6 +53,8 @@ set path+=**
 " Display all matching files when we tab complete
 set wildmenu
 set pastetoggle=<F2>
+
+" keeps any buffer in the background (keeps everything open)
 set hidden
 
 " Visual Wrapping
@@ -99,6 +104,53 @@ set ruler
 set cmdheight=1
 
 " -----------------------------------------------------------------------------
+" Primeagen Opions
+" -----------------------------------------------------------------------------
+"  VimRC Structure:
+"  1. set
+"  2. plugins (Plug)
+"  3. editor settings
+"  4. let
+"  5. remaps
+"  6. autocommands
+" if you do vim . in a directory that contains a .vimrc it will is that
+set exrc
+
+" no error sounds
+set noerrorbells
+
+" How to keep history (undotree plugin)
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+
+" Extra column for linting
+set signcolumn=yes
+
+" highlight Normal guibg=none
+" prefferred plugins:
+" nvim-lsp
+" telescope (only for nvim)
+" treesitter
+" gruvbox (theme)
+" undotree
+" fugitive (git integration)
+"
+
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+" Trim trailing whitespace on save
+augroup THE_PRIMEAGEN
+    autocmd!
+    autocmd BufWritePre * :call TrimWhitespace()
+augroup END
+
+" -----------------------------------------------------------------------------
 " => Show the 80th Column
 " -----------------------------------------------------------------------------
 if (exists('+colorcolumn'))
@@ -115,7 +167,9 @@ endif
 " -----------------------------------------------------------------------------
 " MAPPINGS
 " -----------------------------------------------------------------------------
-
+" rule:
+" mode lhs rhs
+" nnoremap means n : normal mode nore : no recursive execution map
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
@@ -254,6 +308,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'https://github.com/francoiscabrol/ranger.vim'
 " --- Ranger dependency
 Plug 'rbgrouleff/bclose.vim'
+
+" --- TagBar (ctags)
+Plug 'preservim/tagbar'
+
+" --- Undotree (emacs)
+Plug 'mbbill/undotree'
 call plug#end()
 " -----------------------------------------------------------------------------
 " => FZF
@@ -269,6 +329,8 @@ autocmd VimEnter * NERDTree | wincmd p
 " => MAPPINGS PLUGINS
 " -----------------------------------------------------------------------------
 map <F3> :NERDTreeToggle<CR>
+nnoremap <F5> :UndotreeToggle<CR>
+
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 nnoremap <leader>nc :NERDTreeCWD<CR>
@@ -295,3 +357,10 @@ nnoremap <leader>s :Startify<CR>
 
 " Easy align interactive
 vnoremap <silent> <Enter> :EasyAlign<cr>
+
+nnoremap <F8> :TagbarToggle<CR>
+
+" TODO: Learn to code only with ctags before jumping into lsp (CoC)
+" https://vimways.org/2018/you-should-be-using-tags-in-vim/
+" https://kulkarniamit.github.io/whatwhyhow/howto/use-vim-ctags.html
+" https://gist.github.com/miguelgrinberg/527bb5a400791f89b3c4da4bd61222e4
