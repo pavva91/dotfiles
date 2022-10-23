@@ -327,6 +327,10 @@ Plug 'preservim/tagbar'
 
 " --- Undotree (emacs)
 Plug 'mbbill/undotree'
+
+" --- navigate seamlessly between vim and tmux splits using a consistent set
+"  of hotkeys.
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 " -----------------------------------------------------------------------------
 " => FZF
