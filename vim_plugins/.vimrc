@@ -42,6 +42,7 @@ set relativenumber	    " show relative line numbers
 " -----------------------------------------------------------------------------
 " VISUALS
 " -----------------------------------------------------------------------------
+set fillchars+=vert:\   " removes pipes on split separators
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
 set wildmenu            " visual autocomplete for command menu
@@ -181,11 +182,23 @@ nmap <leader>w :w!<cr>
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
+map <leader>tt :vnew term://bash<CR>
+
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+" Make adjusting split sizes a bit more friendly
+noremap <silent> <C-Left> :vertical resize +3<CR>
+noremap <silent> <C-Right> :vert res-3<CR>
+noremap <silent> <C-Up> :resize +3<CR>
+noremap <silent> <C-Down> :res -3<CR>
+
+" Change 2 split windows from vert to horiz or horiz to vert
+map <leader>th <C-w>t<C-w>H
+map <leader>tk <C-w>t<C-w>K
 
 " highlight last inserted text
 nnoremap gV `[v`]
