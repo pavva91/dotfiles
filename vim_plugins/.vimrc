@@ -300,9 +300,12 @@ Plug 'sheerun/vim-polyglot'
 " --- Start Page
 Plug 'mhinz/vim-startify'
 
-" --- Auto close parentheses
-Plug 'jiangmiao/auto-pairs'
-
+"{{ Autopairs
+"" ---> closing XML tags <---
+Plug 'alvan/vim-closetag'
+"  " ---> closing braces and brackets <---
+ Plug 'jiangmiao/auto-pairs'
+"  "}}
 
 " --- Surrounding (e.g: surround 1 word with '()': ysw), surround 2 lines with '{}' ys2j} )
 "  ysw( : surround 1 word with '(   )' with heading and trailing spaces
@@ -313,9 +316,14 @@ Plug 'tpope/vim-surround' " ys
 " --- Commentary Toggle (gcc : comment line, gc : comment selection)
 Plug 'tpope/vim-commentary'
 
-" --- Git integration
-"  https://vimawesome.com/plugin/fugitive-vim
+"{{ Git integration
+"" ---> git commands within vim <---
 Plug 'tpope/vim-fugitive'
+" ---> git changes on the gutter <---
+ Plug 'airblade/vim-gitgutter'
+"  " ---> nerdtree git changes <---
+ Plug 'Xuyuanp/nerdtree-git-plugin'
+"  "}}
 
 " --- Ranger File Manager
 Plug 'https://github.com/francoiscabrol/ranger.vim'
@@ -328,19 +336,32 @@ Plug 'preservim/tagbar'
 " --- Undotree (emacs)
 Plug 'mbbill/undotree'
 
-" --- navigate seamlessly between vim and tmux splits using a consistent set
-"  of hotkeys.
+"{{ TMux - Vim integration
 Plug 'christoomey/vim-tmux-navigator'
+""}}"}}
+
 call plug#end()
+
 " -----------------------------------------------------------------------------
 " => FZF
 " -----------------------------------------------------------------------------
 let g:fzf_command_prefix = 'Fzf'
+
 " -----------------------------------------------------------------------------
 " => NERDTree
 " -----------------------------------------------------------------------------
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
+
+" ---> show hidden files <---
+let NERDTreeShowHidden=1
+
+
+" -----------------------------------------------------------------------------
+" => FZF
+" -----------------------------------------------------------------------------
+" ---> files on which to activate tags auto-closing <---
+ let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.vue,*.phtml,*.js,*.jsx,*.coffee,*.erb'
 
 " -----------------------------------------------------------------------------
 " => MAPPINGS PLUGINS
