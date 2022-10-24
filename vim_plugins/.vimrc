@@ -317,22 +317,16 @@ Plug 'tpope/vim-surround' " ys
 " --- Commentary Toggle (gcc : comment line, gc : comment selection)
 Plug 'tpope/vim-commentary'
 
-"{{ Git integration
-"" ---> git commands within vim <---
-Plug 'tpope/vim-fugitive'
-" ---> git changes on the gutter <---
- Plug 'airblade/vim-gitgutter'
-"  " ---> nerdtree git changes <---
- Plug 'Xuyuanp/nerdtree-git-plugin'
-"  "}}
+" --- TagBar (ctags)
+Plug 'preservim/tagbar'
+
+" CoC - Intellisense
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " --- Ranger File Manager
 Plug 'https://github.com/francoiscabrol/ranger.vim'
 " --- Ranger dependency
 Plug 'rbgrouleff/bclose.vim'
-
-" --- TagBar (ctags)
-Plug 'preservim/tagbar'
 
 " --- Undotree (emacs)
 Plug 'mbbill/undotree'
@@ -341,9 +335,18 @@ Plug 'mbbill/undotree'
 Plug 'christoomey/vim-tmux-navigator'
 ""}}"}}
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+" Nerd Fonts
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
+
+"{{ Git integration
+"" ---> git commands within vim <---
+Plug 'tpope/vim-fugitive'
+" ---> git changes on the gutter <---
+ Plug 'airblade/vim-gitgutter'
+"  " ---> nerdtree git changes <---
+ Plug 'Xuyuanp/nerdtree-git-plugin'
+"  "}}
 
 " -----------------------------------------------------------------------------
 " => FZF
