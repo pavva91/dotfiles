@@ -27,7 +27,9 @@ alias rm='rm -iv'
 # cat alias with bat
 alias cat='bat'
 
+# clear aliases (ctrl-l doesn't work with vim-tmux integration)
 alias c='clear'
+alias L='clear'
 
 
 # Add an "alert" alias for long running commands.  Use like so:
