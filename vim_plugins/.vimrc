@@ -123,6 +123,7 @@ set noerrorbells
 " How to keep history (undotree plugin)
 set noswapfile
 set nobackup
+set nowritebackup
 set undodir=~/.vim/undodir
 set undofile
 
@@ -340,6 +341,8 @@ Plug 'mbbill/undotree'
 Plug 'christoomey/vim-tmux-navigator'
 ""}}"}}
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
 " -----------------------------------------------------------------------------
@@ -402,3 +405,5 @@ nnoremap <F8> :TagbarToggle<CR>
 " https://vimways.org/2018/you-should-be-using-tags-in-vim/
 " https://kulkarniamit.github.io/whatwhyhow/howto/use-vim-ctags.html
 " https://gist.github.com/miguelgrinberg/527bb5a400791f89b3c4da4bd61222e4
+
+source $HOME/.vim/coc.vim
