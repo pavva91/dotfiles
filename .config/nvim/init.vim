@@ -23,14 +23,27 @@ source $HOME/.config/nvim/keys/mappings.vim
 " --- Theme
 colorscheme gruvbox
 
+" ----------------------------------------------------------------------------- => NERDTree
+" -----------------------------------------------------------------------------
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 
-" --- CloseTag
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.xml' " On which file closeTag is active
+" ---> show hidden files <---
+let NERDTreeShowHidden=1
+
+" -----------------------------------------------------------------------------
+" => CLOSETAG
+" -----------------------------------------------------------------------------
+" ---> files on which to activate tags auto-closing <---
+ let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.vue,*.phtml,*.js,*.jsx,*.coffee,*.erb'
 
 " --- ctags mapping Tagbar
 let g:tagbar_ctags_bin = '/usr/bin/ctags'
+
+" -----------------------------------------------------------------------------
+" => FZF
+" -----------------------------------------------------------------------------
+let g:fzf_command_prefix = 'Fzf'
 
 " Try remapping to insert code snippets
 " -1 means 'go up one line (k)' <CR> means hit 'Enter'

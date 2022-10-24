@@ -8,6 +8,8 @@ set wrap
 set encoding=utf-8
 set pumheight=10
 set cursorline
+" Extra column for linting
+set signcolumn=yes
 set background=dark
 set number
 set relativenumber
@@ -26,3 +28,6 @@ set wildmenu
 set pastetoggle=<F2>
 set splitbelow
 set splitright
+" no error sounds
+set noerrorbells
+

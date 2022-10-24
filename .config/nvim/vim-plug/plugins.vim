@@ -1,102 +1,104 @@
 call plug#begin('~/.vim/plugged')
-  " The default plugin directory will be as follows:
-  "   - Vim (Linux/macOS): '~/.vim/plugged'
-  "   - Vim (Windows): '~/vimfiles/plugged'
-  "   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
-  " You can specify a custom plugin directory by passing it as the argument
-  "   - e.g. `call plug#begin('~/.vim/plugged')`
-  "   - Avoid using standard Vim directory names like 'plugin'
 
-  " Make sure you use single quotes
+" Rip Grep (:Rg <string> <folder>)
+Plug 'jremmen/vim-ripgrep'
 
-  " On-demand loading
-  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-  Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+" See and clean trailing whitespaces (:FixWhitespace)
+Plug 'bronson/vim-trailing-whitespace'
 
-  " Plugin outside ~/.vim/plugged with post-update hook
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'junegunn/fzf.vim'
-  " --- Change Project Root Directory
-  Plug 'airblade/vim-rooter'
-  " :FZF
-  " :Files
-  " :Rg (rip grep)
-  " :BLines
-  " :Lines
-  " :Ag (silver search)
-  " :Buffers
-  " :History:
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
 
-  " --- Syntax Highlighting
-  Plug 'sheerun/vim-polyglot'
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
-  " --- Themes
-  Plug 'https://github.com/Matsuuu/pinkmare'
-  Plug 'https://github.com/morhetz/gruvbox'
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
-  " Colorscheme
-  Plug 'joshdick/onedark.vim'
+" --- Syntax Highlighting
+Plug 'sheerun/vim-polyglot'
 
-  " --- Status Bar
-  Plug 'https://github.com/vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
+" --- Start Page
+Plug 'mhinz/vim-startify'
 
-  " --- Ranger File Manager
-  Plug 'https://github.com/francoiscabrol/ranger.vim'
-  " --- Ranger dependency
-  Plug 'rbgrouleff/bclose.vim'
+"{{ Autopairs
+"" ---> closing XML tags <---
+Plug 'alvan/vim-closetag'
+"  " ---> closing braces and brackets <---
+ Plug 'jiangmiao/auto-pairs'
+"  "}}
 
-  " --- Start Page
-  Plug 'mhinz/vim-startify'
+" --- Surrounding (e.g: surround 1 word with '()': ysw), surround 2 lines with '{}' ys2j} )
+"  cs"' - Change "hello" to 'hello'
+Plug 'tpope/vim-surround' " ys
 
-  " --- Auto close parenthesys
-  Plug 'jiangmiao/auto-pairs'
+" --- Commentary Toggle (gcc : comment line, gc : comment selection)
+Plug 'tpope/vim-commentary'
 
-  " --- Surrounding (e.g: surround 1 word with '()': ysw), surround 2 lines with '{}' ys2j} )
-  "  cs"' - Change "hello" to 'hello'
-  Plug 'tpope/vim-surround' " ys
+" --- TagBar (ctags)
+Plug 'preservim/tagbar'
 
-  " --- Commentary Toggle (gcc : comment line, gc : comment selection)
-  Plug 'tpope/vim-commentary'
+" --- CoC (Intellisense)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-  " --- CloseTag (html, xml...)
-  Plug 'alvan/vim-closetag'
+" --- Ranger File Manager
+Plug 'https://github.com/francoiscabrol/ranger.vim'
+" --- Ranger dependency
+Plug 'rbgrouleff/bclose.vim'
 
-  " --- TagBar (ctags)
-  Plug 'preservim/tagbar'
+" --- Undotree (emacs)
+Plug 'mbbill/undotree'
 
-  " --- CoC (Intellisense)
-  "  Stable version of coc
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"{{ TMux - Vim integration
+Plug 'christoomey/vim-tmux-navigator'
+""}}"}}
 
-  " Keeping up to date with master
-  " Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+" Nerd Fonts
+Plug 'ryanoasis/vim-devicons'
+call plug#end()
 
-  " Treesitter
-  Plug 'nvim-treesitter/nvim-treesitter'
+" --- Git Integration https://www.youtube.com/watch?v=F7JZdAwGmpU
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-rhubarb'
+Plug 'junegunn/gv.vim'
+"{{ Git integration
+"" ---> git commands within vim <---
+Plug 'tpope/vim-fugitive'
+" ---> git changes on the gutter <---
+ Plug 'airblade/vim-gitgutter'
+"  " ---> nerdtree git changes <---
+ Plug 'Xuyuanp/nerdtree-git-plugin'
+"  "}}
 
-  Plug 'liuchengxu/vim-which-key'
+" Treesitter
+Plug 'nvim-treesitter/nvim-treesitter'
 
-  " On-demand lazy load
-  Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+Plug 'liuchengxu/vim-which-key'
 
-  " To register the descriptions when using the on-demand load feature,
-  " use the autocmd hook to call which_key#register(), e.g., register for the Space key:
-  " autocmd! User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
+" On-demand lazy load
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
-  " --- Colorizer
-  Plug 'norcalli/nvim-colorizer.lua'
+" To register the descriptions when using the on-demand load feature,
+" use the autocmd hook to call which_key#register(), e.g., register for the Space key:
+" autocmd! User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
 
-  " --- Icons
-  Plug 'ryanoasis/vim-devicons'
+" --- Colorizer
+Plug 'norcalli/nvim-colorizer.lua'
 
-  " --- Test
-  Plug 'vim-test/vim-test'
+" --- Test
+Plug 'vim-test/vim-test'
 
-  " --- Git Integration https://www.youtube.com/watch?v=F7JZdAwGmpU
-  Plug 'mhinz/vim-signify'
-  Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-rhubarb'
-  Plug 'junegunn/gv.vim'
+" --- Themes
+Plug 'https://github.com/Matsuuu/pinkmare'
+Plug 'https://github.com/morhetz/gruvbox'
+
+" Colorscheme
+Plug 'joshdick/onedark.vim'
+
+" --- Status Bar
+Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
   call plug#end()

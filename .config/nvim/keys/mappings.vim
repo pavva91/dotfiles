@@ -33,24 +33,24 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 nnoremap <leader>nc :NERDTreeCWD<CR>
 nnoremap <leader>r :RangerCurrentDirectory<CR>
-nnoremap <leader>g :GFiles<CR>
+nnoremap <leader>g :FzfGFiles<CR>
 " Ag on CWD
-nnoremap <leader>ag :Ag<CR>
+nnoremap <leader>ag :FzfAg<CR>
 " Rip Grep on CWD
-nnoremap <leader>rg :Rg<CR>
+nnoremap <leader>rg :FzfRg<CR>
 " FZF by file name without file preview on CWD
 nnoremap <leader>fz :FZF<CR>
 " FZF by file name with file preview on CWD
-nnoremap <leader>ff :Files<CR>
-nnoremap <C-p> :Files<CR>
+nnoremap <leader>ff :FzfFiles<CR>
+nnoremap <C-p> :FzfFiles<CR>
 " Fuzzy find string in current open file
-nnoremap <leader>fb :BLines<CR>
+nnoremap <leader>fb :FzfBLines<CR>
 nnoremap g/ :BLines<CR>
 " Fuzzy find string in files in buffer
-nnoremap <leader>fl :Lines<CR>
-nnoremap g? :Lines<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>h :History:<CR>
+nnoremap <leader>fl :FzfLines<CR>
+nnoremap g? :FzfLines<CR>
+nnoremap <leader>b :FzfBuffers<CR>
+nnoremap <leader>h :FzfHistory:<CR>
 nnoremap <leader>s :Startify<CR>
 
 " nnoremap <C-g> :Ag<CR>
