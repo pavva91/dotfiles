@@ -55,6 +55,12 @@ set path+=**
 set wildmenu
 set pastetoggle=<F2>
 
+" Extra column for linting
+set signcolumn=yes
+
+" Give more space for displaying messages.
+set cmdheight=2
+
 " keeps any buffer in the background (keeps everything open)
 set hidden
 
@@ -127,8 +133,9 @@ set nowritebackup
 set undodir=~/.vim/undodir
 set undofile
 
-" Extra column for linting
-set signcolumn=yes
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
 
 " highlight Normal guibg=none
 " prefferred plugins:
@@ -409,4 +416,5 @@ nnoremap <F8> :TagbarToggle<CR>
 " https://kulkarniamit.github.io/whatwhyhow/howto/use-vim-ctags.html
 " https://gist.github.com/miguelgrinberg/527bb5a400791f89b3c4da4bd61222e4
 
+" Coc Extensions: https://www.npmjs.com/search?q=keywords%3Acoc.nvim
 source $HOME/.vim/coc.vim
