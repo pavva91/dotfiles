@@ -1,21 +1,85 @@
 {
-    // suggestions
-    "suggest.noselect": true,
-	"suggest.completionItemKindLabels": {
-		"text": "t",
-		"method": "m",
-		"function": "f"
-	},
-	"snippets.priority": 1,
-	"suggest.languageSourcePriority": 99,
-	"coc.source.file.priority": 2,
-	"coc.source.around.priority": 3,
-	"coc.source.buffer.priority": 4,
+  // suggestions
+  "suggest.noselect": true,
+  "suggest.completionItemKindLabels": {
+    "text": "t",
+    "method": "m",
+    "function": "f"
+  },
+  "snippets.priority": 1,
+  "suggest.languageSourcePriority": 99,
+  "coc.source.file.priority": 2,
+  "coc.source.around.priority": 3,
+  "coc.source.buffer.priority": 4,
 
-	// diagnostic
-	"diagnostic.errorSign": "✗",
-	"diagnostic.infoSign": "ℹ",
-	"diagnostic.hintSign": "➤",
-	"diagnostic.warningSign": "⚠"
+  // diagnostic
+  "diagnostic.errorSign": "✗",
+  "diagnostic.infoSign": "ℹ",
+  "diagnostic.hintSign": "➤",
+  "diagnostic.warningSign": "⚠",
+
+  // codeLens
+  // turn off codeLens stuff for improving performance
+  "codeLens.enable": false,
+
+  // java
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "/usr/lib/jvm/java-17-openjdk",
+      "default": true
+    },
+    {
+      "name": "JavaSE-11",
+      "path": "/usr/lib/jvm/java-11-openjdk"
+    },
+    {
+      "name": "JavaSE-1.8",
+      "path": "/usr/lib/jvm/java-8-openjdk"
+    }
+  ],
+  "java.enabled": true,
+  "java.jdt.ls.home": "/home/bob/.config/coc/extensions/coc-java-data/server",
+  "java.jdt.ls.vmargs": "-noverify -Xmx6G -XX:+UseG1GC -XX:+UseStringDeduplication",
+  "java.trace.server": "verbose",
+  // turn off codeLens stuff for improving performance
+  "java.referencesCodeLens.enabled": false,
+  "java.implementationsCodeLens.enabled": false,
+  "java.completion.enabled": true,
+  "java.completion.guessMethodArguments": true,
+  "java.completion.overwrite": true,
+  "java.format.enabled": true,
+  "java.foldingRange.enabled": true,
+  "java.codeGeneration.useBlocks": true,
+  "java.codeGeneration.generateComments": true,
+  "java.signatureHelp.enabled": true,
+  "java.saveActions.organizeImports": true,
+  "java.selectionRange.enabled": true,
+  "java.format.settings.url": "/home/bob/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
+
+  // list
+  "list.indicator": ">",
+  "list.selectedSignText": "*",
+
+  // autoformat
+  "coc.preferences.formatOnSaveFiletypes": [
+    "java",
+    "javascript",
+    "typescripty",
+    "python",
+    "html",
+    "yaml",
+    "json",
+    "css"
+  ],
+
+  // explorer
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": "labeling",
+  "explorer.keyMappings.global": {
+    "<cr>": ["expandable?", "expand", "open"],
+    "v": "open:vsplit"
+  }
 
 }

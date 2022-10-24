@@ -59,9 +59,6 @@ set pastetoggle=<F2>
 " Extra column for linting
 set signcolumn=yes
 
-" Give more space for displaying messages.
-set cmdheight=2
-
 " keeps any buffer in the background (keeps everything open)
 set hidden
 
@@ -221,6 +218,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 " Replace all is aliased to S
 nnoremap S :%s//g<left><left>
 
+" Tab switch buffer
 nnoremap <TAB> :bnext<CR>
 nnoremap <S-TAB> :bprevious<CR>
 
@@ -419,3 +417,7 @@ nnoremap <F8> :TagbarToggle<CR>
 
 " Coc Extensions: https://www.npmjs.com/search?q=keywords%3Acoc.nvim
 source $HOME/.vim/coc.vim
+
+" Give more space for displaying messages.
+set cmdheight=2
+
