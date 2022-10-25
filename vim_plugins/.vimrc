@@ -410,7 +410,7 @@ nnoremap <leader>fb :FzfBLines<CR>
 nnoremap g/ :FzfBLines<CR>
 " Fuzzy find string in files in buffer
 nnoremap <leader>fl :Lines<CR>
-nnoremap g? :Lines<CR>
+nnoremap g? :FzfLines<CR>
 nnoremap <leader>b :FzfBuffers<CR>
 nnoremap <leader>h :FzfHistory:<CR>
 nnoremap <leader>s :Startify<CR>
