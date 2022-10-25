@@ -354,6 +354,8 @@ Plug 'tpope/vim-fugitive'
  Plug 'Xuyuanp/nerdtree-git-plugin'
 "  "}}
 
+" Debug
+Plug 'puremourning/vimspector'
 " -----------------------------------------------------------------------------
 " => FZF
 " -----------------------------------------------------------------------------
@@ -374,6 +376,14 @@ let NERDTreeShowHidden=1
 " -----------------------------------------------------------------------------
 " ---> files on which to activate tags auto-closing <---
  let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.vue,*.phtml,*.js,*.jsx,*.coffee,*.erb'
+
+" -----------------------------------------------------------------------------
+" => VIMSPECTOR
+" -----------------------------------------------------------------------------
+" for normal mode - the word under the cursor
+nmap <Leader>di <Plug>VimspectorBalloonEval
+" for visual mode, the visually selected text
+xmap <Leader>di <Plug>VimspectorBalloonEval
 
 " -----------------------------------------------------------------------------
 " => MAPPINGS PLUGINS
@@ -420,4 +430,3 @@ source $HOME/.vim/coc.vim
 
 " Give more space for displaying messages.
 set cmdheight=2
-
