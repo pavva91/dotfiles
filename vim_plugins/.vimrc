@@ -343,7 +343,6 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Nerd Fonts
 Plug 'ryanoasis/vim-devicons'
-call plug#end()
 
 "{{ Git integration
 "" ---> git commands within vim <---
@@ -356,6 +355,8 @@ Plug 'tpope/vim-fugitive'
 
 " Debug
 Plug 'puremourning/vimspector'
+call plug#end()
+
 " -----------------------------------------------------------------------------
 " => FZF
 " -----------------------------------------------------------------------------
