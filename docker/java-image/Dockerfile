@@ -1,4 +1,5 @@
 FROM alpine:latest
+ADD .bashrc /root/.bashrc
 
 # Install Vim
 RUN apk add vim
@@ -60,12 +61,8 @@ RUN mkdir ~/.config/coc/extensions/coc-java-data
 RUN mkdir ~/.config/coc/extensions/coc-java-data/server
 RUN tar -xzvf ~/jdt-language-server/jdt-language-server-latest.tar.gz -C ~/.config/coc/extensions/coc-java-data/server
 
-# install coc-json & coc-html and exit
+# install coc-java & coc-json and exit
 RUN vim -c 'CocInstall -sync coc-java coc-json coc-vimlsp|q' >> /dev/null
-# Update Language Server
-# RUN vim -c 'CocCommand java.updateLanguageServer|q' >> /dev/null
-
-# CMD ["/usr/bin/vim"]
 
 # Keep container running in background
 CMD tail -f /dev/null
