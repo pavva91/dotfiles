@@ -26,6 +26,9 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
+" Use <CR> to confirm completion, use: >
+inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)

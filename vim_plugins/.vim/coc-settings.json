@@ -80,6 +80,7 @@
   "explorer.keyMappings.global": {
     "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit"
-  }
+  },
+  "java.errors.incompleteClasspath.severity": "ignore"
 
 }

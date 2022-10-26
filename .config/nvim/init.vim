@@ -4,6 +4,7 @@
 " _/ /_/ / / / / /__| |/ / / / / / / /
 "/____/_/ /_/_/\__(_)___/_/_/ /_/ /_/
 "
+" https://github.com/nvim-lua/kickstart.nvim
 
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/vim-plug/plugins.vim

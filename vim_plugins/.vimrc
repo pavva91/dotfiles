@@ -396,9 +396,9 @@ nnoremap <leader>nf :NERDTreeFind<CR>
 nnoremap <leader>nc :NERDTreeCWD<CR>
 nnoremap <leader>r :RangerCurrentDirectory<CR>
 nnoremap <leader>g :FzfGFiles<CR>
-" Ag on CWD
+"FZF Ag (file_name and/or file_content) recursively on CWD
 nnoremap <leader>ag :FzfAg<CR>
-" Rip Grep on CWD
+"FZF Rip (file_name and/or file_content) Grep recursively on CWD
 nnoremap <leader>rg :FzfRg<CR>
 " FZF by file name without file preview on CWD
 nnoremap <leader>fz :FZF<CR>
@@ -409,7 +409,7 @@ nnoremap <C-p> :FzfFiles<CR>
 nnoremap <leader>fb :FzfBLines<CR>
 nnoremap g/ :FzfBLines<CR>
 " Fuzzy find string in files in buffer
-nnoremap <leader>fl :Lines<CR>
+nnoremap <leader>fl :FzfLines<CR>
 nnoremap g? :FzfLines<CR>
 nnoremap <leader>b :FzfBuffers<CR>
 nnoremap <leader>h :FzfHistory:<CR>
