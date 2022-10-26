@@ -1,6 +1,9 @@
 FROM alpine:latest
 ADD .bashrc /root/.bashrc
 
+# Update Packages
+RUN apk update
+
 # Install Vim
 RUN apk add vim
 

@@ -343,7 +343,6 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Nerd Fonts
 Plug 'ryanoasis/vim-devicons'
-call plug#end()
 
 "{{ Git integration
 "" ---> git commands within vim <---
@@ -356,6 +355,11 @@ Plug 'tpope/vim-fugitive'
 
 " Debug
 Plug 'puremourning/vimspector'
+
+" Onedark Theme
+Plug 'joshdick/onedark.vim'
+call plug#end()
+
 " -----------------------------------------------------------------------------
 " => FZF
 " -----------------------------------------------------------------------------
@@ -430,3 +434,4 @@ source $HOME/.vim/coc.vim
 
 " Give more space for displaying messages.
 set cmdheight=2
+colorscheme onedark
