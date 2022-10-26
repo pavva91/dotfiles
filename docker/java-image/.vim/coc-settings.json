@@ -1,0 +1,67 @@
+{
+  // suggestions
+  "suggest.noselect": true,
+  "suggest.completionItemKindLabels": {
+    "text": "t",
+    "method": "m",
+    "function": "f"
+  },
+  "suggest.languageSourcePriority": 99,
+  "coc.source.file.priority": 2,
+  "coc.source.around.priority": 3,
+  "coc.source.buffer.priority": 4,
+
+  // diagnostic
+  "diagnostic.errorSign": "✗",
+  "diagnostic.infoSign": "ℹ",
+  "diagnostic.hintSign": "➤",
+  "diagnostic.warningSign": "⚠",
+
+  // codeLens
+  // turn off codeLens stuff for improving performance
+  "codeLens.enable": false,
+
+  // java
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "/usr/lib/jvm/java-17-openjdk",
+      "default": true
+    }
+  ],
+  "java.enabled": true,
+  "java.jdt.ls.home": "/root/.config/coc/extensions/coc-java-data/server",
+  "java.jdt.ls.vmargs": "-noverify -Xmx6G -XX:+UseG1GC -XX:+UseStringDeduplication",
+  "java.trace.server": "verbose",
+  // turn off codeLens stuff for improving performance
+  "java.referencesCodeLens.enabled": false,
+  "java.implementationsCodeLens.enabled": false,
+  "java.completion.enabled": true,
+  "java.completion.guessMethodArguments": true,
+  "java.completion.overwrite": true,
+  "java.format.enabled": true,
+  "java.foldingRange.enabled": true,
+  "java.codeGeneration.useBlocks": true,
+  "java.codeGeneration.generateComments": true,
+  "java.signatureHelp.enabled": true,
+  "java.saveActions.organizeImports": true,
+  "java.selectionRange.enabled": true,
+  "java.errors.incompleteClasspath.severity": "warning",
+  // "java.format.settings.url": "/root/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
+
+  // list
+  "list.indicator": ">",
+  "list.selectedSignText": "*",
+
+  // autoformat
+  "coc.preferences.formatOnSaveFiletypes": [
+    "java",
+    "javascript",
+    "typescripty",
+    "python",
+    "html",
+    "yaml",
+    "json",
+    "css"
+  ]
+}
