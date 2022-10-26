@@ -66,3 +66,7 @@ RUN vim -c 'CocInstall -sync coc-java coc-json coc-vimlsp|q' >> /dev/null
 # RUN vim -c 'CocCommand java.updateLanguageServer|q' >> /dev/null
 
 # CMD ["/usr/bin/vim"]
+
+# Keep container running in background
+CMD tail -f /dev/null
+
