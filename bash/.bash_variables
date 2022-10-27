@@ -1,4 +1,15 @@
- export VISUAL=nvim;
- export EDITOR=nvim;
- export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
- export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:500 {}' --select-1 --exit-0"
+#!/bin/bash
+
+export VISUAL=nvim;
+export EDITOR=nvim;
+
+# Set Go path
+export GOPATH=~/go
+
+# Add Go binary
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+
+# fzf variables
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:500 {}' --select-1 --exit-0"
