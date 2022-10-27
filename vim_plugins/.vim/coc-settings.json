@@ -12,6 +12,8 @@
   "coc.source.around.priority": 3,
   "coc.source.buffer.priority": 4,
 
+  "hover.target": "float",
+
   // diagnostic
   "diagnostic.errorSign": "✗",
   "diagnostic.infoSign": "ℹ",
@@ -21,6 +23,15 @@
   // codeLens
   // turn off codeLens stuff for improving performance
   "codeLens.enable": false,
+
+  // go
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    }
+  },
 
   // java
   "java.configuration.runtimes": [
@@ -63,6 +74,7 @@
 
   // autoformat
   "coc.preferences.formatOnSaveFiletypes": [
+    "go",
     "java",
     "javascript",
     "typescripty",
@@ -82,5 +94,4 @@
     "v": "open:vsplit"
   },
   "java.errors.incompleteClasspath.severity": "ignore"
-
 }
