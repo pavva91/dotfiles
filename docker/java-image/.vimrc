@@ -43,7 +43,8 @@ set relativenumber	    " show relative line numbers
 " -----------------------------------------------------------------------------
 " VISUALS
 " -----------------------------------------------------------------------------
-set fillchars+=vert:\   " removes pipes on split separators
+" set fillchars+=vert:\   " removes pipes on split separators
+set fillchars+=vert:\│   " removes pipes on split separators
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
 set wildmenu            " visual autocomplete for command menu
@@ -282,82 +283,83 @@ map <F3> :call ToggleVExplorer()<CR>
 " -----------------------------------------------------------------------------
 " => PLUG
 " -----------------------------------------------------------------------------
-call plug#begin()
+call plug#begin('~/.vim/plugged')
 
-" Rip Grep (:Rg <string> <folder>)
-Plug 'jremmen/vim-ripgrep'
+    " Rip Grep (:Rg <string> <folder>)
+    Plug 'jremmen/vim-ripgrep'
 
-" See and clean trailing whitespaces (:FixWhitespace)
-Plug 'bronson/vim-trailing-whitespace'
+    " See and clean trailing whitespaces (:FixWhitespace)
+    Plug 'bronson/vim-trailing-whitespace'
 
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'junegunn/vim-easy-align'
+    " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+    Plug 'junegunn/vim-easy-align'
 
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+    " On-demand loading
+    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
-"a Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+    "a Plugin outside ~/.vim/plugged with post-update hook
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
 
-" --- Syntax Highlighting
-Plug 'sheerun/vim-polyglot'
+    " --- Syntax Highlighting
+    Plug 'sheerun/vim-polyglot'
 
-" --- Start Page
-Plug 'mhinz/vim-startify'
+    " --- Start Page
+    Plug 'mhinz/vim-startify'
 
-"{{ Autopairs
-"" ---> closing XML tags <---
-Plug 'alvan/vim-closetag'
-"  " ---> closing braces and brackets <---
- Plug 'jiangmiao/auto-pairs'
-"  "}}
+    "{{ Autopairs
+    "" ---> closing XML tags <---
+    Plug 'alvan/vim-closetag'
+    "  " ---> closing braces and brackets <---
+    Plug 'jiangmiao/auto-pairs'
+    "  "}}
 
-" --- Surrounding (e.g: surround 1 word with '()': ysw), surround 2 lines with '{}' ys2j} )
-"  ysw( : surround 1 word with '(   )' with heading and trailing spaces
-"  cs"' - Change "hello" to 'hello'
-"https://vimawesome.com/plugin/surround-vim
-Plug 'tpope/vim-surround' " ys
+    " --- Surrounding (e.g: surround 1 word with '()': ysw), surround 2 lines with '{}' ys2j} )
+    "  ysw( : surround 1 word with '(   )' with heading and trailing spaces
+    "  cs"' - Change "hello" to 'hello'
+    "https://vimawesome.com/plugin/surround-vim
+    Plug 'tpope/vim-surround' " ys
 
-" --- Commentary Toggle (gcc : comment line, gc : comment selection)
-Plug 'tpope/vim-commentary'
+    " --- Commentary Toggle (gcc : comment line, gc : comment selection)
+    Plug 'tpope/vim-commentary'
 
-" --- TagBar (ctags)
-Plug 'preservim/tagbar'
+    " --- TagBar (ctags)
+    Plug 'preservim/tagbar'
 
-" CoC - Intellisense
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " CoC - Intellisense
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" --- Ranger File Manager
-Plug 'https://github.com/francoiscabrol/ranger.vim'
-" --- Ranger dependency
-Plug 'rbgrouleff/bclose.vim'
+    " --- Ranger File Manager
+    Plug 'https://github.com/francoiscabrol/ranger.vim'
+    " --- Ranger dependency
+    Plug 'rbgrouleff/bclose.vim'
 
-" --- Undotree (emacs)
-Plug 'mbbill/undotree'
+    " --- Undotree (emacs)
+    Plug 'mbbill/undotree'
 
-"{{ TMux - Vim integration
-Plug 'christoomey/vim-tmux-navigator'
-""}}"}}
+    "{{ TMux - Vim integration
+    Plug 'christoomey/vim-tmux-navigator'
+    ""}}"}}
 
-" Nerd Fonts
-Plug 'ryanoasis/vim-devicons'
+    " Nerd Fonts
+    Plug 'ryanoasis/vim-devicons'
 
-"{{ Git integration
-"" ---> git commands within vim <---
-Plug 'tpope/vim-fugitive'
-" ---> git changes on the gutter <---
- Plug 'airblade/vim-gitgutter'
-"  " ---> nerdtree git changes <---
- Plug 'Xuyuanp/nerdtree-git-plugin'
-"  "}}
+    "{{ Git integration
+    "" ---> git commands within vim <---
+    Plug 'tpope/vim-fugitive'
+    " ---> git changes on the gutter <---
+    Plug 'airblade/vim-gitgutter'
+    "  " ---> nerdtree git changes <---
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    "  "}}
 
-" Debug
-Plug 'puremourning/vimspector'
+    " Debug
+    Plug 'puremourning/vimspector'
 
-" Onedark Theme
-Plug 'joshdick/onedark.vim'
+    " Molokai Theme
+    Plug 'tomasr/molokai'
+
 call plug#end()
 
 " -----------------------------------------------------------------------------
@@ -434,4 +436,3 @@ source $HOME/.vim/coc.vim
 
 " Give more space for displaying messages.
 set cmdheight=2
-colorscheme onedark

@@ -4,6 +4,9 @@ ADD .bashrc /root/.bashrc
 # Update Packages
 RUN apk update
 
+# Install ctags
+RUN apk add ctags
+
 # Install Vim
 RUN apk add vim
 
@@ -46,6 +49,7 @@ ADD .vim/coc.vim /root/.vim/coc.vim
 # RUN vim -c "PlugInstall" -c "qa"
 # Install plugins
 RUN vim +PlugInstall +qall >> /dev/null
+# RUN vim +PlugInstall +qall
 
 # Install Tmux Plugin Manager
 RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -69,4 +73,3 @@ RUN vim -c 'CocInstall -sync coc-java coc-json coc-vimlsp|q' >> /dev/null
 
 # Keep container running in background
 CMD tail -f /dev/null
-
