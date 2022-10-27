@@ -1,0 +1,49 @@
+{
+  // suggestions
+  "suggest.noselect": true,
+  "suggest.completionItemKindLabels": {
+    "text": "t",
+    "method": "m",
+    "function": "f"
+  },
+  "suggest.languageSourcePriority": 99,
+  "coc.source.file.priority": 2,
+  "coc.source.around.priority": 3,
+  "coc.source.buffer.priority": 4,
+
+  // diagnostic
+  "diagnostic.errorSign": "✗",
+  "diagnostic.infoSign": "ℹ",
+  "diagnostic.hintSign": "➤",
+  "diagnostic.warningSign": "⚠",
+
+  // codeLens
+  // turn off codeLens stuff for improving performance
+  "codeLens.enable": false,
+
+  // go
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    }
+  },
+
+  // list
+  "list.indicator": ">",
+  "list.selectedSignText": "*",
+
+  // autoformat
+  "coc.preferences.formatOnSaveFiletypes": [
+    "go",
+    "java",
+    "javascript",
+    "typescripty",
+    "python",
+    "html",
+    "yaml",
+    "json",
+    "css"
+  ]
+}
