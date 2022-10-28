@@ -226,6 +226,9 @@ nnoremap <S-TAB> :bprevious<CR>
 " buffer search shortcut
 nnoremap gb :ls<cr>:b<space>
 
+" quit current open buffer and switch to previous buffer
+nmap <leader>bq :bp <BAR> bd #<cr>
+
 " SPELL TOGGLE
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
