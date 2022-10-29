@@ -226,6 +226,9 @@ nnoremap <S-TAB> :bprevious<CR>
 " buffer search shortcut
 nnoremap gb :ls<cr>:b<space>
 
+" buffer search shortcut and open in vertical split
+nnoremap gB :ls<cr>:vert sb<space>
+
 " quit current open buffer and switch to previous buffer
 nmap <leader>bq :bp <BAR> bd #<cr>
 
