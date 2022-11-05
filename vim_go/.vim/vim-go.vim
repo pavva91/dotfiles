@@ -1,4 +1,5 @@
 let g:go_bin_path = $GOBIN
+" disabling vim-go mapping `gd` for go to definition
 let g:go_def_mapping_enabled = 0
 
 " disable all linters as that is taken care of by coc.nvim
