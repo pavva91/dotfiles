@@ -22,7 +22,7 @@
 
   // codeLens
   // turn off codeLens stuff for improving performance
-  "codeLens.enable": false,
+  "codeLens.enable": true,
 
   // go
   "languageserver": {
