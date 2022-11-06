@@ -13,7 +13,7 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
+# ls aliases (Rust)
 alias ll='exa -lF'
 alias la='exa -lFa'
 alias l='exa -CF'
@@ -24,8 +24,13 @@ alias mv='mv -iv'
 # rm alias
 alias rm='rm -iv'
 
-# cat alias with bat
+# cat alias with bat (Rust)
 alias cat='bat'
+
+# find alias with fd (Rust)
+alias find='fd'
+
+# Use procs instead of ps
 
 # clear aliases (ctrl-l doesn't work with vim-tmux integration)
 alias c='clear'
