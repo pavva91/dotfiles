@@ -94,7 +94,10 @@ nnoremap <space> za
 set ruler
 
 " Height of the command bar
-set cmdheight=1
+" set cmdheight=1
+
+" Give more space for displaying messages.
+set cmdheight=2
 
 " -----------------------------------------------------------------------------
 " Primeagen Opions
@@ -160,16 +163,6 @@ endif
 " set spell
 
 " -----------------------------------------------------------------------------
-" MAPPINGS
-" -----------------------------------------------------------------------------
-" rule:
-" mode lhs rhs
-" nnoremap means n : normal mode nore : no recursive execution map
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ","
-
-" -----------------------------------------------------------------------------
 " => Helper functions
 " -----------------------------------------------------------------------------
 " Returns true if paste mode is enabled
@@ -212,27 +205,3 @@ function! ToggleVExplorer()
     endif
 endfunction
 map <F3> :call ToggleVExplorer()<CR>
-
-" -----------------------------------------------------------------------------
-" => FZF
-" -----------------------------------------------------------------------------
-let g:fzf_command_prefix = 'Fzf'
-
-" -----------------------------------------------------------------------------
-" => NERDTree
-" -----------------------------------------------------------------------------
-" Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
-
-" ---> show hidden files <---
-let NERDTreeShowHidden=1
-
-
-" -----------------------------------------------------------------------------
-" => FZF
-" -----------------------------------------------------------------------------
-" ---> files on which to activate tags auto-closing <---
- let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.vue,*.phtml,*.js,*.jsx,*.coffee,*.erb'
-
-" Give more space for displaying messages.
-set cmdheight=2
