@@ -72,3 +72,6 @@ alias kp=~/bash_scripts/kill_processes.sh
 
 # Get weather
 alias wtr=~/bash_scripts/get_weather.sh
+
+# Speed Test
+alias st='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python'
