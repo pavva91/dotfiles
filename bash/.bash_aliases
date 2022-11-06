@@ -75,3 +75,6 @@ alias wtr=~/bash_scripts/get_weather.sh
 
 # Speed Test
 alias st='https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py'
+
+# Get Command Cheatsheet
+alias cheat=~/bash_scripts/get_command_cheatsheet.sh
