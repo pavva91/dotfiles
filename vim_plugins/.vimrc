@@ -43,7 +43,8 @@ set relativenumber	    " show relative line numbers
 " -----------------------------------------------------------------------------
 " VISUALS
 " -----------------------------------------------------------------------------
-set fillchars+=vert:\   " removes pipes on split separators
+set fillchars=vert:\   " removes pipes on split separators
+" set fillchars+=vert:\   " removes pipes on split separators
 " set fillchars+=vert:\│   " use │ on split separators
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
@@ -371,6 +372,7 @@ call plug#begin()
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
 
 call plug#end()
+colorscheme molokai
 
 " -----------------------------------------------------------------------------
 " => FZF
