@@ -56,6 +56,9 @@ alias stop_vpn_service='(sudo systemctl stop openvpn-client@ch-lu-01.protonvpn.c
 # Fuzzy Find on Installed Packages
 alias what_i_have=~/bash_scripts/what_i_have.sh
 
+# Fuzzy Find on Installed Packages and remove it
+alias remove_program=~/bash_scripts/remove_program.sh
+
 # Fuzzy Find on available packages and install it
 alias search_and_install_package=~/bash_scripts/search_and_install_package.sh
 
@@ -64,3 +67,6 @@ alias fzfvim=~/bash_scripts/fzfvim.sh
 
 # fzf alias to open file with nvim
 alias fzfnvim=~/bash_scripts/fzfnvim.sh
+
+# List processes and kill selected (with tab)
+alias kp=~/bash_scripts/kill_processes.sh
