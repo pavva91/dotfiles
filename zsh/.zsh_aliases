@@ -31,7 +31,6 @@ alias cat='bat'
 alias c='clear'
 alias L='clear'
 
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -70,3 +69,6 @@ alias fzfnvim=~/bash_scripts/fzfnvim.sh
 
 # List processes and kill selected (with tab)
 alias kp=~/bash_scripts/kill_processes.sh
+
+# Get weather
+alias wtr=~/bash_scripts/get_weather.sh
