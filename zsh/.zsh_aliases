@@ -83,3 +83,6 @@ alias st='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/s
 
 # Get Command Cheatsheet
 alias cheat=~/bash_scripts/get_command_cheatsheet.sh
+
+# Start tmux base session
+alias based=~/bash_scripts/start_tmux_base_session.sh

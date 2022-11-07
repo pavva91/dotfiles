@@ -16,7 +16,7 @@ fi
 # ls aliases (Rust)
 alias ll='exa -lF'
 alias la='exa -lFa'
-alias l='exa -CF'
+alias l='exa -lF -snew'
 
 # mv alias
 alias mv='mv -iv'
@@ -83,3 +83,6 @@ alias st='https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest
 
 # Get Command Cheatsheet
 alias cheat=~/bash_scripts/get_command_cheatsheet.sh
+
+# Start tmux base session
+alias based=~/bash_scripts/start_tmux_base_session.sh
