@@ -42,6 +42,9 @@ call plug#begin()
     " --- Commentary Toggle (gcc : comment line, gc : comment selection)
     Plug 'tpope/vim-commentary'
 
+    " --- Enable . to repeat also plugin commands
+    Plug 'tpope/vim-repeat'
+
     " --- TagBar (ctags)
     Plug 'preservim/tagbar'
 
