@@ -86,3 +86,9 @@ alias cheat=~/bash_scripts/get_command_cheatsheet.sh
 
 # Start tmux base session
 alias based=~/bash_scripts/start_tmux_base_session.sh
+
+# Fix zsh history
+alias fix_zsh_history=~/bash_scripts/zsh_history_fix.sh
+
+# Connect to VPN Interactively
+alias connect_vpn=~/bash_scripts/start_vpn.sh
