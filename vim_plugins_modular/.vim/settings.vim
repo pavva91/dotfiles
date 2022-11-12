@@ -184,6 +184,10 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/bob'
+
 " Toggle Vexplore with Ctrl-O
 function! ToggleVExplorer()
     if exists("t:expl_buf_num")
