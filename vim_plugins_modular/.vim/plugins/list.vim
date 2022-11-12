@@ -39,6 +39,13 @@ call plug#begin()
     "https://vimawesome.com/plugin/surround-vim
     Plug 'tpope/vim-surround' " ys
 
+    " Shortcuts with [b ]b for buffer, a for argument, q quickfix, l location,
+    " t tags, [e exchange current line with line above ]e exchange with line
+    " below
+    " ]f to to the next file in the folder, [f go to the previous file in the
+    " folder
+    Plug 'tpope/vim-unimpaired'
+
     " --- Commentary Toggle (gcc : comment line, gc : comment selection)
     Plug 'tpope/vim-commentary'
 
@@ -81,6 +88,10 @@ call plug#begin()
     " Themes
     Plug 'tomasr/molokai'
     Plug 'morhetz/gruvbox'
+    Plug 'sheerun/vim-wombat-scheme'
+    " Plug 'chriskempson/base16-vim'
+    " Plug 'altercation/solarized'
+
 
     " Go support for vim
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }

@@ -2,7 +2,7 @@
 filetype plugin on
 syntax on
 
-colorscheme molokai
+colorscheme gruvbox
 set background=dark
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -47,7 +47,8 @@ set pastetoggle=<F2>
 " Extra column for linting
 set signcolumn=yes
 
-" keeps any buffer in the background (keeps everything open)
+" keeps any buffer in the background (keeps everything open) (can use :bnext,
+" :bprevious without issues of having to either :w or e! the buffer)
 set hidden
 
 " Visual Wrapping
