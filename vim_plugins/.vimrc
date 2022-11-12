@@ -243,6 +243,14 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
+" Shortcuts buffer traversing
+nnoremap [b :bprevious<CR>
+nnoremap ]b :bnext<CR>
+nnoremap [B :bfirst<CR>
+nnoremap ]B :blast<CR>
+
+" Easy expansion of the active file directory
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " -----------------------------------------------------------------------------
 " => Helper functions
 " -----------------------------------------------------------------------------
