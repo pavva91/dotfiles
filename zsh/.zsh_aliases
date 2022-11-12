@@ -51,12 +51,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 #    -q suppress version numbers of packages (this would confuse pacman -R)
 alias cleanup_packages='(set -x; sudo pacman -Rs $(pacman -Qdtq))'
 
-# Restart VPN Service
-alias restart_vpn_service='(sudo systemctl restart openvpn-client@ch-lu-01.protonvpn.com.udp.service)'
-
-# Stop VPN Service
-alias stop_vpn_service='(sudo systemctl stop openvpn-client@ch-lu-01.protonvpn.com.udp.service)'
-
 # Fuzzy Find on Installed Packages
 alias what_i_have=~/bash_scripts/what_i_have.sh
 
@@ -92,3 +86,6 @@ alias fix_zsh_history=~/bash_scripts/zsh_history_fix.sh
 
 # Connect to VPN Interactively
 alias connect_vpn=~/bash_scripts/start_vpn.sh
+
+# Fix VPN connection after inactivity wifi drop
+alias vpn_fix_after_inactivity_wifi=~/bash_scripts/vpn_fix_after_inactivity_wifi.sh

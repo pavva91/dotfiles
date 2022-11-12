@@ -87,4 +87,5 @@ alias fix_zsh_history=~/bash_scripts/zsh_history_fix.sh
 # Connect to VPN Interactively
 alias connect_vpn=~/bash_scripts/start_vpn.sh
 
+# Fix VPN connection after inactivity wifi drop
 alias vpn_fix_after_inactivity_wifi=~/bash_scripts/vpn_fix_after_inactivity_wifi.sh
