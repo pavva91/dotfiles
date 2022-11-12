@@ -1,9 +1,7 @@
 #!/bin/bash
 
 ##Check VPN status
-# GET_VPN=$(nmcli con show -a | grep tun0 | cut -d ' ' -f1)
-# GET_VPN=$(nmcli -t con show -a | grep tun0 | awk -F  ':' '{ print $1 }')
-GET_VPN=$(nmcli con show -a | grep tun0 | awk '{ print $1 }')
+GET_VPN=$(nmcli con show | grep tun0 | cut -d ' ' -f1)
 
 ##Store status in STATUS
 if [[ $GET_VPN == *"tun0"* ]]
