@@ -3,7 +3,7 @@
 # link: https://bbs.archlinux.org/viewtopic.php?id=274242
 is_vpn_routing=$(ip route | grep "[0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+ via 192.168.0.1 dev wlan0" | wc -l)
 if [[ $is_vpn_routing == 0 ]]; then
-    echo "VPN connection drop, should restart openvpn client"
+    echo "VPN connection dropped, should restart openvpn client"
     already_active_VPN=$(systemctl status | grep '\.protonvpn\.net\.udp\.service$' | awk -F "@" '{ print $2  }')
     echo "Restarting VPN: $already_active_VPN"
     sudo systemctl restart openvpn-client@$already_active_VPN
