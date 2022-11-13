@@ -1,3 +1,6 @@
+" Coc extensions to install upfront
+let g:coc_global_extensions = [ 'coc-eslint', 'coc-prettier', 'coc-word', 'coc-snippets', 'coc-css', 'coc-json', 'coc-yaml', 'coc-html', 'coc-sh', 'coc-vimlsp' ]
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: There's always complete item selected by default, you may want to enable
 " no select by `"suggest.noselect": true` in your configuration file.
