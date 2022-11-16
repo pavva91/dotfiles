@@ -92,6 +92,11 @@ call plug#begin()
     " Plug 'chriskempson/base16-vim'
     " Plug 'altercation/solarized'
 
+    " Show colors on screen (fix: :set syntax=sh, )
+    " to fix it and activate it, run:
+    " :set syntax=css
+    " :set syntax=bash
+    Plug 'ap/vim-css-color', { 'for': ['css', 'vim']  }
 
     " Go support for vim
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
