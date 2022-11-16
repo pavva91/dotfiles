@@ -114,4 +114,9 @@ fi
 setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 
+# FZF script to enable fzf key-bindings
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 source /usr/share/nvm/init-nvm.sh
