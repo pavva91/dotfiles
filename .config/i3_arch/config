@@ -263,7 +263,8 @@ exec_always feh --bg-fi $HOME/Pictures/Wallpapers/Bliss_1920x1080.png
 # Keybing for i3lock
 #bindsym $mod+x exec $HOME/.config/i3blocks/scripts/lock
 #bindsym $mod+z exec i3lock -c 000000
-bindsym $mod+z exec ~/.config/i3blocks/scripts/lock
+# bindsym $mod+z exec ~/.config/i3blocks/scripts/lock
+bindsym $mod+z exec ~/.config/i3/lock.sh
 
 # Start Application Shortcuts
 bindsym $mod+F1 exec brave
@@ -279,11 +280,13 @@ exec /usr/bin/polkit-dumb-agent
 # Screens
 exec /usr/bin/xrandr --output eDP-1 --primary
 
-# @ work
-# xrandr --output HDMI-1 --left-of eDP-1 --mode 1920x1080 --rate 60
+# @ work turn on
+# xrandr --output HDMI-1 --left-of eDP-1 --mode 1920x1080 --rate 60 --brightness 0.7
+# turn off
+# xrandr --output HDMI-1 --off
 
 # change brightness
-xrandr --output HDMI-1 --brightness 0.5
+# xrandr --output HDMI-1 --brightness 0.5
 
 # Restart Tray applications
 exec_always --no-startup-id "~/.config/i3/tray.sh"

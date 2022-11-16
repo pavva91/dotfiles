@@ -28,9 +28,13 @@ VERIFYING='#00564dE6'
 --bshl-color=$WRONG          \
 \
 --screen 1                   \
---blur 5                     \
+--blur 9                     \
 --clock                      \
 --indicator                  \
 --time-str="%H:%M:%S"        \
 --date-str="%A, %m %Y"       \
 --keylayout 1                \
+--pointer win                \
+--show-failed-attempts       \
+# --image ~/Pictures/Wallpapers/Ransomware-Splash-Screen.png \
+# --tiling
