@@ -46,8 +46,8 @@ nnoremap <leader><space> :nohlsearch<CR>
 nnoremap S :%s//g<left><left>
 
 " Tab switch buffer
-nnoremap <TAB> :bnext<CR>
-nnoremap <S-TAB> :bprevious<CR>
+" nnoremap <TAB> :bnext<CR>
+" nnoremap <S-TAB> :bprevious<CR>
 
 " buffer search shortcut
 nnoremap gb :ls<cr>:b<space>
