@@ -13,8 +13,8 @@ else
     STATUS=OFF
 fi
 
-echo $STATUS
-echo $STATUS
+echo $STATUS # full text
+echo $STATUS # short text
 
 ##Colors
 if [[ "$STATUS" == "ON" ]]
