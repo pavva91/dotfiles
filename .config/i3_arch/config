@@ -31,11 +31,17 @@ font pango:UbuntuMono Nerd Font 13
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
-# Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+# # Use pactl to adjust volume in PulseAudio.
+# bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+# bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+# bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+# bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Use wpctl to adjust volume in PipeWire.
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
 # Use brightnessctl to adjust screen brightness
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
@@ -290,6 +296,11 @@ exec /usr/bin/xrandr --output eDP-1 --primary
 
 # Restart Tray applications
 exec_always --no-startup-id "~/.config/i3/tray.sh"
+
+# ALSA Config (alsamixer)
+exec_always --no-startup-id alsactl --file ~/.config/asound.state restore
+
+# exec --no-startup-id "~/bash_scripts/create_virtual_speaker_and_virtual_microphone.sh"
 
 # Applications to start on startup
 
