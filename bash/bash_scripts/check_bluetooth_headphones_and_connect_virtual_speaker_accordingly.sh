@@ -1,14 +1,14 @@
 #!/bin/bash
 
 previous_bluetooth_outputs=$(<~/log_bash_scripts/bluetooth_outputs.log)
-bluetooth_outputs=$(pw-link --output | rg "bluez_output" | wc -l)
+actual_bluetooth_outputs=$(pw-link --output | rg "bluez_output" | wc -l)
 
-echo $bluetooth_outputs > ~/log_bash_scripts/bluetooth_outputs.log
+echo $actual_bluetooth_outputs > ~/log_bash_scripts/bluetooth_outputs.log
 echo "Previous value: $previous_bluetooth_outputs"
-echo "Actual value: $bluetooth_outputs"
+echo "Actual value: $actual_bluetooth_outputs"
 
-if [[ $bluetooth_outputs != $previous_bluetooth_outputs ]]; then
-    if [[ $bluetooth_outputs == 0 ]]; then
+if [[ $actual_bluetooth_outputs != $previous_bluetooth_outputs ]]; then
+    if [[ $actual_bluetooth_outputs == 0 ]]; then
         # Connect Gain Virtual Speaker to Built-In Audio
         pw-link "Gain Virtual Speaker (Stereo):Audio Output 1" alsa_output.pci-0000_00_1b.0.playback.0.0:playback_FL
         pw-link "Gain Virtual Speaker (Stereo):Audio Output 2" alsa_output.pci-0000_00_1b.0.playback.0.0:playback_FR
