@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CARLA-PROJECT>
+<CARLA-PROJECT VERSION='2.5'>
+ <EngineSettings>
+  <ForceStereo>false</ForceStereo>
+  <PreferPluginBridges>false</PreferPluginBridges>
+  <PreferUiBridges>true</PreferUiBridges>
+  <UIsAlwaysOnTop>false</UIsAlwaysOnTop>
+  <MaxParameters>200</MaxParameters>
+  <UIBridgesTimeout>4000</UIBridgesTimeout>
+ </EngineSettings>
+
+ <Transport>
+  <BeatsPerMinute>120</BeatsPerMinute>
+ </Transport>
+
+ <!-- RNNoise suppression for voice -->
+ <Plugin>
+  <Info>
+   <Type>LV2</Type>
+   <Name>RNNoise suppression for voice</Name>
+   <URI>https://github.com/werman/noise-suppression-for-voice</URI>
+  </Info>
+
+  <Data>
+   <Active>No</Active>
+   <DryWet>0.6487095</DryWet>
+   <Volume>1.110153</Volume>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x1</Options>
+
+   <CustomData>
+    <Type>http://lv2plug.in/ns/ext/atom#String</Type>
+    <Key>https://github.com/werman/noise-suppression-for-voice:StateString</Key>
+    <Value>
+219.VMjLgHM....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOR4jSuk1bk4COPEjTA0DHoQVOhXWXj80YxE1Xk8EbkIWZuQlHfXWXrUWY8HRL1.iKvHxK9vCTAIUPMARZj0iH1EFYeIWYzI2agMFcoYWYeclbgMVYeAWYxk1ajIBH1EFa0UVOhLiKvHxK9vCTAIUPMARZj0iH1EFYeQGZxU1bn8FajIBH1EFa0UVOh.iKzLSN4jSN4jyM1DSM3DCMxHxK9vyKR4jSuk1bk4C.
+    </Value>
+   </CustomData>
+  </Data>
+ </Plugin>
+
+ <!-- Calf Reverb -->
+ <Plugin>
+  <Info>
+   <Type>LV2</Type>
+   <Name>Calf Reverb</Name>
+   <URI>http://calf.sourceforge.net/plugins/Reverb</URI>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x3f1</Options>
+
+   <Parameter>
+    <Index>3</Index>
+    <Name>Decay time</Name>
+    <Symbol>decay_time</Symbol>
+    <Value>1.5</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>4</Index>
+    <Name>High Frq Damp</Name>
+    <Symbol>hf_damp</Symbol>
+    <Value>5000</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>5</Index>
+    <Name>Room size</Name>
+    <Symbol>room_size</Symbol>
+    <Value>2</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>6</Index>
+    <Name>Diffusion</Name>
+    <Symbol>diffusion</Symbol>
+    <Value>0.5</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>7</Index>
+    <Name>Wet Amount</Name>
+    <Symbol>amount</Symbol>
+    <Value>0.25</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>8</Index>
+    <Name>Dry Amount</Name>
+    <Symbol>dry</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>9</Index>
+    <Name>Pre Delay</Name>
+    <Symbol>predelay</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>10</Index>
+    <Name>Bass Cut</Name>
+    <Symbol>bass_cut</Symbol>
+    <Value>300</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>11</Index>
+    <Name>Treble Cut</Name>
+    <Symbol>treble_cut</Symbol>
+    <Value>5000</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>12</Index>
+    <Name>Active</Name>
+    <Symbol>on</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>13</Index>
+    <Name>Input Gain</Name>
+    <Symbol>level_in</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>14</Index>
+    <Name>Output Gain</Name>
+    <Symbol>level_out</Symbol>
+    <Value>1</Value>
+   </Parameter>
+  </Data>
+ </Plugin>
+
+ <ExternalPatchbay>
+  <Connection>
+   <Source>WH-1000XM3:capture_MONO</Source>
+   <Target>RNNoise suppression for voice:Audio In 1</Target>
+  </Connection>
+  <Connection>
+   <Source>WH-1000XM3:capture_MONO</Source>
+   <Target>RNNoise suppression for voice:Audio In 2</Target>
+  </Connection>
+  <Connection>
+   <Source>WH-1000XM3:capture_MONO</Source>
+   <Target>Skype:input_MONO</Target>
+  </Connection>
+  <Connection>
+   <Source>Skype:output_MONO</Source>
+   <Target>WH-1000XM3:playback_MONO</Target>
+  </Connection>
+  <Connection>
+   <Source>RNNoise suppression for voice:Audio Out 1</Source>
+   <Target>Calf Reverb:In L</Target>
+  </Connection>
+  <Connection>
+   <Source>RNNoise suppression for voice:Audio Out 2</Source>
+   <Target>Calf Reverb:In R</Target>
+  </Connection>
+  <Positions>
+   <Position x1="826" y1="946" x2="1995" y2="847">
+    <Name>WH-1000XM3</Name>
+   </Position>
+   <Position x1="1315" y1="1079" x2="1947" y2="946">
+    <Name>Built-in Audio</Name>
+   </Position>
+   <Position x1="1297" y1="1315" x2="1772" y2="1015">
+    <Name>Noise Canceling source</Name>
+   </Position>
+   <Position x1="1832" y1="1222">
+    <Name>Firefox</Name>
+   </Position>
+   <Position x1="1535" y1="821">
+    <Name>Skype</Name>
+   </Position>
+   <Position x1="999" y1="797" pluginId="0">
+    <Name>RNNoise suppression for voice</Name>
+   </Position>
+   <Position x1="1300" y1="689" pluginId="1">
+    <Name>Calf Reverb</Name>
+   </Position>
+  </Positions>
+ </ExternalPatchbay>
+</CARLA-PROJECT>

@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CARLA-PROJECT>
+<CARLA-PROJECT VERSION='2.5'>
+ <EngineSettings>
+  <ForceStereo>false</ForceStereo>
+  <PreferPluginBridges>false</PreferPluginBridges>
+  <PreferUiBridges>true</PreferUiBridges>
+  <UIsAlwaysOnTop>false</UIsAlwaysOnTop>
+  <MaxParameters>200</MaxParameters>
+  <UIBridgesTimeout>4000</UIBridgesTimeout>
+ </EngineSettings>
+
+ <Transport>
+  <BeatsPerMinute>120</BeatsPerMinute>
+ </Transport>
+
+ <!-- RNNoise suppression for voice -->
+ <Plugin>
+  <Info>
+   <Type>LV2</Type>
+   <Name>RNNoise suppression for voice</Name>
+   <URI>https://github.com/werman/noise-suppression-for-voice</URI>
+  </Info>
+
+  <Data>
+   <Active>No</Active>
+   <DryWet>0.6487095</DryWet>
+   <Volume>1.110153</Volume>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x1</Options>
+
+   <CustomData>
+    <Type>http://lv2plug.in/ns/ext/atom#String</Type>
+    <Key>https://github.com/werman/noise-suppression-for-voice:StateString</Key>
+    <Value>
+219.VMjLgHM....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOR4jSuk1bk4COPEjTA0DHoQVOhXWXj80YxE1Xk8EbkIWZuQlHfXWXrUWY8HRL1.iKvHxK9vCTAIUPMARZj0iH1EFYeIWYzI2agMFcoYWYeclbgMVYeAWYxk1ajIBH1EFa0UVOhLiKvHxK9vCTAIUPMARZj0iH1EFYeQGZxU1bn8FajIBH1EFa0UVOh.iKzLSN4jSN4jyM1DSM3DCMxHxK9vyKR4jSuk1bk4C.
+    </Value>
+   </CustomData>
+  </Data>
+ </Plugin>
+
+ <ExternalPatchbay>
+  <Connection>
+   <Source>WH-1000XM3:capture_MONO</Source>
+   <Target>Skype:input_MONO</Target>
+  </Connection>
+  <Connection>
+   <Source>Skype:output_MONO</Source>
+   <Target>WH-1000XM3:playback_MONO</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium:output_FL</Source>
+   <Target>Built-in Audio:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium:output_FL</Source>
+   <Target>WH-1000XM3:playback_MONO</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium:output_FR</Source>
+   <Target>Built-in Audio:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium:output_FR</Source>
+   <Target>WH-1000XM3:playback_MONO</Target>
+  </Connection>
+  <Positions>
+   <Position x1="1241" y1="877" x2="1995" y2="847">
+    <Name>WH-1000XM3</Name>
+   </Position>
+   <Position x1="1315" y1="1079" x2="1947" y2="946">
+    <Name>Built-in Audio</Name>
+   </Position>
+   <Position x1="1297" y1="1315" x2="1772" y2="1015">
+    <Name>Noise Canceling source</Name>
+   </Position>
+   <Position x1="1832" y1="1222">
+    <Name>Firefox</Name>
+   </Position>
+   <Position x1="1539" y1="1073" pluginId="0">
+    <Name>RNNoise suppression for voice</Name>
+   </Position>
+   <Position x1="1553" y1="885">
+    <Name>Skype</Name>
+   </Position>
+   <Position x1="1676" y1="878">
+    <Name>Chromium</Name>
+   </Position>
+  </Positions>
+ </ExternalPatchbay>
+</CARLA-PROJECT>
