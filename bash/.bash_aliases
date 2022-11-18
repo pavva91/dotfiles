@@ -89,3 +89,6 @@ alias connect_vpn=~/bash_scripts/start_vpn.sh
 
 # Fix VPN connection after inactivity wifi drop
 alias vpn_fix_after_inactivity_wifi=~/bash_scripts/vpn_fix_after_inactivity_wifi.sh
+
+# Check if bluetooth outputs are present and connect Virtual Speaker to them, otherwise connect to Built-in-Audio
+alias virtualspeaker2bluetooth=~/bash_scripts/check_bluetooth_headphones_and_connect_virtual_speaker_accordingly.sh
