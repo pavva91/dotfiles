@@ -1,75 +1,90 @@
 #!/bin/bash
 
+virtual_speaker_FL="Gain Virtual Speaker (Stereo):Audio Output 1"
+virtual_speaker_FR="Gain Virtual Speaker (Stereo):Audio Output 2"
+
+builtin_audio_FL="alsa_output.pci-0000_00_1b.0.playback.0.0:playback_FL"
+builtin_audio_FR="alsa_output.pci-0000_00_1b.0.playback.0.0:playback_FR"
+
+bluetooth_headphones_FL="bluez_output.38_18_4C_18_C8_2D.1:playback_FL"
+bluetooth_headphones_FR="bluez_output.38_18_4C_18_C8_2D.1:playback_FR"
+
+bluetooth_speaker_FL="bluez_output.04_21_44_EF_03_70.1:playback_FL"
+bluetooth_speaker_FR="bluez_output.04_21_44_EF_03_70.1:playback_FR"
+
+focusrite_FL="alsa_output.usb-Focusrite_Scarlett_2i2_USB-00.playback.0.0:playback_FL"
+focusrite_FR="alsa_output.usb-Focusrite_Scarlett_2i2_USB-00.playback.0.0:playback_FR"
+
 connect_builtin_audio () {
     # Disconnect Gain Virtual Speaker to Bluetooth WH-1000XM3 Audio
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 1" bluez_output.38_18_4C_18_C8_2D.1:playback_FL
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 2" bluez_output.38_18_4C_18_C8_2D.1:playback_FR
+    pw-link --disconnect "$virtual_speaker_FL" "$bluetooth_headphones_FL"
+    pw-link --disconnect "$virtual_speaker_FR" "$bluetooth_headphones_FR"
 
     # Disconnect Gain Virtual Speaker to Bluetooth SRS-XB43
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 1" bluez_output.04_21_44_EF_03_70.1:playback_FL
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 2" bluez_output.04_21_44_EF_03_70.1:playback_FR
+    pw-link --disconnect "$virtual_speaker_FL" "$bluetooth_speaker_FL"
+    pw-link --disconnect "$virtual_speaker_FR" "$bluetooth_speaker_FR"
 
     # Disconnect Gain Virtual Speaker to Focusrite_Scarlett_2i2_USB
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 1" alsa_output.usb-Focusrite_Scarlett_2i2_USB-00.playback.0.0:playback_FL
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 2" alsa_output.usb-Focusrite_Scarlett_2i2_USB-00.playback.0.0:playback_FR
+    pw-link --disconnect "$virtual_speaker_FL" "$focusrite_FL"
+    pw-link --disconnect "$virtual_speaker_FR" "$focusrite_FR"
 
     # Connect Gain Virtual Speaker to Built-In Audio
-    pw-link "Gain Virtual Speaker (Stereo):Audio Output 1" alsa_output.pci-0000_00_1b.0.playback.0.0:playback_FL
-    pw-link "Gain Virtual Speaker (Stereo):Audio Output 2" alsa_output.pci-0000_00_1b.0.playback.0.0:playback_FR
+    pw-link "$virtual_speaker_FL" "$builtin_audio_FL"
+    pw-link "$virtual_speaker_FR" "$builtin_audio_FR"
 }
 
 connect_bluetooth_headset () {
     # Disconnect Gain Virtual Speaker to Built-In Audio
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 1" alsa_output.pci-0000_00_1b.0.playback.0.0:playback_FL
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 2" alsa_output.pci-0000_00_1b.0.playback.0.0:playback_FR
+    pw-link --disconnect "$virtual_speaker_FL" "$builtin_audio_FL"
+    pw-link --disconnect "$virtual_speaker_FR" "$builtin_audio_FR"
 
     # Disconnect Gain Virtual Speaker to Bluetooth SRS-XB43
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 1" bluez_output.04_21_44_EF_03_70.1:playback_FL
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 2" bluez_output.04_21_44_EF_03_70.1:playback_FR
+    pw-link --disconnect "$virtual_speaker_FL" "$bluetooth_speaker_FL"
+    pw-link --disconnect "$virtual_speaker_FR" "$bluetooth_speaker_FR"
 
     # Disconnect Gain Virtual Speaker to Focusrite_Scarlett_2i2_USB
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 1" alsa_output.usb-Focusrite_Scarlett_2i2_USB-00.playback.0.0:playback_FL
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 2" alsa_output.usb-Focusrite_Scarlett_2i2_USB-00.playback.0.0:playback_FR
+    pw-link --disconnect "$virtual_speaker_FL" "$focusrite_FL"
+    pw-link --disconnect "$virtual_speaker_FR" "$focusrite_FR"
 
     # Connect Gain Virtual Speaker to bluetooth WH-1000XM3
-    pw-link "Gain Virtual Speaker (Stereo):Audio Output 1" bluez_output.38_18_4C_18_C8_2D.1:playback_FL
-    pw-link "Gain Virtual Speaker (Stereo):Audio Output 2" bluez_output.38_18_4C_18_C8_2D.1:playback_FR
+    pw-link "$virtual_speaker_FL" "$bluetooth_headphones_FL"
+    pw-link "$virtual_speaker_FR" "$bluetooth_headphones_FR"
 }
 
 connect_bluetooth_speaker () {
     # Disconnect Gain Virtual Speaker to Built-In Audio
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 1" alsa_output.pci-0000_00_1b.0.playback.0.0:playback_FL
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 2" alsa_output.pci-0000_00_1b.0.playback.0.0:playback_FR
+    pw-link --disconnect "$virtual_speaker_FL" "$builtin_audio_FL"
+    pw-link --disconnect "$virtual_speaker_FR" "$builtin_audio_FR"
 
     # Disconnect Gain Virtual Speaker to Bluetooth WH-1000XM3 Audio
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 1" bluez_output.38_18_4C_18_C8_2D.1:playback_FL
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 2" bluez_output.38_18_4C_18_C8_2D.1:playback_FR
+    pw-link --disconnect "$virtual_speaker_FL" "$bluetooth_headphones_FL"
+    pw-link --disconnect "$virtual_speaker_FR" "$bluetooth_headphones_FR"
 
     # Disconnect Gain Virtual Speaker to Focusrite_Scarlett_2i2_USB
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 1" alsa_output.usb-Focusrite_Scarlett_2i2_USB-00.playback.0.0:playback_FL
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 2" alsa_output.usb-Focusrite_Scarlett_2i2_USB-00.playback.0.0:playback_FR
+    pw-link --disconnect "$virtual_speaker_FL" "$focusrite_FL"
+    pw-link --disconnect "$virtual_speaker_FR" "$focusrite_FR"
 
     # Connect Gain Virtual Speaker to Bluetooth SRS-XB43
-    pw-link "Gain Virtual Speaker (Stereo):Audio Output 1" bluez_output.04_21_44_EF_03_70.1:playback_FL
-    pw-link "Gain Virtual Speaker (Stereo):Audio Output 2" bluez_output.04_21_44_EF_03_70.1:playback_FR
+    pw-link "$virtual_speaker_FL" "$bluetooth_speaker_FL"
+    pw-link "$virtual_speaker_FR" "$bluetooth_speaker_FR"
 }
 
 connect_focusrite () {
     # Disconnect Gain Virtual Speaker to Built-In Audio
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 1" alsa_output.pci-0000_00_1b.0.playback.0.0:playback_FL
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 2" alsa_output.pci-0000_00_1b.0.playback.0.0:playback_FR
+    pw-link --disconnect "$virtual_speaker_FL" "$builtin_audio_FL"
+    pw-link --disconnect "$virtual_speaker_FR" "$builtin_audio_FR"
 
     # Disconnect Gain Virtual Speaker to Bluetooth WH-1000XM3 Audio
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 1" bluez_output.38_18_4C_18_C8_2D.1:playback_FL
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 2" bluez_output.38_18_4C_18_C8_2D.1:playback_FR
+    pw-link --disconnect "$virtual_speaker_FL" "$bluetooth_headphones_FL"
+    pw-link --disconnect "$virtual_speaker_FR" "$bluetooth_headphones_FR"
 
     # Disconnect Gain Virtual Speaker to Bluetooth SRS-XB43
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 1" bluez_output.04_21_44_EF_03_70.1:playback_FL
-    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 2" bluez_output.04_21_44_EF_03_70.1:playback_FR
+    pw-link --disconnect "$virtual_speaker_FL" "$bluetooth_speaker_FL"
+    pw-link --disconnect "$virtual_speaker_FR" "$bluetooth_speaker_FR"
 
     # Connect Gain Virtual Speaker to Focusrite_Scarlett_2i2_USB
-    pw-link "Gain Virtual Speaker (Stereo):Audio Output 1" alsa_output.usb-Focusrite_Scarlett_2i2_USB-00.playback.0.0:playback_FL
-    pw-link "Gain Virtual Speaker (Stereo):Audio Output 2" alsa_output.usb-Focusrite_Scarlett_2i2_USB-00.playback.0.0:playback_FR
+    pw-link "$virtual_speaker_FL" "$focusrite_FL"
+    pw-link "$virtual_speaker_FR" "$focusrite_FR"
 }
 
 while getopts "abcf" option; do
