@@ -5,6 +5,10 @@ connect_builtin_audio () {
     pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 1" bluez_output.38_18_4C_18_C8_2D.1:playback_FL
     pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 2" bluez_output.38_18_4C_18_C8_2D.1:playback_FR
 
+    # Disconnect Gain Virtual Speaker to Bluetooth SRS-XB43
+    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 1" bluez_output.04_21_44_EF_03_70.1:playback_FL
+    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 2" bluez_output.04_21_44_EF_03_70.1:playback_FR
+
     # Connect Gain Virtual Speaker to Built-In Audio
     pw-link "Gain Virtual Speaker (Stereo):Audio Output 1" alsa_output.pci-0000_00_1b.0.playback.0.0:playback_FL
     pw-link "Gain Virtual Speaker (Stereo):Audio Output 2" alsa_output.pci-0000_00_1b.0.playback.0.0:playback_FR
@@ -15,12 +19,30 @@ connect_bluetooth_headset () {
     pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 1" alsa_output.pci-0000_00_1b.0.playback.0.0:playback_FL
     pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 2" alsa_output.pci-0000_00_1b.0.playback.0.0:playback_FR
 
+    # Disconnect Gain Virtual Speaker to Bluetooth SRS-XB43
+    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 1" bluez_output.04_21_44_EF_03_70.1:playback_FL
+    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 2" bluez_output.04_21_44_EF_03_70.1:playback_FR
+
     # Connect Gain Virtual Speaker to bluetooth WH-1000XM3
     pw-link "Gain Virtual Speaker (Stereo):Audio Output 1" bluez_output.38_18_4C_18_C8_2D.1:playback_FL
     pw-link "Gain Virtual Speaker (Stereo):Audio Output 2" bluez_output.38_18_4C_18_C8_2D.1:playback_FR
 }
 
-while getopts "ab" option; do
+connect_bluetooth_speaker () {
+    # Disconnect Gain Virtual Speaker to Built-In Audio
+    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 1" alsa_output.pci-0000_00_1b.0.playback.0.0:playback_FL
+    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 2" alsa_output.pci-0000_00_1b.0.playback.0.0:playback_FR
+
+    # Disconnect Gain Virtual Speaker to Bluetooth WH-1000XM3 Audio
+    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 1" bluez_output.38_18_4C_18_C8_2D.1:playback_FL
+    pw-link --disconnect "Gain Virtual Speaker (Stereo):Audio Output 2" bluez_output.38_18_4C_18_C8_2D.1:playback_FR
+
+    # Connect Gain Virtual Speaker to Bluetooth SRS-XB43
+    pw-link "Gain Virtual Speaker (Stereo):Audio Output 1" bluez_output.04_21_44_EF_03_70.1:playback_FL
+    pw-link "Gain Virtual Speaker (Stereo):Audio Output 2" bluez_output.04_21_44_EF_03_70.1:playback_FR
+}
+
+while getopts "abc" option; do
     case $option in
         a)
             connect_builtin_audio
@@ -28,6 +50,10 @@ while getopts "ab" option; do
             ;;
         b)
             connect_bluetooth_headset
+            exit 0
+            ;;
+        c)
+            connect_bluetooth_speaker
             exit 0
             ;;
         ?)
