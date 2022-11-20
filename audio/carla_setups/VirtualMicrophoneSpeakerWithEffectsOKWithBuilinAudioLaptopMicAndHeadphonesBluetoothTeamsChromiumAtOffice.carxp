@@ -1058,6 +1058,14 @@
    <Target>Noise Suppressor for Voice (Mono):Input</Target>
   </Connection>
   <Connection>
+   <Source>Noise Canceling source:capture_1</Source>
+   <Target>Pre Gain Mic (Stereo):Audio Input 1</Target>
+  </Connection>
+  <Connection>
+   <Source>Noise Canceling source:capture_1</Source>
+   <Target>Pre Gain Mic (Stereo):Audio Input 2</Target>
+  </Connection>
+  <Connection>
    <Source>Calf Studio Gear:Equalizer 12 Band Out #1</Source>
    <Target>Calf Studio Gear:Compressor In #1</Target>
   </Connection>
@@ -1082,12 +1090,20 @@
    <Target>Calf Valerio Audio Gain (Stereo):input_2</Target>
   </Connection>
   <Connection>
-   <Source>Noise Canceling source:capture_1</Source>
-   <Target>Pre Gain Mic (Stereo):Audio Input 1</Target>
+   <Source>Pre Gain Mic (Stereo):Audio Output 1</Source>
+   <Target>Calf Equalizer 5 Band:In L</Target>
   </Connection>
   <Connection>
-   <Source>Noise Canceling source:capture_1</Source>
-   <Target>Pre Gain Mic (Stereo):Audio Input 2</Target>
+   <Source>Pre Gain Mic (Stereo):Audio Output 2</Source>
+   <Target>Calf Equalizer 5 Band:In R</Target>
+  </Connection>
+  <Connection>
+   <Source>Calf Equalizer 5 Band:Out L</Source>
+   <Target>Calf Compressor:In L</Target>
+  </Connection>
+  <Connection>
+   <Source>Calf Equalizer 5 Band:Out R</Source>
+   <Target>Calf Compressor:In R</Target>
   </Connection>
   <Connection>
    <Source>Calf Compressor:Out L</Source>
@@ -1106,44 +1122,12 @@
    <Target>Gain Mic (Stereo):Audio Input 2</Target>
   </Connection>
   <Connection>
-   <Source>Calf Valerio Audio Gain (Stereo):output_1</Source>
-   <Target>VirtualMic:input_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Calf Valerio Audio Gain (Stereo):output_2</Source>
-   <Target>VirtualMic:input_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Calf Equalizer 5 Band:Out L</Source>
-   <Target>Calf Compressor:In L</Target>
-  </Connection>
-  <Connection>
-   <Source>Calf Equalizer 5 Band:Out R</Source>
-   <Target>Calf Compressor:In R</Target>
-  </Connection>
-  <Connection>
-   <Source>Pre Gain Mic (Stereo):Audio Output 1</Source>
-   <Target>Calf Equalizer 5 Band:In L</Target>
-  </Connection>
-  <Connection>
-   <Source>Pre Gain Mic (Stereo):Audio Output 2</Source>
-   <Target>Calf Equalizer 5 Band:In R</Target>
-  </Connection>
-  <Connection>
-   <Source>Firefox:output_FL</Source>
-   <Target>VirtualSpeaker:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Firefox:output_FR</Source>
-   <Target>VirtualSpeaker:playback_FR</Target>
-  </Connection>
-  <Connection>
    <Source>Gain Virtual Speaker (Stereo):Audio Output 1</Source>
-   <Target>WH-1000XM3:playback_FL</Target>
+   <Target>Focusrite Scarlett 2i2:playback_FL</Target>
   </Connection>
   <Connection>
    <Source>Gain Virtual Speaker (Stereo):Audio Output 2</Source>
-   <Target>WH-1000XM3:playback_FR</Target>
+   <Target>Focusrite Scarlett 2i2:playback_FR</Target>
   </Connection>
   <Connection>
    <Source>Noise Suppressor for Voice (Mono):Output</Source>
@@ -1154,6 +1138,22 @@
    <Target>Calf Studio Gear:Equalizer 12 Band In #2</Target>
   </Connection>
   <Connection>
+   <Source>Calf Valerio Audio Gain (Stereo):output_1</Source>
+   <Target>VirtualMic:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Calf Valerio Audio Gain (Stereo):output_2</Source>
+   <Target>VirtualMic:input_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Firefox:output_FL</Source>
+   <Target>VirtualSpeaker:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Firefox:output_FR</Source>
+   <Target>VirtualSpeaker:playback_FR</Target>
+  </Connection>
+  <Connection>
    <Source>VirtualSpeaker Monitor:monitor_FL</Source>
    <Target>Gain Virtual Speaker (Stereo):Audio Input 1</Target>
   </Connection>
@@ -1161,29 +1161,18 @@
    <Source>VirtualSpeaker Monitor:monitor_FR</Source>
    <Target>Gain Virtual Speaker (Stereo):Audio Input 2</Target>
   </Connection>
-  <Connection>
-   <Source>VirtualMic Monitor:capture_FL</Source>
-   <Target>Firefox:input_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>VirtualMic Monitor:capture_FR</Source>
-   <Target>Firefox:input_FR</Target>
-  </Connection>
   <Positions>
    <Position x1="1400" y1="946" x2="2158" y2="183">
     <Name>Built-in Audio</Name>
    </Position>
-   <Position x1="1727" y1="1201">
-    <Name>Calf Studio Gear</Name>
-   </Position>
    <Position x1="1803" y1="515">
     <Name>Noise Canceling source</Name>
    </Position>
-   <Position x1="2121" y1="446">
-    <Name>VirtualSpeaker</Name>
+   <Position x1="1727" y1="1201">
+    <Name>Calf Studio Gear</Name>
    </Position>
-   <Position x1="1550" y1="1422" x2="2130" y2="630">
-    <Name>WH-1000XM3</Name>
+   <Position x1="2192" y1="409">
+    <Name>VirtualSpeaker</Name>
    </Position>
    <Position x1="1550" y1="2236" x2="2040" y2="1275">
     <Name>VirtualMic</Name>
