@@ -43,6 +43,14 @@ bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
+# Use wpctl to adjust volume of Built-in Audio
+bindsym $mod+Up exec ~/.config/i3/volume_builtin_audio.sh up
+bindsym $mod+Down exec ~/.config/i3/volume_builtin_audio.sh down
+
+# Use wpctl to adjust volume of Bluetooth Headset Audio
+bindsym $alt+Up exec ~/.config/i3/volume_bluetooth_headset.sh up
+bindsym $alt+Down exec ~/.config/i3/volume_bluetooth_headset.sh down
+
 # Use brightnessctl to adjust screen brightness
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
@@ -85,23 +93,11 @@ bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+b split h
@@ -298,7 +294,13 @@ exec /usr/bin/xrandr --output eDP-1 --primary
 exec_always --no-startup-id "~/.config/i3/tray.sh"
 
 # ALSA Config (alsamixer)
-exec_always --no-startup-id alsactl --file ~/.config/asound.state restore
+exec_always --no-startup-id alsactl --file ~/.config/audio/alsamixer_setup/asound.state restore
+
+# Open Calf
+exec --no-startup-id calfjackhost -l ~/.config/audio/calf_sessions/call_warm_voice_laptop_mic
+
+# Open Carla
+exec --no-startup-id carla ~/.config/audio/carla_setups/VirtualMicrophoneSpeakerWithEffectsOKWithBuilinAudioLaptopMicAndHeadphonesBluetoothTeamsChromiumAtOffice.carxp
 
 # exec --no-startup-id "~/bash_scripts/create_virtual_speaker_and_virtual_microphone.sh"
 
