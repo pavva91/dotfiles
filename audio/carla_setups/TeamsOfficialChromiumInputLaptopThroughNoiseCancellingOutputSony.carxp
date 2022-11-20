@@ -41,50 +41,79 @@
 
  <ExternalPatchbay>
   <Connection>
-   <Source>WH-1000XM3:capture_MONO</Source>
-   <Target>Skype:input_MONO</Target>
+   <Source>Noise Canceling source:capture_1</Source>
+   <Target>Chromium input:input_1</Target>
   </Connection>
   <Connection>
-   <Source>Skype:output_MONO</Source>
-   <Target>WH-1000XM3:playback_MONO</Target>
+   <Source>Built-in Audio:capture_FL</Source>
+   <Target>Noise Canceling source:input_FL</Target>
   </Connection>
   <Connection>
-   <Source>Chromium:output_FL</Source>
+   <Source>Built-in Audio:capture_FR</Source>
+   <Target>Noise Canceling source:input_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-191:output_FL</Source>
    <Target>Built-in Audio:playback_FL</Target>
   </Connection>
   <Connection>
-   <Source>Chromium:output_FL</Source>
-   <Target>WH-1000XM3:playback_MONO</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium:output_FR</Source>
+   <Source>Chromium-191:output_FR</Source>
    <Target>Built-in Audio:playback_FR</Target>
   </Connection>
   <Connection>
-   <Source>Chromium:output_FR</Source>
-   <Target>WH-1000XM3:playback_MONO</Target>
+   <Source>Chromium-197:output_FL</Source>
+   <Target>Built-in Audio:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-197:output_FR</Source>
+   <Target>Built-in Audio:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-203:output_FL</Source>
+   <Target>Built-in Audio:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-203:output_FR</Source>
+   <Target>Built-in Audio:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-300:output_FL</Source>
+   <Target>WH-1000XM3:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-300:output_FL</Source>
+   <Target>WH-1000XM3:playback_FR</Target>
   </Connection>
   <Positions>
-   <Position x1="1241" y1="877" x2="1995" y2="847">
-    <Name>WH-1000XM3</Name>
-   </Position>
-   <Position x1="1315" y1="1079" x2="1947" y2="946">
-    <Name>Built-in Audio</Name>
-   </Position>
-   <Position x1="1297" y1="1315" x2="1772" y2="1015">
+   <Position x1="1457" y1="1009" x2="1468" y2="938">
     <Name>Noise Canceling source</Name>
    </Position>
-   <Position x1="1832" y1="1222">
-    <Name>Firefox</Name>
+   <Position x1="1269" y1="940" x2="2153" y2="861">
+    <Name>Built-in Audio</Name>
    </Position>
-   <Position x1="1539" y1="1073" pluginId="0">
+   <Position x1="1241" y1="877" x2="2173" y2="1087">
+    <Name>WH-1000XM3</Name>
+   </Position>
+   <Position x1="1637" y1="2257" x2="1991" y2="2261">
+    <Name>Midi-Bridge</Name>
+   </Position>
+   <Position x1="1444" y1="824" pluginId="0">
     <Name>RNNoise suppression for voice</Name>
    </Position>
-   <Position x1="1553" y1="885">
-    <Name>Skype</Name>
+   <Position x1="1898" y1="912">
+    <Name>Chromium-191</Name>
    </Position>
-   <Position x1="1676" y1="878">
-    <Name>Chromium</Name>
+   <Position x1="1900" y1="1063">
+    <Name>Chromium-197</Name>
+   </Position>
+   <Position x1="1899" y1="842">
+    <Name>Chromium-203</Name>
+   </Position>
+   <Position x1="1702" y1="1039">
+    <Name>Chromium input</Name>
+   </Position>
+   <Position x1="1899" y1="988">
+    <Name>Chromium-300</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>
