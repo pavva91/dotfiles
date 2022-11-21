@@ -576,7 +576,7 @@
    <Parameter>
     <Index>0</Index>
     <Name>VAD Threshold</Name>
-    <Value>50</Value>
+    <Value>95</Value>
    </Parameter>
 
    <Parameter>
@@ -1123,11 +1123,11 @@
   </Connection>
   <Connection>
    <Source>Gain Virtual Speaker (Stereo):Audio Output 1</Source>
-   <Target>Focusrite Scarlett 2i2:playback_FL</Target>
+   <Target>WH-1000XM3:playback_FL</Target>
   </Connection>
   <Connection>
    <Source>Gain Virtual Speaker (Stereo):Audio Output 2</Source>
-   <Target>Focusrite Scarlett 2i2:playback_FR</Target>
+   <Target>WH-1000XM3:playback_FR</Target>
   </Connection>
   <Connection>
    <Source>Noise Suppressor for Voice (Mono):Output</Source>
@@ -1154,12 +1154,60 @@
    <Target>VirtualSpeaker:playback_FR</Target>
   </Connection>
   <Connection>
+   <Source>Chromium-316:output_FL</Source>
+   <Target>VirtualSpeaker:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-316:output_FR</Source>
+   <Target>VirtualSpeaker:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-322:output_FL</Source>
+   <Target>VirtualSpeaker:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-322:output_FR</Source>
+   <Target>VirtualSpeaker:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-328:output_FL</Source>
+   <Target>VirtualSpeaker:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-328:output_FR</Source>
+   <Target>VirtualSpeaker:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-334:output_FL</Source>
+   <Target>VirtualSpeaker:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-334:output_FR</Source>
+   <Target>VirtualSpeaker:playback_FR</Target>
+  </Connection>
+  <Connection>
    <Source>VirtualSpeaker Monitor:monitor_FL</Source>
    <Target>Gain Virtual Speaker (Stereo):Audio Input 1</Target>
   </Connection>
   <Connection>
    <Source>VirtualSpeaker Monitor:monitor_FR</Source>
    <Target>Gain Virtual Speaker (Stereo):Audio Input 2</Target>
+  </Connection>
+  <Connection>
+   <Source>VirtualMic Monitor:capture_FL</Source>
+   <Target>Chromium input:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>VirtualMic Monitor:capture_FL</Source>
+   <Target>VirtualSpeaker:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>VirtualMic Monitor:capture_FR</Source>
+   <Target>Chromium input:input_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>VirtualMic Monitor:capture_FR</Source>
+   <Target>VirtualSpeaker:playback_FR</Target>
   </Connection>
   <Positions>
    <Position x1="1400" y1="946" x2="2158" y2="183">
