@@ -576,7 +576,7 @@
    <Parameter>
     <Index>0</Index>
     <Name>VAD Threshold</Name>
-    <Value>95</Value>
+    <Value>96</Value>
    </Parameter>
 
    <Parameter>
@@ -1154,19 +1154,19 @@
    <Target>VirtualSpeaker:playback_FR</Target>
   </Connection>
   <Connection>
-   <Source>Chromium-316:output_FL</Source>
+   <Source>Chromium-302:output_FL</Source>
    <Target>VirtualSpeaker:playback_FL</Target>
   </Connection>
   <Connection>
-   <Source>Chromium-316:output_FR</Source>
+   <Source>Chromium-302:output_FR</Source>
    <Target>VirtualSpeaker:playback_FR</Target>
   </Connection>
   <Connection>
-   <Source>Chromium-322:output_FL</Source>
+   <Source>Firefox:output_FL-1745</Source>
    <Target>VirtualSpeaker:playback_FL</Target>
   </Connection>
   <Connection>
-   <Source>Chromium-322:output_FR</Source>
+   <Source>Firefox:output_FR-1746</Source>
    <Target>VirtualSpeaker:playback_FR</Target>
   </Connection>
   <Connection>
@@ -1175,14 +1175,6 @@
   </Connection>
   <Connection>
    <Source>Chromium-328:output_FR</Source>
-   <Target>VirtualSpeaker:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-334:output_FL</Source>
-   <Target>VirtualSpeaker:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-334:output_FR</Source>
    <Target>VirtualSpeaker:playback_FR</Target>
   </Connection>
   <Connection>
@@ -1195,15 +1187,7 @@
   </Connection>
   <Connection>
    <Source>VirtualMic Monitor:capture_FL</Source>
-   <Target>Chromium input:input_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>VirtualMic Monitor:capture_FL</Source>
    <Target>VirtualSpeaker:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>VirtualMic Monitor:capture_FR</Source>
-   <Target>Chromium input:input_FR</Target>
   </Connection>
   <Connection>
    <Source>VirtualMic Monitor:capture_FR</Source>
@@ -1254,6 +1238,9 @@
    </Position>
    <Position x1="1374" y1="1260" pluginId="8">
     <Name>Calf Equalizer 12 Band</Name>
+   </Position>
+   <Position x1="932" y1="337" x2="2155" y2="302">
+    <Name>WH-1000XM3</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>
