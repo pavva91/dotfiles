@@ -161,7 +161,7 @@ handle_image() {
         #     exit 1;;
 
         ## PDF
-        # application/pdf)
+        application/pdf)
             pdftoppm -f 1 -l 1 \
                      -scale-to-x "${DEFAULT_SIZE%x*}" \
                      -scale-to-y -1 \
@@ -320,11 +320,11 @@ handle_mime() {
             exit 1;;
 
         ## Image
-        image/*)
+        # image/*)
             ## Preview as text conversion
-            img2txt --gamma=0.6 --width="${PV_WIDTH}" -- "${FILE_PATH}" && exit 4
-            exiftool "${FILE_PATH}" && exit 5
-            exit 1;;
+            # img2txt --gamma=0.6 --width="${PV_WIDTH}" -- "${FILE_PATH}" && exit 4
+            # exiftool "${FILE_PATH}" && exit 5
+            # exit 1;;
 
         ## Video and audio
         video/* | audio/*)
