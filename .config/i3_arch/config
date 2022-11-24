@@ -257,10 +257,14 @@ bar {
         }
 }
 
+# Get Weather
+exec_always convert $HOME/Pictures/Wallpapers/Bliss_1920x1080.png <( curl wttr.in/Brugge_tqp0.png  ) -geometry +50+50 -composite $HOME/Pictures/Wallpapers/Bliss_1920x1080_weather.jpg
+
 # Display Wallpaper
 #exec_always feh --bg-fi $HOME/Pictures/Wallpapers/arch.jpg
 #exec_always feh --bg-fi $HOME/Pictures/Wallpapers/wp7062351-popos-wallpapers.png
-exec_always feh --bg-fi $HOME/Pictures/Wallpapers/Bliss_1920x1080.png
+exec_always feh --bg-fi $HOME/Pictures/Wallpapers/Bliss_1920x1080_weather.jpg
+
 
 # Keybing for i3lock
 #bindsym $mod+x exec $HOME/.config/i3blocks/scripts/lock
