@@ -4,10 +4,10 @@
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="7.54048e-06" />
-  <param name="meter_inR" value="7.54048e-06" />
-  <param name="meter_outL" value="1.34292e-05" />
-  <param name="meter_outR" value="1.34292e-05" />
+  <param name="meter_inL" value="7.55006e-05" />
+  <param name="meter_inR" value="7.55006e-05" />
+  <param name="meter_outL" value="0.000103992" />
+  <param name="meter_outR" value="0.000103992" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
@@ -70,11 +70,11 @@
 <preset bank="0" program="0" plugin="compressor" name="">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
-  <param name="meter_in" value="1.34292e-05" />
-  <param name="meter_out" value="1.21967e-05" />
+  <param name="meter_in" value="0.000103992" />
+  <param name="meter_out" value="0.000103992" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
-  <param name="threshold" value="0.312083" />
+  <param name="threshold" value="0.169576" />
   <param name="ratio" value="3.02937" />
   <param name="attack" value="0.0447214" />
   <param name="release" value="0.0918063" />
@@ -88,8 +88,8 @@
 </plugin>
 <plugin type="reverb" instance-name="Reverb" input-index="7" output-index="7">
 <preset bank="0" program="0" plugin="reverb" name="">
-  <param name="meter_inL" value="1.21967e-05" />
-  <param name="meter_inR" value="1.21967e-05" />
+  <param name="meter_inL" value="0.000103992" />
+  <param name="meter_inR" value="0.000103992" />
   <param name="clip_outL" value="0" />
   <param name="decay_time" value="1.5" />
   <param name="hf_damp" value="5000" />
@@ -103,8 +103,8 @@
   <param name="on" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
-  <param name="meter_outL" value="1.21967e-05" />
-  <param name="meter_outR" value="1.21967e-05" />
+  <param name="meter_outL" value="0.000103992" />
+  <param name="meter_outR" value="0.000103992" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outR" value="0" />

@@ -576,7 +576,7 @@
    <Parameter>
     <Index>0</Index>
     <Name>VAD Threshold</Name>
-    <Value>96</Value>
+    <Value>99</Value>
    </Parameter>
 
    <Parameter>
@@ -1146,36 +1146,12 @@
    <Target>VirtualMic:input_FR</Target>
   </Connection>
   <Connection>
-   <Source>Firefox:output_FL</Source>
-   <Target>VirtualSpeaker:playback_FL</Target>
+   <Source>VirtualMic Monitor:capture_FL</Source>
+   <Target>Noise Canceling source:input_FL</Target>
   </Connection>
   <Connection>
-   <Source>Firefox:output_FR</Source>
-   <Target>VirtualSpeaker:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-302:output_FL</Source>
-   <Target>VirtualSpeaker:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-302:output_FR</Source>
-   <Target>VirtualSpeaker:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Firefox:output_FL-1745</Source>
-   <Target>VirtualSpeaker:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Firefox:output_FR-1746</Source>
-   <Target>VirtualSpeaker:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-328:output_FL</Source>
-   <Target>VirtualSpeaker:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-328:output_FR</Source>
-   <Target>VirtualSpeaker:playback_FR</Target>
+   <Source>VirtualMic Monitor:capture_FR</Source>
+   <Target>Noise Canceling source:input_FR</Target>
   </Connection>
   <Connection>
    <Source>VirtualSpeaker Monitor:monitor_FL</Source>
@@ -1184,14 +1160,6 @@
   <Connection>
    <Source>VirtualSpeaker Monitor:monitor_FR</Source>
    <Target>Gain Virtual Speaker (Stereo):Audio Input 2</Target>
-  </Connection>
-  <Connection>
-   <Source>VirtualMic Monitor:capture_FL</Source>
-   <Target>VirtualSpeaker:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>VirtualMic Monitor:capture_FR</Source>
-   <Target>VirtualSpeaker:playback_FR</Target>
   </Connection>
   <Positions>
    <Position x1="1400" y1="946" x2="2158" y2="183">
@@ -1203,11 +1171,11 @@
    <Position x1="1727" y1="1201">
     <Name>Calf Studio Gear</Name>
    </Position>
-   <Position x1="2192" y1="409">
-    <Name>VirtualSpeaker</Name>
-   </Position>
    <Position x1="1550" y1="2236" x2="2040" y2="1275">
     <Name>VirtualMic</Name>
+   </Position>
+   <Position x1="2192" y1="409">
+    <Name>VirtualSpeaker</Name>
    </Position>
    <Position x1="1190" y1="2227" x2="2250" y2="2257">
     <Name>Midi-Bridge</Name>
@@ -1238,9 +1206,6 @@
    </Position>
    <Position x1="1374" y1="1260" pluginId="8">
     <Name>Calf Equalizer 12 Band</Name>
-   </Position>
-   <Position x1="932" y1="337" x2="2155" y2="302">
-    <Name>WH-1000XM3</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>
