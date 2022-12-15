@@ -1,5 +1,13 @@
 set selection-clipboard clipboard
-map K zoom in
-map J zoom out
+/* map K zoom in */
+/* map J zoom out */
 map i recolor
 map p print
+/* zi zoom in */
+/* zo zoom out */
+/* + zoom in */
+/* - zoom out */
+/* r rotate 90 degrees */
+/* F5 presentation mode */
+/* <space> page down (presentation mode) */
+/* <backspace> page up (presentation mode) */
