@@ -1,0 +1,5 @@
+#!/bin/bash
+
+restored=$(bdk-cli key restore --mnemonic "hint cigar insect leader august mosquito broken speak analyst oblige famous stomach")
+echo $restored
+# bdk-cli repl --descriptor "wpkh(tprv8ZgxMBicQKsPdJViVfh57F6Pc1FNopB1NHSN8Pr8oX4DJHVadHwvhELFs8qgnLBDQr2tFCi5QSbxzDz33Zrk1xMXLnqSZfc4wM1kskHEin4/84h/1h/0h/0/*)"
