@@ -14,8 +14,8 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # ls aliases (Rust)
-alias ll='exa -lF'
-alias la='exa -lFa'
+alias ll='exa -lFh'
+alias la='exa -lFah'
 alias l='exa -lF -snew'
 
 # mv alias
@@ -94,4 +94,4 @@ alias vpn_fix_after_inactivity_wifi=~/bash_scripts/vpn_fix_after_inactivity_wifi
 alias virtualspeaker2output=~/bash_scripts/check_bluetooth_headphones_and_connect_virtual_speaker_accordingly.sh
 
 # Adjust HDMI-1 Screen Brightness and gamma presets
-alias dimmerhdmi1=~/bash_scripts/hdmi_1_dimmer.sh
+alias dimmer=~/bash_scripts/dimmer.sh
