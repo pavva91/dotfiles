@@ -9,6 +9,10 @@ VERIFYING='#00564dE6'
 RING='#000F3AF1'
 INSIDE_RING='#FFFFFFFF'
 
+# alacritty -e cmatrix &
+# sleep 0.7
+# i3-msg fullscreen
+
 /usr/bin/i3lock \
 --insidever-color=$CLEAR     \
 --ringver-color=$VERIFYING   \
@@ -40,5 +44,6 @@ INSIDE_RING='#FFFFFFFF'
 --pointer win                \
 --show-failed-attempts       \
 --ignore-empty-password      \
+# --no-verify
 # --image ~/Pictures/Wallpapers/Ransomware-Splash-Screen.png \
 # --tiling
