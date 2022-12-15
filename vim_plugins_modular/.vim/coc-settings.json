@@ -31,6 +31,11 @@
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "filetypes": ["go"]
     }
+    // "rust": {
+    //   "command": "rust-analyzer",
+    //   "filetypes": ["rust"],
+    //   "rootPatterns": ["Cargo.toml"]
+    // }
   },
 
   // java
@@ -82,8 +87,11 @@
     "html",
     "yaml",
     "json",
-    "css"
+    "css",
+    "rust"
   ],
+
+  "coc.preferences.formatOnSave": true,
 
   // explorer
   "explorer.width": 30,
@@ -93,5 +101,9 @@
     "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit"
   },
-  "java.errors.incompleteClasspath.severity": "ignore"
+  "java.errors.incompleteClasspath.severity": "ignore",
+
+  // Rust
+  "rust-analyzer.server.path": "~/.cargo/bin/rust-analyzer"
+  // "rust-analyzer.server.extraEnv": { "RUSTUP_TOOLCHAIN": "stable" }
 }

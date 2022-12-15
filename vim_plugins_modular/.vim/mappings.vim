@@ -43,7 +43,7 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 nnoremap <leader><space> :nohlsearch<CR>
 
 " Replace all is aliased to S
-nnoremap S :%s//g<left><left>
+nnoremap S :%s//gc<left><left><left>
 
 " Tab switch buffer
 " nnoremap <TAB> :bnext<CR>
@@ -83,3 +83,7 @@ map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " Easy expansion of the active file directory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" Fixing the & Command
+nnoremap & :&&<CR>
+xnoremap & :&&<CR>

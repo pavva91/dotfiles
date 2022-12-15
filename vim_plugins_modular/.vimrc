@@ -10,7 +10,7 @@
 " :so % : To make changes effective
 
 " -----------------------------------------------------------------------------
-" COLORS AND SYNTAX HIGHLIGHT
+" COLORS AND SYNTAX HIGHLIGHT ciao_bello
 " -----------------------------------------------------------------------------
 "
 source $HOME/.vim/plugins/list.vim

@@ -3,6 +3,18 @@
 " -----------------------------------------------------------------------------
 call plug#begin()
 
+    " Abbreviation
+    " Substitution on steroids (:%Subvert/facilit{y,ies}/building{,s}/g)
+    " :Subvert/blog{,s}/post{,s}/g  (you can do that also with normal :s)
+    " You can abbreviate it as :S, and it accepts the full range of flags including things like c (confirm).
+    " Coercion (crs : coerce to snake case : Turn 'fooBar' into 'foo_bar')
+    " MixedCase (crm); camelCase (crc), snake_case (crs), UPPER_CASE (cru),
+    " dash-case (cr-), dot.case (cr.), space case (cr<space>), Title Case (crt)
+    Plug 'tpope/vim-abolish'
+
+    " * and # Search for the current selection in Visual mode
+    Plug 'nelstrom/vim-visual-star-search'
+
     " Rip Grep (:Rg <string> <folder>)
     Plug 'jremmen/vim-ripgrep'
 
@@ -57,6 +69,7 @@ call plug#begin()
 
     " CoC - Intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Plug 'neoclide/coc.nvim', {'tag': 'v0.0.78'}
 
     " --- Ranger File Manager
     Plug 'https://github.com/francoiscabrol/ranger.vim'
