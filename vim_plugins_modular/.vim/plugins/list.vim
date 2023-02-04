@@ -114,4 +114,7 @@ call plug#begin()
     " Go support for vim
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
 
+    " Dart support for vim
+    Plug 'dart-lang/dart-vim-plugin'
+
 call plug#end()
