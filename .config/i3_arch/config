@@ -10,8 +10,8 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
-set $mod Mod1
-set $alt Mod4
+set $mod Mod4
+set $alt Mod1
 
 # Invert Caps with Ctrl
 exec setxkbmap -option ctrl:swapcaps
@@ -46,10 +46,12 @@ bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 # Use wpctl to adjust volume of Built-in Audio
 bindsym $mod+Up exec ~/.config/i3/volume_builtin_audio.sh up
 bindsym $mod+Down exec ~/.config/i3/volume_builtin_audio.sh down
+bindsym $mod+F8 exec ~/.config/i3/volume_builtin_audio.sh toggle
 
 # Use wpctl to adjust volume of Bluetooth Headset Audio
 bindsym $alt+Up exec ~/.config/i3/volume_bluetooth_headset.sh up
 bindsym $alt+Down exec ~/.config/i3/volume_bluetooth_headset.sh down
+bindsym $alt+F8 exec ~/.config/i3/volume_bluetooth_headset.sh toggle
 
 # Use brightnessctl to adjust screen brightness
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
@@ -81,11 +83,11 @@ bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -display-drun "RU
 # screenshots
 bindsym Print exec ~/.config/i3/screenshot.sh full
 bindsym Shift+Print exec ~/.config/i3/screenshot.sh rect
-bindsym $alt+Print exec ~/.config/i3/screenshot.sh active_window
+bindsym $mod+Print exec ~/.config/i3/screenshot.sh active_window
 
 # border and decoration toggle
 default_border pixel
-bindsym $alt+c border toggle
+bindsym $mod+c border toggle
 
 # change focus
 bindsym $mod+$left focus left
@@ -322,10 +324,10 @@ exec --no-startup-id env QT_SCALE_FACTOR=1.01 keepassxc
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Get Bookmark binding
-bindsym $alt+l exec ~/Bookmark/get_bookmark.sh
+bindsym $alt+Shift+l exec ~/Bookmark/get_bookmark.sh
 
 # Set Bookmark binding
-bindsym $alt+b exec ~/Bookmark/bookmark_this.sh
+bindsym $alt+Shift+b exec ~/Bookmark/bookmark_this.sh
 
 # startup sound, because why not?
 exec --no-startup-id mpv ~/Music/startup_audio/Microsoft\ Windows\ XP\ Startup\ Sound-7nQ2oiVqKHw.opus

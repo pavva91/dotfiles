@@ -8,4 +8,6 @@ case "$1" in
         wpctl set-volume $bluetooth_headset_id 5%+ ;;
 	"down")
         wpctl set-volume $bluetooth_headset_id 5%- ;;
+	"toggle")
+        wpctl set-mute $bluetooth_headset_id toggle ;;
 esac
