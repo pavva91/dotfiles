@@ -60,6 +60,9 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
+" Symbol renaming.
+nmap <leader>cw <Plug>(coc-rename)
+
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
@@ -77,10 +80,17 @@ augroup end
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
-" Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line.
+" Remap keys for applying code actions at the cursor position
+nmap <leader>ac  <Plug>(coc-codeaction-cursor)
+" Remap keys for apply code actions affect whole buffer
+nmap <leader>as  <Plug>(coc-codeaction-source)
+" Apply the most preferred quickfix action to fix diagnostic on the current line
 nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Remap keys for applying refactor code actions
+nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
+xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
 
 " Run the Code Lens action on the current line.
 nmap <leader>cl  <Plug>(coc-codelens-action)
@@ -150,4 +160,17 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 nmap <space>e :CocCommand explorer<CR>
 nmap <space>f :CocCommand explorer --preset floating<CR>
+
+" Format All Code
 nmap <leader>lf <Plug>(coc-format)
+
+" Show documentation for the word under the cursor
+nnoremap <silent> K :call CocAction('doHover')<CR>
+
+" Show diagnostics list
+nnoremap <silent> <space>d :<C-u>CocList diagnostics<cr>
+
+" Show symbols list
+nnoremap <silent> <space>s :<C-u>CocList -I symbols<cr>
+
+nmap <leader>do <Plug>(coc-codeaction)

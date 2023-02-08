@@ -8,6 +8,9 @@
 " like <leader>w saves the current file
 let mapleader = ","
 
+map <leader>2 :set autoindent expandtab tabstop=2 shiftwidth=2<CR>
+map <leader>4 :set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smartindent<CR>
+
 " Fast saving
 nmap <leader>w :w!<cr>
 

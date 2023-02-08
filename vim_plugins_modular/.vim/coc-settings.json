@@ -82,7 +82,9 @@
     "go",
     "java",
     "javascript",
-    "typescripty",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
     "python",
     "html",
     "yaml",
@@ -104,6 +106,9 @@
   "java.errors.incompleteClasspath.severity": "ignore",
 
   // Rust
-  "rust-analyzer.server.path": "~/.cargo/bin/rust-analyzer"
+  "rust-analyzer.server.path": "~/.cargo/bin/rust-analyzer",
   // "rust-analyzer.server.extraEnv": { "RUSTUP_TOOLCHAIN": "stable" }
+
+  // JavaScript
+  "coc.preferences.formatOnType": true
 }

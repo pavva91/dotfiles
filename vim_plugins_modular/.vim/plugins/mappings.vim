@@ -7,7 +7,7 @@ nnoremap <F5> :UndotreeToggle<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 nnoremap <leader>nc :NERDTreeCWD<CR>
-nnoremap <leader>r :RangerCurrentDirectory<CR>
+" nnoremap <leader>r :RangerCurrentDirectory<CR>
 nnoremap <leader>g :FzfGFiles<CR>
 "FZF Ag (file_name and/or file_content) recursively on CWD
 nnoremap <leader>ag :FzfAg<CR>

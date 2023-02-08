@@ -20,6 +20,10 @@ set shiftwidth=4
 set expandtab       " tabs are spaces
 set smartindent
 
+" Set indentation width ot 2 spaces
+" set autoindent expandtab tabstop=2 shiftwidth=2
+
+
 " -----------------------------------------------------------------------------
 " LINE NUMBERS
 " -----------------------------------------------------------------------------
