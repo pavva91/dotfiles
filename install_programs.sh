@@ -35,8 +35,31 @@ sudo pacman -S \
     maim \
     ranger \
     zathura \
+    fzf \
+    pasystray \
+    network-manager-applet \
+    blueman \
+    yay \
 
 
+./config_vim.sh
 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# Nerd Fonts i3
+mkdir ~/.local/share/fonts
+mkdir ~/.local/share/fonts/NerdFonts
+cd ~/Downloads
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/UbuntuMono.zip
+mkdir ~/.local/share/fonts/NerdFonts/UbuntuMono
+unzip UbuntuMono.zip -d ~/.local/share/fonts/NerdFonts/UbuntuMono
+
+# Nerd Fonts Alacritty
+cd ~/Downloads
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/JetBrainsMono.zip
+mkdir ~/.local/share/fonts/NerdFonts/JetBrainsMono
+unzip JetBrainsMono.zip -d ~/.local/share/fonts/NerdFonts/JetBrainsMono
+
+# Image Preview on Ranger
+sudo pacman -S w3m
+
+# Lock
+yay -S i3lock-color
