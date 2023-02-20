@@ -1,0 +1,5 @@
+QT_QPA_PLATFORMTHEME=qt5ct
+
+# Nix .desktop folder
+export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
+
