@@ -67,4 +67,8 @@ source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# Node Version Management
 source /usr/share/nvm/init-nvm.sh
+
+# Nix Os packages
+[[ -f /etc/profile.d/nix.sh ]] && . /etc/profile.d/nix.sh

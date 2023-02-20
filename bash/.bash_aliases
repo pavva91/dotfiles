@@ -25,10 +25,10 @@ alias mv='mv -iv'
 alias rm='rm -iv'
 
 # cat alias with bat (Rust)
-alias cat='bat'
+alias p='bat'
 
 # find alias with fd (Rust)
-alias find='fd'
+alias f='fd'
 
 # Use procs instead of ps
 
