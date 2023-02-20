@@ -8,6 +8,7 @@
 " like <leader>w saves the current file
 let mapleader = ","
 
+" 2 or 4 spaces tab
 map <leader>2 :set autoindent expandtab tabstop=2 shiftwidth=2<CR>
 map <leader>4 :set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smartindent<CR>
 
