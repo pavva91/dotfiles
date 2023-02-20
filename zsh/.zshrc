@@ -119,4 +119,8 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Node Version Manager
 source /usr/share/nvm/init-nvm.sh
+
+# Nix Os packages
+[[ -f /etc/profile.d/nix.sh ]] && . /etc/profile.d/nix.sh
