@@ -25,11 +25,14 @@ mkdir ~/.config/ranger
 stow -v -t ~/.config/ranger ranger
 
 sudo pacman -S \
+    base-devel \
     i3 \
+    i3blocks \
     rofi \
     vim \
     alacritty \
     tmux \
+    pyenv \
     tree \
     feh \
     maim \
@@ -40,7 +43,9 @@ sudo pacman -S \
     network-manager-applet \
     blueman \
     yay \
+    keepassxc \
 
+yay -S nvm
 
 ./config_vim.sh
 
@@ -63,3 +68,22 @@ sudo pacman -S w3m
 
 # Lock
 yay -S i3lock-color
+
+# Tmux
+sudo pacman -S tmux
+# Install tmux plugin manager (tpm)
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+tmux source ~/.tmux.conf
+
+#Open tmux
+tmux
+	- Install tmux plugins: prefix+I
+
+# Rust gnu utils
+sudo pacman -S exa bat fd
+
+# Create Dir Screenshots
+mkdir ~/Pictures/Screenshots
+
+# Install Synology Drive
+yay -S synology-drive
