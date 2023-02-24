@@ -25,7 +25,6 @@ return {
 		autotag = {
 			enable = true,
 		}
-
 	},
 	--  --- Surrounding (e.g: surround 1 word with '()': ysw), surround 2 lines with '{}' ys2j} )
 	--  ysw( : surround 1 word with '(   )' with heading and trailing spaces
