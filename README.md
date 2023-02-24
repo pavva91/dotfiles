@@ -49,5 +49,17 @@ Then stow:
 ` cd ~/.dotfiles/.config`
 `stow -v -t ~/.config/alacritty alacritty`
 
+## Stow nvim dotfiles
+Before create nvim folder in ~/.config
+`mkdir ~/.config/nvim`
+Then stow:
+` cd ~/.dotfiles/.config`
+`stow -v -t ~/.config/nvim nvim`
+
+## Stow x11 dotfiles (general config of i3)
+Stow:
+` cd ~/.dotfiles`
+`stow -v -t ~ x11`
+
 rm on symlink will remove the symlink only
 https://venthur.de/2021-12-19-managing-dotfiles-with-stow.html
