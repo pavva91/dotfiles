@@ -5,6 +5,55 @@ Based on:
 ## List of plugins
 ### Package manager
 * [Lazy](https://github.com/folke/lazy.nvim)
+#### Modification on Configuration files
+The configuration files must be modified:
+For example:
+```lua
+require('onedark').setup {
+    style = 'darker',
+		transparent = false,
+}
+require('onedark').load()
+```
+In Lazy becomes (~/.config/nvim/lua/custom/plugins/onedark.lua): 
+```lua
+return {
+	'navartsu/onedark.nvim',
+	opts = {
+		-- Main options --
+		style = 'dark',
+		transparent = false,
+	}
+}
+```
+Or what is declared in ~/.config/nvim/init.lua like that:
+```lua
+{
+	'nvim-lualine/lualine.nvim',
+	opts = {
+		options = {
+			icons_enabled = true,
+			theme = 'onedark',
+			component_separators = '|',
+			section_separators = '',
+		},
+	},
+}
+```
+In Lazy becomes (~/.config/nvim/lua/custom/plugins/lualine.lua): 
+```lua
+return {
+  'nvim-lualine/lualine.nvim',
+  opts = {
+    options = {
+      icons_enabled = true,
+      theme = 'onedark',
+			component_separators = '|',
+			section_separators = '',
+		}
+	}
+}
+```
 ### LSP manager
 * [Mason](https://github.com/williamboman/mason.nvim)
 ### Fuzzy Finder

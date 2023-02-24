@@ -1,9 +1,15 @@
 -- VANILLA SETTINGS -----------------------------------------------------------------
 
+-- Theme
+vim.cmd.colorscheme 'onedark'
+
+-- Leader
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Make relative line numbers default
 vim.opt.relativenumber = true
+
 vim.opt.pastetoggle = "<F2>"
 vim.opt.showcmd = true
 vim.opt.cursorline = true
@@ -29,7 +35,7 @@ vim.o.mouse = 'a'
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+vim.o.clipboard = ''
 
 -- Enable break indent
 vim.o.breakindent = true
