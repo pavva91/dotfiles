@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.keymap.set('n', '<leader>2', '<cmd>set autoindent expandtab tabstop=2 shiftwidth=2<CR>',
 	{ desc = 'Change indentation to 2 spaces' })
 
-vim.keymap.set('n', '<leader>4', '<cmd>tabstop=4 softtabstop=4 shiftwidth=4 expandtab smartindent<CR>',
+vim.keymap.set('n', '<leader>4', '<cmd>set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smartindent<CR>',
 	{ desc = 'Change indentation to 4 spaces' })
 
 -- vim.keymap.set('n', '<leader>w', '<cmd>w!<CR>',
@@ -74,3 +74,14 @@ vim.keymap.set('n', '<leader>B', '<cmd>ls<cr>:b<space>',
 -- buffer search shortcut and open in vertical split
 vim.keymap.set('n', '<leader>b', '<cmd>ls<cr>:vert sb<space>',
 	{ desc = 'Search on List [b]Buffer and open on Vertical Split' })
+
+-- VimScript mappings
+-- from this: https://gist.github.com/joelpalmer/9db3f1cdfd463daa6d7c614ae1618fa6
+vim.cmd([[
+" Easy expansion of the active file directory
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" open file in directory of current file
+nmap <leader>e :e %:h/
+nmap <leader>v :vs %:h/
+]])
