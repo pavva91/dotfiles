@@ -66,3 +66,11 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+
+-- buffer search shortcut
+vim.keymap.set('n', '<leader>B', '<cmd>ls<cr>:b<space>',
+	{ desc = 'Search on List [B]Buffer' })
+
+-- buffer search shortcut and open in vertical split
+vim.keymap.set('n', '<leader>b', '<cmd>ls<cr>:vert sb<space>',
+	{ desc = 'Search on List [b]Buffer and open on Vertical Split' })
