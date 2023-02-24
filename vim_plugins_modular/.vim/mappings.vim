@@ -6,7 +6,8 @@
 " nnoremap means n : normal mode nore : no recursive execution map
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ","
+" let mapleader = ","
+let mapleader = " "
 
 " 2 or 4 spaces tab
 map <leader>2 :set autoindent expandtab tabstop=2 shiftwidth=2<CR>
