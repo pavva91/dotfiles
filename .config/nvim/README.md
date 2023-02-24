@@ -1,6 +1,6 @@
 # Neovim Configs
 Based on: 
-* [Kickstart.nvim](https://raw.githubusercontent.com/nvim-lua/kickstart.nvim/master/README.md)
+* [Kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
 
 ## List of plugins
 ### Package manager
