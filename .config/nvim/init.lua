@@ -382,7 +382,7 @@ local servers = {
       'vue', 'html'
     }
   },
-  -- tsserver = {},
+  tsserver = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
