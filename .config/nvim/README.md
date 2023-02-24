@@ -1,17 +1,16 @@
 # Neovim Configs
 Based on: 
 * [Kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
-
 ## List of plugins
-### Package manager
+### Plugin manager
 * [Lazy](https://github.com/folke/lazy.nvim)
 #### Modification on Configuration files
 The configuration files must be modified:
 For example:
 ```lua
 require('onedark').setup {
-    style = 'darker',
-		transparent = false,
+  style = 'darker',
+  transparent = false,
 }
 require('onedark').load()
 ```
@@ -20,7 +19,6 @@ In Lazy becomes (~/.config/nvim/lua/custom/plugins/onedark.lua):
 return {
 	'navartsu/onedark.nvim',
 	opts = {
-		-- Main options --
 		style = 'dark',
 		transparent = false,
 	}

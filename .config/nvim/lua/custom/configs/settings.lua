@@ -13,8 +13,21 @@ vim.opt.relativenumber = true
 vim.opt.pastetoggle = "<F2>"
 vim.opt.showcmd = true
 vim.opt.cursorline = true
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
+
+-- Default indentation 4 spaces
+vim.opt.tabstop = 4 -- number of visual spaces per TAB
+vim.opt.softtabstop = 4 -- number of spaces in tab when editing
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true -- tabs are spaces
+vim.opt.smartindent = true
+
+-- Set indentation width ot 2 spaces
+-- vim.opt.autoindent = true
+-- vim.opt.expandtab = true
+-- vim.opt.tabstop = 2
+-- vim.opt.shiftwidth = 2
+-- set autoindent expandtab tabstop=2 shiftwidth=2
+
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
