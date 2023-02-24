@@ -110,5 +110,8 @@
   // "rust-analyzer.server.extraEnv": { "RUSTUP_TOOLCHAIN": "stable" }
 
   // JavaScript
-  "coc.preferences.formatOnType": true
+  "coc.preferences.formatOnType": true,
+
+  // Vue.js
+  "volar.enable": true
 }
