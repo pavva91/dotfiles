@@ -18,505 +18,6 @@
  <Plugin>
   <Info>
    <Type>LV2</Type>
-   <Name>Pre Gain Mic (Stereo)</Name>
-   <URI>http://kxstudio.sf.net/carla/plugins/audiogain_s</URI>
-  </Info>
-
-  <Data>
-   <Active>Yes</Active>
-   <Volume>1.27</Volume>
-   <ControlChannel>1</ControlChannel>
-   <Options>0x4</Options>
-
-   <Parameter>
-    <Index>1</Index>
-    <Name>Gain</Name>
-    <Symbol>gain</Symbol>
-    <Value>4</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>2</Index>
-    <Name>Apply Left</Name>
-    <Symbol>apply_left</Symbol>
-    <Value>1</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>3</Index>
-    <Name>Apply Right</Name>
-    <Symbol>apply_right</Symbol>
-    <Value>1</Value>
-   </Parameter>
-
-   <CustomData>
-    <Type>http://kxstudio.sf.net/ns/carla/property</Type>
-    <Key>CarlaSkinIsCompacted</Key>
-    <Value>false</Value>
-   </CustomData>
-  </Data>
- </Plugin>
-
- <!-- Calf Equalizer 5 Band -->
- <Plugin>
-  <Info>
-   <Type>LV2</Type>
-   <Name>Calf Equalizer 5 Band</Name>
-   <URI>http://calf.sourceforge.net/plugins/Equalizer5Band</URI>
-  </Info>
-
-  <Data>
-   <Active>Yes</Active>
-   <ControlChannel>1</ControlChannel>
-   <Options>0x3f1</Options>
-
-   <Parameter>
-    <Index>0</Index>
-    <Name>Bypass</Name>
-    <Symbol>bypass</Symbol>
-    <Value>0</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>1</Index>
-    <Name>Input Gain</Name>
-    <Symbol>level_in</Symbol>
-    <Value>7.61054372787476</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>2</Index>
-    <Name>Output Gain</Name>
-    <Symbol>level_out</Symbol>
-    <Value>6.44416761398315</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>11</Index>
-    <Name>LS Active</Name>
-    <Symbol>ls_active</Symbol>
-    <Value>0</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>12</Index>
-    <Name>Level L</Name>
-    <Symbol>ls_level</Symbol>
-    <Value>0.015625</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>13</Index>
-    <Name>Freq L</Name>
-    <Symbol>ls_freq</Symbol>
-    <Value>54.4398994445801</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>14</Index>
-    <Name>LS Q</Name>
-    <Symbol>ls_q</Symbol>
-    <Value>0.707000017166138</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>15</Index>
-    <Name>HS Active</Name>
-    <Symbol>hs_active</Symbol>
-    <Value>1</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>16</Index>
-    <Name>Level H</Name>
-    <Symbol>hs_level</Symbol>
-    <Value>0.0648221969604492</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>17</Index>
-    <Name>Freq H</Name>
-    <Symbol>hs_freq</Symbol>
-    <Value>17022.400390625</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>18</Index>
-    <Name>HS Q</Name>
-    <Symbol>hs_q</Symbol>
-    <Value>0.556441009044647</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>19</Index>
-    <Name>F1 Active</Name>
-    <Symbol>p1_active</Symbol>
-    <Value>1</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>20</Index>
-    <Name>Level 1</Name>
-    <Symbol>p1_level</Symbol>
-    <Value>0.855314016342163</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>21</Index>
-    <Name>Freq 1</Name>
-    <Symbol>p1_freq</Symbol>
-    <Value>279.960998535156</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>22</Index>
-    <Name>Q 1</Name>
-    <Symbol>p1_q</Symbol>
-    <Value>9.63829040527344</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>23</Index>
-    <Name>F2 Active</Name>
-    <Symbol>p2_active</Symbol>
-    <Value>1</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>24</Index>
-    <Name>Level 2</Name>
-    <Symbol>p2_level</Symbol>
-    <Value>1.69161999225616</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>25</Index>
-    <Name>Freq 2</Name>
-    <Symbol>p2_freq</Symbol>
-    <Value>1275.55004882812</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>26</Index>
-    <Name>Q 2</Name>
-    <Symbol>p2_q</Symbol>
-    <Value>3.66438007354736</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>27</Index>
-    <Name>F3 Active</Name>
-    <Symbol>p3_active</Symbol>
-    <Value>1</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>28</Index>
-    <Name>Level 3</Name>
-    <Symbol>p3_level</Symbol>
-    <Value>1.55339002609253</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>29</Index>
-    <Name>Freq 3</Name>
-    <Symbol>p3_freq</Symbol>
-    <Value>14062</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>30</Index>
-    <Name>Q 3</Name>
-    <Symbol>p3_q</Symbol>
-    <Value>0.515228986740112</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>31</Index>
-    <Name>Individual Filters</Name>
-    <Symbol>individuals</Symbol>
-    <Value>1</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>32</Index>
-    <Name>Zoom</Name>
-    <Symbol>zoom</Symbol>
-    <Value>0.261139988899231</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>33</Index>
-    <Name>Analyzer Active</Name>
-    <Symbol>analyzer</Symbol>
-    <Value>0</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>34</Index>
-    <Name>Analyzer Mode</Name>
-    <Symbol>analyzer_mode</Symbol>
-    <Value>1</Value>
-   </Parameter>
-
-   <CustomData>
-    <Type>http://kxstudio.sf.net/ns/carla/property</Type>
-    <Key>CarlaSkinIsCompacted</Key>
-    <Value>false</Value>
-   </CustomData>
-  </Data>
- </Plugin>
-
- <!-- Calf Compressor -->
- <Plugin>
-  <Info>
-   <Type>LV2</Type>
-   <Name>Calf Compressor</Name>
-   <URI>http://calf.sourceforge.net/plugins/Compressor</URI>
-  </Info>
-
-  <Data>
-   <Active>Yes</Active>
-   <ControlChannel>1</ControlChannel>
-   <Options>0x3f1</Options>
-
-   <Parameter>
-    <Index>0</Index>
-    <Name>Bypass</Name>
-    <Symbol>bypass</Symbol>
-    <Value>0</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>1</Index>
-    <Name>Input</Name>
-    <Symbol>level_in</Symbol>
-    <Value>3.20427918434143</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>6</Index>
-    <Name>Threshold</Name>
-    <Symbol>threshold</Symbol>
-    <Value>0.00140034756623209</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>7</Index>
-    <Name>Ratio</Name>
-    <Symbol>ratio</Symbol>
-    <Value>2.12986278533936</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>8</Index>
-    <Name>Attack</Name>
-    <Symbol>attack</Symbol>
-    <Value>1.19675076007843</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>9</Index>
-    <Name>Release</Name>
-    <Symbol>release</Symbol>
-    <Value>238.087036132812</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>10</Index>
-    <Name>Makeup Gain</Name>
-    <Symbol>makeup</Symbol>
-    <Value>64</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>11</Index>
-    <Name>Knee</Name>
-    <Symbol>knee</Symbol>
-    <Value>2.04485702514648</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>12</Index>
-    <Name>Detection</Name>
-    <Symbol>detection</Symbol>
-    <Value>0</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>13</Index>
-    <Name>Stereo Link</Name>
-    <Symbol>stereo_link</Symbol>
-    <Value>1</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>15</Index>
-    <Name>Mix</Name>
-    <Symbol>mix</Symbol>
-    <Value>1</Value>
-   </Parameter>
-
-   <CustomData>
-    <Type>http://kxstudio.sf.net/ns/carla/property</Type>
-    <Key>CarlaSkinIsCompacted</Key>
-    <Value>false</Value>
-   </CustomData>
-  </Data>
- </Plugin>
-
- <!-- Calf Reverb -->
- <Plugin>
-  <Info>
-   <Type>LV2</Type>
-   <Name>Calf Reverb</Name>
-   <URI>http://calf.sourceforge.net/plugins/Reverb</URI>
-  </Info>
-
-  <Data>
-   <Active>Yes</Active>
-   <ControlChannel>1</ControlChannel>
-   <Options>0x3f1</Options>
-
-   <Parameter>
-    <Index>3</Index>
-    <Name>Decay time</Name>
-    <Symbol>decay_time</Symbol>
-    <Value>2.64022016525269</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>4</Index>
-    <Name>High Frq Damp</Name>
-    <Symbol>hf_damp</Symbol>
-    <Value>4518.24755859375</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>5</Index>
-    <Name>Room size</Name>
-    <Symbol>room_size</Symbol>
-    <Value>0</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>6</Index>
-    <Name>Diffusion</Name>
-    <Symbol>diffusion</Symbol>
-    <Value>0.486999988555908</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>7</Index>
-    <Name>Wet Amount</Name>
-    <Symbol>amount</Symbol>
-    <Value>0.0942084267735481</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>8</Index>
-    <Name>Dry Amount</Name>
-    <Symbol>dry</Symbol>
-    <Value>2</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>9</Index>
-    <Name>Pre Delay</Name>
-    <Symbol>predelay</Symbol>
-    <Value>40</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>10</Index>
-    <Name>Bass Cut</Name>
-    <Symbol>bass_cut</Symbol>
-    <Value>86.5209350585938</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>11</Index>
-    <Name>Treble Cut</Name>
-    <Symbol>treble_cut</Symbol>
-    <Value>20000</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>12</Index>
-    <Name>Active</Name>
-    <Symbol>on</Symbol>
-    <Value>0</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>13</Index>
-    <Name>Input Gain</Name>
-    <Symbol>level_in</Symbol>
-    <Value>0.322640597820282</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>14</Index>
-    <Name>Output Gain</Name>
-    <Symbol>level_out</Symbol>
-    <Value>1.4907101392746</Value>
-   </Parameter>
-
-   <CustomData>
-    <Type>http://kxstudio.sf.net/ns/carla/property</Type>
-    <Key>CarlaSkinIsCompacted</Key>
-    <Value>false</Value>
-   </CustomData>
-  </Data>
- </Plugin>
-
- <!-- Audio Gain (Stereo) -->
- <Plugin>
-  <Info>
-   <Type>LV2</Type>
-   <Name>Gain Mic (Stereo)</Name>
-   <URI>http://kxstudio.sf.net/carla/plugins/audiogain_s</URI>
-  </Info>
-
-  <Data>
-   <Active>Yes</Active>
-   <Volume>1.075612</Volume>
-   <ControlChannel>1</ControlChannel>
-   <Options>0x4</Options>
-
-   <Parameter>
-    <Index>1</Index>
-    <Name>Gain</Name>
-    <Symbol>gain</Symbol>
-    <Value>2.38955593109131</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>2</Index>
-    <Name>Apply Left</Name>
-    <Symbol>apply_left</Symbol>
-    <Value>1</Value>
-   </Parameter>
-
-   <Parameter>
-    <Index>3</Index>
-    <Name>Apply Right</Name>
-    <Symbol>apply_right</Symbol>
-    <Value>1</Value>
-   </Parameter>
-
-   <CustomData>
-    <Type>http://kxstudio.sf.net/ns/carla/property</Type>
-    <Key>CarlaSkinIsCompacted</Key>
-    <Value>false</Value>
-   </CustomData>
-  </Data>
- </Plugin>
-
- <!-- Audio Gain (Stereo) -->
- <Plugin>
-  <Info>
-   <Type>LV2</Type>
    <Name>Gain Virtual Speaker (Stereo)</Name>
    <URI>http://kxstudio.sf.net/carla/plugins/audiogain_s</URI>
   </Info>
@@ -569,7 +70,7 @@
 
   <Data>
    <Active>Yes</Active>
-   <Volume>0.9828022</Volume>
+   <Volume>0.6125126</Volume>
    <ControlChannel>1</ControlChannel>
    <Options>0x0</Options>
 
@@ -594,13 +95,13 @@
    <Parameter>
     <Index>3</Index>
     <Name>Placeholder</Name>
-    <Value>0</Value>
+    <Value>0.497298926115036</Value>
    </Parameter>
 
    <Parameter>
     <Index>4</Index>
     <Name>Placeholder</Name>
-    <Value>0</Value>
+    <Value>0.475840330123901</Value>
    </Parameter>
   </Data>
  </Plugin>
@@ -1043,27 +544,35 @@
  <ExternalPatchbay>
   <Connection>
    <Source>Built-in Audio:capture_FL</Source>
-   <Target>Noise Canceling source:input_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Built-in Audio:capture_FL</Source>
    <Target>Noise Suppressor for Voice (Mono):Input</Target>
-  </Connection>
-  <Connection>
-   <Source>Built-in Audio:capture_FR</Source>
-   <Target>Noise Canceling source:input_FR</Target>
   </Connection>
   <Connection>
    <Source>Built-in Audio:capture_FR</Source>
    <Target>Noise Suppressor for Voice (Mono):Input</Target>
   </Connection>
   <Connection>
-   <Source>Noise Canceling source:capture_1</Source>
-   <Target>Pre Gain Mic (Stereo):Audio Input 1</Target>
+   <Source>Calf Valerio Audio Gain (Stereo):output_1</Source>
+   <Target>VirtualMic:input_FL</Target>
   </Connection>
   <Connection>
-   <Source>Noise Canceling source:capture_1</Source>
-   <Target>Pre Gain Mic (Stereo):Audio Input 2</Target>
+   <Source>Calf Valerio Audio Gain (Stereo):output_2</Source>
+   <Target>VirtualMic:input_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Gain Virtual Speaker (Stereo):Audio Output 1</Source>
+   <Target>Built-in Audio:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Gain Virtual Speaker (Stereo):Audio Output 2</Source>
+   <Target>Built-in Audio:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Noise Suppressor for Voice (Mono):Output</Source>
+   <Target>Calf Studio Gear:Equalizer 12 Band In #1</Target>
+  </Connection>
+  <Connection>
+   <Source>Noise Suppressor for Voice (Mono):Output</Source>
+   <Target>Calf Studio Gear:Equalizer 12 Band In #2</Target>
   </Connection>
   <Connection>
    <Source>Calf Studio Gear:Equalizer 12 Band Out #1</Source>
@@ -1090,121 +599,46 @@
    <Target>Calf Valerio Audio Gain (Stereo):input_2</Target>
   </Connection>
   <Connection>
-   <Source>Pre Gain Mic (Stereo):Audio Output 1</Source>
-   <Target>Calf Equalizer 5 Band:In L</Target>
-  </Connection>
-  <Connection>
-   <Source>Pre Gain Mic (Stereo):Audio Output 2</Source>
-   <Target>Calf Equalizer 5 Band:In R</Target>
-  </Connection>
-  <Connection>
-   <Source>Calf Equalizer 5 Band:Out L</Source>
-   <Target>Calf Compressor:In L</Target>
-  </Connection>
-  <Connection>
-   <Source>Calf Equalizer 5 Band:Out R</Source>
-   <Target>Calf Compressor:In R</Target>
-  </Connection>
-  <Connection>
-   <Source>Calf Compressor:Out L</Source>
-   <Target>Calf Reverb:In L</Target>
-  </Connection>
-  <Connection>
-   <Source>Calf Compressor:Out R</Source>
-   <Target>Calf Reverb:In R</Target>
-  </Connection>
-  <Connection>
-   <Source>Calf Reverb:Out L</Source>
-   <Target>Gain Mic (Stereo):Audio Input 1</Target>
-  </Connection>
-  <Connection>
-   <Source>Calf Reverb:Out R</Source>
-   <Target>Gain Mic (Stereo):Audio Input 2</Target>
-  </Connection>
-  <Connection>
-   <Source>Gain Virtual Speaker (Stereo):Audio Output 1</Source>
-   <Target>WH-1000XM3:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Gain Virtual Speaker (Stereo):Audio Output 2</Source>
-   <Target>WH-1000XM3:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Noise Suppressor for Voice (Mono):Output</Source>
-   <Target>Calf Studio Gear:Equalizer 12 Band In #1</Target>
-  </Connection>
-  <Connection>
-   <Source>Noise Suppressor for Voice (Mono):Output</Source>
-   <Target>Calf Studio Gear:Equalizer 12 Band In #2</Target>
-  </Connection>
-  <Connection>
-   <Source>Calf Valerio Audio Gain (Stereo):output_1</Source>
-   <Target>VirtualMic:input_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Calf Valerio Audio Gain (Stereo):output_2</Source>
-   <Target>VirtualMic:input_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>VirtualMic Monitor:capture_FL</Source>
-   <Target>Noise Canceling source:input_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>VirtualMic Monitor:capture_FR</Source>
-   <Target>Noise Canceling source:input_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>VirtualSpeaker Monitor:monitor_FL</Source>
+   <Source>VirtualSpeaker:monitor_FL</Source>
    <Target>Gain Virtual Speaker (Stereo):Audio Input 1</Target>
   </Connection>
   <Connection>
-   <Source>VirtualSpeaker Monitor:monitor_FR</Source>
+   <Source>VirtualSpeaker:monitor_FR</Source>
    <Target>Gain Virtual Speaker (Stereo):Audio Input 2</Target>
   </Connection>
+  <Connection>
+   <Source>VirtualMic:capture_FL</Source>
+   <Target>VirtualSpeaker:playback_FL</Target>
+  </Connection>
   <Positions>
-   <Position x1="1400" y1="946" x2="2158" y2="183">
+   <Position x1="1315" y1="647" x2="2158" y2="183">
     <Name>Built-in Audio</Name>
    </Position>
-   <Position x1="1803" y1="515">
+   <Position x1="1793" y1="447">
     <Name>Noise Canceling source</Name>
    </Position>
    <Position x1="1727" y1="1201">
     <Name>Calf Studio Gear</Name>
    </Position>
-   <Position x1="1550" y1="2236" x2="2040" y2="1275">
+   <Position x1="1323" y1="441" x2="2040" y2="1275">
     <Name>VirtualMic</Name>
    </Position>
-   <Position x1="2192" y1="409">
+   <Position x1="1796" y1="180">
     <Name>VirtualSpeaker</Name>
    </Position>
    <Position x1="1190" y1="2227" x2="2250" y2="2257">
     <Name>Midi-Bridge</Name>
    </Position>
-   <Position x1="1785" y1="592" pluginId="0">
-    <Name>Pre Gain Mic (Stereo)</Name>
-   </Position>
-   <Position x1="1792" y1="697" pluginId="1">
-    <Name>Calf Equalizer 5 Band</Name>
-   </Position>
-   <Position x1="1798" y1="791" pluginId="2">
-    <Name>Calf Compressor</Name>
-   </Position>
-   <Position x1="1805" y1="890" pluginId="3">
-    <Name>Calf Reverb</Name>
-   </Position>
-   <Position x1="1782" y1="992" pluginId="4">
-    <Name>Gain Mic (Stereo)</Name>
-   </Position>
-   <Position x1="1785" y1="294" pluginId="5">
+   <Position x1="1785" y1="294" pluginId="0">
     <Name>Gain Virtual Speaker (Stereo)</Name>
    </Position>
-   <Position x1="1756" y1="1126" pluginId="6">
+   <Position x1="1751" y1="1108" pluginId="1">
     <Name>Noise Suppressor for Voice (Mono)</Name>
    </Position>
-   <Position x1="1771" y1="1370" pluginId="7">
+   <Position x1="1771" y1="1370" pluginId="2">
     <Name>Calf Valerio Audio Gain (Stereo)</Name>
    </Position>
-   <Position x1="1374" y1="1260" pluginId="8">
+   <Position x1="1374" y1="1260" pluginId="3">
     <Name>Calf Equalizer 12 Band</Name>
    </Position>
   </Positions>
