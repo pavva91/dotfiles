@@ -87,7 +87,7 @@ set foldmethod=indent   " fold based on indent level
 " -----------------------------------------------------------------------------
 
 " Always show the status line
-set laststatus=2
+" set laststatus=2
 
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
@@ -99,10 +99,10 @@ nnoremap <space> za
 set ruler
 
 " Height of the command bar
-" set cmdheight=1
+set cmdheight=1
 
 " Give more space for displaying messages.
-set cmdheight=2
+" set cmdheight=2
 
 " -----------------------------------------------------------------------------
 " Primeagen Opions
