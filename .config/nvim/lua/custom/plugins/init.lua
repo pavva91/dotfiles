@@ -51,5 +51,4 @@ return {
 	'tomasr/molokai',
 	'morhetz/gruvbox',
 	'sheerun/vim-wombat-scheme',
-	'ap/vim-css-color',
 }
