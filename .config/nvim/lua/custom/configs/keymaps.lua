@@ -53,19 +53,25 @@ vim.keymap.set('n', '<leader>ss', '<cmd>setlocal spell!<cr>',
 	{ desc = 'Toggle Spell Checking' })
 
 -- Copy to clipboard
-vim.keymap.set({ 'n', 'x' }, 'cp', '"+y')
+vim.keymap.set({ 'n', 'x' }, 'cp', '"+y',
+	{ desc = 'Copy to clipboard' })
 
 -- Paste from clipboard
-vim.keymap.set({ 'n', 'x' }, 'cv', '"+p')
+vim.keymap.set({ 'n', 'x' }, 'cv', '"+p',
+	{ desc = 'Paste from clipboard' })
 
 -- Reload our configuration
 vim.api.nvim_create_user_command('ReloadConfig', 'source $MYVIMRC', {})
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev,
+	{ desc = 'Go to Next [D]iagnostic' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next,
+	{ desc = 'Go to Previous [D]iagnostic' })
+vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float,
+	{ desc = 'Open Diagnostic floating window' })
+vim.keymap.set('n', '<leader>l', vim.diagnostic.setloclist,
+	{ desc = 'Open List of Diagnostics' })
 
 -- buffer search shortcut
 vim.keymap.set('n', '<leader>B', '<cmd>ls<cr>:b<space>',

@@ -1,7 +1,13 @@
 -- VANILLA SETTINGS -----------------------------------------------------------------
 
+-- Set <space> as the leader key
+-- See `:help mapleader`
+--  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 -- Theme
-vim.cmd.colorscheme 'onedark'
+vim.cmd.colorscheme 'desert'
 
 -- Leader
 vim.g.mapleader = ' '
@@ -28,6 +34,8 @@ vim.opt.smartindent = true
 -- vim.opt.shiftwidth = 2
 -- set autoindent expandtab tabstop=2 shiftwidth=2
 
+-- Set termguicolors, needed for nvim-colorizer
+vim.opt.termguicolors = true
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
