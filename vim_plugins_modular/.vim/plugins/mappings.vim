@@ -9,21 +9,30 @@ nnoremap <leader>nf :NERDTreeFind<CR>
 nnoremap <leader>nc :NERDTreeCWD<CR>
 " nnoremap <leader>r :RangerCurrentDirectory<CR>
 nnoremap <leader>g :FzfGFiles<CR>
-"FZF Ag (file_name and/or file_content) recursively on CWD
-nnoremap <leader>ag :FzfAg<CR>
-"FZF Rip (file_name and/or file_content) Grep recursively on CWD
-nnoremap <leader>rg :FzfRg<CR>
+"FZF Ag (file_name and/or file_content) recursively on CWD ([F]ind [A]g)
+nnoremap <leader>fa :FzfAg<CR>
+"FZF RipGrep (file_name and/or file_content) Grep recursively on CWD ([F]ind [G]rep)
+nnoremap <leader>fg :FzfRg<CR>
 " FZF by file name without file preview on CWD
 nnoremap <leader>fz :FZF<CR>
 " FZF by file name with file preview on CWD
 nnoremap <leader>ff :FzfFiles<CR>
-nnoremap <C-p> :FzfFiles<CR>
-" Fuzzy find string in current open file
-nnoremap <leader>fb :FzfBLines<CR>
-nnoremap g/ :FzfBLines<CR>
-" Fuzzy find string in files in buffer
+" nnoremap <C-p> :FzfFiles<CR>
+" [/] Fuzzily search in current buffer
+nnoremap <leader>/ :FzfBLines<CR>
+
+" [F]ind [H]elp
+nnoremap <leader>fh :FzfHelptags<CR>
+
+" [F]ind [B]uffer
+nnoremap <leader>fb :FzfBuffers<CR>
+" [F]ind [B]uffer
+nnoremap <leader><space> :FzfBuffers<CR>
+" Fuzzy find string in all files in buffers
 nnoremap <leader>fl :FzfLines<CR>
 nnoremap g? :FzfLines<CR>
+nnoremap <leader>? :FzfLines<CR>
+
 nnoremap <leader>b :FzfBuffers<CR>
 nnoremap <leader>h :FzfHistory:<CR>
 nnoremap <leader>s :Startify<CR>

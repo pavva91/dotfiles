@@ -48,6 +48,7 @@ call plug#begin()
     " --- Surrounding (e.g: surround 1 word with '()': ysw), surround 2 lines with '{}' ys2j} )
     "  ysw( : surround 1 word with '(   )' with heading and trailing spaces
     "  cs"' - Change "hello" to 'hello'
+    "  csttp<CR> - Change <h1> tag to <p> tag:
     "https://vimawesome.com/plugin/surround-vim
     Plug 'tpope/vim-surround' " ys
 
