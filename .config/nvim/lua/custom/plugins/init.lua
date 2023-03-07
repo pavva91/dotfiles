@@ -51,4 +51,7 @@ return {
 	'tomasr/molokai',
 	'morhetz/gruvbox',
 	'sheerun/vim-wombat-scheme',
+	-- Fuzzy Finder
+	'junegunn/fzf',
+	'junegunn/fzf.vim'
 }
