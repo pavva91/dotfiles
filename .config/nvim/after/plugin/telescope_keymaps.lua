@@ -1,11 +1,12 @@
+-- https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/lua/tj/telescope/keys.lua
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
 	defaults = {
 		mappings = {
 			i = {
-				['<C-u>'] = false,
-				['<C-d>'] = false,
+					['<C-u>'] = false,
+					['<C-d>'] = false,
 			},
 		},
 	},
@@ -15,7 +16,7 @@ require('telescope').setup {
 pcall(require('telescope').load_extension, 'fzf')
 
 -- See `:help telescope.builtin`
-vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
+-- vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
 	-- You can pass additional configuration to telescope to change theme, layout, etc.
@@ -34,4 +35,8 @@ vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { de
 -- resume from last search
 vim.keymap.set('n', '<leader>fr', require('telescope.builtin').resume, { desc = '[F]ind [R]esume' })
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = '[F]ind [B]uffers' })
-vim.keymap.set('n', '<leader>fc', require('telescope.builtin').git_status, { desc = '[F]ind Git Status and Diff' })
+vim.keymap.set('n', '<leader>fk', require('telescope.builtin').keymaps, { desc = '[F]ind [K]eymaps' })
+
+-- Git
+vim.keymap.set('n', '<leader>fs', require('telescope.builtin').git_status, { desc = '[F]ind Git [S]tatus and Diff' })
+vim.keymap.set('n', '<leader>fc', require('telescope.builtin').git_commits, { desc = '[F]ind Git [C]ommits' })
