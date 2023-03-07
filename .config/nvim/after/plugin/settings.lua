@@ -10,3 +10,12 @@ vim.cmd.colorscheme 'onedark'
 vim.g.material_style = "deep ocean"
 -- to change run this Ex command: :lua require("material.functions").find_style()
 --
+---------------------------------------------------------------------------
+-- => FZF https://github.com/junegunn/fzf.vim
+---------------------------------------------------------------------------
+-- let g:fzf_command_prefix = 'Fzf'
+-- DOESN'T WORK
+vim.g.fzf_command_prefix = 'Fzf'
+-- vim.cmd([[
+-- let g:fzf_command_prefix = 'Fzf'
+-- ]])

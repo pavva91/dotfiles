@@ -12,12 +12,12 @@ keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>",
 	{ desc = '[C]ode [A]ction' })
 
 -- Rename all occurrences of the hovered word for the entire file
-keymap("n", "gr", "<cmd>Lspsaga rename<CR>",
-	{ desc = 'Rename all occurrences of the hovered word for the entire file ([G]roup [R]enaming)' })
+keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>",
+	{ desc = '[R]e[N]ame all occurrences of the hovered word for the entire file' })
 
 -- Rename all occurrences of the hovered word for the selected files
-keymap("n", "gr", "<cmd>Lspsaga rename ++project<CR>",
-	{ desc = 'Rename all occurrences of the hovered word for the selected files' })
+keymap("n", "<leader>rf", "<cmd>Lspsaga rename ++project<CR>",
+	{ desc = '[R]ename all occurrences of the hovered word for the selected [F]iles' })
 
 -- Peek definition
 -- You can edit the file containing the definition in the floating window
@@ -68,12 +68,12 @@ keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>",
 
 -- Diagnostic jump with filters such as only jumping to an error
 keymap("n", "[E", function()
-	require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
-end,
+		require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+	end,
 	{ desc = 'Error Jump Backward' })
 keymap("n", "]E", function()
-	require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
-end,
+		require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
+	end,
 	{ desc = 'Error Jump Forward' })
 
 -- Toggle outline
@@ -96,8 +96,8 @@ keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>",
 -- close the hover window. If you want to jump to the hover window
 -- you should use the wincmd command "<C-w>w"
 -- Please make sure you install markdown and markdown_inline parser
-keymap("n", "K", "<cmd>Lspsaga hover_doc ++keep<CR>",
-	{ desc = 'Hover Doc Keep' })
+-- keymap("n", "K", "<cmd>Lspsaga hover_doc ++keep<CR>",
+-- { desc = 'Hover Doc Keep' })
 
 -- Call hierarchy
 keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>",
