@@ -11,25 +11,31 @@
   "coc.source.file.priority": 2,
   "coc.source.around.priority": 3,
   "coc.source.buffer.priority": 4,
-
   "hover.target": "float",
-
   // diagnostic
-  "diagnostic.errorSign": "✗",
-  "diagnostic.infoSign": "ℹ",
-  "diagnostic.hintSign": "➤",
+  // "diagnostic.errorSign": "✗",
+  "diagnostic.errorSign": "❌",
+  // "diagnostic.infoSign": "ℹ",
+  "diagnostic.infoSign": "󰋽",
+  // "diagnostic.hintSign": "➤",
+  "diagnostic.hintSign": "",
   "diagnostic.warningSign": "⚠",
-
   // codeLens
   // turn off codeLens stuff for improving performance
   "codeLens.enable": true,
-
   // go
   "languageserver": {
     "golang": {
       "command": "gopls",
-      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["go"]
+      "rootPatterns": [
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "filetypes": [
+        "go"
+      ]
     }
     // "rust": {
     //   "command": "rust-analyzer",
@@ -37,7 +43,6 @@
     //   "rootPatterns": ["Cargo.toml"]
     // }
   },
-
   // java
   "java.configuration.runtimes": [
     {
@@ -72,11 +77,9 @@
   "java.saveActions.organizeImports": true,
   "java.selectionRange.enabled": true,
   "java.format.settings.url": "/home/bob/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
-
   // list
   "list.indicator": ">",
   "list.selectedSignText": "*",
-
   // autoformat
   "coc.preferences.formatOnSaveFiletypes": [
     "go",
@@ -92,26 +95,25 @@
     "css",
     "rust"
   ],
-
   "coc.preferences.formatOnSave": true,
-
   // explorer
   "explorer.width": 30,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": "labeling",
   "explorer.keyMappings.global": {
-    "<cr>": ["expandable?", "expand", "open"],
+    "<cr>": [
+      "expandable?",
+      "expand",
+      "open"
+    ],
     "v": "open:vsplit"
   },
   "java.errors.incompleteClasspath.severity": "ignore",
-
   // Rust
   "rust-analyzer.server.path": "~/.cargo/bin/rust-analyzer",
   // "rust-analyzer.server.extraEnv": { "RUSTUP_TOOLCHAIN": "stable" }
-
   // JavaScript
   "coc.preferences.formatOnType": true,
-
   // Vue.js
   "volar.enable": true
 }
