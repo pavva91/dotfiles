@@ -45,7 +45,8 @@ nnoremap gV `[v`]
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " turn off search highlight
-nnoremap <leader><space> :nohlsearch<CR>
+" nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <leader>, :nohlsearch<CR>
 
 " Replace all is aliased to S
 nnoremap S :%s//gc<left><left><left>
