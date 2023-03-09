@@ -551,30 +551,6 @@
    <Target>Noise Suppressor for Voice (Mono):Input</Target>
   </Connection>
   <Connection>
-   <Source>Calf Valerio Audio Gain (Stereo):output_1</Source>
-   <Target>VirtualMic:input_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Calf Valerio Audio Gain (Stereo):output_2</Source>
-   <Target>VirtualMic:input_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Gain Virtual Speaker (Stereo):Audio Output 1</Source>
-   <Target>Built-in Audio:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Gain Virtual Speaker (Stereo):Audio Output 2</Source>
-   <Target>Built-in Audio:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Noise Suppressor for Voice (Mono):Output</Source>
-   <Target>Calf Studio Gear:Equalizer 12 Band In #1</Target>
-  </Connection>
-  <Connection>
-   <Source>Noise Suppressor for Voice (Mono):Output</Source>
-   <Target>Calf Studio Gear:Equalizer 12 Band In #2</Target>
-  </Connection>
-  <Connection>
    <Source>Calf Studio Gear:Equalizer 12 Band Out #1</Source>
    <Target>Calf Studio Gear:Compressor In #1</Target>
   </Connection>
@@ -599,6 +575,30 @@
    <Target>Calf Valerio Audio Gain (Stereo):input_2</Target>
   </Connection>
   <Connection>
+   <Source>Gain Virtual Speaker (Stereo):Audio Output 1</Source>
+   <Target>Built-in Audio:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Gain Virtual Speaker (Stereo):Audio Output 2</Source>
+   <Target>Built-in Audio:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Noise Suppressor for Voice (Mono):Output</Source>
+   <Target>Calf Studio Gear:Equalizer 12 Band In #1</Target>
+  </Connection>
+  <Connection>
+   <Source>Noise Suppressor for Voice (Mono):Output</Source>
+   <Target>Calf Studio Gear:Equalizer 12 Band In #2</Target>
+  </Connection>
+  <Connection>
+   <Source>Calf Valerio Audio Gain (Stereo):output_1</Source>
+   <Target>VirtualMic:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Calf Valerio Audio Gain (Stereo):output_2</Source>
+   <Target>VirtualMic:input_FR</Target>
+  </Connection>
+  <Connection>
    <Source>VirtualSpeaker:monitor_FL</Source>
    <Target>Gain Virtual Speaker (Stereo):Audio Input 1</Target>
   </Connection>
@@ -608,7 +608,11 @@
   </Connection>
   <Connection>
    <Source>VirtualMic:capture_FL</Source>
-   <Target>VirtualSpeaker:playback_FL</Target>
+   <Target>Noise Canceling source:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>VirtualMic:capture_FR</Source>
+   <Target>Noise Canceling source:input_FR</Target>
   </Connection>
   <Positions>
    <Position x1="1315" y1="647" x2="2158" y2="183">
@@ -620,11 +624,11 @@
    <Position x1="1727" y1="1201">
     <Name>Calf Studio Gear</Name>
    </Position>
-   <Position x1="1323" y1="441" x2="2040" y2="1275">
-    <Name>VirtualMic</Name>
-   </Position>
    <Position x1="1796" y1="180">
     <Name>VirtualSpeaker</Name>
+   </Position>
+   <Position x1="1323" y1="441" x2="2040" y2="1275">
+    <Name>VirtualMic</Name>
    </Position>
    <Position x1="1190" y1="2227" x2="2250" y2="2257">
     <Name>Midi-Bridge</Name>

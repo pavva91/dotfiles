@@ -1,0 +1,442 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CARLA-PROJECT>
+<CARLA-PROJECT VERSION='2.5'>
+ <EngineSettings>
+  <ForceStereo>false</ForceStereo>
+  <PreferPluginBridges>false</PreferPluginBridges>
+  <PreferUiBridges>true</PreferUiBridges>
+  <UIsAlwaysOnTop>false</UIsAlwaysOnTop>
+  <MaxParameters>200</MaxParameters>
+  <UIBridgesTimeout>4000</UIBridgesTimeout>
+ </EngineSettings>
+
+ <Transport>
+  <BeatsPerMinute>120</BeatsPerMinute>
+ </Transport>
+
+ <!-- Audio Gain (Stereo) -->
+ <Plugin>
+  <Info>
+   <Type>LV2</Type>
+   <Name>Gain Virtual Speaker (Stereo)</Name>
+   <URI>http://kxstudio.sf.net/carla/plugins/audiogain_s</URI>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <DryWet>0.8394357</DryWet>
+   <Volume>0.6041266</Volume>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x4</Options>
+
+   <Parameter>
+    <Index>1</Index>
+    <Name>Gain</Name>
+    <Symbol>gain</Symbol>
+    <Value>2.47839117050171</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>2</Index>
+    <Name>Apply Left</Name>
+    <Symbol>apply_left</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>3</Index>
+    <Name>Apply Right</Name>
+    <Symbol>apply_right</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <CustomData>
+    <Type>http://kxstudio.sf.net/ns/carla/property</Type>
+    <Key>CarlaSkinIsCompacted</Key>
+    <Value>false</Value>
+   </CustomData>
+  </Data>
+ </Plugin>
+
+ <!-- Noise Suppressor for Voice (Mono) -->
+ <Plugin>
+  <Info>
+   <Type>LADSPA</Type>
+   <Name>Noise Suppressor for Voice (Mono)</Name>
+   <Binary>/usr/lib/ladspa/librnnoise_ladspa.so</Binary>
+   <Label>noise_suppressor_mono</Label>
+   <UniqueID>9354877</UniqueID>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <Volume>0.8046134</Volume>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x0</Options>
+
+   <Parameter>
+    <Index>0</Index>
+    <Name>VAD Threshold</Name>
+    <Value>99</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>1</Index>
+    <Name>VAD Grace Period</Name>
+    <Value>500</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>2</Index>
+    <Name>Retroactive VAD Grace</Name>
+    <Value>100</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>3</Index>
+    <Name>Placeholder</Name>
+    <Value>0.497298926115036</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>4</Index>
+    <Name>Placeholder</Name>
+    <Value>0.475840330123901</Value>
+   </Parameter>
+  </Data>
+ </Plugin>
+
+ <!-- Audio Gain (Stereo) -->
+ <Plugin>
+  <Info>
+   <Type>INTERNAL</Type>
+   <Name>Calf Valerio Mic Gain (Stereo)</Name>
+   <Label>audiogain_s</Label>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <DryWet>0.8308824</DryWet>
+   <Volume>0.6864556</Volume>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x0</Options>
+
+   <Parameter>
+    <Index>0</Index>
+    <Name>Gain</Name>
+    <Value>3.25510215759277</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>1</Index>
+    <Name>Apply Left</Name>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>2</Index>
+    <Name>Apply Right</Name>
+    <Value>1</Value>
+   </Parameter>
+
+   <CustomData>
+    <Type>http://kxstudio.sf.net/ns/carla/property</Type>
+    <Key>CarlaSkinIsCompacted</Key>
+    <Value>false</Value>
+   </CustomData>
+  </Data>
+ </Plugin>
+
+ <ExternalPatchbay>
+  <Connection>
+   <Source>Built-in Audio:capture_FL</Source>
+   <Target>Noise Suppressor for Voice (Mono):Input</Target>
+  </Connection>
+  <Connection>
+   <Source>Built-in Audio:capture_FL</Source>
+   <Target>PulseAudio Volume Control:input_FL-11979</Target>
+  </Connection>
+  <Connection>
+   <Source>Built-in Audio:capture_FR</Source>
+   <Target>Noise Suppressor for Voice (Mono):Input</Target>
+  </Connection>
+  <Connection>
+   <Source>Built-in Audio:capture_FR</Source>
+   <Target>PulseAudio Volume Control:input_FR-11981</Target>
+  </Connection>
+  <Connection>
+   <Source>Noise Canceling source:capture_1</Source>
+   <Target>PulseAudio Volume Control:input_1-11973</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-151:output_FL</Source>
+   <Target>VirtualSpeaker:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-151:output_FL</Source>
+   <Target>PulseAudio Volume Control:input_FL-12041</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-151:output_FR</Source>
+   <Target>VirtualSpeaker:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-151:output_FR</Source>
+   <Target>PulseAudio Volume Control:input_FR-12043</Target>
+  </Connection>
+  <Connection>
+   <Source>Firefox:output_FL-7956</Source>
+   <Target>VirtualSpeaker:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Firefox:output_FL-7956</Source>
+   <Target>PulseAudio Volume Control:input_FL-12033</Target>
+  </Connection>
+  <Connection>
+   <Source>Firefox:output_FR-7957</Source>
+   <Target>VirtualSpeaker:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Firefox:output_FR-7957</Source>
+   <Target>PulseAudio Volume Control:input_FR-12035</Target>
+  </Connection>
+  <Connection>
+   <Source>Noise Suppressor for Voice (Mono):Output</Source>
+   <Target>Calf Studio Gear:Equalizer 12 Band In #1</Target>
+  </Connection>
+  <Connection>
+   <Source>Noise Suppressor for Voice (Mono):Output</Source>
+   <Target>Calf Studio Gear:Equalizer 12 Band In #2</Target>
+  </Connection>
+  <Connection>
+   <Source>Gain Virtual Speaker (Stereo):Audio Output 1</Source>
+   <Target>Built-in Audio:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Gain Virtual Speaker (Stereo):Audio Output 2</Source>
+   <Target>Built-in Audio:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Calf Studio Gear:Equalizer 12 Band Out #1</Source>
+   <Target>Calf Studio Gear:Compressor In #1</Target>
+  </Connection>
+  <Connection>
+   <Source>Calf Studio Gear:Equalizer 12 Band Out #2</Source>
+   <Target>Calf Studio Gear:Compressor In #2</Target>
+  </Connection>
+  <Connection>
+   <Source>Calf Studio Gear:Compressor Out #1</Source>
+   <Target>Calf Studio Gear:Reverb In #1</Target>
+  </Connection>
+  <Connection>
+   <Source>Calf Studio Gear:Compressor Out #2</Source>
+   <Target>Calf Studio Gear:Reverb In #2</Target>
+  </Connection>
+  <Connection>
+   <Source>Calf Studio Gear:Reverb Out #1</Source>
+   <Target>Calf Valerio Mic Gain (Stereo):input_1</Target>
+  </Connection>
+  <Connection>
+   <Source>Calf Studio Gear:Reverb Out #2</Source>
+   <Target>Calf Valerio Mic Gain (Stereo):input_2</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium:output_FL</Source>
+   <Target>VirtualSpeaker:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium:output_FL</Source>
+   <Target>PulseAudio Volume Control:input_FL-12037</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium:output_FR</Source>
+   <Target>VirtualSpeaker:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium:output_FR</Source>
+   <Target>PulseAudio Volume Control:input_FR-12039</Target>
+  </Connection>
+  <Connection>
+   <Source>Firefox:output_FL</Source>
+   <Target>VirtualSpeaker:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Firefox:output_FL</Source>
+   <Target>PulseAudio Volume Control:input_FL-12029</Target>
+  </Connection>
+  <Connection>
+   <Source>Firefox:output_FR</Source>
+   <Target>VirtualSpeaker:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Firefox:output_FR</Source>
+   <Target>PulseAudio Volume Control:input_FR-12031</Target>
+  </Connection>
+  <Connection>
+   <Source>Calf Valerio Mic Gain (Stereo):output_1</Source>
+   <Target>VirtualMic:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Calf Valerio Mic Gain (Stereo):output_2</Source>
+   <Target>VirtualMic:input_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-465:output_FL</Source>
+   <Target>VirtualSpeaker:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-465:output_FL</Source>
+   <Target>PulseAudio Volume Control:input_FL-12045</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-465:output_FR</Source>
+   <Target>VirtualSpeaker:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-465:output_FR</Source>
+   <Target>PulseAudio Volume Control:input_FR-12047</Target>
+  </Connection>
+  <Connection>
+   <Source>Firefox:output_FL-12360</Source>
+   <Target>VirtualSpeaker:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Firefox:output_FL-12360</Source>
+   <Target>PulseAudio Volume Control:input_FL-12365</Target>
+  </Connection>
+  <Connection>
+   <Source>Firefox:output_FR-12361</Source>
+   <Target>VirtualSpeaker:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Firefox:output_FR-12361</Source>
+   <Target>PulseAudio Volume Control:input_FR-12367</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-517:output_FL</Source>
+   <Target>VirtualSpeaker:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-517:output_FL</Source>
+   <Target>PulseAudio Volume Control:input_FL-12049</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-517:output_FR</Source>
+   <Target>VirtualSpeaker:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-517:output_FR</Source>
+   <Target>PulseAudio Volume Control:input_FR-12051</Target>
+  </Connection>
+  <Connection>
+   <Source>VirtualSpeaker:monitor_FL</Source>
+   <Target>Gain Virtual Speaker (Stereo):Audio Input 1</Target>
+  </Connection>
+  <Connection>
+   <Source>VirtualSpeaker:monitor_FL</Source>
+   <Target>PulseAudio Volume Control:input_FL-11969</Target>
+  </Connection>
+  <Connection>
+   <Source>VirtualSpeaker:monitor_FR</Source>
+   <Target>Gain Virtual Speaker (Stereo):Audio Input 2</Target>
+  </Connection>
+  <Connection>
+   <Source>VirtualSpeaker:monitor_FR</Source>
+   <Target>PulseAudio Volume Control:input_FR-11971</Target>
+  </Connection>
+  <Connection>
+   <Source>Built-in Audio:monitor_FL</Source>
+   <Target>PulseAudio Volume Control:input_FL-11975</Target>
+  </Connection>
+  <Connection>
+   <Source>Built-in Audio:monitor_FR</Source>
+   <Target>PulseAudio Volume Control:input_FR-11977</Target>
+  </Connection>
+  <Connection>
+   <Source>Built-in Audio (HDMI 0):monitor_1</Source>
+   <Target>PulseAudio Volume Control:input_FL-11983</Target>
+  </Connection>
+  <Connection>
+   <Source>Built-in Audio (HDMI 0):monitor_2</Source>
+   <Target>PulseAudio Volume Control:input_FR-11985</Target>
+  </Connection>
+  <Connection>
+   <Source>Built-in Audio (HDMI 1):monitor_1</Source>
+   <Target>PulseAudio Volume Control:input_FL-11987</Target>
+  </Connection>
+  <Connection>
+   <Source>Built-in Audio (HDMI 1):monitor_2</Source>
+   <Target>PulseAudio Volume Control:input_FR-11989</Target>
+  </Connection>
+  <Connection>
+   <Source>Built-in Audio (HDMI 2):monitor_1</Source>
+   <Target>PulseAudio Volume Control:input_FL-11991</Target>
+  </Connection>
+  <Connection>
+   <Source>Built-in Audio (HDMI 2):monitor_2</Source>
+   <Target>PulseAudio Volume Control:input_FR-11993</Target>
+  </Connection>
+  <Connection>
+   <Source>Built-in Audio (HDMI 3):monitor_1</Source>
+   <Target>PulseAudio Volume Control:input_FL-11995</Target>
+  </Connection>
+  <Connection>
+   <Source>Built-in Audio (HDMI 3):monitor_2</Source>
+   <Target>PulseAudio Volume Control:input_FR-11997</Target>
+  </Connection>
+  <Connection>
+   <Source>Built-in Audio (HDMI 4):monitor_1</Source>
+   <Target>PulseAudio Volume Control:input_FL-11999</Target>
+  </Connection>
+  <Connection>
+   <Source>Built-in Audio (HDMI 4):monitor_2</Source>
+   <Target>PulseAudio Volume Control:input_FR-12001</Target>
+  </Connection>
+  <Connection>
+   <Source>VirtualMic:capture_FL</Source>
+   <Target>Noise Canceling source:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>VirtualMic:capture_FL</Source>
+   <Target>VirtualSpeaker:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>VirtualMic:capture_FL</Source>
+   <Target>PulseAudio Volume Control:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>VirtualMic:capture_FR</Source>
+   <Target>Noise Canceling source:input_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>VirtualMic:capture_FR</Source>
+   <Target>PulseAudio Volume Control:input_FR</Target>
+  </Connection>
+  <Positions>
+   <Position x1="1315" y1="647" x2="2158" y2="183">
+    <Name>Built-in Audio</Name>
+   </Position>
+   <Position x1="1793" y1="447">
+    <Name>Noise Canceling source</Name>
+   </Position>
+   <Position x1="2027" y1="1067">
+    <Name>Calf Studio Gear</Name>
+   </Position>
+   <Position x1="1323" y1="441" x2="2040" y2="1275">
+    <Name>VirtualMic</Name>
+   </Position>
+   <Position x1="1796" y1="180">
+    <Name>VirtualSpeaker</Name>
+   </Position>
+   <Position x1="1190" y1="2227" x2="2250" y2="2257">
+    <Name>Midi-Bridge</Name>
+   </Position>
+   <Position x1="1785" y1="294">
+    <Name>Gain Virtual Speaker (Stereo)</Name>
+   </Position>
+   <Position x1="1751" y1="1108">
+    <Name>Noise Suppressor for Voice (Mono)</Name>
+   </Position>
+  </Positions>
+ </ExternalPatchbay>
+</CARLA-PROJECT>
