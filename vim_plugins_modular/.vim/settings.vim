@@ -46,6 +46,7 @@ set showmatch           " highlight matching [{()}]
 set path+=**
 " Display all matching files when we tab complete
 set wildmenu
+
 set pastetoggle=<F2>
 
 " Extra column for linting
@@ -87,7 +88,7 @@ set foldmethod=indent   " fold based on indent level
 " -----------------------------------------------------------------------------
 
 " Always show the status line
-" set laststatus=2
+set laststatus=2
 
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
