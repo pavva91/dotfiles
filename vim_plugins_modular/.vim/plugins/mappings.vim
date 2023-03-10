@@ -62,11 +62,13 @@ nnoremap <leader>gu :GitGutterUndoHunk<CR>
 " COC MAPPINGS
 " -----------------------------------------------------------------------------
 " Mappings for CoCList
+" Show diagnostics list
+nnoremap <silent> <leader>d :<C-u>CocList diagnostics<cr>
+
 " Show all diagnostics.
 " :CocList diagnostics gives error: Uncaught exception: EISDIR: illegal
 " operation on a directory, read
-" nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-nnoremap <silent><nowait> <leader>a  :<C-u>CocDiagnostics<cr>
+nnoremap <silent><nowait> <leader>q  :<C-u>CocDiagnostics<cr>
 " Manage extensions.
 nnoremap <silent><nowait> <leader>e  :<C-u>CocList extensions<cr>
 " Show commands.
@@ -91,9 +93,6 @@ nmap <leader>lf <Plug>(coc-format)
 
 " Show documentation for the word under the cursor
 nnoremap <silent> K :call CocAction('doHover')<CR>
-
-" Show diagnostics list
-nnoremap <silent> <leader>d :<C-u>CocList diagnostics<cr>
 
 " Show symbols list
 nnoremap <silent> <leader>s :<C-u>CocList -I symbols<cr>
