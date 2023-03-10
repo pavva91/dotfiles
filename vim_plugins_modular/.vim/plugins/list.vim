@@ -24,8 +24,12 @@ call plug#begin()
     " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
     Plug 'junegunn/vim-easy-align'
 
-    " On-demand loading
+    " Nerd Tree
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    "  " ---> nerdtree git changes <---
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
     Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
     "a Plugin outside ~/.vim/plugged with post-update hook
@@ -92,8 +96,6 @@ call plug#begin()
     Plug 'tpope/vim-fugitive'
     " ---> git changes on the gutter <---
      Plug 'airblade/vim-gitgutter'
-    "  " ---> nerdtree git changes <---
-     Plug 'Xuyuanp/nerdtree-git-plugin'
     "  "}}
 
     " Debug
