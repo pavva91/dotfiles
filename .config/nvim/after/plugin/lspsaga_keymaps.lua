@@ -15,6 +15,10 @@ keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>",
 keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>",
 	{ desc = '[R]e[N]ame all occurrences of the hovered word for the entire file' })
 
+-- Rename all occurrences of the hovered word for the entire file
+keymap("n", "<leader>cw", "<cmd>Lspsaga rename<CR>",
+	{ desc = '[R]e[N]ame all occurrences of the hovered word for the entire file' })
+
 -- Rename all occurrences of the hovered word for the selected files
 keymap("n", "<leader>rf", "<cmd>Lspsaga rename ++project<CR>",
 	{ desc = '[R]ename all occurrences of the hovered word for the selected [F]iles' })
@@ -105,6 +109,6 @@ keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>",
 keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>",
 	{ desc = 'Call Hierarchy Outgoing Calls' })
 
--- Floating terminal
+-- Floating terminal (Alt-d)
 keymap({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>",
 	{ desc = 'Floating Terminal (Alt-d)' })
