@@ -13,13 +13,11 @@
   "coc.source.buffer.priority": 4,
   "hover.target": "float",
   // diagnostic
-  // "diagnostic.errorSign": "✗",
-  "diagnostic.errorSign": "❌",
-  // "diagnostic.infoSign": "ℹ",
-  "diagnostic.infoSign": "󰋽",
-  // "diagnostic.hintSign": "➤",
-  "diagnostic.hintSign": "",
-  "diagnostic.warningSign": "⚠",
+  "diagnostic.refreshOnInsertMode": true,
+  "diagnostic.errorSign": " ",
+  "diagnostic.infoSign": " ",
+  "diagnostic.hintSign": "",
+  "diagnostic.warningSign": " ",
   // codeLens
   // turn off codeLens stuff for improving performance
   "codeLens.enable": true,
