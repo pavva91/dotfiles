@@ -1,4 +1,5 @@
 -- VANILLA SETTINGS -----------------------------------------------------------------
+local set = vim.opt
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -14,73 +15,74 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Make relative line numbers default
-vim.opt.relativenumber = true
+set.relativenumber = true
 
-vim.opt.pastetoggle = "<F2>"
-vim.opt.showcmd = true
-vim.opt.cursorline = true
+set.pastetoggle = "<F2>"
+set.showcmd = true
+set.cursorline = true
 
 -- Default indentation 4 spaces
-vim.opt.tabstop = 4      -- number of visual spaces per TAB
-vim.opt.softtabstop = 4  -- number of spaces in tab when editing
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true -- tabs are spaces
-vim.opt.smartindent = true
+set.tabstop = 4      -- number of visual spaces per TAB
+set.softtabstop = 4  -- number of spaces in tab when editing
+set.shiftwidth = 4
+set.expandtab = true -- tabs are spaces
+set.smartindent = true
 
 -- Set indentation width ot 2 spaces
--- vim.opt.autoindent = true
--- vim.opt.expandtab = true
--- vim.opt.tabstop = 2
--- vim.opt.shiftwidth = 2
+-- set.autoindent = true
+-- set.expandtab = true
+-- set.tabstop = 2
+-- set.shiftwidth = 2
 -- set autoindent expandtab tabstop=2 shiftwidth=2
 
 -- Set termguicolors, needed for nvim-colorizer
-vim.opt.termguicolors = true
+set.termguicolors = true
 
-vim.opt.splitbelow = true
-vim.opt.splitright = true
+set.splitbelow = true
+set.splitright = true
 
 -- Show the 80th Column
 vim.api.nvim_set_option("colorcolumn", "+1")
-vim.opt.colorcolumn = "80"
+set.colorcolumn = "80"
 
 -- Set highlight on search
-vim.o.hlsearch = false
+set.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
 
 -- Enable mouse mode
-vim.o.mouse = 'a'
+set.mouse = 'a'
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard = ''
+set.clipboard = ''
 
 -- Enable break indent
-vim.o.breakindent = true
+set.breakindent = true
 
 -- Save undo history
-vim.o.undofile = true
+set.undofile = true
 
 -- Case insensitive searching UNLESS /C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
+set.ignorecase = true
+set.smartcase = true
 
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
 
 -- Decrease update time
-vim.o.updatetime = 250
-vim.o.timeout = true
-vim.o.timeoutlen = 300
+set.updatetime = 250
+set.timeout = true
+set.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'noinsert,menuone,noselect'
+-- set.completeopt = 'menuone,noselect'
+set.completeopt = 'noinsert,menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
+set.termguicolors = true
 
 -- Disable Swap to allow modification from other text editors (e.g. VScodium, vim)
-vim.opt.swapfile = false
+set.swapfile = false

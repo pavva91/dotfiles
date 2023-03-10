@@ -68,9 +68,9 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev,
 	{ desc = 'Go to Next [D]iagnostic' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next,
 	{ desc = 'Go to Previous [D]iagnostic' })
-vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float,
+vim.keymap.set('n', '<leader>q', vim.diagnostic.open_float,
 	{ desc = 'Open Diagnostic floating window' })
-vim.keymap.set('n', '<leader>l', vim.diagnostic.setloclist,
+vim.keymap.set('n', '<leader>d', vim.diagnostic.setloclist,
 	{ desc = 'Open List of Diagnostics' })
 
 -- buffer search shortcut
