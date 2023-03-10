@@ -40,6 +40,7 @@ set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
 set wildmenu            " visual autocomplete for command menu
 set showmatch           " highlight matching [{()}]
+
 "set termguicolors
 " Search down into subfolders
 " Provides tab completion for all file-related tasks
@@ -214,4 +215,3 @@ function! ToggleVExplorer()
          let t:expl_buf_num = bufnr("%")
     endif
 endfunction
-map <F3> :call ToggleVExplorer()<CR>
