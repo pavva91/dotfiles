@@ -21,8 +21,8 @@ vim.opt.showcmd = true
 vim.opt.cursorline = true
 
 -- Default indentation 4 spaces
-vim.opt.tabstop = 4 -- number of visual spaces per TAB
-vim.opt.softtabstop = 4 -- number of spaces in tab when editing
+vim.opt.tabstop = 4      -- number of visual spaces per TAB
+vim.opt.softtabstop = 4  -- number of spaces in tab when editing
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true -- tabs are spaces
 vim.opt.smartindent = true
@@ -81,3 +81,6 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+-- Disable Swap to allow modification from other text editors (e.g. VScodium, vim)
+vim.opt.swapfile = false
