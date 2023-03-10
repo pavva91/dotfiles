@@ -12,6 +12,24 @@ autocmd VimEnter * NERDTree | wincmd p
 " ---> show hidden files <---
 let NERDTreeShowHidden=1
 
+" -----------------------------------------------------------------------------
+" => NERDTree Git Plugin https://github.com/Xuyuanp/nerdtree-git-plugin
+" -----------------------------------------------------------------------------
+
+let g:NERDTreeGitStatusUseNerdFonts = 1
+
+" let g:NERDTreeGitStatusIndicatorMapCustom = {
+"                 \ 'Modified'  :'✹',
+"                 \ 'Staged'    :'✚',
+"                 \ 'Untracked' :'✭',
+"                 \ 'Renamed'   :'➜',
+"                 \ 'Unmerged'  :'═',
+"                 \ 'Deleted'   :'✖',
+"                 \ 'Dirty'     :'✗',
+"                 \ 'Ignored'   :'☒',
+"                 \ 'Clean'     :'✔︎',
+"                 \ 'Unknown'   :'?',
+"                 \ }
 
 " -----------------------------------------------------------------------------
 " => CloseTag https://github.com/alvan/vim-closetag
