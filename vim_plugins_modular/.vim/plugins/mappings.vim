@@ -48,6 +48,17 @@ nnoremap <F8> :TagbarToggle<CR>
 " https://gist.github.com/miguelgrinberg/527bb5a400791f89b3c4da4bd61222e4
 
 " -----------------------------------------------------------------------------
+" GIT GUTTER
+" -----------------------------------------------------------------------------
+nnoremap ]h :GitGutterNextHunk<CR>
+nnoremap [h :GitGutterPrevHunk<CR>
+nnoremap <leader>gd :GitGutterDiffOrig<CR>
+nnoremap <leader>gf :GitGutterFold<CR>
+nnoremap <leader>gh :GitGutterLineHighlightsToggle<CR>
+nnoremap <leader>sh :GitGutterStageHunk<CR>
+nnoremap <leader>gu :GitGutterUndoHunk<CR>
+
+" -----------------------------------------------------------------------------
 " COC MAPPINGS
 " -----------------------------------------------------------------------------
 " Mappings for CoCList
