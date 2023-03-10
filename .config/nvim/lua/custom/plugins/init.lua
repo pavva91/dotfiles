@@ -53,5 +53,7 @@ return {
 	'sheerun/vim-wombat-scheme',
 	-- Fuzzy Finder
 	'junegunn/fzf',
-	'junegunn/fzf.vim'
+	'junegunn/fzf.vim',
+	-- Undo Tree
+	'mbbill/undotree'
 }
