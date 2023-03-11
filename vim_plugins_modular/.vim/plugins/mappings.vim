@@ -1,6 +1,9 @@
 " -----------------------------------------------------------------------------
 " => MAPPINGS PLUGINS
 " -----------------------------------------------------------------------------
+" nnoremap <silent> <space> :WhichKey '<Space>'<CR>
+" nnoremap <silent> g :WhichKey 'g'<CR>
+
 map <F3> :NERDTreeToggle<CR>
 nnoremap <F5> :UndotreeToggle<CR>
 
