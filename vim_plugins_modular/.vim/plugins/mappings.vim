@@ -42,7 +42,7 @@ nnoremap <leader>h :FzfHistory:<CR>
 " nnoremap <leader>s :Startify<CR>
 
 " Easy align interactive
-vnoremap <silent> <Enter> :EasyAlign<cr>
+vnoremap <Enter> :EasyAlign<cr>
 
 nnoremap <F8> :TagbarToggle<CR>
 
@@ -60,7 +60,7 @@ nnoremap <leader>gd :GitGutterDiffOrig<CR>
 nnoremap <leader>gf :GitGutterFold<CR>
 nnoremap <leader>gh :GitGutterLineHighlightsToggle<CR>
 nnoremap <leader>sh :GitGutterStageHunk<CR>
-nnoremap <leader>gu :GitGutterUndoHunk<CR>
+nnoremap <leader>hr :GitGutterUndoHunk<CR> " Hunk Reset
 
 " -----------------------------------------------------------------------------
 " COC MAPPINGS
