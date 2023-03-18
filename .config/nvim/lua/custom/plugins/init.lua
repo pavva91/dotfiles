@@ -15,7 +15,7 @@ return {
 	-- Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 	'junegunn/vim-easy-align',
 	--- Start Page
-	'mhinz/vim-startify',
+	-- 'mhinz/vim-startify',
 	-- {{ Autopairs
 	-- ---> closing XML tags <---
 	-- 'alvan/vim-closetag',

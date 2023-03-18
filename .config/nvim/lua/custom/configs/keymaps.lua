@@ -122,3 +122,7 @@ vim.keymap.set('n', '<leader>wl', function()
 		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 	end,
 	{ desc = '[W]orkspace [L]ist Folders' })
+
+-- Format
+vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format,
+	{ desc = '[L]SP [F]ormat open buffer' })
