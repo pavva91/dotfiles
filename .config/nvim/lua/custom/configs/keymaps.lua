@@ -92,7 +92,7 @@ nmap <leader>e :e %:h/
 nmap <leader>v :vs %:h/
 ]])
 
--- Set LSP keymaps
+-- Set LSP keymaps (commented are overwritten by LSP Saga)
 
 -- vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename,
 -- 	{ desc = '[R]e[n]ame' })
