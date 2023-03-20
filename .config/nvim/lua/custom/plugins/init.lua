@@ -55,5 +55,7 @@ return {
 	'junegunn/fzf',
 	'junegunn/fzf.vim',
 	-- Undo Tree
-	'mbbill/undotree'
+	'mbbill/undotree',
+	-- Vim LaTeX support
+	-- 'lervag/vimtex'
 }
