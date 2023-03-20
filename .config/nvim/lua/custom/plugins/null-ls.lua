@@ -18,9 +18,12 @@ return {
 				require("null-ls").builtins.code_actions.eslint,
 
 				-- Refactoring (https://github.com/ThePrimeagen/refactoring.nvim)
-				-- require("null-ls").builtins.code_actions.refactoring.with({
-				-- 	Filetypes = { "go", "javascript", "lua", "python", "typescript" }
-				-- })
+				require("null-ls").builtins.code_actions.refactoring.with({
+					Filetypes = { "go", "javascript", "lua", "python", "typescript" }
+				})
+
+				-- Spell suggestions code completion
+				-- require("null-ls").builtins.completion.spell,
 
 			}
 		}
