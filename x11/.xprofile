@@ -11,3 +11,5 @@ export GOPATH=~/go
 export GOBIN=/usr/local/go/bin
 export PATH=$PATH:$GOBIN
 
+# Project
+export API=$GOPATH/src/gitlab.devops.ti.howest.be/ibm-metaverse/wallet-api
