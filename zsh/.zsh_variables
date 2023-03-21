@@ -4,11 +4,11 @@ export VISUAL=nvim;
 export EDITOR=nvim;
 
 # Set Go path
-export GOPATH=~/go
+# export GOPATH=~/go
 
 # Add Go binary
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOBIN
+# export GOBIN=$GOPATH/bin
+# export PATH=$PATH:$GOBIN
 
 # less with colors
 export LESS_TERMCAP_mb=$'\e[1;32m'

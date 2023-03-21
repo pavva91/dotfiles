@@ -3,13 +3,13 @@
 export VISUAL=vim;
 export EDITOR=vim;
 
-# Set Go path
-export GOPATH=~/go
+# # Set Go path
+# export GOPATH=~/go
 
-# Add Go binary
-# export GOBIN=$GOPATH/bin
-export GOBIN=/usr/local/go/bin
-export PATH=$PATH:$GOBIN
+# # Add Go binary
+# # export GOBIN=$GOPATH/bin
+# export GOBIN=/usr/local/go/bin
+# export PATH=$PATH:$GOBIN
 
 # less with colors
 export LESS_TERMCAP_mb=$'\e[1;32m'
