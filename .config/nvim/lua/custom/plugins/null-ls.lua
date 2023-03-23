@@ -21,13 +21,13 @@ return {
 				require("null-ls").builtins.formatting.eslint,
 
 				-- GitSigns
-				require("null-ls").builtins.code_actions.gitsigns.with({
-					config = {
-						filter_actions = function(title)
-							return title:lower():match("blame") == nil -- filter out blame actions
-						end,
-					},
-				}),
+				-- require("null-ls").builtins.code_actions.gitsigns.with({
+				-- 	config = {
+				-- 		filter_actions = function(title)
+				-- 			return title:lower():match("blame") == nil -- filter out blame actions
+				-- 		end,
+				-- 	},
+				-- }),
 
 				-- Text Lint - The pluggable linting tool for text and Markdown.
 				-- require("null-ls").builtins.diagnostics.textlint
