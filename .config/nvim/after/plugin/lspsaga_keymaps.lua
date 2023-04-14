@@ -110,5 +110,5 @@ keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>",
 	{ desc = 'Call Hierarchy Outgoing Calls' })
 
 -- Floating terminal (Alt-d)
-keymap({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>",
-	{ desc = 'Floating Terminal (Alt-d)' })
+-- keymap({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>",
+-- 	{ desc = 'Floating Terminal (Alt-d)' })
