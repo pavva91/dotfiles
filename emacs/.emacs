@@ -50,3 +50,11 @@
 ;; Enable Evil
 (require 'evil)
 (evil-mode 1)
+
+;; Org Mode Settings
+;;(after! org
+(setq org-directory "~/org/")
+(setq org-agenda-files '("~/org/agenda.org"))
+  ;;(setq org-todo-keywords '((sequence "TODO(t)" "PROGRESS(p)" "WAIT(w)" "DONE(d)" "CANCELLED(c)" )))
+  ;;(require 'org-bullets)
+;;)
