@@ -123,12 +123,28 @@ function! GitInfo()
     endif
 endfunction
 
+" Automatically change the statusline color depending on mode
+function! ChangeStatuslineColor()
+    if (mode() =~# '\v(n|no)')
+        exe 'hi! StatusLine ctermfg=004'
+    elseif (mode() =~# '\v(v|V)' || g:currentmode[mode()] ==# 'V·Block' || get(g:currentmode, mode(), '') ==# 't')
+        exe 'hi! StatusLine ctermfg=005'
+    elseif (mode() ==# 'i')
+        exe 'hi! StatusLine ctermfg=002'
+    else
+        exe 'hi! StatusLine ctermfg=006'
+    endif
+
+    return ''
+endfunction
+
 " Always show the status line
 set laststatus=2
 
 " Format the status line
 set statusline=
 set statusline+=\ 
+set statusline+=%{ChangeStatuslineColor()}                  " Changing the statusline color
 set statusline+=%0*\ %{toupper(g:currentmode[mode()])}      "Vim Mode"
 set statusline+=%{HasPaste()}
 set statusline+=%{GitInfo()}                                "Current Git Branch"
