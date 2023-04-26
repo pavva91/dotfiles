@@ -135,7 +135,6 @@ set statusline+=%{GitInfo()}                                "Current Git Branch"
 set statusline+=\ %F%m%r%h\                                 "Open Buffer Filepath"
 set statusline+=%w\                                         "filestatus"
 set statusline+=\ CWD:\ %r%{getcwd()}%h\                    "Current Working Directory"
-
 set statusline+=%0*\ %3p%%\ \ %l:\ %3c\                    " Rownumber/total (%)
 
 " space open/closes folds
