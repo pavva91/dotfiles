@@ -232,6 +232,7 @@ endif
 " => Helper functions
 " -----------------------------------------------------------------------------
 " Returns true if paste mode is enabled
+" FEATURE BRANCH ADD
 function! HasPaste()
     if &paste
         return 'PASTE MODE  '
