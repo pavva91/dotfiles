@@ -232,6 +232,8 @@ endif
 " => Helper functions
 " -----------------------------------------------------------------------------
 " Returns true if paste mode is enabled
+" MAIN BRANCH
+" CONFLICT
 function! HasPaste()
     if &paste
         return 'PASTE MODE  '
