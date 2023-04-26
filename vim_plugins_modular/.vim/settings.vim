@@ -232,12 +232,6 @@ endif
 " => Helper functions
 " -----------------------------------------------------------------------------
 " Returns true if paste mode is enabled
-<<<<<<< HEAD
-" MAIN BRANCH
-" CONFLICT
-=======
-" FEATURE BRANCH ADD
->>>>>>> feature-branch
 function! HasPaste()
     if &paste
         return 'PASTE MODE  '
