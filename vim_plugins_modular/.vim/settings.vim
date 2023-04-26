@@ -92,11 +92,51 @@ set foldmethod=indent   " fold based on indent level
 " => Status line
 " -----------------------------------------------------------------------------
 
+let g:currentmode={
+    \ 'n'      : 'Normal ',
+    \ 'no'     : 'N·Operator Pending ',
+    \ 'v'      : 'Visual ',
+    \ 'V'      : 'V-Line ',
+    \ '\<C-V>' : 'V-Block ',
+    \ 's'      : 'Select ',
+    \ 'S'      : 'S-Line ',
+    \ '\<C-S>' : 'S-Block ',
+    \ 'i'      : 'Insert ',
+    \ 'R'      : 'Replace ',
+    \ 'Rv'     : 'V-Replace ',
+    \ 'c'      : 'Command ',
+    \ 'cv'     : 'Vim Ex ',
+    \ 'ce'     : 'Ex ',
+    \ 'r'      : 'Prompt ',
+    \ 'rm'     : 'More ',
+    \ 'r?'     : 'Confirm ',
+    \ '!'      : 'Shell ',
+    \ 't'      : 'Terminal '
+    \}
+
+function! GitInfo()
+    let git = FugitiveHead()
+    if git != ''
+        return ' '.FugitiveHead()
+    else
+        return ''
+    endif
+endfunction
+
 " Always show the status line
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ %l:\%c
+set statusline=
+set statusline+=\ 
+set statusline+=%0*\ %{toupper(g:currentmode[mode()])}      "Vim Mode"
+set statusline+=%{HasPaste()}
+set statusline+=%{GitInfo()}                                "Current Git Branch"
+set statusline+=\ %F%m%r%h\                                 "Open Buffer Filepath"
+set statusline+=%w\                                         "filestatus"
+set statusline+=\ CWD:\ %r%{getcwd()}%h\                    "Current Working Directory"
+
+set statusline+=%0*\ %3p%%\ \ %l:\ %3c\                    " Rownumber/total (%)
 
 " space open/closes folds
 nnoremap <space> za
