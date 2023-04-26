@@ -8,3 +8,4 @@ vim.keymap.set('n', '<leader>sH', '<cmd>Gitsigns undo_stage_hunk<cr>', { desc = 
 vim.keymap.set('n', '<leader>hs', '<cmd>Gitsigns select_hunk<cr>', { desc = '[H]unk [S]elect where the cursor is on' })
 vim.keymap.set({ "n", "v" }, '<leader>hr', '<cmd>Gitsigns reset_hunk<cr>',
 { desc = '[H]unk [R]eset where the cursor is on' })
+vim.keymap.set('n', '<leader>gb', '<cmd>Gitsigns toggle_current_line_blame<cr>', { desc = 'Toggle [G]it [B]lame Current Line' })
