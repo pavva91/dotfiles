@@ -183,3 +183,13 @@ nmap <silent> <C-s> <Plug>(coc-range-select)
 xmap <silent> <C-s> <Plug>(coc-range-select)
 nmap <silent> <C-S> <Plug>(coc-range-select-backward)
 xmap <silent> <C-S> <Plug>(coc-range-select-backward)
+
+" -----------------------------------------------------------------------------
+" VIM TEST
+" -----------------------------------------------------------------------------
+nmap <silent> <leader>tt :TestNearest<CR>
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tv :TestVisit<CR>

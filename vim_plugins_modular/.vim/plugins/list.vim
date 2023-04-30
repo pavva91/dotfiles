@@ -98,6 +98,9 @@ call plug#begin()
      Plug 'airblade/vim-gitgutter'
     "  "}}
 
+    " Run Tests
+    Plug 'vim-test/vim-test'
+
     " Debug
     Plug 'puremourning/vimspector'
 
