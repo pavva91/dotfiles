@@ -193,3 +193,10 @@ nmap <silent> <leader>tf :TestFile<CR>
 nmap <silent> <leader>ts :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tv :TestVisit<CR>
+
+" -----------------------------------------------------------------------------
+" VIM FUGITIVE (GIT INTEGRATION)
+" -----------------------------------------------------------------------------
+nmap <leader>gm :Gvdiffsplit!<CR>
+nmap <leader>gs :G<CR>
+nmap <leader>gg :G log --oneline --decorate --graph --all<CR>
