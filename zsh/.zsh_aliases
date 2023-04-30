@@ -95,3 +95,9 @@ alias virtualspeaker2output=~/bash_scripts/check_bluetooth_headphones_and_connec
 
 # Adjust HDMI-1 Screen Brightness and gamma presets
 alias dimmer=~/bash_scripts/dimmer.sh
+
+# Function for Go Test Coverage automation
+cover () {
+    t="/tmp/go-cover.$$.tmp"
+    go test -coverprofile=$t $@ && go tool cover -html=$t && unlink $t
+}
