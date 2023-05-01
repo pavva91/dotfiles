@@ -126,5 +126,10 @@ end, { desc = "[W]orkspace [L]ist Folders" })
 vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "[L]SP [F]ormat open buffer" })
 
 -- Git Merge Resolve conflicts (gitdiff)
-vim.keymap.set("n", "<leader>gj", "<cmd>diffget //2<CR>", { desc = "[G]it Diffget from Right (target branch, usually master)" })
+vim.keymap.set(
+	"n",
+	"<leader>gj",
+	"<cmd>diffget //2<CR>",
+	{ desc = "[G]it Diffget from Right (target branch, usually master)" }
+)
 vim.keymap.set("n", "<leader>gf", "<cmd>diffget //3<CR>", { desc = "[G]it Diffget from Left (merge branch)" })
