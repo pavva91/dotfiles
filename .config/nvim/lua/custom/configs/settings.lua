@@ -4,15 +4,15 @@ local set = vim.opt
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Theme
-vim.cmd.colorscheme 'desert'
+vim.cmd.colorscheme("desert")
 
 -- Leader
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Make relative line numbers default
 set.relativenumber = true
@@ -52,12 +52,12 @@ set.hlsearch = false
 vim.wo.number = true
 
 -- Enable mouse mode
-set.mouse = 'a'
+set.mouse = "a"
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-set.clipboard = ''
+set.clipboard = ""
 
 -- Enable break indent
 set.breakindent = true
@@ -70,7 +70,7 @@ set.ignorecase = true
 set.smartcase = true
 
 -- Keep signcolumn on by default
-vim.wo.signcolumn = 'yes'
+vim.wo.signcolumn = "yes"
 
 -- Decrease update time
 set.updatetime = 250
@@ -79,7 +79,7 @@ set.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
 -- set.completeopt = 'menuone,noselect'
-set.completeopt = 'noinsert,menuone,noselect'
+set.completeopt = "noinsert,menuone,noselect"
 
 -- NOTE: You should make sure your terminal supports this
 set.termguicolors = true
