@@ -113,5 +113,6 @@
   // JavaScript
   "coc.preferences.formatOnType": true,
   // Vue.js
-  "volar.enable": true
+  "volar.enable": true,
+  "snippets.ultisnips.pythonPrompt": false
 }
