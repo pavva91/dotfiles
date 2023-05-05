@@ -65,7 +65,7 @@ set.breakindent = true
 -- Save undo history
 set.undofile = true
 
--- Case insensitive searching UNLESS /C or capital in search
+-- Case insensitive searching UNLESS /C or capital in search (:set noic to enable case sensitive search)
 set.ignorecase = true
 set.smartcase = true
 
@@ -80,9 +80,6 @@ set.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 -- set.completeopt = 'menuone,noselect'
 set.completeopt = "noinsert,menuone,noselect"
-
--- NOTE: You should make sure your terminal supports this
-set.termguicolors = true
 
 -- Disable Swap to allow modification from other text editors (e.g. VScodium, vim)
 set.swapfile = false
