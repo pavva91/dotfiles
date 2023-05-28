@@ -41,6 +41,7 @@ require("lazy").setup({
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
       { "williamboman/mason.nvim", config = true },
+      -- { "williamboman/mason.nvim"},
       "williamboman/mason-lspconfig.nvim",
 
       -- Useful status updates for LSP
@@ -48,9 +49,10 @@ require("lazy").setup({
       { "j-hui/fidget.nvim",       opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
-      "folke/neodev.nvim",
+      { "folke/neodev.nvim",       opts = {} },
     },
   },
+  -- { "mfussenegger/nvim-jdtls", ft = { "java" } },
 
   {
     -- Autocompletion
@@ -66,7 +68,7 @@ require("lazy").setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { "folke/which-key.nvim",          opts = {} },
+  { "folke/which-key.nvim",   opts = {} },
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
     "lewis6991/gitsigns.nvim",
@@ -199,6 +201,15 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
     vim.lsp.buf.format()
   end, { desc = "Format current buffer with LSP" })
+
+  require("jdtls").setup_dap({
+    hotcodereplace = "auto",
+    config_overrides = {
+      args = function()
+        return vim.fn.input("args: ", "")
+      end,
+    },
+  })
 end
 
 -- Enable the following language servers
@@ -229,7 +240,10 @@ local servers = {
       telemetry = { enable = false },
     },
   },
+  jdtls = {},
 }
+
+local excl_servers = { "jdtls" }
 
 -- Setup neovim lua configuration
 require("neodev").setup()
@@ -239,24 +253,44 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 -- Setup mason so it can manage external tooling
--- require('mason').setup()
+require("mason").setup()
 
--- Ensure the servers above are installed
+-- -- Ensure the servers above are installed
 local mason_lspconfig = require("mason-lspconfig")
 
 mason_lspconfig.setup({
   ensure_installed = vim.tbl_keys(servers),
 })
 
-mason_lspconfig.setup_handlers({
-  function(server_name)
-    require("lspconfig")[server_name].setup({
+-- mason_lspconfig.setup_handlers({
+--   function(server_name)
+--     require("lspconfig")[server_name].setup({
+--       capabilities = capabilities,
+--       on_attach = on_attach,
+--       settings = servers[server_name],
+--     })
+--   end,
+-- })
+-- local java_config = require('ftplugin.java').config
+for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
+  -- if not excl_servers[server_name] then
+  if server_name ~= "jdtls" then
+    -- vim.notify(server_name)
+    local config = {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = servers[server_name],
-    })
-  end,
-})
+    }
+    require("lspconfig")[server_name].setup(config)
+  end
+  if server_name == "jdtls" then
+    vim.notify("java server encountered!")
+  end
+end
+
+require("fidget").setup()
+
+-- Mason END
 
 -- nvim-cmp setup
 local cmp = require("cmp")
