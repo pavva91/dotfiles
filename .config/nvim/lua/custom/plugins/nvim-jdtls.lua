@@ -149,6 +149,13 @@ return {
                 jdtls.setup_dap({ hotcodereplace = "auto" })
                 jdtls_dap.setup_dap_main_class_configs()
                 jdtls_setup.add_commands()
+                require("lsp_signature").on_attach({
+                    bind = true,
+                    padding = '',
+                    handler_opts = {
+                        border = "rounded"
+                    }
+                }, bufnr)
             end,
             --
             -- 			-- Language server `initializationOptions` (init_options)
