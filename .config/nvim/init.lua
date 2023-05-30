@@ -201,14 +201,12 @@ local on_attach = function(_, bufnr)
     vim.lsp.buf.format()
   end, { desc = "Format current buffer with LSP" })
 
-  require("jdtls").setup_dap({
-    hotcodereplace = "auto",
-    config_overrides = {
-      args = function()
-        return vim.fn.input("args: ", "")
-      end,
+  require("lsp_signature").on_attach({
+    bind = true, -- This is mandatory, otherwise border config won't get registered.
+    handler_opts = {
+      border = "rounded",
     },
-  })
+  }, bufnr)
 end
 
 -- Enable the following language servers
