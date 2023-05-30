@@ -153,68 +153,8 @@
    <Target>Noise Suppressor for Voice (Mono):Input</Target>
   </Connection>
   <Connection>
-   <Source>Built-in Audio:capture_FL</Source>
-   <Target>PulseAudio Volume Control:input_FL-11979</Target>
-  </Connection>
-  <Connection>
    <Source>Built-in Audio:capture_FR</Source>
    <Target>Noise Suppressor for Voice (Mono):Input</Target>
-  </Connection>
-  <Connection>
-   <Source>Built-in Audio:capture_FR</Source>
-   <Target>PulseAudio Volume Control:input_FR-11981</Target>
-  </Connection>
-  <Connection>
-   <Source>Noise Canceling source:capture_1</Source>
-   <Target>PulseAudio Volume Control:input_1-11973</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-151:output_FL</Source>
-   <Target>VirtualSpeaker:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-151:output_FL</Source>
-   <Target>PulseAudio Volume Control:input_FL-12041</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-151:output_FR</Source>
-   <Target>VirtualSpeaker:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-151:output_FR</Source>
-   <Target>PulseAudio Volume Control:input_FR-12043</Target>
-  </Connection>
-  <Connection>
-   <Source>Firefox:output_FL-7956</Source>
-   <Target>VirtualSpeaker:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Firefox:output_FL-7956</Source>
-   <Target>PulseAudio Volume Control:input_FL-12033</Target>
-  </Connection>
-  <Connection>
-   <Source>Firefox:output_FR-7957</Source>
-   <Target>VirtualSpeaker:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Firefox:output_FR-7957</Source>
-   <Target>PulseAudio Volume Control:input_FR-12035</Target>
-  </Connection>
-  <Connection>
-   <Source>Noise Suppressor for Voice (Mono):Output</Source>
-   <Target>Calf Studio Gear:Equalizer 12 Band In #1</Target>
-  </Connection>
-  <Connection>
-   <Source>Noise Suppressor for Voice (Mono):Output</Source>
-   <Target>Calf Studio Gear:Equalizer 12 Band In #2</Target>
-  </Connection>
-  <Connection>
-   <Source>Gain Virtual Speaker (Stereo):Audio Output 1</Source>
-   <Target>Built-in Audio:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Gain Virtual Speaker (Stereo):Audio Output 2</Source>
-   <Target>Built-in Audio:playback_FR</Target>
   </Connection>
   <Connection>
    <Source>Calf Studio Gear:Equalizer 12 Band Out #1</Source>
@@ -241,36 +181,20 @@
    <Target>Calf Valerio Mic Gain (Stereo):input_2</Target>
   </Connection>
   <Connection>
-   <Source>Chromium:output_FL</Source>
-   <Target>VirtualSpeaker:playback_FL</Target>
+   <Source>Gain Virtual Speaker (Stereo):Audio Output 1</Source>
+   <Target>Built-in Audio:playback_FL</Target>
   </Connection>
   <Connection>
-   <Source>Chromium:output_FL</Source>
-   <Target>PulseAudio Volume Control:input_FL-12037</Target>
+   <Source>Gain Virtual Speaker (Stereo):Audio Output 2</Source>
+   <Target>Built-in Audio:playback_FR</Target>
   </Connection>
   <Connection>
-   <Source>Chromium:output_FR</Source>
-   <Target>VirtualSpeaker:playback_FR</Target>
+   <Source>Noise Suppressor for Voice (Mono):Output</Source>
+   <Target>Calf Studio Gear:Equalizer 12 Band In #1</Target>
   </Connection>
   <Connection>
-   <Source>Chromium:output_FR</Source>
-   <Target>PulseAudio Volume Control:input_FR-12039</Target>
-  </Connection>
-  <Connection>
-   <Source>Firefox:output_FL</Source>
-   <Target>VirtualSpeaker:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Firefox:output_FL</Source>
-   <Target>PulseAudio Volume Control:input_FL-12029</Target>
-  </Connection>
-  <Connection>
-   <Source>Firefox:output_FR</Source>
-   <Target>VirtualSpeaker:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Firefox:output_FR</Source>
-   <Target>PulseAudio Volume Control:input_FR-12031</Target>
+   <Source>Noise Suppressor for Voice (Mono):Output</Source>
+   <Target>Calf Studio Gear:Equalizer 12 Band In #2</Target>
   </Connection>
   <Connection>
    <Source>Calf Valerio Mic Gain (Stereo):output_1</Source>
@@ -281,161 +205,48 @@
    <Target>VirtualMic:input_FR</Target>
   </Connection>
   <Connection>
-   <Source>Chromium-465:output_FL</Source>
-   <Target>VirtualSpeaker:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-465:output_FL</Source>
-   <Target>PulseAudio Volume Control:input_FL-12045</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-465:output_FR</Source>
-   <Target>VirtualSpeaker:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-465:output_FR</Source>
-   <Target>PulseAudio Volume Control:input_FR-12047</Target>
-  </Connection>
-  <Connection>
-   <Source>Firefox:output_FL-12360</Source>
-   <Target>VirtualSpeaker:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Firefox:output_FL-12360</Source>
-   <Target>PulseAudio Volume Control:input_FL-12365</Target>
-  </Connection>
-  <Connection>
-   <Source>Firefox:output_FR-12361</Source>
-   <Target>VirtualSpeaker:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Firefox:output_FR-12361</Source>
-   <Target>PulseAudio Volume Control:input_FR-12367</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-517:output_FL</Source>
-   <Target>VirtualSpeaker:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-517:output_FL</Source>
-   <Target>PulseAudio Volume Control:input_FL-12049</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-517:output_FR</Source>
-   <Target>VirtualSpeaker:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-517:output_FR</Source>
-   <Target>PulseAudio Volume Control:input_FR-12051</Target>
-  </Connection>
-  <Connection>
-   <Source>VirtualSpeaker:monitor_FL</Source>
-   <Target>Gain Virtual Speaker (Stereo):Audio Input 1</Target>
-  </Connection>
-  <Connection>
-   <Source>VirtualSpeaker:monitor_FL</Source>
-   <Target>PulseAudio Volume Control:input_FL-11969</Target>
-  </Connection>
-  <Connection>
-   <Source>VirtualSpeaker:monitor_FR</Source>
-   <Target>Gain Virtual Speaker (Stereo):Audio Input 2</Target>
-  </Connection>
-  <Connection>
-   <Source>VirtualSpeaker:monitor_FR</Source>
-   <Target>PulseAudio Volume Control:input_FR-11971</Target>
-  </Connection>
-  <Connection>
-   <Source>Built-in Audio:monitor_FL</Source>
-   <Target>PulseAudio Volume Control:input_FL-11975</Target>
-  </Connection>
-  <Connection>
-   <Source>Built-in Audio:monitor_FR</Source>
-   <Target>PulseAudio Volume Control:input_FR-11977</Target>
-  </Connection>
-  <Connection>
-   <Source>Built-in Audio (HDMI 0):monitor_1</Source>
-   <Target>PulseAudio Volume Control:input_FL-11983</Target>
-  </Connection>
-  <Connection>
-   <Source>Built-in Audio (HDMI 0):monitor_2</Source>
-   <Target>PulseAudio Volume Control:input_FR-11985</Target>
-  </Connection>
-  <Connection>
-   <Source>Built-in Audio (HDMI 1):monitor_1</Source>
-   <Target>PulseAudio Volume Control:input_FL-11987</Target>
-  </Connection>
-  <Connection>
-   <Source>Built-in Audio (HDMI 1):monitor_2</Source>
-   <Target>PulseAudio Volume Control:input_FR-11989</Target>
-  </Connection>
-  <Connection>
-   <Source>Built-in Audio (HDMI 2):monitor_1</Source>
-   <Target>PulseAudio Volume Control:input_FL-11991</Target>
-  </Connection>
-  <Connection>
-   <Source>Built-in Audio (HDMI 2):monitor_2</Source>
-   <Target>PulseAudio Volume Control:input_FR-11993</Target>
-  </Connection>
-  <Connection>
-   <Source>Built-in Audio (HDMI 3):monitor_1</Source>
-   <Target>PulseAudio Volume Control:input_FL-11995</Target>
-  </Connection>
-  <Connection>
-   <Source>Built-in Audio (HDMI 3):monitor_2</Source>
-   <Target>PulseAudio Volume Control:input_FR-11997</Target>
-  </Connection>
-  <Connection>
-   <Source>Built-in Audio (HDMI 4):monitor_1</Source>
-   <Target>PulseAudio Volume Control:input_FL-11999</Target>
-  </Connection>
-  <Connection>
-   <Source>Built-in Audio (HDMI 4):monitor_2</Source>
-   <Target>PulseAudio Volume Control:input_FR-12001</Target>
-  </Connection>
-  <Connection>
    <Source>VirtualMic:capture_FL</Source>
    <Target>Noise Canceling source:input_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>VirtualMic:capture_FL</Source>
-   <Target>VirtualSpeaker:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>VirtualMic:capture_FL</Source>
-   <Target>PulseAudio Volume Control:input_FL</Target>
   </Connection>
   <Connection>
    <Source>VirtualMic:capture_FR</Source>
    <Target>Noise Canceling source:input_FR</Target>
   </Connection>
   <Connection>
-   <Source>VirtualMic:capture_FR</Source>
-   <Target>PulseAudio Volume Control:input_FR</Target>
+   <Source>VirtualSpeaker:monitor_FL</Source>
+   <Target>Gain Virtual Speaker (Stereo):Audio Input 1</Target>
+  </Connection>
+  <Connection>
+   <Source>VirtualSpeaker:monitor_FR</Source>
+   <Target>Gain Virtual Speaker (Stereo):Audio Input 2</Target>
   </Connection>
   <Positions>
-   <Position x1="1315" y1="647" x2="2158" y2="183">
+   <Position x1="1315" y1="647" x2="2258" y2="288">
     <Name>Built-in Audio</Name>
    </Position>
-   <Position x1="1793" y1="447">
+   <Position x1="1801" y1="459">
     <Name>Noise Canceling source</Name>
    </Position>
-   <Position x1="2027" y1="1067">
+   <Position x1="1812" y1="616">
     <Name>Calf Studio Gear</Name>
    </Position>
-   <Position x1="1323" y1="441" x2="2040" y2="1275">
+   <Position x1="1323" y1="441" x2="2492" y2="635">
     <Name>VirtualMic</Name>
    </Position>
-   <Position x1="1796" y1="180">
+   <Position x1="1388" y1="261">
     <Name>VirtualSpeaker</Name>
    </Position>
    <Position x1="1190" y1="2227" x2="2250" y2="2257">
     <Name>Midi-Bridge</Name>
    </Position>
-   <Position x1="1785" y1="294">
+   <Position x1="1785" y1="294" pluginId="0">
     <Name>Gain Virtual Speaker (Stereo)</Name>
    </Position>
-   <Position x1="1751" y1="1108">
+   <Position x1="1516" y1="645" pluginId="1">
     <Name>Noise Suppressor for Voice (Mono)</Name>
+   </Position>
+   <Position x1="2155" y1="634" pluginId="2">
+    <Name>Calf Valerio Mic Gain (Stereo)</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>
