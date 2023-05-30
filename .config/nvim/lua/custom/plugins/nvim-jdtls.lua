@@ -140,9 +140,9 @@ return {
                     codeGeneration = {
                         toString = {
                             template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}",
-                -- flags = {
-                -- 	allow_incremental_sync = true,
-                -- },
+                            -- flags = {
+                            -- 	allow_incremental_sync = true,
+                            -- },
                         },
                         useBlocks = true,
                     },
@@ -170,10 +170,11 @@ return {
                 jdtls_setup.add_commands()
                 require("lsp_signature").on_attach({
                     bind = true,
-                    padding = '',
+                    padding = "",
                     handler_opts = {
-                        border = "rounded"
-                    }
+                        border = "rounded",
+                    },
+                    hint_prefix = "󱄑 ",
                 }, bufnr)
             end,
             --

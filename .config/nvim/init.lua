@@ -207,6 +207,7 @@ local on_attach = function(_, bufnr)
     handler_opts = {
       border = "rounded",
     },
+    hint_prefix = "󱄑 "
   }, bufnr)
 end
 
@@ -282,7 +283,7 @@ for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
     require("lspconfig")[server_name].setup(config)
   end
   if server_name == "jdtls" then
-    vim.notify("jdtls encountered!")
+    vim.notify("jdtls encountered!", vim.log.levels.INFO)
   end
 end
 
@@ -344,7 +345,7 @@ cmp.setup({
     fields = { "menu", "abbr", "kind" },
     format = function(entry, item)
       local menu_icon = {
-       nvim_lsp = "[LSP]",
+        nvim_lsp = "[LSP]",
         luasnip = "[SNIP]",
         buffer = "[BUF]",
         path = "[PATH]",
