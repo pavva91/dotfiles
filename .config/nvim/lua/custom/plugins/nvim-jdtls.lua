@@ -8,7 +8,7 @@ return {
         local jdtls_setup = require("jdtls.setup")
         local home = os.getenv("HOME")
 
-        local root_markers = { ".git", "mvnw", "gradlew" }
+        local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
         local root_dir = jdtls_setup.find_root(root_markers)
 
         local project_name = vim.fn.fnamemodify(root_dir, ":p:h:t")
@@ -83,6 +83,22 @@ return {
             -- for a list of options
             settings = {
                 java = {
+                    references = {
+                        includeDecompiledSources = true,
+                    },
+                    format = {
+                        enabled = true,
+                        settings = {
+                            url = vim.fn.stdpath("config") .. "/lang_servers/intellij-java-google-style.xml",
+                            profile = "GoogleStyle",
+                        },
+                    },
+                    eclipse = {
+                        downloadSources = true,
+                    },
+                    maven = {
+                        downloadSources = true,
+                    },
                     signatureHelp = { enabled = true },
                     contentProvider = { preferred = "fernflower" },
                     -- eclipse = {
@@ -108,12 +124,12 @@ return {
                             "jdk.*",
                             "sun.*",
                         },
-                        -- importOrder = {
-                        -- 	"java",
-                        -- 	"javax",
-                        -- 	"com",
-                        -- 	"org",
-                        -- },
+                        importOrder = {
+                            "java",
+                            "javax",
+                            "com",
+                            "org",
+                        },
                     },
                     sources = {
                         organizeImports = {
@@ -124,6 +140,9 @@ return {
                     codeGeneration = {
                         toString = {
                             template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}",
+                -- flags = {
+                -- 	allow_incremental_sync = true,
+                -- },
                         },
                         useBlocks = true,
                     },
@@ -141,9 +160,9 @@ return {
                     -- 	},
                     -- },
                 },
-                -- flags = {
-                -- 	allow_incremental_sync = true,
-                -- },
+            },
+            flags = {
+                allow_incremental_sync = true,
             },
             on_attach = function(client, bufnr)
                 jdtls.setup_dap({ hotcodereplace = "auto" })
