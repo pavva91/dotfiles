@@ -50,6 +50,7 @@ require("lazy").setup({
 
       -- Additional lua configuration, makes nvim stuff amazing!
       { "folke/neodev.nvim",       opts = {} },
+      "ray-x/lsp_signature.nvim",
     },
   },
 
@@ -67,7 +68,7 @@ require("lazy").setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { "folke/which-key.nvim",   opts = {} },
+  { "folke/which-key.nvim",          opts = {} },
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
     "lewis6991/gitsigns.nvim",
@@ -337,21 +338,21 @@ cmp.setup({
     { name = "cmdline" },
   },
   window = {
-    documentation = cmp.config.window.bordered()
+    documentation = cmp.config.window.bordered(),
   },
   formatting = {
-    fields = {'menu', 'abbr', 'kind'},
-    format = function (entry, item)
+    fields = { "menu", "abbr", "kind" },
+    format = function(entry, item)
       local menu_icon = {
-        nvim_lsp = '[LSP]',
-        luasnip = '[SNIP]',
-        buffer = '[BUF]',
-        path = '[PATH]',
-        cmdline = '[CMD]',
+       nvim_lsp = "[LSP]",
+        luasnip = "[SNIP]",
+        buffer = "[BUF]",
+        path = "[PATH]",
+        cmdline = "[CMD]",
       }
 
       item.menu = menu_icon[entry.source.name]
       return item
-    end
-  }
+    end,
+  },
 })
