@@ -3,6 +3,7 @@ require("custom.configs")
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -64,6 +65,7 @@ require("lazy").setup({
       "rafamadriz/friendly-snippets",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
+      "ray-x/cmp-treesitter",
     },
   },
 
@@ -207,7 +209,7 @@ local on_attach = function(_, bufnr)
     handler_opts = {
       border = "rounded",
     },
-    hint_prefix = "󱄑 "
+    hint_prefix = "󱄑 ",
   }, bufnr)
 end
 
@@ -337,6 +339,7 @@ cmp.setup({
     { name = "buffer" },
     { name = "luasnip" },
     { name = "cmdline" },
+    { name = "treesitter" },
   },
   window = {
     documentation = cmp.config.window.bordered(),
@@ -350,6 +353,8 @@ cmp.setup({
         buffer = "[BUF]",
         path = "[PATH]",
         cmdline = "[CMD]",
+        treesitter = "[TS]",
+        -- treesitter = "",
       }
 
       item.menu = menu_icon[entry.source.name]
