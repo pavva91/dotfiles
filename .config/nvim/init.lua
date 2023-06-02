@@ -1,7 +1,5 @@
 require("custom.configs")
 -- Install package manager
---    https://github.com/folke/lazy.nvim
---    `:help lazy.nvim.txt` for more info
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
@@ -60,9 +58,15 @@ require("lazy").setup({
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
-      "L3MON4D3/LuaSnip",
+      {
+        "L3MON4D3/LuaSnip",
+        dependencies = { "rafamadriz/friendly-snippets" },
+        build = "make install_jsregexp",
+      },
+      "hrsh7th/cmp-cmdline",
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
+      "honza/vim-snippets",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "ray-x/cmp-treesitter",
@@ -297,6 +301,8 @@ require("fidget").setup()
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
+require("luasnip.loaders.from_vscode").lazy_load()
+
 luasnip.config.setup({})
 
 cmp.setup({
@@ -335,9 +341,9 @@ cmp.setup({
   }),
   sources = {
     { name = "path" },
+    { name = "luasnip" },
     { name = "nvim_lsp" },
     { name = "buffer" },
-    { name = "luasnip" },
     { name = "cmdline" },
     { name = "treesitter" },
   },
