@@ -341,12 +341,12 @@ cmp.setup({
     end, { "i", "s" }),
   }),
   sources = {
-    { name = "path" },
     { name = "luasnip" },
     { name = "nvim_lsp" },
-    { name = "buffer" },
-    { name = "cmdline" },
     { name = "treesitter" },
+    { name = "buffer" },
+    { name = "path" },
+    -- { name = "cmdline" },
   },
   window = {
     documentation = cmp.config.window.bordered(),
@@ -357,10 +357,10 @@ cmp.setup({
       local menu_icon = {
         nvim_lsp = "[LSP]",
         luasnip = "[SNIP]",
+        treesitter = "[TS]",
         buffer = "[BUF]",
         path = "[PATH]",
-        cmdline = "[CMD]",
-        treesitter = "[TS]",
+        -- cmdline = "[CMD]",
         -- treesitter = "",
       }
 
