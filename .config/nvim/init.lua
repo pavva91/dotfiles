@@ -59,6 +59,7 @@ require("lazy").setup({
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-nvim-lua",
       {
         "L3MON4D3/LuaSnip",
         dependencies = { "rafamadriz/friendly-snippets" },
@@ -71,6 +72,10 @@ require("lazy").setup({
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "ray-x/cmp-treesitter",
+      {
+        "tzachar/cmp-tabnine",
+        build = './install.sh'
+      }
     },
   },
 
@@ -346,6 +351,8 @@ cmp.setup({
     { name = "treesitter" },
     { name = "buffer" },
     { name = "path" },
+    { name = "nvim_lua" },
+    { name = "cmp_tabnine" },
     -- { name = "cmdline" },
   },
   window = {
@@ -360,6 +367,8 @@ cmp.setup({
         treesitter = "[TS]",
         buffer = "[BUF]",
         path = "[PATH]",
+        nvim_lua = "[LUA]",
+        cmp_tabnine = "[TN]",
         -- cmdline = "[CMD]",
         -- treesitter = "",
       }
