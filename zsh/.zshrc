@@ -124,3 +124,6 @@ source /usr/share/nvm/init-nvm.sh
 
 # Nix Os packages
 [[ -f /etc/profile.d/nix.sh ]] && . /etc/profile.d/nix.sh
+
+# Run node lts
+nvm use --lts
