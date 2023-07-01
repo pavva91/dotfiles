@@ -2,6 +2,8 @@
 filetype plugin on
 syntax on
 
+let g:mapleader = " "
+
 colorscheme gruvbox
 set background=dark
 

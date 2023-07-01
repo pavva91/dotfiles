@@ -12,16 +12,18 @@ nnoremap <leader>u :UndotreeToggle<CR>
 " nnoremap <leader>nf :NERDTreeFind<CR>
 nnoremap <leader>nc :NERDTreeCWD<CR>
 " nnoremap <leader>r :RangerCurrentDirectory<CR>
-nnoremap <leader>g :FzfGFiles<CR>
+nnoremap <leader>fg :FzfGFiles<CR>
+nnoremap <leader>p :FzfGFiles<CR>
 
 "FZF Ag (file_name and/or file_content) recursively on CWD ([F]ind [A]g)
 " nnoremap <leader>fa :FzfAg<CR>
 "FZF RipGrep (file_name and/or file_content) Grep recursively on CWD ([F]ind [G]rep)
-nnoremap <leader>fg :FzfRg<CR>
+nnoremap <leader>fG :FzfRg<CR>
 " FZF by file name without file preview on CWD
 " nnoremap <leader>fz :FZF<CR>
 " FZF by file name with file preview on CWD
 nnoremap <leader>ff :FzfFiles<CR>
+nnoremap <leader>fj :FzfJumps<CR>
 " nnoremap <C-p> :FzfFiles<CR>
 " [/] Fuzzily search in current buffer
 nnoremap <leader>/ :FzfBLines<CR>
@@ -88,7 +90,7 @@ nnoremap <silent><nowait> <leader>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent><nowait> <leader>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent><nowait> <leader>p  :<C-u>CocListResume<CR>
+" nnoremap <silent><nowait> <leader>p  :<C-u>CocListResume<CR>
 
 " nmap <space>e :CocCommand explorer<CR>
 nmap <space>f :CocCommand explorer --preset floating<CR>

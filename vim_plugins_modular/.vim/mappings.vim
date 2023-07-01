@@ -108,4 +108,9 @@ nnoremap <leader>Y gg"+yG
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-map <F3> :Ex<CR>
+" open NetRW
+nnoremap <F3> :Ex<CR>
+nnoremap <leader>pv :Vex<CR>
+
+" resource vim configs
+nnoremap <leader><CR> :so ~/.vimrc<CR>
