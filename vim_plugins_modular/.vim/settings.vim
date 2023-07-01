@@ -87,6 +87,11 @@ set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " fold based on indent level
 
+" -----------------------------------------------------------------------------
+" Wild Menu (Ex autocompletion)
+" -----------------------------------------------------------------------------
+set wildoptions=pum     " vertical autocompletion
+" set wildoptions=tagfile " horizontal autocompletion
 
 " -----------------------------------------------------------------------------
 " => Status line
@@ -143,7 +148,7 @@ set laststatus=2
 
 " Format the status line
 set statusline=
-set statusline+=\ 
+set statusline+=\
 set statusline+=%{ChangeStatuslineColor()}                  " Changing the statusline color
 set statusline+=%0*\ %{toupper(g:currentmode[mode()])}      "Vim Mode"
 set statusline+=%{HasPaste()}
