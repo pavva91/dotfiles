@@ -77,7 +77,7 @@ call plug#begin()
     " Plug 'neoclide/coc.nvim', {'tag': 'v0.0.78'}
 
     " --- Ranger File Manager
-    Plug 'https://github.com/francoiscabrol/ranger.vim'
+    " Plug 'https://github.com/francoiscabrol/ranger.vim'
     " --- Ranger dependency
     Plug 'rbgrouleff/bclose.vim'
 
