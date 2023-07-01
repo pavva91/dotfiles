@@ -108,6 +108,8 @@ call plug#begin()
     Plug 'tomasr/molokai'
     Plug 'morhetz/gruvbox'
     Plug 'sheerun/vim-wombat-scheme'
+    Plug 'ayu-theme/ayu-vim'
+    Plug 'dracula/vim', { 'as': 'dracula' }
     " Plug 'chriskempson/base16-vim'
     " Plug 'altercation/solarized'
 

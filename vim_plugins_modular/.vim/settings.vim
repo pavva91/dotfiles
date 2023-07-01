@@ -4,8 +4,11 @@ syntax on
 
 let g:mapleader = " "
 
+" Colorschemes
+set termguicolors
 colorscheme gruvbox
 set background=dark
+let ayucolor="dark"   " for dark version of ayu theme
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -45,7 +48,6 @@ set cursorline          " highlight current line
 set wildmenu            " visual autocomplete for command menu
 set showmatch           " highlight matching [{()}]
 
-"set termguicolors
 " Search down into subfolders
 " Provides tab completion for all file-related tasks
 set path+=**
@@ -69,6 +71,14 @@ set wrap
 " Enable indentationn
 filetype indent on      " load filetype-specific indent files
 
+" The cursor in insert mode is visible and fixed
+" set guicursor=
+set guicursor=n-v-c:block-Cursor/lCursor
+set guicursor+=ve:ver35-Cursor
+set guicursor+=o:hor50-Cursor
+set guicursor+=i-ci:ver25-Cursor/lCursor
+set guicursor+=r-cr:hor20-Cursor/lCursor
+set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 " -----------------------------------------------------------------------------
 " SEARCH
 " -----------------------------------------------------------------------------
