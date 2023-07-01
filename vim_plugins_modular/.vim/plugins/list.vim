@@ -104,6 +104,9 @@ call plug#begin()
     " Debug
     Plug 'puremourning/vimspector'
 
+    " Highlight on yank
+    Plug 'machakann/vim-highlightedyank'
+
     " Themes
     Plug 'tomasr/molokai'
     Plug 'morhetz/gruvbox'
