@@ -93,3 +93,17 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " Fixing the & Command
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
+
+" yank into selection without swapping default register ("")
+vnoremap <leader>p "_dP
+
+" yank to clipboard
+vnoremap <leader>y "+y
+nnoremap <leader>y "+y
+
+" yank all buffer to clipboard
+nnoremap <leader>Y gg"+yG
+
+" move selection up/down (with autoindent)
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
