@@ -69,10 +69,6 @@ vim.keymap.set({ "n" }, "<leader>Y", 'gg"+yG', { desc = "Copy all buffer to clip
 vim.keymap.set({ "n", "x" }, "cv", '"+p', { desc = "Paste from clipboard" })
 vim.keymap.set({ "v" }, "<leader>p", '"_dP', { desc = "Paste without swapping default register" })
 
--- Move Selection (with autoindent)
-vim.keymap.set("v", "K", "<cmd>m<space>'<-2<cr>gv=gv", { desc = "Move selection up" })
-vim.keymap.set("v", "J", "<cmd>m<space>'>+1<cr>gv=gv", { desc = "Move selection down" })
-
 -- Reload our configuration
 vim.api.nvim_create_user_command("ReloadConfig", "source $MYVIMRC", {})
 
@@ -95,6 +91,8 @@ vim.keymap.set(
 
 -- VimScript mappings
 -- from this: https://gist.github.com/joelpalmer/9db3f1cdfd463daa6d7c614ae1618fa6
+-- Move Selection (with autoindent)
+
 vim.cmd([[
 " Easy expansion of the active file directory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
@@ -102,6 +100,12 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " open file in directory of current file
 nmap <leader>e :e %:h/
 nmap <leader>v :vs %:h/
+
+" Move selection up
+vnoremap J :m '>+1<CR>gv=gv
+" Move selection down
+vnoremap K :m '<-2<CR>gv=gv
+
 ]])
 
 -- Set LSP keymaps (commented are overwritten by LSP Saga)
