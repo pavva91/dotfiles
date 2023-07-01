@@ -63,6 +63,10 @@ set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " fold based on indent level
 
+" -----------------------------------------------------------------------------------
+" WILD MENU
+" -----------------------------------------------------------------------------------
+set wildoptions=pum     " vertical autocompletion
 
 " -----------------------------------------------------------------------------------
 " => Status line
