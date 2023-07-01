@@ -4,12 +4,6 @@ syntax on
 
 let g:mapleader = " "
 
-" Colorschemes
-set termguicolors
-colorscheme gruvbox
-set background=dark
-let ayucolor="dark"   " for dark version of ayu theme
-
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
 
@@ -19,15 +13,24 @@ set mouse=a
 set timeoutlen=500
 
 " -----------------------------------------------------------------------------
+" COLORSCHEMES
+" -----------------------------------------------------------------------------
+set termguicolors
+colorscheme gruvbox
+set background=dark
+let ayucolor="dark"   " for dark version of ayu theme
+
+" -----------------------------------------------------------------------------
 " TAB
 " -----------------------------------------------------------------------------
+" Set indentation width of 4 spaces
 set tabstop=4       " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in tab when editing
 set shiftwidth=4
 set expandtab       " tabs are spaces
 set smartindent
 
-" Set indentation width ot 2 spaces
+" Set indentation width of 2 spaces
 " set autoindent expandtab tabstop=2 shiftwidth=2
 
 
@@ -38,6 +41,14 @@ set number              " show line numbers
 set relativenumber	    " show relative line numbers
 
 " -----------------------------------------------------------------------------
+" WILD MENU (EX MODE AUTOCOMPLETION)
+" -----------------------------------------------------------------------------
+set wildoptions=pum     " vertical autocompletion
+" set wildoptions=tagfile " horizontal autocompletion
+
+set wildmenu            " visual autocomplete for command menu
+
+" -----------------------------------------------------------------------------
 " VISUALS
 " -----------------------------------------------------------------------------
 set fillchars=vert:\   " removes pipes on split separators
@@ -45,15 +56,11 @@ set fillchars=vert:\   " removes pipes on split separators
 " set fillchars+=vert:\│   " use │ on split separators
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
-set wildmenu            " visual autocomplete for command menu
 set showmatch           " highlight matching [{()}]
 
 " Search down into subfolders
 " Provides tab completion for all file-related tasks
 set path+=**
-
-" Display all matching files when we tab complete
-set wildmenu
 
 set pastetoggle=<F2>
 
@@ -73,12 +80,15 @@ filetype indent on      " load filetype-specific indent files
 
 " The cursor in insert mode is visible and fixed
 " set guicursor=
-set guicursor=n-v-c:block-Cursor/lCursor
-set guicursor+=ve:ver35-Cursor
-set guicursor+=o:hor50-Cursor
-set guicursor+=i-ci:ver25-Cursor/lCursor
-set guicursor+=r-cr:hor20-Cursor/lCursor
-set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
+
+" try fix guicursor
+" set guicursor=n-v-c:block-Cursor/lCursor
+" set guicursor+=ve:ver35-Cursor
+" set guicursor+=o:hor50-Cursor
+" set guicursor+=i-ci:ver25-Cursor/lCursor
+" set guicursor+=r-cr:hor20-Cursor/lCursor
+" set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
+
 " -----------------------------------------------------------------------------
 " SEARCH
 " -----------------------------------------------------------------------------
@@ -98,12 +108,6 @@ set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " fold based on indent level
-
-" -----------------------------------------------------------------------------
-" Wild Menu (Ex autocompletion)
-" -----------------------------------------------------------------------------
-set wildoptions=pum     " vertical autocompletion
-" set wildoptions=tagfile " horizontal autocompletion
 
 " -----------------------------------------------------------------------------
 " => Status line
