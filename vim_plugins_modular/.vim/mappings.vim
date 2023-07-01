@@ -107,3 +107,5 @@ nnoremap <leader>Y gg"+yG
 " move selection up/down (with autoindent)
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+map <F3> :Ex<CR>

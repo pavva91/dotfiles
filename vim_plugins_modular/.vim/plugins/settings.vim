@@ -7,7 +7,7 @@ let g:fzf_command_prefix = 'Fzf'
 " => NERDTree https://github.com/preservim/nerdtree
 " -----------------------------------------------------------------------------
 " Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
+" autocmd VimEnter * NERDTree | wincmd p
 
 " ---> show hidden files <---
 let NERDTreeShowHidden=1

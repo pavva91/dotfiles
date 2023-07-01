@@ -4,8 +4,9 @@
 " nnoremap <silent> <space> :WhichKey '<Space>'<CR>
 " nnoremap <silent> g :WhichKey 'g'<CR>
 
-map <F3> :NERDTreeToggle<CR>
-nnoremap <F5> :UndotreeToggle<CR>
+" map <F3> :NERDTreeToggle<CR>
+" nnoremap <F5> :UndotreeToggle<CR>
+nnoremap <leader>u :UndotreeToggle<CR>
 
 " nnoremap <leader>n :NERDTreeToggle<CR>
 " nnoremap <leader>nf :NERDTreeFind<CR>
@@ -199,4 +200,5 @@ nmap <silent> <leader>tv :TestVisit<CR>
 " -----------------------------------------------------------------------------
 nmap <leader>gm :Gvdiffsplit!<CR>
 nmap <leader>gs :G<CR>
+nmap <leader>gp :G push<CR>
 nmap <leader>gg :G log --oneline --decorate --graph --all<CR>
