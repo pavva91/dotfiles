@@ -2,9 +2,10 @@
 " COLORS AND SYNTAX HIGHLIGHT
 " -----------------------------------------------------------------------------------
 " Enable syntax highlighting
+filetype plugin on
 syntax enable
 
-filetype plugin on
+let g:mapleader = " "
 
 colorscheme desert
 set background=dark
@@ -12,12 +13,16 @@ set background=dark
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
 
+set timeoutlen=500
+
 " -----------------------------------------------------------------------------------
 " TAB
 " -----------------------------------------------------------------------------------
 set tabstop=4       " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in tab when editing
+set shiftwidth=4
 set expandtab       " tabs are spaces
+set smartindent
 
 " -----------------------------------------------------------------------------------
 " LINE NUMBERS
@@ -26,19 +31,25 @@ set number              " show line numbers
 set relativenumber	    " show relative line numbers
 
 " -----------------------------------------------------------------------------------
+" LINE NUMBERS
+" -----------------------------------------------------------------------------------
+set wildmenu            " visual autocomplete for command menu
+set wildoptions=pum     " vertical autocompletion
+
+" -----------------------------------------------------------------------------------
 " VISUALS
 " -----------------------------------------------------------------------------------
+set fillchars=vert:\   " removes pipes on split separators
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
-set wildmenu            " visual autocomplete for command menu
 set showmatch           " highlight matching [{()}]
 "set termguicolors
 " Search down into subfolders
 " Provides tab completion for all file-related tasks
 set path+=**
 " Display all matching files when we tab complete
-set wildmenu
 set pastetoggle=<F2>
+set signcolumn=yes " extra column for linting
 set hidden
 set wrap
 
@@ -85,10 +96,6 @@ nnoremap <space> za
 " MAPPINGS
 " -----------------------------------------------------------------------------------
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ","
-
 " Fast saving
 nmap <leader>w :w!<cr>
 
@@ -109,7 +116,7 @@ nnoremap gV `[v`]
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " turn off search highlight
-nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <leader>, :nohlsearch<CR>
 
 " Replace all is aliased to S
 nnoremap S :%s//g<left><left>
@@ -177,31 +184,30 @@ endfunction
 " => CONFIG NETRW FILE EXPLORER
 " -----------------------------------------------------------------------------------
 
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-" Toggle Vexplore with Ctrl-O
-function! ToggleVExplorer()
-    if exists("t:expl_buf_num")
-        let expl_win_num = bufwinnr(t:expl_buf_num)
-        let cur_win_num = winnr()
+" let g:netrw_banner = 0
+" let g:netrw_liststyle = 3
+" let g:netrw_browse_split = 4
+" let g:netrw_altv = 1
+" let g:netrw_winsize = 25
+" " Toggle Vexplore with Ctrl-O
+" function! ToggleVExplorer()
+"     if exists("t:expl_buf_num")
+"         let expl_win_num = bufwinnr(t:expl_buf_num)
+"         let cur_win_num = winnr()
 
-        if expl_win_num != -1
-            while expl_win_num != cur_win_num
-                exec "wincmd w"
-                let cur_win_num = winnr()
-            endwhile
+"         if expl_win_num != -1
+"             while expl_win_num != cur_win_num
+"                 exec "wincmd w"
+"                 let cur_win_num = winnr()
+"             endwhile
 
-            close
-        endif
+"             close
+"         endif
 
-        unlet t:expl_buf_num
-    else
-         Vexplore
-         let t:expl_buf_num = bufnr("%")
-    endif
-endfunction
-map <F3> :call ToggleVExplorer()<CR>
-
+"         unlet t:expl_buf_num
+"     else
+"          Vexplore
+"          let t:expl_buf_num = bufnr("%")
+"     endif
+" endfunction
+" map <F3> :call ToggleVExplorer()<CR>
