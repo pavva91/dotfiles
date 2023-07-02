@@ -43,10 +43,10 @@ set relativenumber	    " show relative line numbers
 " -----------------------------------------------------------------------------
 " WILD MENU (EX MODE AUTOCOMPLETION)
 " -----------------------------------------------------------------------------
+set wildmenu            " visual autocomplete for command menu
 set wildoptions=pum     " vertical autocompletion
 " set wildoptions=tagfile " horizontal autocompletion
 
-set wildmenu            " visual autocomplete for command menu
 
 " -----------------------------------------------------------------------------
 " VISUALS
@@ -64,8 +64,7 @@ set path+=**
 
 set pastetoggle=<F2>
 
-" Extra column for linting
-set signcolumn=yes
+set signcolumn=yes " extra column for linting
 
 " keeps any buffer in the background (keeps everything open) (can use :bnext,
 " :bprevious without issues of having to either :w or e! the buffer)
