@@ -295,9 +295,9 @@ for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
     }
     require("lspconfig")[server_name].setup(config)
   end
-  if server_name == "jdtls" then
-    vim.notify("jdtls encountered!", vim.log.levels.INFO)
-  end
+  -- if server_name == "jdtls" then
+  --   vim.notify("jdtls encountered!", vim.log.levels.INFO)
+  -- end
 end
 
 require("fidget").setup()
