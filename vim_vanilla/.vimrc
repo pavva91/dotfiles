@@ -134,7 +134,10 @@ nnoremap gB :ls<cr>:vert sb<space>
 nmap <leader>bq :bp <BAR> bd #<cr>
 
 " yank into selection without swapping default register ("")
-vnoremap <leader>p "_dP
+" vnoremap <leader>p "_dP
+
+" yank by using yank register
+vnoremap <leader>p d"0P
 
 " yank to clipboard
 vnoremap <leader>y "+y
