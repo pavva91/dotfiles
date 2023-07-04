@@ -168,6 +168,14 @@ nnoremap ]B :blast<CR>
 " Easy expansion of the active file directory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
+" -----------------------------------------------------------------------------
+" => Show the 80th Column
+" -----------------------------------------------------------------------------
+if (exists('+colorcolumn'))
+    set colorcolumn=80
+    highlight ColorColumn ctermbg=9
+endif
+
 " -----------------------------------------------------------------------------------
 " => Helper functions
 " -----------------------------------------------------------------------------------
