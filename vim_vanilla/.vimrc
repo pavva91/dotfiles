@@ -89,12 +89,64 @@ set laststatus=2
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
-" space open/closes folds
-nnoremap <space> za
+" -----------------------------------------------------------------------------
+" => Show the 80th Column
+" -----------------------------------------------------------------------------
+if (exists('+colorcolumn'))
+    set colorcolumn=80
+    highlight ColorColumn ctermbg=9
+endif
+
+" -----------------------------------------------------------------------------------
+" => Helper functions
+" -----------------------------------------------------------------------------------
+" Returns true if paste mode is enabled
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    endif
+    return ''
+endfunction
+
+
+" -----------------------------------------------------------------------------------
+" => CONFIG NETRW FILE EXPLORER
+" -----------------------------------------------------------------------------------
+
+" let g:netrw_banner = 0
+" let g:netrw_liststyle = 3
+" let g:netrw_browse_split = 4
+" let g:netrw_altv = 1
+" let g:netrw_winsize = 25
+" " Toggle Vexplore with Ctrl-O
+" function! ToggleVExplorer()
+"     if exists("t:expl_buf_num")
+"         let expl_win_num = bufwinnr(t:expl_buf_num)
+"         let cur_win_num = winnr()
+
+"         if expl_win_num != -1
+"             while expl_win_num != cur_win_num
+"                 exec "wincmd w"
+"                 let cur_win_num = winnr()
+"             endwhile
+
+"             close
+"         endif
+
+"         unlet t:expl_buf_num
+"     else
+"          Vexplore
+"          let t:expl_buf_num = bufnr("%")
+"     endif
+" endfunction
+" map <F3> :call ToggleVExplorer()<CR>
 
 " -----------------------------------------------------------------------------------
 " MAPPINGS
 " -----------------------------------------------------------------------------------
+
+" space open/closes folds
+nnoremap <space> za
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -171,54 +223,5 @@ nnoremap ]B :blast<CR>
 " Easy expansion of the active file directory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-" -----------------------------------------------------------------------------
-" => Show the 80th Column
-" -----------------------------------------------------------------------------
-if (exists('+colorcolumn'))
-    set colorcolumn=80
-    highlight ColorColumn ctermbg=9
-endif
-
-" -----------------------------------------------------------------------------------
-" => Helper functions
-" -----------------------------------------------------------------------------------
-" Returns true if paste mode is enabled
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    endif
-    return ''
-endfunction
-
-
-" -----------------------------------------------------------------------------------
-" => CONFIG NETRW FILE EXPLORER
-" -----------------------------------------------------------------------------------
-
-" let g:netrw_banner = 0
-" let g:netrw_liststyle = 3
-" let g:netrw_browse_split = 4
-" let g:netrw_altv = 1
-" let g:netrw_winsize = 25
-" " Toggle Vexplore with Ctrl-O
-" function! ToggleVExplorer()
-"     if exists("t:expl_buf_num")
-"         let expl_win_num = bufwinnr(t:expl_buf_num)
-"         let cur_win_num = winnr()
-
-"         if expl_win_num != -1
-"             while expl_win_num != cur_win_num
-"                 exec "wincmd w"
-"                 let cur_win_num = winnr()
-"             endwhile
-
-"             close
-"         endif
-
-"         unlet t:expl_buf_num
-"     else
-"          Vexplore
-"          let t:expl_buf_num = bufnr("%")
-"     endif
-" endfunction
-" map <F3> :call ToggleVExplorer()<CR>
+" Project Tree Toggle
+nnoremap <leader>pt :Vex<CR>

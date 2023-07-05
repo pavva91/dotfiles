@@ -5,6 +5,7 @@
 " nnoremap <silent> g :WhichKey 'g'<CR>
 
 " map <F3> :NERDTreeToggle<CR>
+map <leader>pt :NERDTreeToggle<CR>
 " nnoremap <F5> :UndotreeToggle<CR>
 nnoremap <leader>u :UndotreeToggle<CR>
 
