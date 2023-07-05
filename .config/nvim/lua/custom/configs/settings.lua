@@ -42,8 +42,8 @@ set.splitbelow = true
 set.splitright = true
 
 -- Show the 80th Column
-vim.api.nvim_set_option("colorcolumn", "+1")
 set.colorcolumn = "80"
+-- vim.api.nvim_set_option_value("+colorcolumn", "+1")
 
 -- Set highlight on search
 set.hlsearch = false

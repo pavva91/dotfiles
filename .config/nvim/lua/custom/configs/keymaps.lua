@@ -67,7 +67,9 @@ vim.keymap.set({ "n" }, "<leader>Y", 'gg"+yG', { desc = "Copy all buffer to clip
 
 -- Paste from clipboard
 vim.keymap.set({ "n", "x" }, "cv", '"+p', { desc = "Paste from clipboard" })
-vim.keymap.set({ "v" }, "<leader>p", '"_dP', { desc = "Paste without swapping default register" })
+
+-- vim.keymap.set({ "v" }, "<leader>p", '"_dP', { desc = "Paste without swapping default register" })
+vim.keymap.set({ "v" }, "<leader>p", 'd"0P', { desc = "Paste by using yanking register" })
 
 -- Reload our configuration
 vim.api.nvim_create_user_command("ReloadConfig", "source $MYVIMRC", {})
@@ -89,7 +91,7 @@ vim.keymap.set(
 	{ desc = "Search on List [b]Buffer and open on Vertical Split" }
 )
 
--- VimScript mappings
+-- NOTE: VimScript mappings
 -- from this: https://gist.github.com/joelpalmer/9db3f1cdfd463daa6d7c614ae1618fa6
 -- Move Selection (with autoindent)
 
