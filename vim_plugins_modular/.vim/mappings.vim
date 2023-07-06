@@ -97,8 +97,11 @@ xnoremap & :&&<CR>
 " yank into selection without swapping default register ("")
 " vnoremap <leader>p "_dP
 
-" yank by using yank register
+" substitute selection by yank by using yank register
 vnoremap <leader>p d"0P
+
+" yank by using yank register
+nnoremap <leader>p "0p
 
 " yank to clipboard
 vnoremap <leader>y "+y

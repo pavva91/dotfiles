@@ -69,7 +69,8 @@ vim.keymap.set({ "n" }, "<leader>Y", 'gg"+yG', { desc = "Copy all buffer to clip
 vim.keymap.set({ "n", "x" }, "cv", '"+p', { desc = "Paste from clipboard" })
 
 -- vim.keymap.set({ "v" }, "<leader>p", '"_dP', { desc = "Paste without swapping default register" })
-vim.keymap.set({ "v" }, "<leader>p", 'd"0P', { desc = "Paste by using yanking register" })
+vim.keymap.set({ "v" }, "<leader>p", 'd"0P', { desc = "Paste selection by using yank register" })
+vim.keymap.set({ "n" }, "<leader>p", '"0p', { desc = "Paste by using yank register" })
 
 -- Reload our configuration
 vim.api.nvim_create_user_command("ReloadConfig", "source $MYVIMRC", {})
