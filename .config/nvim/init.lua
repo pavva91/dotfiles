@@ -74,8 +74,8 @@ require("lazy").setup({
       "ray-x/cmp-treesitter",
       {
         "tzachar/cmp-tabnine",
-        build = './install.sh'
-      }
+        build = "./install.sh",
+      },
     },
   },
 
@@ -140,6 +140,7 @@ require("lazy").setup({
   --
   --    An additional note is that if you only copied in the `init.lua`, you can just comment this line
   --    to get rid of the warning telling you that there are not plugins in `lua/custom/plugins/`.
+
   { import = "custom.plugins" },
 }, {})
 
@@ -200,7 +201,7 @@ local on_attach = function(_, bufnr)
   -- See `:help K` for why this keymap
   -- nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
   -- nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
-  nmap('<leader>hh', vim.lsp.buf.signature_help, 'Signature [H][H]elp Documentation')
+  nmap("<leader>hh", vim.lsp.buf.signature_help, "Signature [H][H]elp Documentation")
 
   -- Lesser used LSP functionality
   nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
