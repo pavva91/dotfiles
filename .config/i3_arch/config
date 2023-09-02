@@ -292,7 +292,6 @@ bindsym $mod+F4 exec chromium
 exec /usr/bin/polkit-dumb-agent
 
 # Screens
-exec /usr/bin/xrandr --output eDP-1 --primary
 
 # @ work turn on
 # xrandr --output HDMI-1 --left-of eDP-1 --mode 1920x1080 --rate 60 --brightness 0.7
@@ -307,6 +306,9 @@ exec_always --no-startup-id "~/.config/i3/tray.sh"
 
 # ALSA Config (alsamixer)
 exec_always --no-startup-id alsactl --file ~/.config/audio/alsamixer_setup/asound.state restore
+
+# Setup Monitors
+exec --no-startup-id "~/.config/i3/monitors_setup.sh"
 
 # Open Calf
 exec --no-startup-id calfjackhost -l ~/.config/audio/calf_sessions/call_warm_voice_laptop_mic
