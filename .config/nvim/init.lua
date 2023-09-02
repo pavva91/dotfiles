@@ -370,7 +370,7 @@ cmp.setup({
         buffer = "[BUF]",
         path = "[PATH]",
         nvim_lua = "[LUA]",
-        cmp_tabnine = "[TN]",
+        cmp_tabnine = "[T9]",
         -- cmdline = "[CMD]",
         -- treesitter = "",
       }
