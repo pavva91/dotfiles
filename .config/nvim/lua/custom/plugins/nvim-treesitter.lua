@@ -31,6 +31,7 @@ return {
                 "regex",
                 "markdown",
                 "markdown_inline",
+                "sql",
             },
             autotag = {
                 enable = true,
