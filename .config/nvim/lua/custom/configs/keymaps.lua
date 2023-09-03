@@ -147,3 +147,7 @@ vim.keymap.set(
 	{ desc = "[G]it Diffget from Right (target branch, usually master)" }
 )
 vim.keymap.set("n", "<leader>gf", "<cmd>diffget //3<CR>", { desc = "[G]it Diffget from Left (merge branch)" })
+
+-- Resize window with shift + and shift -
+vim.keymap.set('n', '_', '<c-w>5<')
+vim.keymap.set('n', '+', '<c-w>5>')
