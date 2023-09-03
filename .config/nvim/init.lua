@@ -33,9 +33,20 @@ require("lazy").setup({
   "tpope/vim-sleuth",
 
   -- Database Explorer
-  "tpope/vim-dadbod",
-  "kristijanhusak/vim-dadbod-ui",
-  "kristijanhusak/vim-dadbod-completion",
+  {
+    "kristijanhusak/vim-dadbod-ui",
+    dependencies = {
+      "tpope/vim-dadbod",
+    },
+  },
+  {
+    "kristijanhusak/vim-dadbod-completion",
+    dependencies = {
+      "hrsh7th/nvim-cmp",
+      "tpope/vim-dadbod",
+      "kristijanhusak/vim-dadbod-ui",
+    },
+  },
 
   {
     "tpope/vim-dadbod",
@@ -44,10 +55,9 @@ require("lazy").setup({
       "kristijanhusak/vim-dadbod-ui",
       "kristijanhusak/vim-dadbod-completion",
     },
-  -- NOTE: to add custom configs for the plugin
-  -- config = function()
-  --   require("custom.configs.dadbod")
-  -- end
+    config = function()
+      -- require("config.dadbod").setup()
+    end,
   },
 
   -- NOTE: This is where your plugins related to LSP can be installed.
@@ -369,10 +379,11 @@ cmp.setup({
     { name = "luasnip" },
     { name = "nvim_lsp" },
     { name = "treesitter" },
-    { name = "buffer" },
+    { name = "buffer",     keyword_length = 5 },
     { name = "path" },
     { name = "nvim_lua" },
     { name = "cmp_tabnine" },
+    { name = "vim-dadbod-completion" },
     -- { name = "cmdline" },
   },
   window = {
@@ -391,6 +402,7 @@ cmp.setup({
         cmp_tabnine = "[T9]",
         -- cmdline = "[CMD]",
         -- treesitter = "",
+        ["vim-dadbod-completion"] = "[DB]",
       }
 
       item.menu = menu_icon[entry.source.name]
@@ -398,3 +410,16 @@ cmp.setup({
     end,
   },
 })
+
+-- NOTE: Database completion OLD (works)
+vim.api.nvim_exec2(
+  [[
+autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
+ ]],
+  {}
+)
+
+-- NOTE: Original with deprecated function
+-- vim.api.nvim_exec([[
+-- autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
+--   ]], false)
