@@ -10,13 +10,18 @@ local function db_completion()
     formatting = {
       fields = { "menu", "abbr", "kind" },
       format = function(entry, item)
-        item.menu = ({
-          ["vim-dadbod-completion"] = "[DB]",
-        })[entry.source.name]
+        -- fancy icons and a name of kind
+        -- item.kind = require("lspkind").presets.default[item.kind] .. " " .. item.kind
+
+        -- item.menu = ({
+        --   ["vim-dadbod-completion"] = "[DB]",
+        -- })[entry.source.name]
+
         local menu_icon = {
           ["vim-dadbod-completion"] = "[DB]",
         }
         item.menu = menu_icon[entry.source.name]
+
         return item
       end,
     },
