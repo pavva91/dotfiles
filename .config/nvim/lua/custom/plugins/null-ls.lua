@@ -20,7 +20,7 @@ return {
 
 				-- ESLint
 				require("null-ls").builtins.code_actions.eslint,
-				require("null-ls").builtins.formatting.eslint,
+				require("null-ls").builtins.diagnostics.eslint,
 
 				-- GitSigns
 				-- require("null-ls").builtins.code_actions.gitsigns.with({
