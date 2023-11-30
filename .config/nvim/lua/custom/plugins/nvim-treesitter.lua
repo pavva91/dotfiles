@@ -26,7 +26,7 @@ return {
                 "html",
                 "json",
                 "vim",
-                "help",
+                "vimdoc",
                 "yaml",
                 "regex",
                 "markdown",
