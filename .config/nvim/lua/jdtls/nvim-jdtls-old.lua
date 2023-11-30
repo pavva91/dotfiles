@@ -2,6 +2,9 @@ return {
     -- https://github.com/mfussenegger/dotfiles/blob/833d634251ebf3bf7e9899ed06ac710735d392da/vim/.config/nvim/ftplugin/java.lua
     "mfussenegger/nvim-jdtls",
     ft = "java",
+    -- event = { "FileType" },
+    -- event = { "BufEnter", "BufRead", "BufReadPost", "BufReadPre", "BufWinEnter", "FileType" },
+    lazy = "true",
     config = function()
         local jdtls = require("jdtls")
         local jdtls_dap = require("jdtls.dap")
@@ -17,7 +20,7 @@ return {
         local path_to_jdtls = home .. "/.local/share/nvim/mason/packages/jdtls"
         local path_to_config = path_to_jdtls .. "/config_linux"
         local path_to_plugins = path_to_jdtls .. "/plugins/"
-        local path_to_jar = path_to_plugins .. "org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar"
+        local path_to_jar = path_to_plugins .. "org.eclipse.equinox.launcher_1.6.500.v20230717-2134.jar"
         local lombok_path = path_to_jdtls .. "/lombok.jar"
         local path_to_jdebug = home .. "/.local/share/nvim/mason/packages/java-debug-adapter"
         local path_to_jtest = home .. "/.local/share/nvim/mason/packages/java-test"
@@ -25,8 +28,10 @@ return {
             vim.fn.glob(path_to_jdebug .. "/extension/server/com.microsoft.java.debug.plugin-*.jar", true),
         }
 
+        -- NOTE: only needed for init_options
         local extendedClientCapabilities = jdtls.extendedClientCapabilities
         extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
+
         vim.list_extend(bundles, vim.split(vim.fn.glob(path_to_jtest .. "/extension/server/*.jar", true), "\n"))
 
         -- Main Config
@@ -185,6 +190,7 @@ return {
             -- 			-- See https://github.com/mfussenegger/nvim-jdtls#java-debug-installation
             -- 			--
             -- 			-- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
+
             init_options = {
                 bundles = bundles,
                 extendedClientCapabilities = extendedClientCapabilities,
@@ -193,7 +199,47 @@ return {
 
         -- 		-- This starts a new client & server,
         -- 		-- or attaches to an existing client & server depending on the `root_dir`.
+
+        -- NOTE: Old
+        -- BUG: Only attach on first buffer
         jdtls.start_or_attach(config)
+
+        -- NOTE: New Way
+        -- BUG: Run 2 times
+        -- TODO: Create autocmd
+
+        -- NOTE: VimScript would be
+        -- augroup lsp au! au FileType java lua
+        -- jdtls.start_or_attach(config)
+        -- augroup end
+
+        local lspGrp = vim.api.nvim_create_augroup("lsp", { clear = true })
+
+        -- local cmd =  "require('jdtls').start_or_attach(config)"
+
+        -- vim.api.nvim_create_autocmd(
+        --     "FileType", {
+        --         pattern = { "java" },
+        --         -- command = cmd,
+        --         -- command = "lua require('jdtls').start_or_attach(config)",
+        --         -- command =   ("lua require('jdtls').start_or_attach(%s)"):format(config),
+        --         -- command =   "lua require('jdtls').start_or_attach(config)",
+        --         -- BUG: Run 2 times
+        --         command = "lua print('bella')",
+        --         group = lspGrp
+        --     }
+        -- )
+
+        -- local cmd = "augroup lsp au! au FileType java lua"
+        -- cmd = cmd .. (" jdtls.start_or_attach(%s)"):format(config)
+        -- cmd = cmd .. " augroup end"
+        -- vim.cmd(cmd)
+
+        -- vim.cmd [[
+        -- augroup lsp au! au FileType java lua
+        -- jdtls.start_or_attach(config)
+        -- augroup end
+        -- ]]
 
         -- Java keymaps
         vim.cmd(
@@ -213,21 +259,21 @@ return {
         end
 
         local opts = {
-            mode = "n", -- NORMAL mode
+            mode = "n",     -- NORMAL mode
             prefix = "<leader>",
-            buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-            silent = true, -- use `silent` when creating keymaps
+            buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
+            silent = true,  -- use `silent` when creating keymaps
             noremap = true, -- use `noremap` when creating keymaps
-            nowait = true, -- use `nowait` when creating keymaps
+            nowait = true,  -- use `nowait` when creating keymaps
         }
 
         local vopts = {
-            mode = "v", -- VISUAL mode
+            mode = "v",     -- VISUAL mode
             prefix = "<leader>",
-            buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-            silent = true, -- use `silent` when creating keymaps
+            buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
+            silent = true,  -- use `silent` when creating keymaps
             noremap = true, -- use `noremap` when creating keymaps
-            nowait = true, -- use `nowait` when creating keymaps
+            nowait = true,  -- use `nowait` when creating keymaps
         }
 
         local mappings = {

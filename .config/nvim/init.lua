@@ -131,11 +131,13 @@ require("lazy").setup({
   {
     -- Add indentation guides even on blank lines
     "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
     opts = {
-      char = "┊",
-      show_trailing_blankline_indent = false,
+      indent = { char = "┊" }
+      -- char = "┊",
+      -- show_trailing_blankline_indent = false,
     },
   },
 
@@ -162,6 +164,9 @@ require("lazy").setup({
     cond = function()
       return vim.fn.executable("make") == 1
     end,
+  },
+  {
+    "mfussenegger/nvim-jdtls",
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -285,7 +290,7 @@ local servers = {
       telemetry = { enable = false },
     },
   },
-  jdtls = {},
+  -- jdtls = {},
 }
 
 local excl_servers = { "jdtls" }
@@ -333,5 +338,90 @@ require("fidget").setup()
 
 -- Mason END
 
+<<<<<<< Updated upstream
 -- nvim-cmp setup (completion)
 require("config.nvim-cmp")
+=======
+-- nvim-cmp setup
+local cmp = require("cmp")
+local luasnip = require("luasnip")
+
+require("luasnip.loaders.from_vscode").lazy_load()
+
+luasnip.config.setup({})
+
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ["<C-e>"] = cmp.mapping.abort(),
+    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-Space>"] = cmp.mapping.complete({}),
+    ["<CR>"] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    }),
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+  }),
+  sources = {
+    { name = "luasnip" },
+    { name = "nvim_lsp" },
+    { name = "treesitter" },
+    { name = "buffer" },
+    { name = "path" },
+    { name = "nvim_lua" },
+    { name = "cmp_tabnine" },
+    -- { name = "cmdline" },
+  },
+  window = {
+    documentation = cmp.config.window.bordered(),
+  },
+  formatting = {
+    fields = { "menu", "abbr", "kind" },
+    format = function(entry, item)
+      local menu_icon = {
+        nvim_lsp = "[LSP]",
+        luasnip = "[SNIP]",
+        treesitter = "[TS]",
+        buffer = "[BUF]",
+        path = "[PATH]",
+        nvim_lua = "[LUA]",
+        cmp_tabnine = "[TN]",
+        -- cmdline = "[CMD]",
+        -- treesitter = "",
+      }
+
+      item.menu = menu_icon[entry.source.name]
+      return item
+    end,
+  },
+})
+
+vim.cmd [[
+augroup jdtls_lsp
+    autocmd!
+    autocmd FileType java lua require'jdtls.jdtls_setup'.setup()
+augroup end
+]]
+>>>>>>> Stashed changes
