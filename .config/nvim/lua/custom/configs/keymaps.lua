@@ -119,6 +119,8 @@ vnoremap K :m '<-2<CR>gv=gv
 -- 	{ desc = '[C]ode [A]ction' })
 -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition,
 -- 	{ desc = '[G]oto [D]efinition' })
+-- vim.keymap.set('n', 'gr', vim.lsp.buf.references,
+-- 	{ desc = '[G]oto [R]eferences' })
 vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { desc = "[G]oto [I]mplementation" })
 vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, { desc = "Type [D]efinition" })
 
