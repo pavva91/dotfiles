@@ -72,3 +72,8 @@ source /usr/share/nvm/init-nvm.sh
 
 # Nix Os packages
 [[ -f /etc/profile.d/nix.sh ]] && . /etc/profile.d/nix.sh
+
+# Node Version Manager Add (autocompletion)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
