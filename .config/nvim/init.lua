@@ -1,4 +1,3 @@
--- NOTE: Interesting config https://github.com/kristijanhusak/neovim-config/tree/20cd27b0386acf5106c9faab51bdc6f8b2b3cc10/nvim
 require("custom.configs")
 -- Install package manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -32,34 +31,6 @@ require("lazy").setup({
 
   -- Detect tabstop and shiftwidth automatically
   "tpope/vim-sleuth",
-
-  -- Database Explorer
-  {
-    "kristijanhusak/vim-dadbod-ui",
-    dependencies = {
-      "tpope/vim-dadbod",
-    },
-  },
-  {
-    "kristijanhusak/vim-dadbod-completion",
-    dependencies = {
-      "hrsh7th/nvim-cmp",
-      "tpope/vim-dadbod",
-      "kristijanhusak/vim-dadbod-ui",
-    },
-  },
-
-  {
-    "tpope/vim-dadbod",
-    opt = true,
-    dependencies = {
-      "kristijanhusak/vim-dadbod-ui",
-      "kristijanhusak/vim-dadbod-completion",
-    },
-    config = function()
-      -- require("config.dadbod").setup()
-    end,
-  },
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -109,13 +80,10 @@ require("lazy").setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { "folke/which-key.nvim",  opts = {} },
+  { "folke/which-key.nvim",          opts = {} },
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
     "lewis6991/gitsigns.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
     opts = {
       -- See `:help gitsigns.txt`
       signs = {
@@ -142,16 +110,10 @@ require("lazy").setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { "numToStr/Comment.nvim", opts = {} },
+  { "numToStr/Comment.nvim",         opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
-  {
-    "nvim-telescope/telescope.nvim",
-    version = "*",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-  },
+  { "nvim-telescope/telescope.nvim", version = "*", dependencies = { "nvim-lua/plenary.nvim" } },
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built.
   -- Only load if `make` is available. Make sure you have the system
@@ -186,6 +148,12 @@ require("lazy").setup({
 
   { import = "custom.plugins" },
 }, {})
+
+-- [[ Setting options ]]
+-- See `:help vim.o`
+
+-- Sync clipboard between OS and Neovim.
+--  Remove this option if you want your OS clipboard to remain independent.
 
 -- [[ Basic Keymaps ]]
 
@@ -321,6 +289,7 @@ mason_lspconfig.setup({
 --     })
 --   end,
 -- })
+-- local java_config = require('ftplugin.java').config
 for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
   -- if not excl_servers[server_name] then
   if server_name ~= "jdtls" then
@@ -332,16 +301,15 @@ for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
     }
     require("lspconfig")[server_name].setup(config)
   end
+  -- if server_name == "jdtls" then
+  --   vim.notify("jdtls encountered!", vim.log.levels.INFO)
+  -- end
 end
 
 require("fidget").setup()
 
 -- Mason END
 
-<<<<<<< Updated upstream
--- nvim-cmp setup (completion)
-require("config.nvim-cmp")
-=======
 -- nvim-cmp setup
 local cmp = require("cmp")
 local luasnip = require("luasnip")
@@ -424,4 +392,3 @@ augroup jdtls_lsp
     autocmd FileType java lua require'jdtls.jdtls_setup'.setup()
 augroup end
 ]]
->>>>>>> Stashed changes
