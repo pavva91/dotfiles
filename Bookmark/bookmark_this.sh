@@ -1,4 +1,6 @@
 #!/bin/sh
+# Need to activate notifications: sudo pacman -S notification-daemon
+# Install xclip: sudo pacman -S xclip
 
 bookmark="$(xclip -o)"
 file="$HOME/Bookmark/list"
