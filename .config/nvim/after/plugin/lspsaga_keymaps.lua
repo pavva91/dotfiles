@@ -4,8 +4,11 @@ local keymap = vim.keymap.set
 -- If there is no definition, it will instead be hidden
 -- When you use an action in finder like "open vsplit",
 -- you can use <C-t> to jump back
-keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>",
-	{ desc = 'LSP Finder, find the symbol\'s definition' })
+keymap("n", "gh", "<cmd>Lspsaga finder<CR>",
+	{ desc = 'Finder, find the symbol\'s definition' })
+
+keymap("n", "gf", "<cmd>Lspsaga finder<CR>",
+	{ desc = '[G]o [F]ind, find the symbol\'s definition' })
 
 -- Code action
 keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>",
