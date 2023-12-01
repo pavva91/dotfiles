@@ -12,23 +12,69 @@ function M.setup()
   local project_name = vim.fn.fnamemodify(root_dir, ":p:h:t")
   local workspace_dir = home .. "/.cache/jdtls/workspace" .. project_name
 
-  local path_to_jdtls = home .. "/.local/share/nvim/mason/packages/jdtls"
+    -- 💀
+  local path_to_mason_packages = home .. "/.local/share/nvim/mason/packages"
+    -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
+
+  local path_to_jdtls = path_to_mason_packages .. "/jdtls"
+  local path_to_jdebug = path_to_mason_packages .. "/java-debug-adapter"
+  local path_to_jtest = path_to_mason_packages .. "/java-test"
+
   local path_to_config = path_to_jdtls .. "/config_linux"
-  local path_to_plugins = path_to_jdtls .. "/plugins/"
-  local path_to_jar = path_to_plugins .. "org.eclipse.equinox.launcher_1.6.500.v20230717-2134.jar"
   local lombok_path = path_to_jdtls .. "/lombok.jar"
-  local path_to_jdebug = home .. "/.local/share/nvim/mason/packages/java-debug-adapter"
-  local path_to_jtest = home .. "/.local/share/nvim/mason/packages/java-test"
+
+    -- 💀
+  local path_to_jar = path_to_jdtls .. "/plugins/org.eclipse.equinox.launcher_1.6.500.v20230717-2134.jar"
+    -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
+
   local bundles = {
     vim.fn.glob(path_to_jdebug .. "/extension/server/com.microsoft.java.debug.plugin-*.jar", true),
   }
 
   vim.list_extend(bundles, vim.split(vim.fn.glob(path_to_jtest .. "/extension/server/*.jar", true), "\n"))
 
-  local on_attach = function(client, bufnr)
+  -- LSP settings for Java.
+  local on_attach = function(_, bufnr)
     jdtls.setup_dap({ hotcodereplace = "auto" })
     jdtls_dap.setup_dap_main_class_configs()
     jdtls_setup.add_commands()
+
+    local nmap = function(keys, func, desc)
+      if desc then
+        desc = "LSP: " .. desc
+      end
+
+      vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
+    end
+
+    -- nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+    -- nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+
+    -- nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+    -- nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+    nmap("gI", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
+    nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
+    -- nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
+    -- nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+
+    -- See `:help K` for why this keymap
+    -- nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
+    -- nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+    nmap("<leader>hh", vim.lsp.buf.signature_help, "Signature [H][H]elp Documentation")
+
+    -- Lesser used LSP functionality
+    nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+    nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
+    nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
+    nmap("<leader>wl", function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, "[W]orkspace [L]ist Folders")
+
+    -- Create a command `:Format` local to the LSP buffer
+    vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
+      vim.lsp.buf.format()
+    end, { desc = "Format current buffer with LSP" })
+
     require("lsp_signature").on_attach({
       bind = true,
       padding = "",
@@ -38,32 +84,8 @@ function M.setup()
       hint_prefix = "󱄑 ",
     }, bufnr)
 
-    -- Mappings.
-    -- local opts = { noremap = true, silent = true }
-    -- buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    -- buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    -- buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    -- buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    -- buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-    -- buf_set_keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-    -- buf_set_keymap('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-    -- buf_set_keymap('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-    -- buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-    -- buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    -- buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references() && vim.cmd("copen")<CR>', opts)
-    -- buf_set_keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-    -- buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-    -- buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-    -- buf_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-    -- -- Java specific
-    -- buf_set_keymap("n", "<leader>di", "<Cmd>lua require'jdtls'.organize_imports()<CR>", opts)
-    -- buf_set_keymap("n", "<leader>dt", "<Cmd>lua require'jdtls'.test_class()<CR>", opts)
-    -- buf_set_keymap("n", "<leader>dn", "<Cmd>lua require'jdtls'.test_nearest_method()<CR>", opts)
-    -- buf_set_keymap("v", "<leader>de", "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", opts)
-    -- buf_set_keymap("n", "<leader>de", "<Cmd>lua require('jdtls').extract_variable()<CR>", opts)
-    -- buf_set_keymap("v", "<leader>dm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
-    --
-    -- buf_set_keymap("n", "<leader>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+    require 'lspsaga'.init_lsp_saga()
+
   end
 
   local capabilities = {
@@ -219,43 +241,10 @@ function M.setup()
     extendedClientCapabilities = extendedClientCapabilities,
   }
 
-  -- UI
-  local finders = require 'telescope.finders'
-  local sorters = require 'telescope.sorters'
-  local actions = require 'telescope.actions'
-  local pickers = require 'telescope.pickers'
-  require('jdtls.ui').pick_one_async = function(items, prompt, label_fn, cb)
-    local opts = {}
-    pickers.new(opts, {
-      prompt_title    = prompt,
-      finder          = finders.new_table {
-        results = items,
-        entry_maker = function(entry)
-          return {
-            value = entry,
-            display = label_fn(entry),
-            ordinal = label_fn(entry),
-          }
-        end,
-      },
-      sorter          = sorters.get_generic_fuzzy_sorter(),
-      attach_mappings = function(prompt_bufnr)
-        actions.goto_file_selection_edit:replace(function()
-          local selection = actions.get_selected_entry(prompt_bufnr)
-          actions.close(prompt_bufnr)
-
-          cb(selection.value)
-        end)
-
-        return true
-      end,
-    }):find()
-  end
-
-  -- Server
+  -- Start Server
   require('jdtls').start_or_attach(config)
 
-  -- Keymaps
+  -- Set Java Specific Keymaps
   require("jdtls.keymaps")
 end
 
