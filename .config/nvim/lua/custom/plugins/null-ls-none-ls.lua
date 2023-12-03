@@ -1,5 +1,8 @@
+-- TODO: Linter alternative: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#eslint
+-- TODO: Formatter: https://github.com/mhartington/formatter.nvim
 return {
-	"jose-elias-alvarez/null-ls.nvim",
+	-- "jose-elias-alvarez/null-ls.nvim",
+	"nvimtools/none-ls.nvim",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
@@ -13,14 +16,24 @@ return {
 
 				-- FORMATTING
 				-- Prettier
-				require("null-ls").builtins.formatting.prettier.with({
+				-- require("null-ls").builtins.formatting.prettier.with({
+				-- 	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html", "json", "jsonc", "yaml", "markdown", "markdown.mdx", "graphql", "handlebars", "solidity" },
+				-- }),                                -- markdown and solidity formatting
+
+				-- Prettier Daemon (faster)
+				require("null-ls").builtins.formatting.prettierd.with({
 					filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html", "json", "jsonc", "yaml", "markdown", "markdown.mdx", "graphql", "handlebars", "solidity" },
 				}),                                -- markdown and solidity formatting
+
 				require("null-ls").builtins.formatting.stylua, -- lua formatting
 
 				-- ESLint
-				require("null-ls").builtins.code_actions.eslint,
-				require("null-ls").builtins.diagnostics.eslint,
+				-- require("null-ls").builtins.code_actions.eslint,
+				-- require("null-ls").builtins.diagnostics.eslint,
+
+				-- ESLint Daemon (faster)
+				require("null-ls").builtins.code_actions.eslint_d,
+				require("null-ls").builtins.diagnostics.eslint_d,
 
 				-- GitSigns
 				-- require("null-ls").builtins.code_actions.gitsigns.with({
