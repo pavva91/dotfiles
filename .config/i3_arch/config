@@ -84,7 +84,7 @@ bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -display-drun "RU
 
 # screenshots
 bindsym Print exec ~/.config/i3/screenshot.sh full
-bindsym Shift+Print exec ~/.config/i3/screenshot.sh rect
+bindsym $mod+Shift+Print exec ~/.config/i3/screenshot.sh rect
 bindsym $mod+Print exec ~/.config/i3/screenshot.sh active_window
 
 # border and decoration toggle
