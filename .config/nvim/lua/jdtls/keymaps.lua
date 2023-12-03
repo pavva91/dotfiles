@@ -57,8 +57,7 @@ local vmappings = {
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
 
-
--- Old School Mappings.
+-- If you want you can add here Old School Mappings.
 -- vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "[G]oto [R]eferences - Java", expr = true, silent = true })
 -- vim.keymap.set("n","gr", require("telescope.builtin").lsp_references,{ desc = "[G]oto [R]eferences" })
 -- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = "" })
@@ -76,6 +75,7 @@ which_key.register(vmappings, vopts)
 -- vim.keymap.set('n', '[d', vim.lsp.diagnostic.goto_prev, { desc = "" })
 -- vim.keymap.set('n', ']d', vim.lsp.diagnostic.goto_next, { desc = "" })
 -- vim.keymap.set('n', '<leader>q', vim.lsp.diagnostic.set_loclist, { desc = "" })
+
 -- -- Java specific
 -- vim.keymap.set("n", "<leader>di", "<Cmd>lua require'jdtls'.organize_imports()<CR>", { desc = "" })
 -- vim.keymap.set("n", "<leader>dt", "<Cmd>lua require'jdtls'.test_class()<CR>", { desc = "" })

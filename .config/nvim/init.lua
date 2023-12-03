@@ -1,5 +1,5 @@
 require("custom.configs")
--- Install package manager
+-- INFO: Install package manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
@@ -14,14 +14,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- NOTE: Here is where you install your plugins.
--- HACK: Here is where you install your plugins.
--- TODO: Here is where you install your plugins.
--- FIX: Here is where you install your plugins.
--- WARNING: Here is where you install your plugins.
--- PERF: Here is where you install your plugins.
--- BUG: Here is where you install your plugins.
---    as they will be available in your neovim runtime.
 require("lazy").setup({
   -- NOTE: First, some plugins that don't require any configuration
 
@@ -149,14 +141,6 @@ require("lazy").setup({
   { import = "custom.plugins" },
 }, {})
 
--- [[ Setting options ]]
--- See `:help vim.o`
-
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
-
--- [[ Basic Keymaps ]]
-
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
@@ -251,17 +235,13 @@ local servers = {
     },
   },
   tsserver = {},
-  -- eslint = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
     },
   },
-  -- jdtls = {},
 }
-
-local excl_servers = { "jdtls" }
 
 -- Setup neovim lua configuration
 require("neodev").setup()
@@ -280,16 +260,6 @@ mason_lspconfig.setup({
   ensure_installed = vim.tbl_keys(servers),
 })
 
--- mason_lspconfig.setup_handlers({
---   function(server_name)
---     require("lspconfig")[server_name].setup({
---       capabilities = capabilities,
---       on_attach = on_attach,
---       settings = servers[server_name],
---     })
---   end,
--- })
-
 for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
   -- if not excl_servers[server_name] then
   if server_name ~= "jdtls" then
@@ -307,9 +277,9 @@ end
 
 require("fidget").setup()
 
--- Mason END
+-- INFO: Mason END
 
--- nvim-cmp setup
+-- INFO: nvim-cmp setup
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
@@ -385,10 +355,20 @@ cmp.setup({
   },
 })
 
--- NOTE: Execute Java Language Server with autocommand to attach on every buffer
-vim.cmd [[
-augroup jdtls_lsp
-    autocmd!
-    autocmd FileType java lua require'jdtls.jdtls_setup'.setup()
-augroup end
-]]
+-- INFO: Execute Java Language Server with autocommand to attach on every buffer (VimScript)
+-- vim.cmd [[
+-- augroup jdtls_lsp
+--     autocmd!
+--     autocmd FileType java lua require'jdtls.jdtls_setup'.setup()
+-- augroup end
+-- ]]
+
+-- INFO: Use lua instead of vimscript
+local jdtls_lsp = vim.api.nvim_create_augroup("JdtlsGroup", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function()
+    require('jdtls.jdtls_setup').setup()
+  end,
+  group = jdtls_lsp,
+  pattern = "java",
+})
