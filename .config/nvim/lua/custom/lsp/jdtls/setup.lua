@@ -245,7 +245,7 @@ function M.setup()
   require('jdtls').start_or_attach(config)
 
   -- Set Java Specific Keymaps
-  require("jdtls.keymaps")
+  require("custom.lsp.jdtls.keymaps")
 end
 
 return M

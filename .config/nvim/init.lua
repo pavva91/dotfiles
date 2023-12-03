@@ -1,5 +1,7 @@
+-- INFO: vanilla neovim configs first
 require("custom.configs")
--- INFO: Install package manager
+
+-- INFO: install package manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
@@ -15,14 +17,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  -- NOTE: First, some plugins that don't require any configuration
-
-  -- Git related plugins
-  "tpope/vim-fugitive",
-  "tpope/vim-rhubarb",
-
-  -- Detect tabstop and shiftwidth automatically
-  "tpope/vim-sleuth",
+  -- -- NOTE: First, some plugins that don't require any configuration
+  --
+  -- -- Git related plugins
+  -- "tpope/vim-fugitive",
+  -- "tpope/vim-rhubarb",
+  --
+  -- -- Detect tabstop and shiftwidth automatically
+  -- "tpope/vim-sleuth",
+  --
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -71,8 +74,7 @@ require("lazy").setup({
     },
   },
 
-  -- Useful plugin to show you pending keybinds.
-  { "folke/which-key.nvim",          opts = {} },
+  -- { "folke/which-key.nvim",          opts = {} },
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
     "lewis6991/gitsigns.nvim",
@@ -120,7 +122,7 @@ require("lazy").setup({
     end,
   },
   {
-    "mfussenegger/nvim-jdtls",
+    -- "mfussenegger/nvim-jdtls",
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -149,16 +151,16 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- [[ Highlight on yank ]]
--- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
-vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = "*",
-})
+-- -- [[ Highlight on yank ]]
+-- -- See `:help vim.highlight.on_yank()`
+-- local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+-- vim.api.nvim_create_autocmd("TextYankPost", {
+--   callback = function()
+--     vim.highlight.on_yank()
+--   end,
+--   group = highlight_group,
+--   pattern = "*",
+-- })
 
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
@@ -367,7 +369,7 @@ cmp.setup({
 local jdtls_lsp = vim.api.nvim_create_augroup("JdtlsGroup", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
   callback = function()
-    require('jdtls.jdtls_setup').setup()
+    require('custom.lsp.jdtls.setup').setup()
   end,
   group = jdtls_lsp,
   pattern = "java",
