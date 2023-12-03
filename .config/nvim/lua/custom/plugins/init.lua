@@ -1,14 +1,20 @@
 return {
-	-- Try integration from vim
-	----
+	-- NOTE: First, some plugins that don't require any configuration
 
-	-- Abbreviation
-	-- Substitution on steroids (:%Subvert/facilit{y,ies}/building{,s}/g)
-	-- :Subvert/blog{,s}/post{,s}/g  (you can do that also with normal :s)
-	-- You can abbreviate it as :S, and it accepts the full range of flags including things like c (confirm).
-	-- Coercion (crs : coerce to snake case : Turn 'fooBar' into 'foo_bar')
-	-- MixedCase (crm); camelCase (crc), snake_case (crs), UPPER_CASE (cru),
-	-- dash-case (cr-), dot.case (cr.), space case (cr<space>), Title Case (crt)
+	-- Git related plugins
+	"tpope/vim-fugitive",
+	"tpope/vim-rhubarb",
+
+	-- Detect tabstop and shiftwidth automatically
+	"tpope/vim-sleuth",
+
+	-- NOTE: Abbreviation
+	-- NOTE: Substitution on steroids (:%Subvert/facilit{y,ies}/building{,s}/g)
+	-- NOTE: :Subvert/blog{,s}/post{,s}/g  (you can do that also with normal :s)
+	-- NOTE: You can abbreviate it as :S, and it accepts the full range of flags including things like c (confirm).
+	-- NOTE: Coercion (crs : coerce to snake case : Turn 'fooBar' into 'foo_bar')
+	-- NOTE: MixedCase (crm); camelCase (crc), snake_case (crs), UPPER_CASE (cru),
+	-- NOTE: dash-case (cr-), dot.case (cr.), space case (cr<space>), Title Case (crt)
 	"tpope/vim-abolish",
 	-- * and # Search for the current selection in Visual mode
 	"nelstrom/vim-visual-star-search",
@@ -26,6 +32,7 @@ return {
 			enable = true,
 		},
 	},
+
 	--  --- Surrounding (e.g: surround 1 word with '()': ysw), surround 2 lines with '{}' ys2j} )
 	--  ysw( : surround 1 word with '(   )' with heading and trailing spaces
 	--  cs"' - Change "hello" to 'hello'
@@ -58,4 +65,36 @@ return {
 	"mbbill/undotree",
 	-- Vim LaTeX support
 	-- 'lervag/vimtex'
+	"mfussenegger/nvim-jdtls",
+	{ "folke/which-key.nvim",  opts = {} },
+	{
+		-- Adds git releated signs to the gutter, as well as utilities for managing changes
+		"lewis6991/gitsigns.nvim",
+		opts = {
+			-- See `:help gitsigns.txt`
+			signs = {
+				add = { text = "+" },
+				change = { text = "~" },
+				delete = { text = "_" },
+				topdelete = { text = "‾" },
+				changedelete = { text = "~" },
+			},
+		},
+	},
+	{
+		-- Add indentation guides even on blank lines
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		-- Enable `lukas-reineke/indent-blankline.nvim`
+		-- See `:help indent_blankline.txt`
+		opts = {
+			indent = { char = "┊" }
+			-- char = "┊",
+			-- show_trailing_blankline_indent = false,
+		},
+	},
+
+	-- "gc" to comment visual regions/lines
+	{ "numToStr/Comment.nvim", opts = {} },
+
 }

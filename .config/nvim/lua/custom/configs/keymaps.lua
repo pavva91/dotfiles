@@ -10,17 +10,6 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- [[ Highlight on yank ]]
--- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
-vim.api.nvim_create_autocmd("TextYankPost", {
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-	group = highlight_group,
-	pattern = "*",
-})
-
 -- 2 or 4 spaces tab
 vim.keymap.set(
 	"n",
@@ -123,6 +112,7 @@ vnoremap K :m '<-2<CR>gv=gv
 -- 	{ desc = '[G]oto [R]eferences' })
 vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { desc = "[G]oto [I]mplementation" })
 vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, { desc = "Type [D]efinition" })
+vim.keymap.set("n", "gK", vim.lsp.buf.signature_help, { desc = "Signature Help" })
 
 -- See `:help K` for why this keymap
 -- vim.keymap.set('n', 'K', vim.lsp.buf.hover,
@@ -137,6 +127,7 @@ vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, { desc = 
 vim.keymap.set("n", "<leader>wl", function()
 	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 end, { desc = "[W]orkspace [L]ist Folders" })
+vim.keymap.set("n","<leader>hh", vim.lsp.buf.signature_help, { desc = "Signature [H][H]elp Documentation" })
 
 -- Format
 vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "[L]SP [F]ormat open buffer" })

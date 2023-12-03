@@ -1,5 +1,6 @@
 -- TODO: Linter alternative lspconfig configurations for eslint: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#eslint
 -- TODO: Linter alternative plugin: https://github.com/mfussenegger/nvim-lint
+-- TODO: nvim-lint configuration from LazyVim: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/linting.lua
 -- TODO: Formatter: https://github.com/mhartington/formatter.nvim
 return {
 	-- "jose-elias-alvarez/null-ls.nvim",
