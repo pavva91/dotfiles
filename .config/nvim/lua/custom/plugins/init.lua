@@ -8,6 +8,20 @@ return {
 	-- Detect tabstop and shiftwidth automatically
 	"tpope/vim-sleuth",
 
+	{
+		"kristijanhusak/vim-dadbod-ui",
+		dependencies = {
+			"tpope/vim-dadbod",
+		},
+	},
+	{
+		"kristijanhusak/vim-dadbod-completion",
+		dependencies = {
+			"hrsh7th/nvim-cmp",
+			"tpope/vim-dadbod",
+			"kristijanhusak/vim-dadbod-ui",
+		},
+	},
 	-- NOTE: Abbreviation
 	-- NOTE: Substitution on steroids (:%Subvert/facilit{y,ies}/building{,s}/g)
 	-- NOTE: :Subvert/blog{,s}/post{,s}/g  (you can do that also with normal :s)
