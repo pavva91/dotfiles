@@ -79,9 +79,6 @@ require("lazy").setup({
       return vim.fn.executable("make") == 1
     end,
   },
-  {
-    -- "mfussenegger/nvim-jdtls",
-  },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.

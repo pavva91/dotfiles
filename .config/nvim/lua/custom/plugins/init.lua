@@ -8,6 +8,7 @@ return {
 	-- Detect tabstop and shiftwidth automatically
 	"tpope/vim-sleuth",
 
+	-- Database Explorer (vim-dadbod)
 	{
 		"kristijanhusak/vim-dadbod-ui",
 		dependencies = {
