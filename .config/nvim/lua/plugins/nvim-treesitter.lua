@@ -1,9 +1,11 @@
 return {
     -- Highlight, edit, and navigate code
     "nvim-treesitter/nvim-treesitter",
+    event = 'VeryLazy',
     dependencies = {
         "nvim-treesitter/nvim-treesitter-textobjects",
     },
+    build = ':TSUpdate',
     config = function()
         pcall(require("nvim-treesitter.install").update({ with_sync = true }))
         require("nvim-treesitter.configs").setup({

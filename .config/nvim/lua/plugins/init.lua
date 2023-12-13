@@ -26,7 +26,7 @@ return {
 	--  ysw( : surround 1 word with '(   )' with heading and trailing spaces
 	--  cs"' - Change "hello" to 'hello'
 	-- "https://vimawesome.com/plugin/surround-vim
-	"tpope/vim-surround",
+	-- "tpope/vim-surround",
 
 	-- NOTE: Shortcuts with [b ]b for buffer, a for argument, q quickfix, l location,
 	-- t tags, [e exchange current line with line above ]e exchange with line

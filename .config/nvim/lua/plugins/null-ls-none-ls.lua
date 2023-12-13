@@ -29,6 +29,8 @@ return {
 
 				require("null-ls").builtins.formatting.stylua, -- lua formatting
 
+				-- require("null-ls").builtins.formatting.google_java_format, -- java formatting
+
 				-- ESLint
 				-- require("null-ls").builtins.code_actions.eslint,
 				-- require("null-ls").builtins.diagnostics.eslint,
@@ -36,6 +38,10 @@ return {
 				-- ESLint Daemon (faster)
 				require("null-ls").builtins.code_actions.eslint_d,
 				require("null-ls").builtins.diagnostics.eslint_d,
+
+				-- GolangCI Lint
+				require("null-ls").builtins.diagnostics.golangci_lint,
+
 
 				-- GitSigns
 				-- require("null-ls").builtins.code_actions.gitsigns.with({

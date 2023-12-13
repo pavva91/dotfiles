@@ -46,7 +46,7 @@ local mappings = {
 			telescope.grep_string,
 			"[F]ind current [W]ord",
 		},
-		G = {
+		g = {
 			telescope.live_grep,
 			"[F]ind by [G]rep",
 		},
@@ -82,7 +82,7 @@ local mappings = {
 			telescope.git_commits,
 			"[F]ind Git [C]ommits",
 		},
-		g = {
+		G = {
 			telescope.git_files,
 			"[F]ind [G]it Files (hidden files)",
 		},
