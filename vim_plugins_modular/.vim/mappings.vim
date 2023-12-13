@@ -116,7 +116,12 @@ vnoremap K :m '<-2<CR>gv=gv
 
 " open NetRW
 nnoremap <F3> :Ex<CR>
+nnoremap \ :Ex<CR>
 nnoremap <leader>pv :Vex<CR>
 
 " resource vim configs
 nnoremap <leader><CR> :so ~/.vimrc<CR>
+
+nnoremap <leader>ww :w<CR>
+
+inoremap ii <ESC>
