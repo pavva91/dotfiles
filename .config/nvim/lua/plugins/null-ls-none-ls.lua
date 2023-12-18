@@ -40,7 +40,7 @@ return {
 				require("null-ls").builtins.diagnostics.eslint_d,
 
 				-- GolangCI Lint
-				require("null-ls").builtins.diagnostics.golangci_lint,
+				-- require("null-ls").builtins.diagnostics.golangci_lint,
 
 
 				-- GitSigns

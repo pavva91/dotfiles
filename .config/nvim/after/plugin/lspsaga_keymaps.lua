@@ -38,6 +38,10 @@ keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>",
 keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>",
 	{ desc = '[G]o to [D]efinition' })
 
+-- Go to definition in new vertical split
+keymap("n", "gD", "<cmd>vs<CR><cmd>Lspsaga goto_definition<CR>",
+	{ desc = '[G]o to [D]efinition' })
+
 -- Peek type definition
 -- You can edit the file containing the type definition in the floating window
 -- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"

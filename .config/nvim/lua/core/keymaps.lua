@@ -124,7 +124,7 @@ vim.keymap.set("n", "gK", vim.lsp.buf.signature_help, { desc = "Signature Help" 
 -- 	{ desc = 'Signature Documentation' })
 
 -- Lesser used LSP functionality
-vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "[G]oto [D]eclaration" })
+-- vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "[G]oto [D]eclaration" })
 vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, { desc = "[W]orkspace [A]dd Folder" })
 vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, { desc = "[W]orkspace [R]emove Folder" })
 vim.keymap.set("n", "<leader>wl", function()
