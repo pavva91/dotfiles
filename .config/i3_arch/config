@@ -278,6 +278,15 @@ exec_always feh --bg-fi $HOME/Pictures/Wallpapers/Bliss_1920x1080_weather.jpg
 # bindsym $mod+z exec ~/.config/i3blocks/scripts/lock
 bindsym $mod+z exec ~/.config/i3/lock.sh
 
+# FZF as floating window
+for_window [class="Alacritty" instance="floating-term"] floating enable
+
+# Use fzf as program launcher
+bindsym $alt+d exec alacritty --class floating-term -e ~/run_fzf.sh
+
+# Use fzf for finding and opening bookmark
+bindsym $alt+l exec alacritty --class floating-term -e ~/Bookmark/get_bookmark_fzf.sh
+
 # Start Application Shortcuts
 bindsym $mod+F1 exec brave
 bindsym $mod+F2 exec firefox
