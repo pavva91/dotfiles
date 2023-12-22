@@ -1,9 +1,6 @@
 -- VANILLA SETTINGS -----------------------------------------------------------------
 local set = vim.opt
 
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -47,6 +44,7 @@ set.colorcolumn = "80"
 
 -- Set highlight on search
 set.hlsearch = false
+set.incsearch = true
 
 -- Make line numbers default
 vim.wo.number = true
@@ -83,3 +81,11 @@ set.completeopt = "noinsert,menuone,noselect"
 
 -- Disable Swap to allow modification from other text editors (e.g. VScodium, vim)
 set.swapfile = false
+
+vim.g.netrw_banner = 0
+
+-- lsp diagnostic icons
+vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
+vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
+vim.fn.sign_define("DiagnosticSignHint", { text = " ", texthl = "DiagnosticSignHint" })

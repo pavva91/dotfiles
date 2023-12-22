@@ -8,6 +8,7 @@ return {
 		"nvim-neotest/neotest-vim-test",
 		"rouge8/neotest-rust",
 	},
+	event = "BufReadPre",
 	config = function()
 		local opts = {
 			adapters = {
@@ -15,7 +16,7 @@ return {
 					experimental = {
 						test_table = true,
 					},
-					args = { "-coverprofile cover.out"},
+					args = { "-coverprofile cover.out" },
 				}),
 				require("neotest-python")({
 					dap = { justMyCode = false },

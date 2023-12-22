@@ -2,8 +2,9 @@
 
 -- [[ Basic Keymaps ]]
 
-vim.keymap.set("i" , "ii", "<ESC>")
-vim.keymap.set("n" , "<leader>ww", ":w<CR>")
+vim.keymap.set("i", "jk", "<ESC>")
+vim.keymap.set("i", "kj", "<ESC>")
+vim.keymap.set("n", "<leader>ww", ":w<CR>")
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
@@ -130,7 +131,7 @@ vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, { desc = 
 vim.keymap.set("n", "<leader>wl", function()
 	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 end, { desc = "[W]orkspace [L]ist Folders" })
-vim.keymap.set("n","<leader>hh", vim.lsp.buf.signature_help, { desc = "Signature [H][H]elp Documentation" })
+vim.keymap.set("n", "<leader>hh", vim.lsp.buf.signature_help, { desc = "Signature [H][H]elp Documentation" })
 
 -- Format
 vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "[L]SP [F]ormat open buffer" })
@@ -144,6 +145,32 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<leader>gf", "<cmd>diffget //3<CR>", { desc = "[G]it Diffget from Left (merge branch)" })
 
+
 -- Resize window with shift + and shift -
 vim.keymap.set('n', '_', '<c-w>5<')
 vim.keymap.set('n', '+', '<c-w>5>')
+
+vim.keymap.set('n', '<C-Left>', ':vertical resize +3<CR>')
+vim.keymap.set('n', '<C-Right>', ':vertical resize -3<CR>')
+vim.keymap.set('n', '<C-Up>', ':horizontal resize +3<CR>')
+vim.keymap.set('n', '<C-Down>', ':horizontal resize -3<CR>')
+
+vim.keymap.set('n', '<Tab>', ':tabnext <CR>')
+vim.keymap.set('n', '<S-Tab>', ':tabprevious <CR>')
+
+-- scrolling remaps
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
+-- TODO: create snippets shorcuts
+-- <leader>i -> if
+-- <leader>c -> case
+-- <leader>f -> function
+--
+
+-- sort selection
+vim.keymap.set('v', '<leader>s', ':sort<CR>')
+
+-- create template file
+-- vim.cmd(':autocmd BufNewFile *.sh 0r ~/.config/nvim/skeleton.sh')
+-- vim.cmd(':autocmd BufNewFile *.md 0r ~/.config/nvim/skeleton.md')

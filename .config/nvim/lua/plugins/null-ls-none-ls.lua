@@ -8,6 +8,7 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
+	event = "LspAttach",
 	config = function()
 		require("null-ls").setup({
 			sources = {
@@ -27,7 +28,7 @@ return {
 					filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html", "json", "jsonc", "yaml", "markdown", "markdown.mdx", "graphql", "handlebars", "solidity" },
 				}),                                -- markdown and solidity formatting
 
-				require("null-ls").builtins.formatting.stylua, -- lua formatting
+				-- require("null-ls").builtins.formatting.stylua, -- lua formatting
 
 				-- require("null-ls").builtins.formatting.google_java_format, -- java formatting
 

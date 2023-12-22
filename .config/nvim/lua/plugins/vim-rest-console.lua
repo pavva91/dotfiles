@@ -1,5 +1,6 @@
 return {
 	"diepm/vim-rest-console",
+	event = "VeryLazy",
 	config = function()
 		-- Turn off the default keybinding
 		vim.g.vrc_set_default_mapping = 0

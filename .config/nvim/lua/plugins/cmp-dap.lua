@@ -1,5 +1,6 @@
 return {
 	"rcarriga/cmp-dap",
+	event = "VeryLazy",
 -- 	dependencies = {
 -- 		"hrsh7th/nvim-cmp"
 -- 	},

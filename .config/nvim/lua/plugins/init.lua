@@ -3,6 +3,7 @@ return {
 	{
 		-- Adds git releated signs to the gutter, as well as utilities for managing changes
 		"lewis6991/gitsigns.nvim",
+		-- event = "VeryLazy",
 		opts = {
 			-- See `:help gitsigns.txt`
 			signs = {
@@ -80,15 +81,37 @@ return {
 	"junegunn/fzf.vim",
 	"mbbill/undotree",
 	"mfussenegger/nvim-jdtls",
-	{ "folke/which-key.nvim",  opts = {} },
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
+		event = {
+			"BufReadPre",
+			"BufNewFile",
+		},
 		opts = {
 			indent = { char = "┊" }
 		},
 	},
-	{ "numToStr/Comment.nvim", opts = {} },
+	{
+		"numToStr/Comment.nvim",
+		-- event = "VeryLazy",
+		key = "gc",
+		opts = {}
+	},
 
 	-- NOTE: Themes
 	"tomasr/molokai",
