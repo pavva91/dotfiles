@@ -11,3 +11,5 @@ map p print
 /* F5 presentation mode */
 /* <space> page down (presentation mode) */
 /* <backspace> page up (presentation mode) */
+map D set "first-page-column 1:1"
+map <C-d> set "first-page-column 1:2"
