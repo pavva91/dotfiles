@@ -18,9 +18,9 @@ return {
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
 		"ray-x/cmp-treesitter",
-		{
-			"tzachar/cmp-tabnine",
-			build = "./install.sh",
-		},
+		-- {
+		-- 	"tzachar/cmp-tabnine",
+		-- 	build = "./install.sh",
+		-- },
 	},
 }
