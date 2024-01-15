@@ -8,7 +8,7 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
-	event = "LspAttach",
+	event = "BufRead",
 	config = function()
 		require("null-ls").setup({
 			sources = {
