@@ -155,8 +155,15 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize -3<CR>')
 vim.keymap.set('n', '<C-Up>', ':horizontal resize +3<CR>')
 vim.keymap.set('n', '<C-Down>', ':horizontal resize -3<CR>')
 
-vim.keymap.set('n', '<Tab>', ':tabnext <CR>')
-vim.keymap.set('n', '<S-Tab>', ':tabprevious <CR>')
+-- NOTE: <Tab> is equal to <C-i>
+-- vim.keymap.set('n', '<Tab>', ':tabnext <CR>')
+-- vim.keymap.set('n', '<S-Tab>', ':tabprevious <CR>')
+
+vim.keymap.set('n', '<leader>tn', ':tabnext <CR>', { desc = 'Go to [N]ext [T]ab'})
+vim.keymap.set('n', '<leader>tp', ':tabprevious <CR>', { desc = 'Go to [P]revious [T]ab'})
+
+vim.keymap.set('n', 'tn', ':tabnext <CR>', { desc = 'Go to [N]ext [T]ab'})
+vim.keymap.set('n', 'tb', ':tabprevious <CR>', { desc = 'Go to [P]revious [T]ab'})
 
 -- scrolling remaps
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
@@ -171,6 +178,6 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 -- sort selection
 vim.keymap.set('v', '<leader>s', ':sort<CR>')
 
--- create template file
+-- TODO: create template file
 -- vim.cmd(':autocmd BufNewFile *.sh 0r ~/.config/nvim/skeleton.sh')
 -- vim.cmd(':autocmd BufNewFile *.md 0r ~/.config/nvim/skeleton.md')
