@@ -1,33 +1,23 @@
 #!/bin/bash
 
 ##Check VPN status
-# GET_VPN=$(nmcli con show -a | grep tun0 | cut -d ' ' -f1)
-# GET_VPN=$(nmcli -t con show -a | grep tun0 | awk -F  ':' '{ print $1 }')
-# GET_VPN=$(nmcli con show -a | grep tun0 | awk '{ print $1 }')
+# GET_VPN=$(ip route | grep tun0 | wc -l)
+GET_VPN=$(ip route | grep -c tun0)
 
-ISP=$(curl -s ifconfig.co/json | awk -F "\"" '/asn_org/ {print $4}')
 country_iso=$(curl -s ifconfig.co/json | awk -F "\"" '/country_iso/ {print $4}')
-vpn_connected=0 # Defaults to false
 
-if [ "$country_iso" != "IT" ]; then
-    vpn_connected=1
-else
-    vpn_connected=0
-fi
-
-##Store status in STATUS
-if [ $vpn_connected -eq 1 ]
+if [ "$GET_VPN" != "0" ];
 then
-    STATUS=ON
+    STATUS="ON: $country_iso"
 else
-    STATUS=OFF
+    STATUS="OFF: $country_iso"
 fi
 
-echo $STATUS # full text
-echo $STATUS # short text
+echo "$STATUS" # full text
+echo "$STATUS" # short text
 
 ##Colors
-if [[ "$STATUS" == "ON" ]]
+if [[ "$STATUS" == *"ON"* ]]
 then
     echo "#00ff00"
 else
