@@ -7,8 +7,8 @@ local keymap = vim.keymap.set
 keymap("n", "gh", "<cmd>Lspsaga finder<CR>",
 	{ desc = 'Finder, find the symbol\'s definition' })
 
-keymap("n", "gf", "<cmd>Lspsaga finder<CR>",
-	{ desc = '[G]o [F]ind, find the symbol\'s definition' })
+-- keymap("n", "gf", "<cmd>Lspsaga finder<CR>",
+-- 	{ desc = '[G]o [F]ind, find the symbol\'s definition' })
 
 -- Code action
 keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>",
