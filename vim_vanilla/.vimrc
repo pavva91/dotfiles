@@ -173,8 +173,8 @@ nnoremap <leader>, :nohlsearch<CR>
 " Replace all is aliased to S
 nnoremap S :%s//g<left><left>
 
-nnoremap <TAB> :bnext<CR>
-nnoremap <S-TAB> :bprevious<CR>
+" nnoremap <TAB> :bnext<CR>
+" nnoremap <S-TAB> :bprevious<CR>
 
 " buffer search shortcut
 nnoremap gb :ls<cr>:b<space>
@@ -231,4 +231,12 @@ nnoremap <leader>pt :Vex<CR>
 
 nnoremap <leader>ww :w<CR>
 
-inoremap ii <ESC>
+" sort selection
+vnoremap <leader>s :sort<CR>
+
+" scrolling remaps
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+inoremap jk <ESC>
+inoremap kj <ESC>

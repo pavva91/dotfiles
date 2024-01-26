@@ -124,4 +124,12 @@ nnoremap <leader><CR> :so ~/.vimrc<CR>
 
 nnoremap <leader>ww :w<CR>
 
-inoremap ii <ESC>
+inoremap kj <ESC>
+inoremap jk  <ESC>
+
+" sort selection
+vnoremap <leader>s :sort<CR>
+
+" scrolling remaps
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
