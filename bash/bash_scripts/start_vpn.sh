@@ -38,14 +38,14 @@ read -p 'Insert VPN: ' vpn
 
 check_if_vpn_name_correct $vpn
 
-already_active_VPN=$(systemctl status | grep '\.protonvpn\.net\.udp\.service$' | awk -F "@" '{ print $2  }')
+already_active_VPN=$(systemctl status | grep '\.protonvpn\.udp\.service$' | awk -F "@" '{ print $2  }')
 echo "Disconnect from $already_active_VPN"
 sudo systemctl stop openvpn-client@$already_active_VPN
 sudo systemctl disable openvpn-client@$already_active_VPN
 
 echo "Connect to: $vpn"
-sudo systemctl start openvpn-client@$vpn.protonvpn.net.udp.service
-connected_VPN=$(systemctl status | grep '\.protonvpn\.net\.udp\.service$' | awk -F "@" '{ print $2  }')
+sudo systemctl start openvpn-client@$vpn.protonvpn.udp.service
+connected_VPN=$(systemctl status | grep '\.protonvpn\.udp\.service$' | awk -F "@" '{ print $2  }')
 echo "Connected to: $connected_VPN"
 
 sleep 5
