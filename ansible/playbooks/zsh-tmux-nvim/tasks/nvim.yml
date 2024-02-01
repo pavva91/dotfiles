@@ -1,0 +1,42 @@
+# sudo apt-get install ninja-build gettext cmake unzip curl
+
+- name: Install cmake
+  apt: name=cmake
+  tags:
+  - nvim
+
+- name: Install ninja-build
+  apt: name=ninja-build
+  tags:
+  - nvim
+
+- name: Install gettext
+  apt: name=gettext
+  tags:
+  - nvim
+
+- name: Install unzip
+  apt: name=unzip
+  tags:
+  - nvim
+
+- name: Install curl
+  apt: name=curl
+  tags:
+  - nvim
+
+# git clone https://github.com/neovim/neovim
+- name: Clone neovim
+  ansible.builtin.git:
+    repo: https://github.com/neovim/neovim
+    dest: ~/github/neovim
+  tags:
+  - nvim
+
+# make CMAKE_BUILD_TYPE=RelWithDebInfo
+# sudo make install
+- name: Build and Install neovim
+  shell: cd ~/github/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo && sudo make install
+  tags:
+  - zsh
+
