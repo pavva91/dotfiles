@@ -3,6 +3,9 @@
 ## Stow default behaviour
 Stow will by default look for that package in the local directory and then symlink it into the parent directory
 Default stow behaviour is: `stow -t ..`
+for example (`cd dotfiles`)
+`stow zathura`
+
 
 To simulate the stow symlink creation do: -nv
 `stow -nv -t ~/.config .config`
