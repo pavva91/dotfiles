@@ -4,6 +4,7 @@
 pkill -f pasystray
 pkill -f blueman-applet
 pkill -f nm-applet
+pkill -f iwgtk
 
 # START ALL
 
@@ -13,5 +14,8 @@ pasystray --notify=all &
 # Bluetooth
 blueman-applet &
 
-# Network
-nm-applet --indicator &
+# Network with Network Manager
+# nm-applet --indicator &
+
+# Network without Network Manager
+iwgtk -i &
