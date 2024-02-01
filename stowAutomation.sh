@@ -1,36 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# REMOVE ALL FOLDERS
+if [[ -z $STOW_FOLDERS ]]; then
+    STOW_FOLDERS="i3,i3blocks,alacritty,zsh,bash,tmux,nvim,vim,ranger,zathura"
+fi
 
-cd ~/.config
+if [[ -z $DOTFILES ]]; then
+    DOTFILES=$HOME/dotfiles
+fi
 
-rm -r alacritty
-mkdir alacritty
-
-rm -r i3
-mkdir i3
-
-rm -r i3blocks
-mkdir i3blocks
-
-rm -r i3status
-mkdir i3status
-
-rm -r nvim
-mkdir nvim
-
-rm -r ranger
-mkdir ranger
-
-
-# STOW THE EVERYTHING
-
-cd ~/.dotfiles/.config
-
-stow -v -t ~/.config/alacritty alacritty
-stow -v -t ~/.config/i3 i3
-stow -v -t ~/.config/i3blocks i3blocks
-stow -v -t ~/.config/i3copy i3copy
-stow -v -t ~/.config/i3status i3status
-stow -v -t ~/.config/nvim nvim
-stow -v -t ~/.config/ranger ranger
+STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES $DOTFILES/install
