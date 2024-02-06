@@ -1,0 +1,4 @@
+# TODO: Install ranger from git
+# NOTE: dependencies: sudo apt-get install make git vim -y
+# NOTE: git: git clone https://github.com/hut/ranger.git
+# NOTE: build: cd ranger && sudo make install
