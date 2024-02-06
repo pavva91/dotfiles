@@ -13,13 +13,18 @@
   tags:
   - install
 
-- name: Install vim
+- name: Install vim (with clipboard)
   apt: name=vim-gtk3
   tags:
   - install
 
 - name: Install tmux
   apt: name=tmux
+  tags:
+  - install
+
+- name: Install ripgrep
+  apt: name=ripgrep
   tags:
   - install
 
@@ -33,17 +38,18 @@
   tags:
   - install
 
+- name: Install xclip
+  apt: name=xclip
+  tags:
+  - install
+
 - name: Install exa
   apt: name=exa
   tags:
   - install
 
 # TODO: Install rust
-# TODO: Install go
 # TODO: Install java
-# TODO: Install javascript and node
-# TODO: Install ripgrep
-# TODO: Install exa
 # TODO: Install bat
 # TODO: Install xdotool (screenshots, bookmark)
 # TODO: Install maim (screenshots)

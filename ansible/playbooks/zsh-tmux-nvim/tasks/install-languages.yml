@@ -1,0 +1,10 @@
+- name: Install golang
+  apt: name=golang
+  tags:
+  - languages
+
+# TODO: Install rust
+# TODO: Install go
+# TODO: Install java
+# TODO: Install javascript and node
+# TODO: Install ripgrep

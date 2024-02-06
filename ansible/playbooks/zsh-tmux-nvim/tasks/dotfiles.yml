@@ -13,17 +13,23 @@
     accept_hostkey: yes
     version: main
   tags:
-    - install
     - dotfiles
 
+# NOTE: depends on zsh
 - name: Rename .zshrc
   shell: mv ~/.zshrc ~/.zshrc.bak
+  ignore_errors: true
   tags:
-    - install
+    - dotfiles
+
+# NOTE: depends on vim
+- name: Rename .vim
+  shell: mv ~/.vim ~/.vim.old
+  ignore_errors: true
+  tags:
     - dotfiles
 
 - name: Stow dotfiles
   shell: cd $HOME/dotfiles && ./stowAutomation.sh
   tags:
-    - install
     - dotfiles

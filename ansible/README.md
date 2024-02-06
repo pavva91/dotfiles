@@ -16,6 +16,10 @@
 
 - ansible-playbook /scripts/fem.yml
 
+## Run Ansible Playbook (inside docker container) tag
+
+- ansible-playbook /scripts/fem.yml --tags install,dotfiles
+
 ## Ansible Pull
 
 - ansible-pull -U www.url.to.the.ansible.local/folder
@@ -23,3 +27,9 @@
 ### TODO
 
 1. Install fzf
+
+### Sources
+
+The Primeagen:
+
+- (https://github.com/ThePrimeagen/ansible/blob/master/local.yml)[https://github.com/ThePrimeagen/ansible/blob/master/local.yml]

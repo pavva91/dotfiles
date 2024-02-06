@@ -2,17 +2,18 @@
   become: true
   pre_tasks:
     - name: Update cache
+      become: true
       apt:
+        force_apt_get: true
         update_cache: true
+        state: present
       tags:
-      - node
-      - zsh
-      - nvim
       - install
-      - dotfiles
+      - core
   tasks:
     - include: ./tasks/install.yml
     - include: ./tasks/node.yml
     - include: ./tasks/zsh.yml
     - include: ./tasks/nvim.yml
     - include: ./tasks/dotfiles.yml
+    - include: ./tasks/install-languages.yml
