@@ -1,4 +1,0 @@
-- name: Install curl
-  apt: name=curl
-  tags:
-  - curl

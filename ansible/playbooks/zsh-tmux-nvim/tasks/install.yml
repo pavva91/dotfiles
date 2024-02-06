@@ -1,0 +1,59 @@
+- name: Install git
+  apt: name=git
+  tags:
+  - install
+
+- name: Install curl
+  apt: name=curl
+  tags:
+  - install
+
+- name: Install fzf
+  apt: name=fzf
+  tags:
+  - install
+
+- name: Install vim
+  apt: name=vim-gtk3
+  tags:
+  - install
+
+- name: Install tmux
+  apt: name=tmux
+  tags:
+  - install
+
+- name: Install ranger
+  apt: name=ranger
+  tags:
+  - install
+
+- name: Install zathura
+  apt: name=zathura
+  tags:
+  - install
+
+- name: Install exa
+  apt: name=exa
+  tags:
+  - install
+
+# TODO: Install rust
+# TODO: Install go
+# TODO: Install java
+# TODO: Install javascript and node
+# TODO: Install ripgrep
+# TODO: Install exa
+# TODO: Install bat
+# TODO: Install xdotool (screenshots, bookmark)
+# TODO: Install maim (screenshots)
+# TODO: Install syncthing
+# TODO: Install keepassxc
+# TODO: Install synology-drive
+# TODO: Install dmenu (bookmark)
+# TODO: Install xclip (bookmark, nvim)
+# TODO: Install notify-send (bookmark)
+# TODO: Install mpv (media player)
+# TODO: Install w3m (ranger image preview)
+# TODO: Install pdftoppm (ranger pdf preview)
+# TODO: Install epub-thumbnailer (ranger epub preview)

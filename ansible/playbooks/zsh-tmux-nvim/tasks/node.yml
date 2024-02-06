@@ -1,15 +1,17 @@
 - name: install node
   apt:
-    name: ['nodejs', 'npm']
+    name: "nodejs"
   tags:
-  - node
-- name: install node
+    - node
+
+- name: install npm
   apt:
-    name: n
-    global: true
+    name: "npm"
   tags:
-  - node
-- name: n 14
-  shell: n 14
-  tags:
-  - node
+    - node
+
+- name: Install nvm
+  ansible.builtin.shell: >
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+  args:
+    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"

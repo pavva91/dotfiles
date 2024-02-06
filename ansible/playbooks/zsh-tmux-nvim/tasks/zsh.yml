@@ -6,6 +6,10 @@
   shell: chsh -s `which zsh`
   tags:
     - zsh
+- name: Remove old oh my zsh
+  shell: rm -rf ~/.oh-my-zsh
+  tags:
+    - zsh
 - name: Install Oh My Zsh
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   tags:

@@ -5,41 +5,14 @@
       apt:
         update_cache: true
       tags:
-      # - node
-      - curl
-      - git
+      - node
       - zsh
-      - fzf
       - nvim
+      - install
+      - dotfiles
   tasks:
-    # - include: ./tasks/node.yml
-    - include: ./tasks/curl.yml
-    - include: ./tasks/git.yml
+    - include: ./tasks/install.yml
+    - include: ./tasks/node.yml
     - include: ./tasks/zsh.yml
-    - include: ./tasks/fzf.yml
     - include: ./tasks/nvim.yml
-    - name: Install stow
-      apt: name=stow
-      tags:
-      - install
-      - dotfiles
-
-    - name: Cloning dotfiles
-      ansible.builtin.git:
-        repo: 'git@github.com:pavva/dotfiles.git'
-        dest: "{{ lookup('env', 'HOME') }}/dotfiles"
-        recursive: yes
-        update: yes
-        accept_hostkey: yes
-        version: master
-      tags:
-      - install
-      - dotfiles
-
-    - name: Stow dotfiles
-      shell: cd $HOME/dotfiles && ./stowUbuntu.sh
-      tags:
-      - install
-      - dotfiles
-
-    
+    - include: ./tasks/dotfiles.yml

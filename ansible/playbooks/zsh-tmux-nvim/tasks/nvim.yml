@@ -38,5 +38,4 @@
 - name: Build and Install neovim
   shell: cd ~/github/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo && sudo make install
   tags:
-  - zsh
-
+  - nvim
