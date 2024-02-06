@@ -14,8 +14,8 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # ls aliases (Rust)
-alias ll='exa -lFh'
-alias la='exa -lFah'
+alias ll='exa -lhF'
+alias la='exa -lahF'
 alias l='exa -CF'
 
 # mv alias
