@@ -14,7 +14,7 @@ vim.g.maplocalleader = " "
 -- Make relative line numbers default
 set.relativenumber = true
 
-set.pastetoggle = "<F2>"
+-- set.pastetoggle = "<F2>"
 set.showcmd = true
 set.cursorline = true
 
