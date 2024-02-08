@@ -181,3 +181,6 @@ vim.keymap.set('v', '<leader>s', ':sort<CR>')
 -- TODO: create template file
 -- vim.cmd(':autocmd BufNewFile *.sh 0r ~/.config/nvim/skeleton.sh')
 -- vim.cmd(':autocmd BufNewFile *.md 0r ~/.config/nvim/skeleton.md')
+
+vim.keymap.set('n', '<leader>x', ':!chmod +x %<CR>', { desc = 'Make file executable'})
+vim.keymap.set('n', '<C-f>', ':silent !tmux neww ~/dotfiles/productivity/tmux-sessionizer.sh<CR>', { desc = 'Tmux Sessionizer'})

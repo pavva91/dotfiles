@@ -95,3 +95,11 @@ alias virtualspeaker2output=~/bash_scripts/check_bluetooth_headphones_and_connec
 
 # Adjust HDMI-1 Screen Brightness and gamma presets
 alias dimmer=~/bash_scripts/dimmer.sh
+
+alias tmux-sessionizer=~/dotfiles/productivity/tmux-sessionizer.sh
+alias cheatsheets=~/dotfiles/productivity/cheatsheets.sh
+alias chsh=~/dotfiles/productivity/cheatsheets.sh
+
+# bindkey -s ^f "tmux-sessionizer\n"
+
+bind -x '"\C-f":"~/dotfiles/productivity/tmux-sessionizer.sh"'

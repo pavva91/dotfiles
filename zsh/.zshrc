@@ -141,3 +141,4 @@ source /usr/share/nvm/init-nvm.sh
 # Run node lts
 nvm use --lts
 
+bindkey -s ^f "tmux-sessionizer\n"

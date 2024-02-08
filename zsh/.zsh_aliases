@@ -101,3 +101,7 @@ cover () {
     t="/tmp/go-cover.$$.tmp"
     go test -coverprofile=$t $@ && go tool cover -html=$t && unlink $t
 }
+
+alias tmux-sessionizer=~/dotfiles/productivity/tmux-sessionizer.sh
+alias cheatsheets=~/dotfiles/productivity/cheatsheets.sh
+alias chsh=~/dotfiles/productivity/cheatsheets.sh
