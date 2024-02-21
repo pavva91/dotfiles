@@ -20,11 +20,11 @@ if ! tmux has-session -t="$selected_name" 2>/dev/null; then
 	tmux new-session -ds "$selected_name" -c "$selected"
 fi
 
-# tmux running but not open
+# tmux running but not open (detached)
 if [[ -z $TMUX ]] && [[ $tmux_running ]]; then
 	tmux attach -t "$selected_name"
 	exit 0
 fi
 
-# tmux running and already open
+# tmux running and already open (attached)
 tmux switch-client -t "$selected_name"
