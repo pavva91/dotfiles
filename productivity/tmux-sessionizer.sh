@@ -11,14 +11,12 @@ tmux_running=$(pgrep tmux)
 
 # tmux not running
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-	echo "DDD"
 	tmux new-session -s "$selected_name" -c "$selected"
 	exit 0
 fi
 
 # if session does not exist is created
 if ! tmux has-session -t="$selected_name" 2>/dev/null; then
-	echo "AAA"
 	tmux new-session -ds "$selected_name" -c "$selected"
 fi
 
