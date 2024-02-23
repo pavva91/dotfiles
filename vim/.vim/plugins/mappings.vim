@@ -205,3 +205,8 @@ nmap <leader>gm :Gvdiffsplit!<CR>
 nmap <leader>gs :G<CR>
 nmap <leader>gp :G push<CR>
 nmap <leader>gg :G log --oneline --decorate --graph --all<CR>
+
+" -----------------------------------------------------------------------------
+" TMUX-SESSIONIZER
+" -----------------------------------------------------------------------------
+nmap <C-f> :silent !tmux neww ~/dotfiles/productivity/tmux-sessionizer.sh<CR>
