@@ -544,7 +544,7 @@ default it calls `spacemacs/load-spacemacs-env' which loads the environment
 variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
 See the header of this file for more information."
   (spacemacs/load-spacemacs-env)
-)
+  )
 
 (defun dotspacemacs/user-init ()
   "Initialization for user code:
@@ -552,7 +552,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-)
+  )
 
 
 (defun dotspacemacs/user-load ()
@@ -561,7 +561,7 @@ This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
 dump."
   (require 'ox-md)
-)
+  )
 
 
 (defun dotspacemacs/user-config ()
@@ -570,10 +570,44 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (setq org-todo-keywords                                                                                        
+  (setq org-todo-keywords
         '((sequence "TODO(t!)" "NEXT(n!)" "DOINGNOW(d!)" "BLOCKED(b!)" "TODELEGATE(g!)" "DELEGATED(D!)" "FOLLOWUP(f!)" "TICKLE(T!)" "|" "CANCELLED(c!)" "DONE(F!)")))
 
-)
+  ;; kj to exit insert mode
+  (defun my-kj ()
+    (interactive)
+    (let* ((initial-key ?k)
+           (final-key ?j)
+           (timeout 0.5)
+           (event (read-event nil nil timeout)))
+      (if event
+          ;; timeout met
+          (if (and (characterp event) (= event final-key))
+              (evil-normal-state)
+            (insert initial-key)
+            (push event unread-command-events))
+        ;; timeout exceeded
+        (insert initial-key))))
+
+  ;; jk to exit insert mode
+  (defun my-jk ()
+    (interactive)
+    (let* ((initial-key ?j)
+           (final-key ?k)
+           (timeout 0.5)
+           (event (read-event nil nil timeout)))
+      (if event
+          ;; timeout met
+          (if (and (characterp event) (= event final-key))
+              (evil-normal-state)
+            (insert initial-key)
+            (push event unread-command-events))
+        ;; timeout exceeded
+        (insert initial-key))))
+
+  (define-key evil-insert-state-map (kbd "j") 'my-jk)
+  (define-key evil-insert-state-map (kbd "k") 'my-kj)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -582,20 +616,20 @@ before packages are loaded."
 This is an auto-generated function, do not modify its content directly, use
 Emacs customize menu instead.
 This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-agenda-files '("~/org/work.org" "/home/bob/org/personal.org"))
- '(org-safe-remote-resources
-   '("\\`https://raw\\.githubusercontent\\.com\\(?:/\\|\\'\\)" "\\`https://github\\.com\\(?:/\\|\\'\\)"))
- '(package-selected-packages
-   '(company-web web-completion-data counsel-css emmet-mode helm-css-scss pug-mode sass-mode haml-mode scss-mode slim-mode tagedit web-mode ac-ispell auto-complete auto-dictionary auto-yasnippet flycheck-pos-tip pos-tip flyspell-correct-helm flyspell-correct fuzzy gh-md git-link git-messenger git-modes git-timemachine gitignore-templates helm-c-yasnippet helm-company helm-git-grep helm-ls-git helm-lsp json-mode json-navigator hierarchy json-reformat json-snatcher lsp-origami origami lsp-ui markdown-toc mmm-mode mwim orgit-forge orgit forge ghub closql emacsql treepy smeargle treemacs-magit magit magit-section git-commit with-editor transient unfill yasnippet-snippets add-node-modules-path company counsel-gtags counsel swiper ivy dap-mode lsp-docker lsp-treemacs bui yaml lsp-mode markdown-mode ggtags impatient-mode import-js grizzl js-doc js2-refactor yasnippet multiple-cursors livid-mode nodejs-repl npm-mode prettier-js skewer-mode js2-mode simple-httpd tern web-beautify ox-mdx-deck ws-butler writeroom-mode winum which-key volatile-highlights vim-powerline vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toc-org term-cursor symon symbol-overlay spacemacs-purpose-popwin spaceline space-doc restart-emacs request rainbow-delimiters quickrun popwin pcre2el paradox overseer org-superstar org-rich-yank org-projectile org-present org-pomodoro org-mime org-download org-contrib org-cliplink open-junk-file nameless move-text macrostep lorem-ipsum link-hint inspector info+ indent-guide hybrid-mode hungry-delete htmlize holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-descbinds helm-ag google-translate golden-ratio gnuplot flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav elisp-def dumb-jump dotenv-mode diminish devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile all-the-icons aggressive-indent ace-link ace-jump-helm-line)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-)
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(org-agenda-files '("~/org/work.org" "~/org/personal.org" "~/org/bike.org" "~/org/networking.org"))
+   '(org-safe-remote-resources
+     '("\\`https://raw\\.githubusercontent\\.com\\(?:/\\|\\'\\)" "\\`https://github\\.com\\(?:/\\|\\'\\)"))
+   '(package-selected-packages
+     '(company-web web-completion-data counsel-css emmet-mode helm-css-scss pug-mode sass-mode haml-mode scss-mode slim-mode tagedit web-mode ac-ispell auto-complete auto-dictionary auto-yasnippet flycheck-pos-tip pos-tip flyspell-correct-helm flyspell-correct fuzzy gh-md git-link git-messenger git-modes git-timemachine gitignore-templates helm-c-yasnippet helm-company helm-git-grep helm-ls-git helm-lsp json-mode json-navigator hierarchy json-reformat json-snatcher lsp-origami origami lsp-ui markdown-toc mmm-mode mwim orgit-forge orgit forge ghub closql emacsql treepy smeargle treemacs-magit magit magit-section git-commit with-editor transient unfill yasnippet-snippets add-node-modules-path company counsel-gtags counsel swiper ivy dap-mode lsp-docker lsp-treemacs bui yaml lsp-mode markdown-mode ggtags impatient-mode import-js grizzl js-doc js2-refactor yasnippet multiple-cursors livid-mode nodejs-repl npm-mode prettier-js skewer-mode js2-mode simple-httpd tern web-beautify ox-mdx-deck ws-butler writeroom-mode winum which-key volatile-highlights vim-powerline vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toc-org term-cursor symon symbol-overlay spacemacs-purpose-popwin spaceline space-doc restart-emacs request rainbow-delimiters quickrun popwin pcre2el paradox overseer org-superstar org-rich-yank org-projectile org-present org-pomodoro org-mime org-download org-contrib org-cliplink open-junk-file nameless move-text macrostep lorem-ipsum link-hint inspector info+ indent-guide hybrid-mode hungry-delete htmlize holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-descbinds helm-ag google-translate golden-ratio gnuplot flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav elisp-def dumb-jump dotenv-mode diminish devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile all-the-icons aggressive-indent ace-link ace-jump-helm-line)))
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   )
+  )
