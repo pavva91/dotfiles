@@ -63,8 +63,14 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # FZF script to enable fzf key-bindings
+# For Arch
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
+
+# For Debian
+# source /usr/share/doc/fzf/examples/key-bindings.bash
+# source /usr/share/doc/fzf/examples/completion.bash
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Node Version Management

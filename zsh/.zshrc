@@ -133,8 +133,14 @@ fi
 
 
 # FZF script to enable fzf key-bindings
+# For Arch
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+
+# For Debian
+# source /usr/share/doc/fzf/examples/key-bindings.zsh
+# source /usr/share/doc/fzf/examples/completion.zsh
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Node Version Manager
