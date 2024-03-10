@@ -1,7 +1,7 @@
 - name: Install zsh
   apt: name=zsh
   tags:
-  - zsh
+    - zsh
 - name: Change shell
   shell: chsh -s `which zsh`
   tags:
@@ -13,7 +13,7 @@
 - name: Install Oh My Zsh
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   tags:
-  - zsh
+    - zsh
 
 # - name: Set $ZSH_CUSTOM
 #   shell: export ZSH_CUSTOM=~/.oh-my-zsh/custom
@@ -22,28 +22,28 @@
 
 - name: Install zsh plugin autosuggestions
   tags:
-  - zsh
+    - zsh
   # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   ansible.builtin.git:
-    repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
+    repo: "https://github.com/zsh-users/zsh-autosuggestions.git"
     dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 - name: Install zsh plugin syntax highlighting
   tags:
-  - zsh
+    - zsh
   # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   ansible.builtin.git:
-    repo: 'https://github.com/zsh-users/zsh-syntax-highlighting.git'
+    repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
     dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 - name: update our zshrc
   shell: sed -i 's/(git/(git zsh-autosuggestions zsh-syntax-highlighting/' ~/.zshrc
   tags:
-  - zsh
+    - zsh
 
   # git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 - name: Install Powerlevel 10k
   tags:
-  - zsh
+    - zsh
   ansible.builtin.git:
     repo: https://github.com/romkatv/powerlevel10k
     dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
@@ -51,9 +51,9 @@
 - name: update our zshrc to use powerlevel10k theme
   shell: sed -i 's/ZSH_THEME=".*"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
   tags:
-  - zsh
+    - zsh
 
 - name: Install fzf
   apt: name=fzf
   tags:
-  - zsh
+    - zsh

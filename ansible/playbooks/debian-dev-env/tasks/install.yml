@@ -1,53 +1,52 @@
 - name: Install git
   apt: name=git
   tags:
-  - install
+    - install
 
 - name: Install curl
   apt: name=curl
   tags:
-  - install
+    - install
 
 - name: Install fzf
   apt: name=fzf
   tags:
-  - install
+    - install
 
 - name: Install vim (with clipboard)
   apt: name=vim-gtk3
   tags:
-  - install
+    - install
 
 - name: Install tmux
   apt: name=tmux
   tags:
-  - install
+    - install
 
 - name: Install ripgrep
   apt: name=ripgrep
   tags:
-  - install
+    - install
 
 - name: Install ranger
   apt: name=ranger
   tags:
-  - install
+    - install
 
 - name: Install zathura
   apt: name=zathura
   tags:
-  - install
+    - install
 
 - name: Install xclip
   apt: name=xclip
   tags:
-  - install
+    - install
 
 - name: Install exa
   apt: name=exa
   tags:
-  - install
-
+    - install
 # TODO: Install rust
 # TODO: Install java
 # TODO: Install bat

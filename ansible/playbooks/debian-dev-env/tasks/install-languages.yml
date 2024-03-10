@@ -1,8 +1,7 @@
 - name: Install golang
   apt: name=golang
   tags:
-  - languages
-
+    - languages
 # TODO: Install rust
 # TODO: Install go
 # TODO: Install java
