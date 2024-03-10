@@ -11,6 +11,7 @@
         - install
         - core
   tasks:
+    # TODO: download font
     - ansible.builtin.include_tasks: ./tasks/install.yml
     - ansible.builtin.include_tasks: ./tasks/node.yml
     - ansible.builtin.include_tasks: ./tasks/zsh.yml

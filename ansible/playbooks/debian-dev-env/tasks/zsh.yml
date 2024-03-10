@@ -53,6 +53,12 @@
   tags:
     - zsh
 
+- name: Create font folder
+  shell: mkdir -p ~/.local/share/fonts/NerdFonts/Meslo
+
+- name: Download Meslo font
+  shell: wget -P ~/.local/share/fonts/NerdFonts/Meslo https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
+
 - name: Install fzf
   apt: name=fzf
   tags:
