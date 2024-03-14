@@ -23,6 +23,14 @@
   tags:
     - install
 
+- name: Install tmux-plugins (tpm)
+  tags:
+    - zsh
+    # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  ansible.builtin.git:
+    repo: "https://github.com/tmux-plugins/tpm"
+    dest: ~/.tmux/plugins/tpm
+
 - name: Install ripgrep
   apt: name=ripgrep
   tags:
