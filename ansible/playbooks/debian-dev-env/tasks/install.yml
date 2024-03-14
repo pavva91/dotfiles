@@ -28,7 +28,7 @@
     - zsh
     # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   ansible.builtin.git:
-    repo: "https://github.com/tmux-plugins/tpm"
+    repo: "https://github.com/tmux-plugins/tpm.git"
     dest: ~/.tmux/plugins/tpm
 
 - name: Install ripgrep

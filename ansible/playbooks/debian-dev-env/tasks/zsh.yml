@@ -7,7 +7,7 @@
   tags:
     - zsh
 - name: Remove old oh my zsh
-  shell: rm -rf ~/.oh-my-zsh
+  shell: rm -rf {{ lookup('env', 'HOME') }}/.oh-my-zsh
   tags:
     - zsh
 - name: Install Oh My Zsh
@@ -26,14 +26,14 @@
   # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   ansible.builtin.git:
     repo: "https://github.com/zsh-users/zsh-autosuggestions.git"
-    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
 - name: Install zsh plugin syntax highlighting
   tags:
     - zsh
   # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   ansible.builtin.git:
     repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git"
-    dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
 
 - name: update our zshrc
   shell: sed -i 's/(git/(git zsh-autosuggestions zsh-syntax-highlighting/' ~/.zshrc
@@ -46,18 +46,18 @@
     - zsh
   ansible.builtin.git:
     repo: https://github.com/romkatv/powerlevel10k
-    dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
+    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom/themes/powerlevel10k"
 
 - name: update our zshrc to use powerlevel10k theme
-  shell: sed -i 's/ZSH_THEME=".*"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
+  shell: sed -i 's/ZSH_THEME=".*"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' $HOME/.zshrc
   tags:
     - zsh
 
 - name: Create font folder
-  shell: mkdir -p ~/.local/share/fonts/NerdFonts/Meslo
+  shell: mkdir -p $HOME/.local/share/fonts/NerdFonts/Meslo
 
 - name: Download Meslo font
-  shell: wget -P ~/.local/share/fonts/NerdFonts/Meslo https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
+  shell: wget -P $HOME/.local/share/fonts/NerdFonts/Meslo https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
 
 - name: Install fzf
   apt: name=fzf

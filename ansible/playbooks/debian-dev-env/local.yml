@@ -12,6 +12,8 @@
         - core
   tasks:
     # TODO: download font
+    # TODO: Setup Tmux plugin (tpm)
+    # TODO: Install pyenv
     - ansible.builtin.include_tasks: ./tasks/install.yml
     - ansible.builtin.include_tasks: ./tasks/node.yml
     - ansible.builtin.include_tasks: ./tasks/zsh.yml
