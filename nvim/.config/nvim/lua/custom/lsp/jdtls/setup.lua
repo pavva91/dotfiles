@@ -24,7 +24,7 @@ function M.setup()
   local lombok_path = path_to_jdtls .. "/lombok.jar"
 
     -- 💀
-  local path_to_jar = path_to_jdtls .. "/plugins/org.eclipse.equinox.launcher_1.6.500.v20230717-2134.jar"
+  local path_to_jar = path_to_jdtls .. "/plugins/org.eclipse.equinox.launcher_1.6.700.v20231214-2017.jar"
     -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
 
   local bundles = {
