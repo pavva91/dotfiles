@@ -32,6 +32,15 @@ vim.keymap.set(
 -- vim.keymap.set('n', '<leader>w', '<cmd>w!<CR>',
 --   { desc = 'Save Current Open Buffer' })
 
+-- change visual highlight color for code sharing (white-black)
+vim.keymap.set({ "n", "v" }, "<leader>cs", "<cmd>highlight Visual guibg=#fdf7ea guifg=black<CR>", { desc = "[C]ode [S]haring - Readable Visual Selection Highlighting" })
+
+-- change visual highlight color for code sharing (purple)
+vim.keymap.set({ "n", "v" }, "<leader>cp", "<cmd>highlight Visual guibg=#3344aa guifg=#<CR>", { desc = "[C]ode [P]urple - Purple Visual Selection Highlighting" })
+
+-- change visual highlight color for code sharing
+vim.keymap.set({ "n", "v" }, "<leader>cc", "<cmd>highlight Visual guibg=#283457 guifg=#<CR>", { desc = "[C]ode [C]oding - Default Visual Selection Highlighting" })
+
 -- highlight last inserted text
 vim.keymap.set("n", "gV", "`[v`]", { desc = "Highlight Last Inserted Text" })
 
