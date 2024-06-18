@@ -10,15 +10,15 @@
 
 ## Run Image
 
-- docker run --rm -it -v ${PWD}/playbooks:/scripts debian-ansible bash
+- docker run --rm -it -v ./playbooks:/playbooks debian-ansible bash
 
 ## Run Ansible Playbook (inside docker container)
 
-- ansible-playbook /scripts/fem.yml
+- ansible-playbook /playbooks/debian-dev-env/local.yml
 
 ## Run Ansible Playbook (inside docker container) tag
 
-- ansible-playbook /scripts/fem.yml --tags install,dotfiles
+- ansible-playbook /playbooks/debian-dev-env/local.yml --tags install,dotfiles
 
 ## Ansible Pull
 

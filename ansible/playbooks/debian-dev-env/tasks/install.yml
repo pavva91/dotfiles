@@ -25,7 +25,7 @@
 
 - name: Install tmux-plugins (tpm)
   tags:
-    - zsh
+    - install
     # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   ansible.builtin.git:
     repo: "https://github.com/tmux-plugins/tpm.git"
