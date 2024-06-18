@@ -106,3 +106,6 @@ bind -x '"\C-f":"~/dotfiles/productivity/tmux-sessionizer.sh"'
 
 # RipGrep find on file names recursivelly
 alias rgf='rg --files | rg'
+
+# grep find on file names recursivelly
+alias grepf='find | grep'
