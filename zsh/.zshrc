@@ -133,13 +133,18 @@ fi
 
 
 # FZF script to enable fzf key-bindings
-# For Arch
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-
-# For Debian
-# source /usr/share/doc/fzf/examples/key-bindings.zsh
-# source /usr/share/doc/fzf/examples/completion.zsh
+if [[ "$(cat /etc/os-release | grep Arch | wc -l)" == 2 ]]; then
+    echo "I'm on Arch"
+    # For Arch
+    source /usr/share/fzf/key-bindings.zsh
+    source /usr/share/fzf/completion.zsh
+fi
+if [[ "$(cat /etc/os-release | grep Debian | wc -l)" == 2 ]]; then
+    echo "I'm on Debian"
+    # For Debian
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+    source /usr/share/doc/fzf/examples/completion.zsh
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -152,3 +157,12 @@ nvm use --lts
 bindkey -s ^f "tmux-sessionizer\n"
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+# check if I'm on WSL
+if [[ "$(</proc/sys/kernel/osrelease)" == *microsoft* ]]; then
+    echo "I'm on WSL"
+    source ~/bash_scripts/gitWSLWin10.sh
+    source ~/bash_scripts/mavenWSLWin10.sh
+else
+    echo "I'm on bare metal linux"
+fi

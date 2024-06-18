@@ -63,13 +63,18 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # FZF script to enable fzf key-bindings
-# For Arch
-source /usr/share/fzf/key-bindings.bash
-source /usr/share/fzf/completion.bash
-
-# For Debian
-# source /usr/share/doc/fzf/examples/key-bindings.bash
-# source /usr/share/doc/fzf/examples/completion.bash
+if [[ "$(cat /etc/os-release | grep Arch | wc -l)" == 2 ]]; then
+    echo "I'm on Arch"
+    # For Arch
+    source /usr/share/fzf/key-bindings.zsh
+    source /usr/share/fzf/completion.zsh
+fi
+if [[ "$(cat /etc/os-release | grep Debian | wc -l)" == 2 ]]; then
+    echo "I'm on Debian"
+    # For Debian
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+    source /usr/share/doc/fzf/examples/completion.zsh
+fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -83,3 +88,12 @@ source /usr/share/nvm/init-nvm.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# check if I'm on WSL
+if [[ "$(</proc/sys/kernel/osrelease)" == *microsoft* ]]; then
+    echo "I'm on WSL"
+    source ~/bash_scripts/gitWSLWin10.sh
+    source ~/bash_scripts/mavenWSLWin10.sh
+else
+    echo "I'm on bare metal linux"
+fi
