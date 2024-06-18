@@ -17,10 +17,8 @@ isInsideMntDir() {
 # wrap the git command to either run windows git or linux
 git() {
 	if isInsideMntDir; then
-		echo "ciao"
 		git.exe "$@"
 	else
-		echo "hello"
 		/usr/bin/git "$@"
 	fi
 }
