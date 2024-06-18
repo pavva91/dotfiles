@@ -105,3 +105,6 @@ cover () {
 alias tmux-sessionizer=~/dotfiles/productivity/tmux-sessionizer.sh
 alias cheatsheets=~/dotfiles/productivity/cheatsheets.sh
 alias chsh=~/dotfiles/productivity/cheatsheets.sh
+
+# RipGrep find on file names recursivelly
+alias rgf='rg --files | rg'

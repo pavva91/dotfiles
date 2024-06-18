@@ -103,3 +103,6 @@ alias chsh=~/dotfiles/productivity/cheatsheets.sh
 # bindkey -s ^f "tmux-sessionizer\n"
 
 bind -x '"\C-f":"~/dotfiles/productivity/tmux-sessionizer.sh"'
+
+# RipGrep find on file names recursivelly
+alias rgf='rg --files | rg'
