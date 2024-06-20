@@ -66,6 +66,7 @@ local servers = {
   },
   jdtls = {},
   gradle_ls = {},
+  angularls = {},
 }
 
 -- Setup neovim lua configuration
