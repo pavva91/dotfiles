@@ -133,17 +133,15 @@ fi
 
 
 # FZF script to enable fzf key-bindings
-if [[ "$(cat /etc/os-release | grep Arch | wc -l)" == 2 ]]; then
-    echo "I'm on Arch"
+if [[ "$( grep -c Arch < /etc/os-release)" == 2 ]]; then
     # For Arch
     source /usr/share/fzf/key-bindings.zsh
     source /usr/share/fzf/completion.zsh
 fi
-if [[ "$(cat /etc/os-release | grep Debian | wc -l)" == 2 ]]; then
-    echo "I'm on Debian"
+if [[ "$(grep -c Debian < /etc/os-release)" == 2 ]] || [[ "$(grep -c Ubuntu < /etc/os-release)" == 2 ]]; then
+    echo "I'm on Debian-based distro"
     # For Debian
-    source /usr/share/doc/fzf/examples/key-bindings.zsh
-    source /usr/share/doc/fzf/examples/completion.zsh
+    source /usr/share/doc/fzf/examples/key-bindings.bash
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -166,3 +164,6 @@ if [[ "$(</proc/sys/kernel/osrelease)" == *microsoft* ]]; then
 else
     echo "I'm on bare metal linux"
 fi
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
