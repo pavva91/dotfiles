@@ -57,7 +57,7 @@ local servers = {
       "html",
     },
   },
-  tsserver = {},
+  -- tsserver = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
