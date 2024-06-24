@@ -193,3 +193,7 @@ vim.keymap.set('v', '<leader>s', ':sort<CR>')
 
 vim.keymap.set('n', '<leader>x', ':!chmod +x %<CR>', { desc = 'Make file executable'})
 vim.keymap.set('n', '<C-f>', ':silent !tmux neww ~/dotfiles/productivity/tmux-sessionizer.sh<CR>', { desc = 'Tmux Sessionizer'})
+
+-- NOTE: open NetRW in directory of current open buffer
+vim.keymap.set('n', '<leader>fp', ':Ex %:h<CR>', { desc = 'Open [F]ile in [P]roject directory'})
+vim.keymap.set('n', '<leader>pf', ':Ex %:h<CR>', { desc = 'Open [P]roject [F]ile directory'})

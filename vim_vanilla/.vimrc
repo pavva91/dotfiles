@@ -228,6 +228,8 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Project Tree Toggle
 nnoremap <leader>pt :Vex<CR>
+nnoremap <leader>fp :Ex %:h<CR>
+nnoremap <leader>pf :Ex %:h<CR>
 
 nnoremap <leader>ww :w<CR>
 
