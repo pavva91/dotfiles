@@ -17,6 +17,7 @@ fi
 alias ll='exa -lhF'
 alias la='exa -lahF'
 alias l='exa -CF'
+alias lr='ll | grep ^d | awk "{print \$7}"'
 
 # mv alias
 alias mv='mv -iv'
