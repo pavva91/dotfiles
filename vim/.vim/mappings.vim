@@ -122,6 +122,7 @@ nnoremap <leader>pv :Vex<CR>
 " open NetRW in current buffer directory
 nnoremap <leader>fp :Ex %:h<CR>
 nnoremap <leader>pf :Ex %:h<CR>
+nnoremap <leader>po :Ex %:h<CR>
 
 " resource vim configs
 nnoremap <leader><CR> :so ~/.vimrc<CR>
