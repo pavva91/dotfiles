@@ -141,7 +141,7 @@ fi
 if [[ "$(grep -c Debian < /etc/os-release)" == 2 ]] || [[ "$(grep -c Ubuntu < /etc/os-release)" == 2 ]]; then
     echo "I'm on Debian-based distro"
     # For Debian
-    source /usr/share/doc/fzf/examples/key-bindings.bash
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
