@@ -201,3 +201,7 @@ vim.keymap.set('n', '<leader>pf', ':Ex %:h<CR>', { desc = 'Open [P]roject [F]ile
 -- NOTE: install jq first
 vim.keymap.set('n', '<leader>jq', ':%!jq<CR>', { desc = 'JQ Prettify JSON'})
 vim.keymap.set('n', '<leader>jc', ':%!jq -c<CR>', { desc = 'JQ Compact (De-Prettify) JSON'})
+
+-- NOTE: install yq first
+vim.keymap.set('n', '<leader>yq', ':%!yq<CR>', { desc = 'JQ Prettify JSON'})
+vim.keymap.set('n', '<leader>yc', ':%!jq -c<CR>', { desc = 'JQ Compact (De-Prettify) JSON'})
