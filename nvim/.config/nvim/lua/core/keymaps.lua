@@ -197,3 +197,7 @@ vim.keymap.set('n', '<C-f>', ':silent !tmux neww ~/dotfiles/productivity/tmux-se
 -- NOTE: open NetRW in directory of current open buffer
 vim.keymap.set('n', '<leader>fp', ':Ex %:h<CR>', { desc = 'Open [F]ile in [P]roject directory NetRW'})
 vim.keymap.set('n', '<leader>pf', ':Ex %:h<CR>', { desc = 'Open [P]roject [F]ile directory NetRW'})
+
+-- NOTE: install jq first
+vim.keymap.set('n', '<leader>jq', ':%!jq<CR>', { desc = 'JQ Prettify JSON'})
+vim.keymap.set('n', '<leader>jc', ':%!jq -c<CR>', { desc = 'JQ Compact (De-Prettify) JSON'})
