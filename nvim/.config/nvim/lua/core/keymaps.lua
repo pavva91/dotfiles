@@ -198,10 +198,10 @@ vim.keymap.set('n', '<C-f>', ':silent !tmux neww ~/dotfiles/productivity/tmux-se
 vim.keymap.set('n', '<leader>fp', ':Ex %:h<CR>', { desc = 'Open [F]ile in [P]roject directory NetRW'})
 vim.keymap.set('n', '<leader>pf', ':Ex %:h<CR>', { desc = 'Open [P]roject [F]ile directory NetRW'})
 
--- NOTE: install jq first
-vim.keymap.set('n', '<leader>jq', ':%!jq<CR>', { desc = 'JQ Prettify JSON'})
-vim.keymap.set('n', '<leader>jc', ':%!jq -c<CR>', { desc = 'JQ Compact (De-Prettify) JSON'})
-
--- NOTE: install yq first
-vim.keymap.set('n', '<leader>yq', ':%!yq<CR>', { desc = 'JQ Prettify JSON'})
-vim.keymap.set('n', '<leader>yc', ':%!jq -c<CR>', { desc = 'JQ Compact (De-Prettify) JSON'})
+-- NOTE: install jq and yq first
+vim.keymap.set('n', '<leader>jqj', ':%!jq<CR>', { desc = 'JQ Prettify JSON'})
+vim.keymap.set('n', '<leader>jcj', ':%!jq -c<CR>', { desc = 'JQ Compact (De-Prettify) JSON'})
+vim.keymap.set('n', '<leader>jqy', ':%!yq<CR>', { desc = 'JQ Prettify Yaml'})
+vim.keymap.set('n', '<leader>jcy', ':%!yq -c<CR>', { desc = 'JQ Compact (De-Prettify) Yaml'})
+vim.keymap.set('n', '<leader>jqx', ':%!xq<CR>', { desc = 'JQ Prettify XML'})
+vim.keymap.set('n', '<leader>jcx', ':%!xq -c<CR>', { desc = 'JQ Compact (De-Prettify) XML'})
