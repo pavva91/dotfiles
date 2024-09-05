@@ -58,10 +58,21 @@ mkdir ~/.local/share/fonts/NerdFonts/UbuntuMono
 unzip UbuntuMono.zip -d ~/.local/share/fonts/NerdFonts/UbuntuMono
 
 # Nerd Fonts Alacritty
-cd ~/Downloads
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/JetBrainsMono.zip
-mkdir ~/.local/share/fonts/NerdFonts/JetBrainsMono
-unzip JetBrainsMono.zip -d ~/.local/share/fonts/NerdFonts/JetBrainsMono
+
+# NOTE: JetBrainsMono
+# cd ~/Downloads
+# wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/JetBrainsMono.zip
+# mkdir ~/.local/share/fonts/NerdFonts/JetBrainsMono
+# unzip JetBrainsMono.zip -d ~/.local/share/fonts/NerdFonts/JetBrainsMono
+
+# TODO: Use Meslo
+# NOTE: Meslo
+mkdir ~/.local/share/fonts/NerdFonts/Meslo
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf --directory-prefix=~/.local/share/fonts/NerdFonts/Meslo
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf --directory-prefix=~/.local/share/fonts/NerdFonts/Meslo
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf --directory-prefix=~/.local/share/fonts/NerdFonts/Meslo
+
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf --directory-prefix=~/.local/share/fonts/NerdFonts/Meslo
 
 # Image Preview on Ranger
 sudo pacman --needed -S w3m
