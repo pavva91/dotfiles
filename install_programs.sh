@@ -24,7 +24,7 @@ stow -v -t ~/.config/alacritty alacritty
 mkdir ~/.config/ranger
 stow -v -t ~/.config/ranger ranger
 
-sudo pacman -S \
+sudo pacman --needed -S \
     base-devel \
     i3 \
     i3blocks \
@@ -64,13 +64,13 @@ mkdir ~/.local/share/fonts/NerdFonts/JetBrainsMono
 unzip JetBrainsMono.zip -d ~/.local/share/fonts/NerdFonts/JetBrainsMono
 
 # Image Preview on Ranger
-sudo pacman -S w3m
+sudo pacman --needed -S w3m
 
 # Lock
 yay -S i3lock-color
 
 # Tmux
-sudo pacman -S tmux
+sudo pacman --needed -S tmux
 # Install tmux plugin manager (tpm)
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source ~/.tmux.conf
@@ -80,7 +80,7 @@ tmux
 	- Install tmux plugins: prefix+I
 
 # Rust gnu utils
-sudo pacman -S exa bat fd
+sudo pacman --needed -S exa bat fd
 
 # Create Dir Screenshots
 mkdir ~/Pictures/Screenshots
