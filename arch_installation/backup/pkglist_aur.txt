@@ -1,0 +1,17 @@
+authy
+brave-bin
+go-task-bin
+go-task-bin-debug
+goodvibes
+google-chrome
+i3lock-color
+iwgtk
+ngrok
+nvm
+openvpn-update-systemd-resolved
+postman9-bin
+shellcheck-bin
+shellcheck-bin-debug
+synology-drive
+yay-bin
+yay-bin-debug
