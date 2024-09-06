@@ -66,6 +66,8 @@ mkdir ~/.local/share/fonts/NerdFonts/JetBrainsMono
 unzip JetBrainsMono.zip -d ~/.local/share/fonts/NerdFonts/JetBrainsMono
 
 # NOTE: Meslo
+# https://github.com/romkatv/powerlevel10k/blob/master/font.md
+
 mkdir ~/.local/share/fonts/NerdFonts/Meslo
 cd ~/.local/share/fonts/NerdFonts/Meslo
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf

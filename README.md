@@ -1,3 +1,33 @@
+# Configure Arch Linux
+
+1. Run './install_programs.sh'
+2. Install programs:
+
+```bash
+sudo pacman -S - < ./arch_installation/backup/pkglist_no_aur.txt
+```
+
+3. Stow configs
+
+```bash
+cd dotfiles
+stow i3
+stow i3blocks
+stow alacritty
+stow zsh
+stow bash
+stow tmux
+stow nvim
+stow vim
+stow ranger
+stow zathura
+```
+
+4. Install Yay:
+   [https://github.com/Jguer/yay](https://github.com/Jguer/yay)
+5. Configure zsh:
+   - follow ./zsh/README.md
+
 # Create symlinks with stow
 
 ## Stow default behaviour
