@@ -35,12 +35,12 @@ keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>",
 	{ desc = '[G]o to [P]eek definition' })
 
 -- Go to definition
-keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>",
-	{ desc = '[G]o to [D]efinition' })
+-- keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>",
+-- 	{ desc = '[G]o to [D]efinition' })
 
 -- Go to definition in new vertical split
-keymap("n", "gD", "<cmd>vs<CR><cmd>Lspsaga goto_definition<CR>",
-	{ desc = '[G]o to [D]efinition' })
+-- keymap("n", "gD", "<cmd>vs<CR><cmd>Lspsaga goto_definition<CR>",
+-- 	{ desc = '[G]o to [D]efinition' })
 
 -- Peek type definition
 -- You can edit the file containing the type definition in the floating window
@@ -72,17 +72,17 @@ keymap("n", "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>",
 
 -- Diagnostic jump
 -- You can use <C-o> to jump back to your previous location
-keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>",
+keymap("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>",
 	{ desc = 'Diagnostic Jump Backward' })
-keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>",
+keymap("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>",
 	{ desc = 'Diagnostic Jump Forward' })
 
 -- Diagnostic jump with filters such as only jumping to an error
-keymap("n", "[E", function()
+keymap("n", "[e", function()
 		require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
 	end,
 	{ desc = 'Error Jump Backward' })
-keymap("n", "]E", function()
+keymap("n", "]e", function()
 		require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
 	end,
 	{ desc = 'Error Jump Forward' })

@@ -33,13 +33,16 @@ vim.keymap.set(
 --   { desc = 'Save Current Open Buffer' })
 
 -- change visual highlight color for code sharing (white-black)
-vim.keymap.set({ "n", "v" }, "<leader>cs", "<cmd>highlight Visual guibg=#fdf7ea guifg=black<CR>", { desc = "[C]ode [S]haring - Readable Visual Selection Highlighting" })
+vim.keymap.set({ "n", "v" }, "<leader>cs", "<cmd>highlight Visual guibg=#fdf7ea guifg=black<CR>",
+	{ desc = "[C]ode [S]haring - Readable Visual Selection Highlighting" })
 
 -- change visual highlight color for code sharing (purple)
-vim.keymap.set({ "n", "v" }, "<leader>cp", "<cmd>highlight Visual guibg=#3344aa guifg=#<CR>", { desc = "[C]ode [P]urple - Purple Visual Selection Highlighting" })
+vim.keymap.set({ "n", "v" }, "<leader>cp", "<cmd>highlight Visual guibg=#3344aa guifg=#<CR>",
+	{ desc = "[C]ode [P]urple - Purple Visual Selection Highlighting" })
 
 -- change visual highlight color for code sharing
-vim.keymap.set({ "n", "v" }, "<leader>cc", "<cmd>highlight Visual guibg=#283457 guifg=#<CR>", { desc = "[C]ode [C]oding - Default Visual Selection Highlighting" })
+vim.keymap.set({ "n", "v" }, "<leader>cc", "<cmd>highlight Visual guibg=#283457 guifg=#<CR>",
+	{ desc = "[C]ode [C]oding - Default Visual Selection Highlighting" })
 
 -- highlight last inserted text
 vim.keymap.set("n", "gV", "`[v`]", { desc = "Highlight Last Inserted Text" })
@@ -78,8 +81,8 @@ vim.keymap.set({ "n" }, "<leader>p", '"0p', { desc = "Paste by using yank regist
 vim.api.nvim_create_user_command("ReloadConfig", "source $MYVIMRC", {})
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to Next [D]iagnostic" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to Previous [D]iagnostic" })
+-- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to Next [D]iagnostic" })
+-- vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to Previous [D]iagnostic" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.open_float, { desc = "Open Diagnostic floating window" })
 vim.keymap.set("n", "<leader>d", vim.diagnostic.setloclist, { desc = "Open List of Diagnostics" })
 
@@ -119,8 +122,8 @@ vnoremap K :m '<-2<CR>gv=gv
 -- 	{ desc = '[R]e[n]ame' })
 -- vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action,
 -- 	{ desc = '[C]ode [A]ction' })
--- vim.keymap.set('n', 'gd', vim.lsp.buf.definition,
--- 	{ desc = '[G]oto [D]efinition' })
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = '[G]o to [D]efinition' })
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "[G]oto [D]eclaration" })
 -- vim.keymap.set('n', 'gr', vim.lsp.buf.references,
 -- 	{ desc = '[G]oto [R]eferences' })
 vim.keymap.set("n", "gI", vim.lsp.buf.implementation, { desc = "[G]oto [I]mplementation" })
@@ -134,7 +137,6 @@ vim.keymap.set("n", "gK", vim.lsp.buf.signature_help, { desc = "Signature Help" 
 -- 	{ desc = 'Signature Documentation' })
 
 -- Lesser used LSP functionality
--- vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "[G]oto [D]eclaration" })
 vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, { desc = "[W]orkspace [A]dd Folder" })
 vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, { desc = "[W]orkspace [R]emove Folder" })
 vim.keymap.set("n", "<leader>wl", function()
@@ -168,11 +170,11 @@ vim.keymap.set('n', '<C-Down>', ':horizontal resize -3<CR>')
 -- vim.keymap.set('n', '<Tab>', ':tabnext <CR>')
 -- vim.keymap.set('n', '<S-Tab>', ':tabprevious <CR>')
 
-vim.keymap.set('n', '<leader>tn', ':tabnext <CR>', { desc = 'Go to [N]ext [T]ab'})
-vim.keymap.set('n', '<leader>tp', ':tabprevious <CR>', { desc = 'Go to [P]revious [T]ab'})
+vim.keymap.set('n', '<leader>tn', ':tabnext <CR>', { desc = 'Go to [N]ext [T]ab' })
+vim.keymap.set('n', '<leader>tp', ':tabprevious <CR>', { desc = 'Go to [P]revious [T]ab' })
 
-vim.keymap.set('n', 'tn', ':tabnext <CR>', { desc = 'Go to [N]ext [T]ab'})
-vim.keymap.set('n', 'tb', ':tabprevious <CR>', { desc = 'Go to [P]revious [T]ab'})
+vim.keymap.set('n', 'tn', ':tabnext <CR>', { desc = 'Go to [N]ext [T]ab' })
+vim.keymap.set('n', 'tb', ':tabprevious <CR>', { desc = 'Go to [P]revious [T]ab' })
 
 -- scrolling remaps
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
@@ -191,17 +193,18 @@ vim.keymap.set('v', '<leader>s', ':sort<CR>')
 -- vim.cmd(':autocmd BufNewFile *.sh 0r ~/.config/nvim/skeleton.sh')
 -- vim.cmd(':autocmd BufNewFile *.md 0r ~/.config/nvim/skeleton.md')
 
-vim.keymap.set('n', '<leader>x', ':!chmod +x %<CR>', { desc = 'Make file executable'})
-vim.keymap.set('n', '<C-f>', ':silent !tmux neww ~/dotfiles/productivity/tmux-sessionizer.sh<CR>', { desc = 'Tmux Sessionizer'})
+vim.keymap.set('n', '<leader>x', ':!chmod +x %<CR>', { desc = 'Make file executable' })
+vim.keymap.set('n', '<C-f>', ':silent !tmux neww ~/dotfiles/productivity/tmux-sessionizer.sh<CR>',
+	{ desc = 'Tmux Sessionizer' })
 
 -- NOTE: open NetRW in directory of current open buffer
-vim.keymap.set('n', '<leader>fp', ':Ex %:h<CR>', { desc = 'Open [F]ile in [P]roject directory NetRW'})
-vim.keymap.set('n', '<leader>pf', ':Ex %:h<CR>', { desc = 'Open [P]roject [F]ile directory NetRW'})
+vim.keymap.set('n', '<leader>fp', ':Ex %:h<CR>', { desc = 'Open [F]ile in [P]roject directory NetRW' })
+vim.keymap.set('n', '<leader>pf', ':Ex %:h<CR>', { desc = 'Open [P]roject [F]ile directory NetRW' })
 
 -- NOTE: install jq and yq first
-vim.keymap.set('n', '<leader>jqj', ':%!jq<CR>', { desc = 'JQ Prettify JSON'})
-vim.keymap.set('n', '<leader>jcj', ':%!jq -c<CR>', { desc = 'JQ Compact (De-Prettify) JSON'})
-vim.keymap.set('n', '<leader>jqy', ':%!yq<CR>', { desc = 'JQ Prettify Yaml'})
-vim.keymap.set('n', '<leader>jcy', ':%!yq -c<CR>', { desc = 'JQ Compact (De-Prettify) Yaml'})
-vim.keymap.set('n', '<leader>jqx', ':%!xq<CR>', { desc = 'JQ Prettify XML'})
-vim.keymap.set('n', '<leader>jcx', ':%!xq -c<CR>', { desc = 'JQ Compact (De-Prettify) XML'})
+vim.keymap.set('n', '<leader>jqj', ':%!jq<CR>', { desc = 'JQ Prettify JSON' })
+vim.keymap.set('n', '<leader>jcj', ':%!jq -c<CR>', { desc = 'JQ Compact (De-Prettify) JSON' })
+vim.keymap.set('n', '<leader>jqy', ':%!yq -Y<CR>', { desc = 'JQ Prettify Yaml' })
+vim.keymap.set('n', '<leader>jcy', ':%!yq -c<CR>', { desc = 'JQ Compact (De-Prettify) Yaml' })
+vim.keymap.set('n', '<leader>jqx', ':%!xq -x<CR>', { desc = 'JQ Prettify XML' })
+vim.keymap.set('n', '<leader>jcx', ':%!xq -c<CR>', { desc = 'JQ Compact (De-Prettify) XML' })
