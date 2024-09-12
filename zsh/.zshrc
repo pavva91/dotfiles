@@ -167,3 +167,8 @@ fi
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+# Work integration
+if [ -f ~/bash_work_integration.sh ]; then
+	. ~/bash_work_integration.sh
+fi

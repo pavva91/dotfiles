@@ -29,12 +29,12 @@ shopt -s checkwinsize
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_prompt ]; then
-    . ~/.bash_prompt
+	. ~/.bash_prompt
 fi
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
+	debian_chroot=$(cat /etc/debian_chroot)
 fi
 
 # Alias definitions.
@@ -43,7 +43,7 @@ fi
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+	. ~/.bash_aliases
 fi
 
 # Variables definitions.
@@ -52,25 +52,25 @@ fi
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_variables ]; then
-    . ~/.bash_variables
+	. ~/.bash_variables
 fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
+	. /etc/bash_completion
 fi
 
 # FZF script to enable fzf key-bindings
-if [[ "$( grep -c Arch < /etc/os-release)" == 2 ]]; then
-    # For Arch
-    source /usr/share/fzf/key-bindings.bash
+if [[ "$(grep -c Arch </etc/os-release)" == 2 ]]; then
+	# For Arch
+	source /usr/share/fzf/key-bindings.bash
 fi
-if [[ "$(grep -c Debian < /etc/os-release)" == 2 ]] || [[ "$(grep -c Ubuntu < /etc/os-release)" == 2 ]]; then
-    echo "I'm on Debian-based distro"
-    # For Debian
-    source /usr/share/doc/fzf/examples/key-bindings.bash
+if [[ "$(grep -c Debian </etc/os-release)" == 2 ]] || [[ "$(grep -c Ubuntu </etc/os-release)" == 2 ]]; then
+	echo "I'm on Debian-based distro"
+	# For Debian
+	source /usr/share/doc/fzf/examples/key-bindings.bash
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -83,14 +83,19 @@ source /usr/share/nvm/init-nvm.sh
 
 # Node Version Manager Add (autocompletion)
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 # check if I'm on WSL
 if [[ "$(</proc/sys/kernel/osrelease)" == *microsoft* ]]; then
-    echo "I'm on WSL"
-    source ~/bash_scripts/gitWSLWin10.sh
-    source ~/bash_scripts/mavenWSLWin10.sh
+	echo "I'm on WSL"
+	source ~/bash_scripts/gitWSLWin10.sh
+	source ~/bash_scripts/mavenWSLWin10.sh
 else
-    echo "I'm on bare metal linux"
+	echo "I'm on bare metal linux"
+fi
+
+# Work integration
+if [ -f ~/bash_work_integration.sh ]; then
+	. ~/bash_work_integration.sh
 fi
