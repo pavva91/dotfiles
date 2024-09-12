@@ -8,8 +8,6 @@ if [[ -z $DOTFILES_PATH ]]; then
     DOTFILES_PATH=$HOME/dotfiles
 fi
 
-# STOW_FOLDERS=$STOW_FOLDERS DOTFILES_PATH=$DOTFILES_PATH $DOTFILES_PATH/install
-
 cd "$DOTFILES_PATH" || exit
 
 IFS=',' read -r -a programs <<< "$STOW_FOLDERS"
