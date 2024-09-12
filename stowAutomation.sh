@@ -14,7 +14,6 @@ cd "$DOTFILES_PATH" || exit
 
 IFS=',' read -r -a programs <<< "$STOW_FOLDERS"
 for program in "${programs[@]}"; do
-    echo "$program"
-    # stow $program
+    stow $program
 done
 
