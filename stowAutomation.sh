@@ -10,12 +10,11 @@ fi
 
 # STOW_FOLDERS=$STOW_FOLDERS DOTFILES_PATH=$DOTFILES_PATH $DOTFILES_PATH/install
 
-cd $DOTFILES_PATH
-pwd
+cd "$DOTFILES_PATH" || exit
 
 IFS=',' read -r -a programs <<< "$STOW_FOLDERS"
 for program in "${programs[@]}"; do
-    # echo $program
-    stow $program
+    echo "$program"
+    # stow $program
 done
 
