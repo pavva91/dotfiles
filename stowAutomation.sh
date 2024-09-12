@@ -1,11 +1,21 @@
 #!/usr/bin/env bash
 
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="i3,i3blocks,alacritty,zsh,bash,tmux,nvim,vim,ranger,zathura"
+    STOW_FOLDERS="x11,i3,i3blocks,alacritty,zsh,bash,tmux,nvim,vim,ranger,zathura,spacemacs"
 fi
 
-if [[ -z $DOTFILES ]]; then
-    DOTFILES=$HOME/dotfiles
+if [[ -z $DOTFILES_PATH ]]; then
+    DOTFILES_PATH=$HOME/dotfiles
 fi
 
-STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES $DOTFILES/install
+# STOW_FOLDERS=$STOW_FOLDERS DOTFILES_PATH=$DOTFILES_PATH $DOTFILES_PATH/install
+
+cd $DOTFILES_PATH
+pwd
+
+IFS=',' read -r -a programs <<< "$STOW_FOLDERS"
+for program in "${programs[@]}"; do
+    # echo $program
+    stow $program
+done
+

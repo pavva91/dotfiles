@@ -9,8 +9,12 @@ sudo pacman -S - < ./arch_installation/backup/pkglist_no_aur.txt
 
 3. Stow configs
 
+Run './stowAutomation.sh'
+The bash script is doing this:
+
 ```bash
 cd dotfiles
+stow x11
 stow i3
 stow i3blocks
 stow alacritty
@@ -21,6 +25,7 @@ stow nvim
 stow vim
 stow ranger
 stow zathura
+stow spacemacs
 ```
 
 4. Install Yay:
