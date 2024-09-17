@@ -49,7 +49,16 @@ local servers = {
   rust_analyzer = {},
   -- html = {},
   jsonls = {},
-  emmet_ls = {},
+  emmet_ls = {
+    filetypes = {
+      "css",
+      "html",
+      "javascript",
+      "xml",
+      "vue",
+      "xhtml",
+    }
+  },
   bashls = {},
   volar = {
     filetypes = {
