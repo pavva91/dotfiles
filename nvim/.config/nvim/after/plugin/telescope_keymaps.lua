@@ -67,8 +67,8 @@ local mappings = {
 			"[F]ind [R]esume",
 		},
 		b = {
-			telescope.buffers,
-			"[F]ind [B]uffers",
+			telescope.current_buffer_fuzzy_find,
+			"[F]uzzy find in current [B]uffer",
 		},
 		k = {
 			telescope.keymaps,
@@ -77,6 +77,10 @@ local mappings = {
 		s = {
 			telescope.git_status,
 			"[F]ind Git [S]tatus and Diff",
+		},
+		C = {
+			telescope.command_history,
+			"[F]ind Command History",
 		},
 		c = {
 			telescope.git_commits,
