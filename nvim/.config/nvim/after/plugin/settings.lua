@@ -10,7 +10,7 @@ vim.cmd.colorscheme 'tokyonight-night'
 -- vim.cmd.colorscheme 'material'
 
 -- Material Style
-vim.g.material_style = "deep ocean"
+vim.g.material_style = 'deep ocean'
 
 -- to change run this Ex command: :lua require("material.functions").find_style()
 --
@@ -27,4 +27,4 @@ vim.g.fzf_command_prefix = 'Fzf'
 ---------------------------------------------------------------------------
 -- => Treesitter
 ---------------------------------------------------------------------------
-vim.treesitter.language.register("html", "xhtml")
+vim.treesitter.language.register('html', 'xhtml')
