@@ -23,3 +23,8 @@ vim.g.fzf_command_prefix = 'Fzf'
 -- vim.cmd([[
 -- let g:fzf_command_prefix = 'Fzf'
 -- ]])
+
+---------------------------------------------------------------------------
+-- => Treesitter
+---------------------------------------------------------------------------
+vim.treesitter.language.register("html", "xhtml")
