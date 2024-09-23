@@ -78,11 +78,11 @@ local mappings = {
 			telescope.git_status,
 			"[F]ind Git [S]tatus and Diff",
 		},
-		C = {
+		c = {
 			telescope.command_history,
 			"[F]ind Command History",
 		},
-		c = {
+		C = {
 			telescope.git_commits,
 			"[F]ind Git [C]ommits",
 		},
