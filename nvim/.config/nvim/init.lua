@@ -49,6 +49,7 @@ local servers = {
   rust_analyzer = {},
   -- html = {},
   jsonls = {},
+  html = {},
   emmet_ls = {
     filetypes = {
       "css",
@@ -56,7 +57,7 @@ local servers = {
       "javascript",
       "xml",
       "vue",
-      "xhtml",
+      -- "xhtml",
     }
   },
   bashls = {},
@@ -206,4 +207,25 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
   group = jdtls_lsp,
   pattern = "java",
+})
+
+-- NOTE: Run emmet_ls and html_ls on xhtml files
+local home = os.getenv("HOME")
+local emmet_ls_command = home .. '/.local/share/nvim/mason/bin/emmet-ls'
+local html_ls_command = home .. '/.local/share/nvim/mason/bin/vscode-html-language-server'
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function()
+    vim.lsp.start({
+      name = 'emmet_ls',
+      cmd = {emmet_ls_command, '--stdio'}
+    })
+    vim.lsp.start({
+      name = 'html',
+      cmd = {html_ls_command, '--stdio'}
+    })
+    vim.schedule(function ()
+      print("hey is a f***ing .xhtml, we run emmet_ls and html-language-server anyway")
+    end)
+  end,
+  pattern = "xhtml",
 })
