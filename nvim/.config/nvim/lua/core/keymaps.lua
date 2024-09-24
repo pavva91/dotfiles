@@ -189,6 +189,12 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 -- sort selection
 vim.keymap.set('v', '<leader>s', ':sort<CR>')
 
+-- set wrap
+vim.keymap.set('n', '<leader>sw', ':set wrap<CR>')
+
+-- set nowrap
+vim.keymap.set('n', '<leader>sn', ':set nowrap<CR>')
+
 -- TODO: create template file
 -- vim.cmd(':autocmd BufNewFile *.sh 0r ~/.config/nvim/skeleton.sh')
 -- vim.cmd(':autocmd BufNewFile *.md 0r ~/.config/nvim/skeleton.md')
