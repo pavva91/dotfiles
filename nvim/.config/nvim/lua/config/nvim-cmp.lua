@@ -47,8 +47,8 @@ cmp.setup({
     { name = "buffer",               keyword_length = 5 },
     { name = "path" },
     { name = "nvim_lua" },
-    { name = "cmp_tabnine",          keyword_length = 5 },
-    { name = "vim-dadbod-completion" },
+    -- { name = "cmp_tabnine",          keyword_length = 5 },
+    -- { name = "vim-dadbod-completion" },
     -- { name = "cmdline" },
   },
   window = {
@@ -64,10 +64,10 @@ cmp.setup({
         buffer = "[BUF]",
         path = "[PATH]",
         nvim_lua = "[LUA]",
-        cmp_tabnine = "[T9]",
+        -- cmp_tabnine = "[T9]",
         -- cmdline = "[CMD]",
         -- treesitter = "",
-        ["vim-dadbod-completion"] = " ",
+        -- ["vim-dadbod-completion"] = " ",
       }
 
       item.menu = menu_icon[entry.source.name]
@@ -79,12 +79,20 @@ cmp.setup({
 -- NOTE: Database completion OLD (works)
 -- NOTE: example config https://github.com/kristijanhusak/neovim-config/blob/20cd27b0386acf5106c9faab51bdc6f8b2b3cc10/nvim/lua/partials/completion.lua#L18
 
-vim.api.nvim_exec2(
-  [[
-autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
- ]],
-  {}
-)
+-- vim.api.nvim_exec2(
+--   [[
+-- autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
+--  ]],
+--   {}
+-- )
+
+-- NOTE: Move this autocommand into ../../after/plugin/settings.lua
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = 'sql',
+--   callback = function ()
+--     cmp.setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
+--   end
+-- })
 
 -- NOTE: Original with deprecated function
 -- vim.api.nvim_exec([[
