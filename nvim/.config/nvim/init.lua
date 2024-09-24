@@ -213,6 +213,7 @@ vim.api.nvim_create_autocmd("FileType", {
 local home = os.getenv("HOME")
 local emmet_ls_command = home .. '/.local/share/nvim/mason/bin/emmet-ls'
 local html_ls_command = home .. '/.local/share/nvim/mason/bin/vscode-html-language-server'
+local xml_ls_command = home .. '/.local/share/nvim/mason/bin/lemminx'
 vim.api.nvim_create_autocmd("FileType", {
   callback = function()
     vim.lsp.start({
@@ -223,8 +224,12 @@ vim.api.nvim_create_autocmd("FileType", {
       name = 'html',
       cmd = {html_ls_command, '--stdio'}
     })
+    vim.lsp.start({
+      name = 'lemminx',
+      cmd = {xml_ls_command}
+    })
     vim.schedule(function ()
-      print("hey is a f***ing .xhtml, we run emmet_ls and html-language-server anyway")
+      print("hey is a f***ing .xhtml, we run emmet_ls, lemminx(xml_ls) and html-language-server anyway")
     end)
   end,
   pattern = "xhtml",
