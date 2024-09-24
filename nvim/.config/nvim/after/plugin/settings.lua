@@ -40,6 +40,7 @@ vim.api.nvim_create_autocmd('FileType', {
 			sources = {
 				{ name = 'luasnip' },
 				{ name = 'vim-dadbod-completion' },
+				{ name = 'buffer' },
 				{ name = 'treesitter' },
 			},
 			formatting = {
@@ -48,6 +49,7 @@ vim.api.nvim_create_autocmd('FileType', {
 					local menu_icon = {
 						luasnip = '[SNIP]',
 						['vim-dadbod-completion'] = ' ',
+						buffer = '[BUF]',
 						treesitter = '[TS]',
 					}
 
