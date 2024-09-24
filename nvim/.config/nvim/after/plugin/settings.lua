@@ -27,7 +27,7 @@ vim.g.fzf_command_prefix = 'Fzf'
 ---------------------------------------------------------------------------
 -- => Treesitter
 ---------------------------------------------------------------------------
-vim.treesitter.language.register('html', 'xhtml')
+vim.treesitter.language.register('xml', 'xhtml')
 
 ---------------------------------------------------------------------------
 -- => vim-dadbod-completion
