@@ -45,7 +45,53 @@ end
 local servers = {
   -- clangd = {},
   gopls = {},
-  pyright = {},
+  pyright = {
+
+    disableLanguageServices = true,
+    disableOrganizeImports = true,
+    reportMissingModuleSource = "none",
+    reportMissingImports = "none",
+    reportUndefinedVariable = "none",
+
+    capabilities = {
+      textDocument = {
+        publishDiagnostics = {
+          tagSupport = { 2 },
+        },
+      },
+    },
+
+    -- capabilities = (function()
+    --   local capabilities = vim.lsp.protocol.make_client_capabilities()
+    --   capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
+    --   return capabilities
+    -- end)(),
+
+    -- handlers = {
+    --   ["textDocument/publishDiagnostics"] = function () end,
+    -- },
+    -- on_attach = function (client, _)
+    --   client.server_capabilities.codeActionProvider = false
+    -- end,
+
+    settings = {
+      pyright = {
+        disableOrganizeImports = true,
+      },
+      python = {
+        analysis = {
+          autoSearchPaths = true,
+          diagnosticMode = "workspace",
+          -- typeCheckingMode = "basic",
+          typeCheckingMode = "off",
+          useLibraryCodeForTypes = true,
+          -- diagnosticSeverityOverrides = {
+          --   reportUnusedVariable = "warning",
+          -- },
+        }
+      }
+    }
+  },
   rust_analyzer = {},
   -- html = {},
   jsonls = {},
@@ -218,17 +264,17 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function()
     vim.lsp.start({
       name = 'emmet_ls',
-      cmd = {emmet_ls_command, '--stdio'}
+      cmd = { emmet_ls_command, '--stdio' }
     })
     vim.lsp.start({
       name = 'html',
-      cmd = {html_ls_command, '--stdio'}
+      cmd = { html_ls_command, '--stdio' }
     })
     vim.lsp.start({
       name = 'lemminx',
-      cmd = {xml_ls_command}
+      cmd = { xml_ls_command }
     })
-    vim.schedule(function ()
+    vim.schedule(function()
       print("hey is a f***ing .xhtml, we run emmet_ls, lemminx(xml_ls) and html-language-server anyway")
     end)
   end,
