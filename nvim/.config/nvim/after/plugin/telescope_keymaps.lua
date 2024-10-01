@@ -38,6 +38,14 @@ local mappings = {
 			telescopebuiltin.find_files,
 			"[F]ind [F]iles",
 		},
+		F = {
+			'<cmd>lua require "telescope.builtin".live_grep { default_text = vim.fn.expand("function ")}<CR>',
+			"[F]ind [F]unction with grep",
+		},
+		p = {
+			'<cmd>lua require "telescope.builtin".live_grep { default_text = vim.fn.expand("def ")}<CR>',
+			"[F]ind [P]ython function with grep",
+		},
 		h = {
 			telescopebuiltin.help_tags,
 			"[F]ind [H]elp",
