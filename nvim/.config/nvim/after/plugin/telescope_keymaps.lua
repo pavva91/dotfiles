@@ -34,16 +34,40 @@ local opts = {
 local mappings = {
 	f = {
 		name = "Telescope (Finder)",
+		a = {
+			function()
+				telescopebuiltin.find_files({
+					hidden = true,
+					prompt_title = "Find Files (hidden)",
+				})
+			end,
+			"[F]ind [A]ll Files",
+		},
 		f = {
+			-- NOTE: this is overwritten by ~/.local/share/nvim/lazy/telescope.nvim/lua/tlescope/builtin/init.lua
+			-- NOTE: this is useless
 			telescopebuiltin.find_files,
-			"[F]ind [F]iles",
+			"[F]ind [F]iles OVERWRITTEN",
 		},
 		F = {
-			'<cmd>lua require "telescope.builtin".live_grep { default_text = vim.fn.expand("function ")}<CR>',
+			-- '<cmd>lua require "telescope.builtin".live_grep { default_text = vim.fn.expand("function ")}<CR>',
+			function()
+				telescopebuiltin.live_grep({
+					default_text = "function ",
+					prompt_title = "Find 'function' with grep",
+				})
+			end,
 			"[F]ind [F]unction with grep",
 		},
 		p = {
-			'<cmd>lua require "telescope.builtin".live_grep { default_text = vim.fn.expand("def ")}<CR>',
+			-- NOTE: old way (works)
+			-- '<cmd>lua require "telescope.builtin".live_grep { default_text = vim.fn.expand("def ")}<CR>',
+			function()
+				telescopebuiltin.live_grep({
+					default_text = "def ",
+					prompt_title = "Find python function 'def' with grep",
+				})
+			end,
 			"[F]ind [P]ython function with grep",
 		},
 		h = {
