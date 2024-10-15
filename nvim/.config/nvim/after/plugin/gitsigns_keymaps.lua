@@ -24,25 +24,26 @@ vim.keymap.set(
 local gs = package.loaded.gitsigns
 
 -- Navigation
-vim.keymap.set("n", "]c", function()
-	if vim.wo.diff then
-		return "]c"
-	end
-	vim.schedule(function()
-		gs.next_hunk()
-	end)
-	return "<Ignore>"
-end, { expr = true, desc = "Next [C]hange (Hunk)" })
 
-vim.keymap.set("n", "[c", function()
-	if vim.wo.diff then
-		return "[c"
-	end
-	vim.schedule(function()
-		gs.prev_hunk()
-	end)
-	return "<Ignore>"
-end, { expr = true, desc = "Previous [C]hange (Hunk)" })
+-- vim.keymap.set("n", "]c", function()
+-- 	if vim.wo.diff then
+-- 		return "]c"
+-- 	end
+-- 	vim.schedule(function()
+-- 		gs.next_hunk()
+-- 	end)
+-- 	return "<Ignore>"
+-- end, { expr = true, desc = "Next [C]hange (Hunk)" })
+
+-- vim.keymap.set("n", "[c", function()
+-- 	if vim.wo.diff then
+-- 		return "[c"
+-- 	end
+-- 	vim.schedule(function()
+-- 		gs.prev_hunk()
+-- 	end)
+-- 	return "<Ignore>"
+-- end, { expr = true, desc = "Previous [C]hange (Hunk)" })
 
 -- Actions
 vim.keymap.set("n", "<leader>hs", gs.stage_hunk, { desc = "[H]unk [S]tage" })

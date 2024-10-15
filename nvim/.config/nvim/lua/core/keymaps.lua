@@ -214,3 +214,11 @@ vim.keymap.set('n', '<leader>jqy', ':%!yq -Y<CR>', { desc = 'JQ Prettify Yaml' }
 vim.keymap.set('n', '<leader>jcy', ':%!yq -c<CR>', { desc = 'JQ Compact (De-Prettify) Yaml' })
 vim.keymap.set('n', '<leader>jqx', ':%!xq -x<CR>', { desc = 'JQ Prettify XML' })
 vim.keymap.set('n', '<leader>jcx', ':%!xq -c<CR>', { desc = 'JQ Compact (De-Prettify) XML' })
+
+vim.keymap.set("n", "]c", ":cnext<CR>")
+vim.keymap.set("n", "[c", ":cprevious<CR>")
+
+vim.keymap.set("n", "]t", ":tabnext<CR>")
+vim.keymap.set("n", "[t", ":tabprevious<CR>")
+vim.keymap.set("n", "<leader>nt", ":tabnew<CR>")
+vim.keymap.set("n", "<leader>tc", ":tabclose<CR>")
