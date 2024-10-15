@@ -13,6 +13,7 @@ vim.g.maplocalleader = " "
 
 -- Make relative line numbers default
 set.relativenumber = true
+set.number = true
 
 -- set.pastetoggle = "<F2>"
 set.showcmd = true
@@ -34,7 +35,9 @@ set.smartindent = true
 
 -- Set termguicolors, needed for nvim-colorizer
 set.termguicolors = true
+set.background = "dark"
 
+-- split windows
 set.splitbelow = true
 set.splitright = true
 
