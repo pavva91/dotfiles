@@ -141,6 +141,35 @@ vim.keymap.set("n", "<leader>ws", telescopebuiltin.lsp_dynamic_workspace_symbols
 local telescope = require("telescope")
 vim.keymap.set("n", "<leader>rg", require('telescope').extensions.live_grep_args.live_grep_args,
 	{ desc = "[R]ip [G]rep" })
+vim.keymap.set("n", "<leader>pws", function()
+	local word = vim.fn.expand("<cword>")
+	telescopebuiltin.grep_string({ search = word })
+end)
+vim.keymap.set("n", "<leader>pd", function()
+		local word = vim.fn.expand("<cword>")
+		telescopebuiltin.grep_string({
+			search = "def " .. word,
+			prompt_title = "Find python function 'def'",
+		})
+	end,
+	{ desc = "Find [P]ython [D]efinition function current word" }
+)
+vim.keymap.set("n", "<leader>jd", function()
+		local word = vim.fn.expand("<cword>")
+		telescopebuiltin.grep_string({
+			search = "function " .. word,
+			prompt_title = "Find js function 'function'",
+		})
+	end,
+	{ desc = "Find [J]avaScript [D]efinition function current word" }
+)
+vim.keymap.set("n", "<leader>pWs", function()
+	local word = vim.fn.expand("<cWORD>")
+	telescopebuiltin.grep_string({ search = word })
+end)
+vim.keymap.set("n", "<leader>ps", function()
+	telescopebuiltin.grep_string({ search = vim.fn.input("Grep > ") })
+end)
 -- vim.keymap.set("n","<leader>rg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",{ desc = "[R]ip [G]rep" })
 -- require('plugins.telescope').extensions.live_grep_args.live_grep_args
 
