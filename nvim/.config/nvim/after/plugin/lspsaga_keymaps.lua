@@ -72,6 +72,7 @@ keymap("n", "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>",
 
 -- Diagnostic jump
 -- You can use <C-o> to jump back to your previous location
+
 keymap("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>",
 	{ desc = 'Diagnostic Jump Backward' })
 keymap("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>",
