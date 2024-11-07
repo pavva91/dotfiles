@@ -571,7 +571,7 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq org-todo-keywords
-        '((sequence "TODO(t!)" "NEXT(n!)" "DOINGNOW(d!)" "BLOCKED(b!)" "TODELEGATE(g!)" "DELEGATED(D!)" "FOLLOWUP(f!)" "TICKLE(T!)" "|" "CANCELLED(c!)" "DONE(F!)")))
+        '((sequence "TODO(t!)" "NEXT(n!)" "DOINGNOW(d!)" "REVIEW(r!)" "BLOCKED(b!)" "TODELEGATE(g!)" "DELEGATED(D!)" "FOLLOWUP(f!)" "TICKLE(T!)" "|" "CANCELLED(c!)" "DONE(F!)")))
 
   ;; kj to exit insert mode
   (defun my-kj ()
