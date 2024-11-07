@@ -82,9 +82,9 @@ local mappings = {
 			telescopebuiltin.live_grep,
 			"[F]ind by [G]rep",
 		},
-		d = {
+		D = {
 			telescopebuiltin.diagnostics,
-			"[F]ind [D]iagnostics",
+			"[F]ind [D]iagnostics of the whole project",
 		},
 		j = {
 			telescopebuiltin.jumplist,
@@ -98,7 +98,7 @@ local mappings = {
 			telescopebuiltin.resume,
 			"[F]ind [R]esume",
 		},
-		b = {
+		B = {
 			telescopebuiltin.current_buffer_fuzzy_find,
 			"[F]uzzy find in current [B]uffer",
 		},

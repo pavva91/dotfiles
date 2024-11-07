@@ -16,6 +16,80 @@ local opts = {
 }
 
 local mappings = {
+    l = {
+        a = {
+            function()
+                ui.nav_file(1)
+            end,
+            "Harpoon go to one",
+        },
+        s = {
+            function()
+                ui.nav_file(2)
+            end,
+            "Harpoon go to two",
+        },
+        d = {
+            function()
+                ui.nav_file(3)
+            end,
+            "Harpoon go to three",
+        },
+        f = {
+            function()
+                ui.nav_file(4)
+            end,
+            "Harpoon go to four",
+        },
+        q = {
+            function()
+                ui.nav_file(5)
+            end,
+            "Harpoon go to five",
+        },
+        w = {
+            function()
+                ui.nav_file(6)
+            end,
+            "Harpoon go to six",
+        },
+        e = {
+            function()
+                ui.nav_file(7)
+            end,
+            "Harpoon go to seven",
+        },
+        r = {
+            function()
+                ui.nav_file(8)
+            end,
+            "Harpoon go to eight",
+        },
+        z = {
+            function()
+                ui.nav_file(9)
+            end,
+            "Harpoon go to nine",
+        },
+        x = {
+            function()
+                ui.nav_file(10)
+            end,
+            "Harpoon go to ten",
+        },
+        c = {
+            function()
+                ui.nav_file(11)
+            end,
+            "Harpoon go to eleven",
+        },
+        v = {
+            function()
+                ui.nav_file(12)
+            end,
+            "Harpoon go to twelwe",
+        },
+    },
     m = {
         name = "Harpoon (Marks sticky)",
         m = {

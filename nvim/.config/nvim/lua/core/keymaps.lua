@@ -117,7 +117,8 @@ vnoremap K :m '<-2<CR>gv=gv
 ]])
 
 -- Format
-vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "[L]SP [F]ormat open buffer" })
+-- vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "[L]SP [F]ormat open buffer" })
+vim.keymap.set("n", "<leader>fb", vim.lsp.buf.format, { desc = "LSP [F]ormat open [B]uffer" })
 
 -- Git Merge Resolve conflicts (gitdiff)
 vim.keymap.set(
