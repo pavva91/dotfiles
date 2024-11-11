@@ -95,10 +95,10 @@ local mappings = {
 			telescopebuiltin.resume,
 			"[F]ind [R]esume",
 		},
-		b = {
-			telescopebuiltin.current_buffer_fuzzy_find,
-			"[F]uzzy find in current [B]uffer",
-		},
+		-- b = {
+		-- 	telescopebuiltin.current_buffer_fuzzy_find,
+		-- 	"[F]uzzy find in current [B]uffer",
+		-- },
 		k = {
 			telescopebuiltin.keymaps,
 			"[F]ind [K]eymaps",
