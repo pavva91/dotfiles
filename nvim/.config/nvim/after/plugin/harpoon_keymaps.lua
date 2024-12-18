@@ -1,5 +1,25 @@
-local mark = require("harpoon.mark")
-local ui = require("harpoon.ui")
+require("telescope").load_extension("harpoon")
+
+local harpoon = require("harpoon")
+harpoon:setup()
+
+-- basic telescope configuration
+local conf = require("telescope.config").values
+local function toggle_telescope(harpoon_files)
+    local file_paths = {}
+    for _, item in ipairs(harpoon_files.items) do
+        table.insert(file_paths, item.value)
+    end
+
+    require("telescope.pickers").new({}, {
+        prompt_title = "󰛢 Harpoon 󰛢",
+        finder = require("telescope.finders").new_table({
+            results = file_paths,
+        }),
+        previewer = conf.file_previewer({}),
+        sorter = conf.generic_sorter({}),
+    }):find()
+end
 
 local status_ok, which_key = pcall(require, "which-key")
 if not status_ok then
@@ -7,122 +27,108 @@ if not status_ok then
 end
 
 local opts = {
-    mode = "n",  -- NORMAL mode
+    mode = "n",     -- NORMAL mode
     prefix = "<leader>",
-    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-    silent = true, -- use `silent` when creating keymaps
+    buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
+    silent = true,  -- use `silent` when creating keymaps
     noremap = true, -- use `noremap` when creating keymaps
-    nowait = true, -- use `nowait` when creating keymaps
+    nowait = true,  -- use `nowait` when creating keymaps
 }
 
 local mappings = {
     l = {
         a = {
             function()
-                ui.nav_file(1)
+                harpoon:list():select(1)
             end,
-            "Harpoon go to one",
+            "󰛢 󰬺 Harpoon go to one",
         },
         s = {
             function()
-                ui.nav_file(2)
+                harpoon:list():select(2)
             end,
-            "Harpoon go to two",
+            "󰛢 󰬻 Harpoon go to two",
         },
         d = {
             function()
-                ui.nav_file(3)
+                harpoon:list():select(3)
             end,
-            "Harpoon go to three",
+            "󰛢 󰬼 Harpoon go to three",
         },
         f = {
             function()
-                ui.nav_file(4)
+                harpoon:list():select(4)
             end,
-            "Harpoon go to four",
+            "󰛢 󰬽 Harpoon go to four",
         },
         q = {
             function()
-                ui.nav_file(5)
+                harpoon:list():select(5)
             end,
-            "Harpoon go to five",
+            "󰛢 󰬾 Harpoon go to five",
         },
         w = {
             function()
-                ui.nav_file(6)
+                harpoon:list():select(6)
             end,
-            "Harpoon go to six",
+            "󰛢 󰬿 Harpoon go to six",
         },
         e = {
             function()
-                ui.nav_file(7)
+                harpoon:list():select(7)
             end,
-            "Harpoon go to seven",
+            "󰛢 󰭀 Harpoon go to seven",
         },
         r = {
             function()
-                ui.nav_file(8)
+                harpoon:list():select(8)
             end,
-            "Harpoon go to eight",
+            "󰛢 󰭁 Harpoon go to eight",
         },
         z = {
             function()
-                ui.nav_file(9)
+                harpoon:list():select(9)
             end,
-            "Harpoon go to nine",
+            "󰛢 󰭂 Harpoon go to nine",
         },
         x = {
             function()
-                ui.nav_file(10)
+                harpoon:list():select(10)
             end,
-            "Harpoon go to ten",
+            "󰛢 󰿩 Harpoon go to ten",
         },
         c = {
             function()
-                ui.nav_file(11)
+                harpoon:list():select(11)
             end,
-            "Harpoon go to eleven",
+            "󰛢 󰬺󰬺 Harpoon go to eleven",
         },
         v = {
             function()
-                ui.nav_file(12)
+                harpoon:list():select(12)
             end,
-            "Harpoon go to twelwe",
+            "󰛢 󰬺󰬻 Harpoon go to twelwe",
         },
     },
     m = {
         name = "Harpoon (Marks sticky)",
-        m = {
-            ui.toggle_quick_menu,
-            "Harpoon [M]enu of [M]arks",
+        t = {
+            function()
+                harpoon.ui:toggle_quick_menu(harpoon:list())
+            end,
+            "󰛢 󱚌 Harpoon [M]enu [T]ext",
         },
         a = {
-            mark.add_file,
-            "Harpoon [M]ark [A]dd File",
-        },
-        h = {
             function()
-                ui.nav_file(1)
+                harpoon:list():add()
             end,
-            "Harpoon go to [M] [H] one",
+            "󰛢  Harpoon [M]ark [A]dd File",
         },
-        j = {
+        m = {
             function()
-                ui.nav_file(2)
+                toggle_telescope(harpoon:list())
             end,
-            "Harpoon go to [M] [J] two",
-        },
-        k = {
-            function()
-                ui.nav_file(3)
-            end,
-            "Harpoon go to [M] [K] three",
-        },
-        l = {
-            function()
-                ui.nav_file(4)
-            end,
-            "Harpoon go to [M] [l] four",
+            "󰛢  Harpoon [M]enu Telescope",
         },
     },
 }
@@ -133,15 +139,11 @@ which_key.register(mappings, opts)
 -- vim.keymap.set("n", "<leader>mm", ui.toggle_quick_menu, { desc = "Harpoon [M]enu of [M]arks" })
 
 vim.keymap.set("n", "[k", function()
-    ui.nav_prev()
+    harpoon.list():prev()
 end, { desc = "Harpoon go to Previous File" })
 vim.keymap.set("n", "]k", function()
-    ui.nav_next()
+    harpoon.list():next()
 end, { desc = "Harpoon go to Next File" })
-
-vim.keymap.set("n", "<leader>mh", function()
-    ui.nav_file(1)
-end, { desc = "Harpoon go to [M] [H]one" })
 
 -- vim.keymap.set("n", "<leader>mj", function()
 --     ui.nav_file(2)
