@@ -33,7 +33,7 @@ local opts = {
 
 local mappings = {
 	f = {
-		name = "Telescope (Finder)",
+		name = " Telescope (Finder)",
 		a = {
 			function()
 				telescopebuiltin.find_files({
