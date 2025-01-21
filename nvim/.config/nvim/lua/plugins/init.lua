@@ -61,7 +61,7 @@ return {
 				lazy = true,
 			},
 			{
-				"jristijanhusak/vim-dadbod-completion",
+				"kristijanhusak/vim-dadbod-completion",
 				ft = { 'sql', 'mysql', 'plsql' },
 				lazy = true,
 				dependencies = {
@@ -131,6 +131,7 @@ return {
 		key = "gc",
 		opts = {}
 	},
+	"andymass/vim-matchup",
 
 	-- NOTE: Themes
 	"tomasr/molokai",

@@ -9,8 +9,6 @@ return {
     config = function()
         pcall(require("nvim-treesitter.install").update({ with_sync = true }))
         require("nvim-treesitter.configs").setup({
-            -- end,
-            -- opts = {
             -- Add languages to be installed here that you want installed for treesitter
             ensure_installed = {
                 "bash",
@@ -106,6 +104,9 @@ return {
                     },
                 },
             },
+            matchup = {
+                enable = true,
+            }
         })
     end,
 }
