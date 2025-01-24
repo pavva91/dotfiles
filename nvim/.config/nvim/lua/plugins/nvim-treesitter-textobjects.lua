@@ -52,6 +52,7 @@ return {
 						["]n"] = { query = "@number.outer", desc = "Next number start" },
 						["]v"] = { query = "@vardef.outer", query_group = "locals", desc = "Next variable definition start" },
 						["]="] = { query = "@varassign.inner", query_group = "locals", desc = "Next variable assignment start" },
+						["]}"] = { query = "@mustache.open", query_group = "locals", desc = "Next mustache start" },
 
 						["]S"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
 						["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
@@ -71,7 +72,8 @@ return {
 						["[l"] = { query = "@loop.outer", desc = "Previous loop start" },
 						["[n"] = { query = "@number.outer", desc = "Previous number start" },
 						["[v"] = { query = "@vardef.outer", query_group = "locals", desc = "Previous variable definition start" },
-						["[="] = { query = "@varassign.inner", query_group = "locals", desc = "Next variable assignment start" },
+						["[="] = { query = "@varassign.inner", query_group = "locals", desc = "Previous variable assignment start" },
+						["[}"] = { query = "@mustache.open", query_group = "locals", desc = "Previous mustache start" },
 					},
 					goto_previous_end = {
 						["[F"] = { query = "@call.outer", desc = "Previous function call end" },

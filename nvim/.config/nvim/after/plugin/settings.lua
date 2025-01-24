@@ -27,7 +27,8 @@ vim.g.fzf_command_prefix = 'Fzf'
 ---------------------------------------------------------------------------
 -- => Treesitter
 ---------------------------------------------------------------------------
-vim.treesitter.language.register('xml', 'xhtml')
+-- vim.treesitter.language.register('xml', 'xhtml')
+vim.treesitter.language.register('javascript', 'xhtml')
 
 ---------------------------------------------------------------------------
 -- => vim-dadbod-completion
@@ -65,8 +66,13 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-	pattern = { 'dbout' },
+	pattern = 'dbout',
 	callback = function()
 		vim.opt.wrap = true
+		vim.schedule(function()
+			print('is the db output')
+		end)
 	end
 })
+
+vim.g.mkdp_browser = 'firefox'
