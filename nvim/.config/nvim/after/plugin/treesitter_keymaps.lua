@@ -128,11 +128,23 @@ which_key.register(mappings, opts)
 -- vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 -- vim.keymap.set("n", "<leader><space>", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
 
-vim.keymap.set("n","gr", telescopebuiltin.lsp_references,{ desc =  "[G]oto [R]eferences" })
-vim.keymap.set("n","<leader><space>", telescopebuiltin.buffers, { desc = "[ ] Find existing buffers" })
-vim.keymap.set("n","<leader>/", telescopebuiltin.current_buffer_fuzzy_find, { desc = "[/] Fuzzily search in current buffer" })
-vim.keymap.set("n","<leader>ds", telescopebuiltin.lsp_document_symbols,{ desc = "[D]ocument [S]ymbols" })
-vim.keymap.set("n","<leader>ws", telescopebuiltin.lsp_dynamic_workspace_symbols,{ desc = "[W]orkspace [S]ymbols" })
+vim.keymap.set("n", "gr", telescopebuiltin.lsp_references, { desc = "[G]oto [R]eferences" })
+vim.keymap.set("n", "<leader><space>", telescopebuiltin.buffers, { desc = "[ ] Find existing buffers" })
+vim.keymap.set("n", "<leader>/", telescopebuiltin.current_buffer_fuzzy_find,
+	{ desc = "[/] Fuzzily search in current buffer" })
+vim.keymap.set("n", "<leader>ds", telescopebuiltin.lsp_document_symbols, { desc = "[D]ocument [S]ymbols" })
+vim.keymap.set("n", "<leader>ws", telescopebuiltin.lsp_dynamic_workspace_symbols, { desc = "[W]orkspace [S]ymbols" })
 
 local telescope = require("telescope")
-vim.keymap.set("n","<leader>rg", require('telescope').extensions.live_grep_args.live_grep_args,{ desc = "[R]ip [G]rep" })
+vim.keymap.set("n", "<leader>rg", require('telescope').extensions.live_grep_args.live_grep_args,
+	{ desc = "[R]ip [G]rep" })
+
+local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
+
+vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
+vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
+
+vim.keymap.set({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f_expr, { expr = true })
+vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F_expr, { expr = true })
+vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t_expr, { expr = true })
+vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T_expr, { expr = true })

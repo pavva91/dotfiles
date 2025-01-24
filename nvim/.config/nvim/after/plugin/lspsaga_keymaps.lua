@@ -1,5 +1,33 @@
 local keymap = vim.keymap.set
 
+local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
+
+local ld = require("lspsaga.diagnostic")
+
+local next_diagnostic_repeat, prev_diagnostic_repeat = ts_repeat_move.make_repeatable_move_pair(
+	function()
+		ld:goto_next()
+	end,
+	function()
+		ld:goto_prev()
+	end
+)
+
+vim.keymap.set("n", "]d", next_diagnostic_repeat, { desc = 'Diagnostic jump forward' })
+vim.keymap.set("n", "[d", prev_diagnostic_repeat, { desc = 'Diagnostic jump backward' })
+
+local next_error_repeat, prev_error_repeat = ts_repeat_move.make_repeatable_move_pair(
+	function()
+		ld:goto_next({ severity = vim.diagnostic.severity.ERROR })
+	end,
+	function()
+		ld:goto_prev({ severity = vim.diagnostic.severity.ERROR })
+	end
+)
+
+vim.keymap.set("n", "]e", next_error_repeat, { desc = 'Error jump forward' })
+vim.keymap.set("n", "[e", prev_error_repeat, { desc = 'Error jump backward' })
+
 -- LSP finder - Find the symbol's definition
 -- If there is no definition, it will instead be hidden
 -- When you use an action in finder like "open vsplit",
@@ -73,20 +101,21 @@ keymap("n", "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>",
 -- Diagnostic jump
 -- You can use <C-o> to jump back to your previous location
 
-keymap("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>",
-	{ desc = 'Diagnostic Jump Backward' })
-keymap("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>",
-	{ desc = 'Diagnostic Jump Forward' })
+-- keymap("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>",
+-- 	{ desc = 'Diagnostic Jump Backward' })
+-- keymap("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>",
+-- 	{ desc = 'Diagnostic Jump Forward' })
 
 -- Diagnostic jump with filters such as only jumping to an error
-keymap("n", "[e", function()
-		require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
-	end,
-	{ desc = 'Error Jump Backward' })
-keymap("n", "]e", function()
-		require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
-	end,
-	{ desc = 'Error Jump Forward' })
+
+-- keymap("n", "[e", function()
+-- 		require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+-- 	end,
+-- 	{ desc = 'Error Jump Backward' })
+-- keymap("n", "]e", function()
+-- 		require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
+-- 	end,
+-- 	{ desc = 'Error Jump Forward' })
 
 -- Toggle outline
 keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>",
