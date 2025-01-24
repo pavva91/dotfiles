@@ -50,10 +50,11 @@ return {
 						["]i"] = { query = "@conditional.outer", desc = "Next conditional start" },
 						["]l"] = { query = "@loop.outer", desc = "Next loop start" },
 						["]n"] = { query = "@number.outer", desc = "Next number start" },
-						["]v"] = { query = "@variable.outer", desc = "Next variable start" },
+						["]v"] = { query = "@vardef.outer", query_group = "locals", desc = "Next variable definition start" },
+						["]="] = { query = "@varassign.inner", query_group = "locals", desc = "Next variable assignment start" },
 
 						["]S"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
-						["]z"] = { query = "@fold",  query_group = "folds", desc = "Next fold" },
+						["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
 					},
 					goto_next_end = {
 						["]F"] = { query = "@call.outer", desc = "Next function call end" },
@@ -69,6 +70,8 @@ return {
 						["[i"] = { query = "@conditional.outer", desc = "Previous conditional start" },
 						["[l"] = { query = "@loop.outer", desc = "Previous loop start" },
 						["[n"] = { query = "@number.outer", desc = "Previous number start" },
+						["[v"] = { query = "@vardef.outer", query_group = "locals", desc = "Previous variable definition start" },
+						["[="] = { query = "@varassign.inner", query_group = "locals", desc = "Next variable assignment start" },
 					},
 					goto_previous_end = {
 						["[F"] = { query = "@call.outer", desc = "Previous function call end" },
