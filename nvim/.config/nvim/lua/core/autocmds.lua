@@ -85,3 +85,27 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
         vim.fn.setpos(".", save_cursor)
     end,
 })
+
+-- javascript treesitter keymaps
+vim.api.nvim_create_autocmd("FileType", {
+    group = augroup("javascript_treesitter_keymap"),
+    pattern = {
+        "javascript",
+    },
+    callback = function()
+        local ts_textobjects_move = require("nvim-treesitter.textobjects.move")
+
+        vim.keymap.set("n", "]=", ts_textobjects_move.goto_next_start({ query = "@varassign.inner", query_group = "locals", desc = "Next variable assignment start" }), { desc = "Next variable assignment start"})
+        vim.keymap.set("n", "]v", ts_textobjects_move.goto_next_start({ query = "@vardef.outer", query_group = "locals", desc = "Next variable definition start" }), { desc = "Next variable definition start"})
+        vim.keymap.set("n", "]{", ts_textobjects_move.goto_next_start({ query = "@mustache.open", query_group = "locals", desc = "Next mustache open" }), { desc = "Next variable definition start"})
+        vim.keymap.set("n", "]}", ts_textobjects_move.goto_next_start({ query = "@mustache.close", query_group = "locals", desc = "Next mustache open" }), { desc = "Next variable definition start"})
+
+        vim.keymap.set("n", "[=", ts_textobjects_move.goto_previous_start({ query = "@varassign.inner", query_group = "locals", desc = "Previous variable assignment start" }), { desc = "Previous variable assignment start"})
+        vim.keymap.set("n", "[v", ts_textobjects_move.goto_previous_start({ query = "@vardef.outer", query_group = "locals", desc = "Previous variable definition start" }), { desc = "Previous variable definition start"})
+        vim.keymap.set("n", "[{", ts_textobjects_move.goto_previous_start({ query = "@mustache.open", query_group = "locals", desc = "Previous mustache open" }), { desc = "Previous variable definition start"})
+        vim.keymap.set("n", "[}", ts_textobjects_move.goto_previous_start({ query = "@mustache.close", query_group = "locals", desc = "Previous mustache close" }), { desc = "Previous variable definition start"})
+
+        -- ["]v"] = { query = "@vardef.outer", query_group = "locals", desc = "Next variable definition start" },
+    end,
+})
+
