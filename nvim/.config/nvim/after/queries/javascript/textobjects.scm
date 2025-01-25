@@ -23,3 +23,4 @@
 
 ((jsx_expression) @mustache.close
 (#contains? @mustache.close "{{/"))
+
