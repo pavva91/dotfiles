@@ -1,3 +1,0 @@
-; extends
-
-(assignment) @varassign.inner
