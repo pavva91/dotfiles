@@ -4,9 +4,14 @@
 (assignment_expression) @assignment.outer
 (pair) @assignment.outer
 
+(variable_declarator
+  name: (_) @assignment.lhs)
+
+(variable_declarator
+  value: (_) @assignment.rhs)
+
 (variable_declaration) @vardef.outer
 (lexical_declaration) @vardef.outer
-
 
 ((jsx_expression) @mustache.open
 (#contains? @mustache.open "{{#"))
