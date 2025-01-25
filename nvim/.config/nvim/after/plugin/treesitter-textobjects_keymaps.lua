@@ -1,7 +1,7 @@
 -- javascript treesitter keymaps
 vim.api.nvim_create_autocmd("FileType", {
 	-- group = augroup("javascript_treesitter_keymap"),
-	group = vim.api.nvim_create_autocmd("javascript_treesitter_keymaps", { clear = true }),
+	group = vim.api.nvim_create_augroup("javascript_treesitter_keymaps", { clear = true }),
 	pattern = {
 		"javascript",
 	},
