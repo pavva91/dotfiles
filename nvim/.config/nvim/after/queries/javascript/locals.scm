@@ -10,6 +10,11 @@
 (assignment_expression) @varassign.inner
 
 
+(variable_declarator) @assignment.outer
+(assignment_expression) @assignment.outer
+(pair) @assignment.outer
+
+
 ((jsx_expression) @mustache.open
 (#contains? @mustache.open "{{#"))
 
