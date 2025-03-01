@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="x11,i3,i3blocks,alacritty,zsh,bash,tmux,nvim,vim,ranger,zathura,spacemacs,ghostty"
+    STOW_FOLDERS="x11,i3,i3blocks,alacritty,zsh,bash,tmux,nvim,vim,ranger,zathura,spacemacs,ghostty,goodvibes"
 fi
 
 if [[ -z $DOTFILES_PATH ]]; then

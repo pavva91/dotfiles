@@ -88,6 +88,10 @@
     <name>Skyline Radio</name>
   </Station>
   <Station>
+    <uri>https://stream.radiofrance.fr/franceculture/franceculture_hifi.m3u8?id=radiofrance</uri>
+    <name>Radio France - France Culture</name>
+  </Station>
+  <Station>
     <uri>https://stream.radiofrance.fr/fipelectro/fipelectro_hifi.m3u8</uri>
     <name>Fip Electro</name>
   </Station>
