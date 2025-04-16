@@ -43,7 +43,7 @@ local vopts = {
 local vmappings = {
     f = {
         s = {
-            '"zy<ESC>:Telescope live_grep default_text=<c-r>z<CR>',
+            '"zy<ESC>:lua require("telescope.builtin").live_grep({ default_text="<c-r>z", prompt_title="Find visual selection" })<CR>',
             "[F]ind current selection (uses z register)",
         },
     }
